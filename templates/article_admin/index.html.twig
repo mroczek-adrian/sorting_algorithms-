@@ -1,0 +1,109 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello Articl{% endblock %}
+
+
+
+{% block body %}
+
+    <div class="form-group row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-1">
+            <li><a href="{{path('hello_page') }} ">back</a></li>
+        </div>
+        <div class="col-sm-8">
+
+
+            <h1>Lessons! </h1><br>
+            {% for zaj in allZajecia %}
+
+
+                <li> Name of lesson: {{ zaj.nazwa }} Time {{ zaj.okres }} h <a href="{{ url('usuniecia_artykulu', { 'id': zaj.id }) }}">Delete</a></li>
+
+
+
+            {% endfor %}
+            <br><h1>Launch a new Lesson! </h1>
+            {{ form_start(zajeciaForm) }}
+            {{ form_widget(zajeciaForm) }}
+            <button type="submit" class="btn btn-primary">Create!</button>
+            {{ form_end(zajeciaForm) }}
+
+
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+
+
+
+
+{#    <h1>Launch a new Article! ?</h1>#}
+{#    {{ form_start(articleForm) }}#}
+{#    {{ form_widget(articleForm) }}#}
+{#    <button type="submit" class="btn btn-primary">Create!</button>#}
+{#    {{ form_end(articleForm) }}#}
+    <div class="form-group row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-8">
+            <h1>Time when university is open</h1><br>
+            {% for godz in allDniUczelni %}
+
+
+                <li> Day {{ godz.dzien }} Hours {{ godz.godziny }}  <a href="{{ url('usuniecia_godz_ucz', { 'id': godz.id }) }}">Delete</a></li>
+
+
+
+            {% endfor %}
+            <br> <h1>Add a new time when university is open </h1>
+            {{ form_start(gpuForm) }}
+            {{ form_widget(gpuForm) }}
+            <button type="submit" class="btn btn-primary">Create!</button>
+            {{ form_end(gpuForm) }}
+
+
+
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-8">
+            <h1>Teachers </h1><br>
+            {% dump(allTeachers) %}
+            {% for teach in allTeachers %}
+                <li>Name {{ teach.name }} Surname {{ teach.surname}} Subject {{ teach.subject }} Day free from work: {{ teach.day1 }},{{ teach.day3 }},{{ teach.day2 }}<a href="{{ url('usuniecia_teachers', { 'id': teach.id }) }}">Delete</a></li>
+            {% endfor %}
+            <br> <h1>Add teacher </h1>
+            {{ form_start(teachersForm) }}
+            {{ form_widget(teachersForm) }}
+            <button type="submit" class="btn btn-primary">Create!</button>
+            {{ form_end(teachersForm) }}
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+
+
+
+
+
+{% endblock %}
+
