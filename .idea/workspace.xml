@@ -18,24 +18,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>controller</find>
-      <find>STALA</find>
-      <find>tab</find>
-      <find>articleForm</find>
-      <find>ArticleFormType</find>
-      <find>GodzinyPracyUczelniFormType</find>
-      <find>dump</find>
-      <find>dd</find>
-      <find>whi</find>
-      <find>m</find>
-      <find>Which_algorythm_should_i_use</find>
-      <find>zaczy</find>
-      <find>Which</find>
-      <find>name</find>
-    </findStrings>
-  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
@@ -155,7 +137,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projInzyn" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
@@ -184,6 +166,7 @@
       <workItem from="1599205933566" duration="4468000" />
       <workItem from="1599464205677" duration="921000" />
       <workItem from="1599465415584" duration="125000" />
+      <workItem from="1599466105161" duration="5125000" />
     </task>
     <servers />
   </component>
@@ -204,5 +187,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599465540416" />
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1599467170596">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="143" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1599467170596" />
   </component>
 </project>
