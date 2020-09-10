@@ -24,3 +24,10 @@ usuniecia_teachers:
 sort_algorithms:
   path: /sort/algorithms
   controller: App\Controller\SortAlgorithmsController::index
+
+bubble_sort:
+  path: /bubble/sort
+  controller: App\Controller\BubbleSortController::index
+quick_sort:
+  path: /quick/sort
+  controller: App\Controller\QuickSortController::index

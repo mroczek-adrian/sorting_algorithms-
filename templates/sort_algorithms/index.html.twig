@@ -8,11 +8,7 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 
 
-    canvas{
-        border : 1px solid #000;
-        display: block;
-        margin: 0 auto;
-    }
+
 
 </style>
 
@@ -25,15 +21,18 @@
         </div>
         <div class="col-sm-8">
 
-            <h1>Hello {{ controller_name }}! ✅</h1>
+            <h1>Hello {{ controller_name }}!  ✅</h1>
+            <h3>W pracy użyte są następujące algorytmy, które zostały wybrane na podstawie ich różnorodnej złożoności:</h3>
 
-{#            here will be canvas#}
-            <canvas id="bird" width="600" height="380"></canvas>
-            <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
-            <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
-            <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers.jpg') }}" >
-            <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >
-            <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
+
+            <div><a href="{{path('bubble_sort') }} ">sortowanie bąbelkowe</a></div>
+
+
+            <div><a href="{{path('quick_sort') }} ">sortowanie szybkie</a></div>
+            <div><h1>sortowanie przez zliczanie</h1></div>
+            <div><h1>sortowanie przez scalanie</h1></div>
+            <div><h1>sortowanie kopcowe</h1></div>
+
 
         </div>
         <div class="col-sm-2">
@@ -41,9 +40,4 @@
             <h1>under  title will be canvas with simulation</h1>
         </div>
     </div>
-{% endblock %}
-{%  block javascripts %}
-
-
-    <script src="{{asset('js/algorithms-javascript.js') }}"></script>
 {% endblock %}
