@@ -69,7 +69,7 @@ const bg = {
 //NUMBERS
 const nr1 = {
 
-
+    //green number
     sX : 24,
     sY : 24,
     sWidth : 168 - 24,
@@ -78,7 +78,15 @@ const nr1 = {
     dX : 340,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-
+    //blue number
+    bsX : 40,
+    bsY : 27,
+    bsWidth : 80 - 35,
+    bsHeight : 81 - 27,
+    bdY : 70+15,
+    bdX : 20+15,
+    bdWidth : 100 - 54,
+    bdHeight :100 - 54 ,
     //frame can change the image of the images
     frame : 0,
 
@@ -88,6 +96,10 @@ const nr1 = {
         //let nr1 = this.animation[this.frame];
         ctx.drawImage(numbers,nr1.sX,nr1.sY,this.sWidth,this.sHeight,nr1.dX,nr1.dY,
             this.dWidth,this.dHeight);
+    },
+    piwot_draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
     },
 
     bubbleSort : function(){
@@ -114,18 +126,31 @@ const nr1 = {
             if(1150 > frames && frames > 1050){
 
                 this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
+                this.dX -=4.8*globalSpeed;
 
 
             }
 
-
-
-            //THE END OF SIMULATION
-            if( frames == 4999){
-                this.dX =100;
+            //2ND STEP
+            if(1700 > frames && frames > 1600){
+                this.dY +=1.6*globalSpeed;
+                this.dX -=1.5*globalSpeed;
 
             }
+
+
+            //2ND STEP
+            if(1850 > frames && frames > 1750){
+                this.dY +=1.6*globalSpeed;
+                this.bdY +=1.6*globalSpeed;
+                //this.dX -=1.5*globalSpeed;
+
+            }
+            // //THE END OF SIMULATION
+            // if( frames == 4999){
+            //     this.dX =100;
+            //
+            // }
         }
 
     }
@@ -141,7 +166,15 @@ const nr2 = {
     dX : 180,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-
+    //blue number
+    bsX : 165,
+    bsY : 27,
+    bsWidth : 80 - 35,
+    bsHeight : 81 - 27,
+    bdY : 70+15+75,
+    bdX : 180+15,
+    bdWidth : 100 - 54,
+    bdHeight :100 - 54 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -156,10 +189,10 @@ const nr2 = {
 
             ctx.drawImage(numbers,nr2.sX,nr2.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
-
-
-
-
+    },
+    piwot_draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
     },
     bubbleSort : function(){
 
@@ -187,6 +220,16 @@ const nr2 = {
                 this.dY +=1.5*globalSpeed;
 
             }
+            //2ND STEP
+            if(1350 > frames && frames > 1250){
+
+                this.dY +=1.6*globalSpeed;
+                this.dX -=1.3*globalSpeed;
+                this.bdX -=1.3*globalSpeed;
+                this.bdY +=1.6*globalSpeed;
+
+            }
+
             // //THE END OF SIMULATION
             // if( frames == 4999){
             //     this.dX =180;
@@ -205,7 +248,7 @@ const nr3 = {
     sWidth : 168 - 24,
     sHeight : 168 - 24,
     dY : 70,
-    dX : 420,
+    dX : 20,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
     //blue number
@@ -213,8 +256,8 @@ const nr3 = {
     bsY : 27,
     bsWidth : 80 - 35,
     bsHeight : 81 - 27,
-    bdY : 85,
-    bdX : 435,
+    bdY : 70+15,
+    bdX : 20+15,
     bdWidth : 100 - 54,
     bdHeight :100 - 54 ,
 
@@ -255,25 +298,26 @@ const nr3 = {
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
             if(650 > frames && frames > 350){
-                this.dX -=globalSpeed;
+                this.dX +=1.6*globalSpeed;
                 this.dY +=globalSpeed/2;
-                this.bdX -=globalSpeed;
+                this.bdX +=1.6*globalSpeed;
                 this.bdY +=globalSpeed/2;
 
             }
 
 
 
-            //THE END OF SIMULATION
-            if( frames == 4999){
-                this.dX =100;
-
-            }
+            // //THE END OF SIMULATION
+            // if( frames == 4999){
+            //     this.dX =100;
+            //
+            // }
         }
 
     }
 }
 const nr4 = {
+    //green number
     sX : 24,
     sY : 215,
     sWidth : 168 - 24,
@@ -282,6 +326,15 @@ const nr4 = {
     dX : 100,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
+    //blue number
+    bsX : 415,
+    bsY : 27,
+    bsWidth : 80 - 35,
+    bsHeight : 81 - 27,
+    bdY : 70+15+75,
+    bdX : 100+15+250,
+    bdWidth : 100 - 54,
+    bdHeight :100 - 54 ,
     //frame can change the image of the images
     frame : 0,
 
@@ -289,7 +342,10 @@ const nr4 = {
         ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
     },
-
+    piwot_draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
 
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -310,20 +366,23 @@ const nr4 = {
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
             if(850 > frames && frames > 700){
-
                 this.dY +=globalSpeed;
                 this.dX +=3.3*globalSpeed;
-
-
             }
 
-
-
-            //THE END OF SIMULATION
-            if( frames == 4999){
-                this.dX =100;
-
+            //2ND STEP
+            if(1500 > frames && frames > 1400){
+                this.dY +=1.6*globalSpeed;
+              //  this.dX -=1.3*globalSpeed;
+              //  this.bdX -=1.3*globalSpeed;
+                this.bdY +=1.6*globalSpeed;
             }
+
+            // //THE END OF SIMULATION
+            // if( frames == 4999){
+            //     this.dX =100;
+            //
+            // }
         }
 
     }
@@ -372,14 +431,19 @@ const nr9 = {
 
 
             }
-
-
-
-            //THE END OF SIMULATION
-            if( frames == 4999){
-                this.dX =100;
+            //2ND STEP
+            if(1600 > frames && frames > 1500){
+                this.dY +=1.6*globalSpeed;
+                //this.dX +=3.3*globalSpeed;
 
             }
+
+
+            // //THE END OF SIMULATION
+            // if( frames == 4999){
+            //     this.dX =100;
+            //
+            // }
         }
 
     }
@@ -450,8 +514,20 @@ function draw(){
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     if(state.current == state.getReady){}
     else{
-        if(3650 > frames && frames > 150){
+        if(13650 > frames && frames > 150){
             nr3.piwot_draw();
+
+        }
+        if(13650 > frames && frames > 1200){
+            nr2.piwot_draw();
+
+        }
+        if(13650 > frames && frames > 1350){
+            nr4.piwot_draw();
+
+        }
+        if(13650 > frames && frames > 1700){
+            nr1.piwot_draw();
 
         }
     }
