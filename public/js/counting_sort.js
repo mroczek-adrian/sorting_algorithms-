@@ -17,7 +17,8 @@ const blue_numbers=document.getElementById("blue_numbers");
 const compare2numbers=document.getElementById("compare2numbers");
 //IMAGE OF THE GET READY STATE
 const click2start=document.getElementById("click2start");
-
+//IMAGE OF THE TABLE WITH NUMBERS
+const table_and_numbers=document.getElementById("table");
 
 //GAME STATE
 const state = {
@@ -65,7 +66,23 @@ const bg = {
 
 
 
+//TABLE OF NUMBERS
+const table_ = {
 
+    sX : 40,
+    sY : 40,
+    sWidth : 1500 - 40,
+    sHeight : 270 - 40,
+    dY : 40,
+    dX : 40,
+    dWidth : 400,
+    dHeight :150  ,
+
+    draw : function(){
+        ctx.drawImage(table_and_numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    }
+}
 //NUMBERS
 const nr1 = {
 
@@ -635,7 +652,7 @@ function draw(){
 
     //title of canvas
     ctx.font = "30px Arial";
-    ctx.strokeText("Quick Sort!",225,50);
+    ctx.strokeText("Counting Sort!",225,50);
 
     //draw function
     bg.draw();
@@ -646,6 +663,7 @@ function draw(){
     nr3.draw();
     nr4.draw();
     nr9.draw();
+    table_.draw();
     //line.draw();
     // nr3.piwot_draw();
     getReady.draw();

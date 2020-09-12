@@ -31,3 +31,6 @@ bubble_sort:
 quick_sort:
   path: /quick/sort
   controller: App\Controller\QuickSortController::index
+counting_sort:
+  path: /counting/sort
+  controller: App\Controller\CountingSortController::index
