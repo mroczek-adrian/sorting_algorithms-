@@ -19,6 +19,8 @@ const compare2numbers=document.getElementById("compare2numbers");
 const click2start=document.getElementById("click2start");
 //IMAGE OF THE TABLE WITH NUMBERS
 const table_and_numbers=document.getElementById("table");
+//IMAGE OF THE TABLE WITH RED CIRCLE
+const red_circle=document.getElementById("red_circle");
 
 //GAME STATE
 const state = {
@@ -63,47 +65,19 @@ const bg = {
             this.w,this.h);
     }
 }
+//RED CIRCLE
+const red_circle01 = {
 
-
-
-//TABLE OF NUMBERS
-const table_ = {
-
-    sX : 40,
-    sY : 40,
-    sWidth : 1500 - 40,
-    sHeight : 270 - 40,
-    dY : 40,
-    dX : 40,
-    dWidth : 400,
-    dHeight :150  ,
-
-    draw : function(){
-        ctx.drawImage(table_and_numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
-            this.dWidth,this.dHeight);
-    }
-}
-//NUMBERS
-const nr1 = {
-
-    //green number
-    sX : 24,
-    sY : 24,
-    sWidth : 168 - 24,
-    sHeight : 168 - 24,
-    dY : 70,
-    dX : 340,
+    //circle
+    sX : 310,
+    sY : 90,
+    sWidth : 490 - 310,
+    sHeight : 270 - 90,
+    dY : 155,
+    dX : 420,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-    //blue number
-    bsX : 40,
-    bsY : 27,
-    bsWidth : 80 - 35,
-    bsHeight : 81 - 27,
-    bdY : 70+15+155,
-    bdX : 20+15+10,
-    bdWidth : 100 - 54,
-    bdHeight :100 - 54 ,
+
     //frame can change the image of the images
     frame : 0,
 
@@ -111,13 +85,10 @@ const nr1 = {
     draw : function(){
         //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
         //let nr1 = this.animation[this.frame];
-        ctx.drawImage(numbers,nr1.sX,nr1.sY,this.sWidth,this.sHeight,nr1.dX,nr1.dY,
+        ctx.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
     },
-    piwot_draw : function(){
-        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-            this.bdWidth,this.bdHeight);
-    },
+
 
     bubbleSort : function(){
 
@@ -137,66 +108,259 @@ const nr1 = {
         //this.frame = this.frame % this.animation.length;
 
         if(state.current == state.getReady){
-        }else{
+        }else {
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1150 > frames && frames > 1050){
+            if (1150 > frames && frames > 1050) {
 
-                this.dY +=1.5*globalSpeed;
-                this.dX -=4.8*globalSpeed;
-
-
-            }
-
-            //2ND STEP
-            if(1700 > frames && frames > 1600){
-                this.dY +=1.6*globalSpeed;
-                this.dX -=1.5*globalSpeed;
-
-            }
-
-
-            //3ND STEP
-            if(1850 > frames && frames > 1750){
-                this.dY +=1.6*globalSpeed;
-                this.bdY +=1.6*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
-
-            }
-            //4TH STEP
-            if(2200 > frames && frames > 2100){
-                this.dY -=3.2*globalSpeed;
-                this.bdY -=3.2*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
-
-            }
-            //THE END OF SIMULATION
-            if( frames == 2299){
-
-                this.sX = 24;
-                this.sY = 24;
-                this.sWidth = 168 - 24;
-                this.sHeight = 168 - 24;
-                this.dY = 70;
-                this.dX = 340;
-                this.dWidth = 100 - 24;
-                this.dHeight =100 - 24 ;
-                //blue number
-                this.bsX = 40;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
-                this.bdY = 70+15+155;
-                this.bdX = 30+15;
-                this.bdWidth = 100 - 54;
-                this.bdHeight =100 - 54 ;
+                this.dY += 1.5 * globalSpeed;
+                this.dX -= 4.8 * globalSpeed;
 
 
             }
         }
 
+
     }
 }
+const red_circle02 = {
+
+    //circle
+    sX : 310,
+    sY : 90,
+    sWidth : 490 - 310,
+    sHeight : 270 - 90,
+    dY : 55,
+    dX : 420,
+    dWidth : 100 - 24,
+    dHeight :100 - 24 ,
+
+    //frame can change the image of the images
+    frame : 0,
+
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    bubbleSort : function(){
+
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if (1150 > frames && frames > 1050) {
+
+                this.dY += 1.5 * globalSpeed;
+                this.dX -= 4.8 * globalSpeed;
+
+
+            }
+        }
+
+
+    }
+}
+
+//NUMBER OF NUMBERS AT TABLE NR 2
+const how_many_numbers_at_index0 = {
+    //blue number
+    bsX : 145,
+    bsY : 255,
+    bsWidth : 236 - 145,
+    bsHeight : 354 - 255,
+    bdY : 165,
+    bdX : 35,
+    bdWidth : 55,
+    bdHeight :55 ,
+
+    nr01 : [{  bsX : 17,
+            bsY : 9,
+            bsWidth : 105 - 17,
+            bsHeight : 100 - 9}],
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        if (state.current == state.getReady) {
+        } else {
+
+            if ( frames > 150) {
+                let how_many_numbers_at_index0 = this.nr01[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index0.bsX,how_many_numbers_at_index0.bsY,how_many_numbers_at_index0.bsWidth,how_many_numbers_at_index0.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            }else{
+                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            }
+        }
+
+
+    },
+
+
+    bubbleSort: function () {
+
+    },
+
+
+    update: function () {
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if (state.current == state.getReady) {
+        } else {
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if ( frames == 150) {
+
+
+
+            }
+        }
+
+
+    }
+}
+//TOP TABLE OF NUMBERS
+const table_top = {
+
+    sX : 25,
+    sY : 40,
+    sWidth : 1037 - 25,
+    sHeight : 222 - 40,
+    dY : 60,
+    dX : 0,
+    dWidth : 600,
+    dHeight :70  ,
+
+    draw : function(){
+        ctx.drawImage(table_and_numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    }
+}
+//MIDDLE TABLE OF NUMBERS
+const table_middle = {
+
+    sX : 25,
+    sY : 40,
+    sWidth : 1037 - 25,
+    sHeight : 222 - 40,
+    dY : 160,
+    dX : 0,
+    dWidth : 600,
+    dHeight :70  ,
+
+    draw : function(){
+        ctx.drawImage(table_and_numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    }
+}
+//BOTTOM TABLE OF NUMBERS
+const table_bottom = {
+
+    sX : 25,
+    sY : 40,
+    sWidth : 1037 - 25,
+    sHeight : 222 - 40,
+    dY : 260,
+    dX : 0,
+    dWidth : 600,
+    dHeight :70  ,
+
+    draw : function(){
+        ctx.drawImage(table_and_numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    }
+}
+//NUMBERS
+const nr1 = {
+
+    //green number
+    sX : 24,
+    sY : 24,
+    sWidth : 168 - 24,
+    sHeight : 168 - 24,
+    dY : 55,
+    dX : 420,
+    dWidth : 100 - 24,
+    dHeight :100 - 24 ,
+
+    //frame can change the image of the images
+    frame : 0,
+
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(numbers,nr1.sX,nr1.sY,this.sWidth,this.sHeight,nr1.dX,nr1.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    bubbleSort : function(){
+
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if (1150 > frames && frames > 1050) {
+
+                this.dY += 1.5 * globalSpeed;
+                this.dX -= 4.8 * globalSpeed;
+
+
+            }
+        }
+
+
+    }
+}
+
 const nr2 = {
 
     //green number
@@ -204,27 +368,15 @@ const nr2 = {
     sY : 24,
     sWidth : 168 - 24,
     sHeight : 168 - 24,
-    dY : 70,
-    dX : 180,
+    dY : 55,
+    dX : 520,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-    //blue number
-    bsX : 165,
-    bsY : 27,
-    bsWidth : 80 - 35,
-    bsHeight : 81 - 27,
-    bdY : 70+15+75,
-    bdX : 180+15,
-    bdWidth : 100 - 54,
-    bdHeight :100 - 54 ,
+
 
     //frame can change the image of the images
     frame : 0,
 
-    //temporary variable
-    gravity : 0.25,
-    jump : 4.6,
-    speed : 0.25,
 
     draw : function(){
         //let nr2 = this.animation[this.frame];
@@ -232,10 +384,7 @@ const nr2 = {
             ctx.drawImage(numbers,nr2.sX,nr2.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
     },
-    piwot_draw : function(){
-        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-            this.bdWidth,this.bdHeight);
-    },
+
     bubbleSort : function(){
 
     },
@@ -262,46 +411,9 @@ const nr2 = {
                 this.dY +=1.5*globalSpeed;
 
             }
-            //2ND STEP
-            if(1350 > frames && frames > 1250){
-
-                this.dY +=1.6*globalSpeed;
-                this.dX -=1.3*globalSpeed;
-                this.bdX -=1.3*globalSpeed;
-                this.bdY +=1.6*globalSpeed;
-
-            }
-            //4TH STEP
-            if(2200 > frames && frames > 2100){
-                this.dY -=1.6*globalSpeed;
-                this.bdY -=1.6*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
-
-            }
-
-            //THE END OF SIMULATION
-            if( frames == 2299){
-
-                this.sX = 230;
-                this.sY = 24;
-                this.sWidth = 168 - 24;
-                this.sHeight = 168 - 24;
-                this.dY = 70;
-                this.dX = 180;
-                this.dWidth = 100 - 24;
-                this.dHeight =100 - 24 ;
-                //blue number
-                this.bsX = 165;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
-                this.bdY = 70+15+75;
-                this.bdX = 180+15;
-                this.bdWidth = 100 - 54;
-                this.bdHeight =100 - 54 ;
 
 
-            }
+
         }
 
 
@@ -314,19 +426,11 @@ const nr3 = {
     sY : 24,
     sWidth : 168 - 24,
     sHeight : 168 - 24,
-    dY : 70,
+    dY : 55,
     dX : 20,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-    //blue number
-    bsX : 290,
-    bsY : 27,
-    bsWidth : 80 - 35,
-    bsHeight : 81 - 27,
-    bdY : 70+15,
-    bdX : 20+15,
-    bdWidth : 100 - 54,
-    bdHeight :100 - 54 ,
+
 
     //frame can change the image of the images
     frame : 0,
@@ -336,10 +440,6 @@ const nr3 = {
         //let nr3 = this.animation[this.frame];
         ctx.drawImage(numbers,nr3.sX,nr3.sY,this.sWidth,this.sHeight,nr3.dX,nr3.dY,
             this.dWidth,this.dHeight);
-    },
-    piwot_draw : function(){
-        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-            this.bdWidth,this.bdHeight);
     },
 
 
@@ -373,55 +473,21 @@ const nr3 = {
             }
 
 
-
-            //THE END OF SIMULATION
-            if( frames == 2299){
-
-                this.sX = 430;
-                this.sY = 24;
-                this.sWidth = 168 - 24;
-                this.sHeight = 168 - 24;
-                this.dY = 70;
-                this.dX = 20;
-                this.dWidth = 100 - 24;
-                this.dHeight =100 - 24 ;
-                //blue number
-                this.bsX = 290;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
-                this.bdY = 70+15;
-                this.bdX = 20+15;
-                this.bdWidth = 100 - 54;
-                this.bdHeight =100 - 54 ;
-
-
-
-
-            }
         }
 
     }
 }
-const nr4 = {
+const nr4_a = {
     //green number
     sX : 24,
     sY : 215,
     sWidth : 168 - 24,
     sHeight : 168 - 24,
-    dY : 70,
-    dX : 100,
+    dY : 55,
+    dX : 120,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-    //blue number
-    bsX : 415,
-    bsY : 27,
-    bsWidth : 80 - 35,
-    bsHeight : 81 - 27,
-    bdY : 70+15+75,
-    bdX : 100+15+250,
-    bdWidth : 100 - 54,
-    bdHeight :100 - 54 ,
+
     //frame can change the image of the images
     frame : 0,
 
@@ -429,10 +495,7 @@ const nr4 = {
         ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
     },
-    piwot_draw : function(){
-        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-            this.bdWidth,this.bdHeight);
-    },
+
 
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -457,68 +520,21 @@ const nr4 = {
                 this.dX +=3.3*globalSpeed;
             }
 
-            //2ND STEP
-            if(1500 > frames && frames > 1400){
-                this.dY +=1.6*globalSpeed;
-              //  this.dX -=1.3*globalSpeed;
-              //  this.bdX -=1.3*globalSpeed;
-                this.bdY +=1.6*globalSpeed;
-            }
-            //4TH STEP
-            if(2200 > frames && frames > 2100){
-                this.dY -=1.6*globalSpeed;
-                this.bdY -=1.6*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
 
-            }
-
-            //THE END OF SIMULATION
-            if( frames == 2299){
-
-                this.sX = 24;
-                this.sY = 215;
-                this.sWidth = 168 - 24;
-                this.sHeight = 168 - 24;
-                this.dY = 70;
-                this.dX = 100;
-                this.dWidth = 100 - 24;
-                this.dHeight =100 - 24 ;
-                //blue number
-                this.bsX = 415;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
-                this.bdY = 70+15+75;
-                this.bdX = 100+15+250;
-                this.bdWidth = 100 - 54;
-                this.bdHeight =100 - 54 ;
-
-
-            }
         }
 
     }
 }
-const nr9 = {
-    sX : 430,
-    sY : 400,
+const nr4_b = {
+    //green number
+    sX : 24,
+    sY : 215,
     sWidth : 168 - 24,
     sHeight : 168 - 24,
-    dY : 70,
-    dX : 260,
+    dY : 55,
+    dX : 220,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
-
-
-    //blue number
-    bsX : 40,
-    bsY : 280,
-    bsWidth : 80 - 35,
-    bsHeight : 81 - 27,
-    bdY : 70+15+155,
-    bdX : 20+15+10+400-7,
-    bdWidth : 100 - 54,
-    bdHeight :100 - 54 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -528,10 +544,58 @@ const nr9 = {
             this.dWidth,this.dHeight);
     },
 
-    piwot_draw : function(){
-        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-            this.bdWidth,this.bdHeight);
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(850 > frames && frames > 700){
+                this.dY +=globalSpeed;
+                this.dX +=3.3*globalSpeed;
+            }
+
+
+        }
+
+    }
+}
+const nr5 = {
+    sX : 230,
+    sY : 215,
+    sWidth : 168 - 24,
+    sHeight : 168 - 24,
+    dY : 55,
+    dX : 320,
+    dWidth : 100 - 24,
+    dHeight :100 - 24 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+       // ctx.drawImage(numbers, -190, 0);
     },
+
+
 
 
 
@@ -560,47 +624,337 @@ const nr9 = {
 
 
             }
-            //2ND STEP
-            if(1600 > frames && frames > 1500){
-                this.dY +=1.6*globalSpeed;
-                //this.dX +=3.3*globalSpeed;
+        }
+
+    }
+}
+
+//INDEX OF THE TOP TABLE
+const index00 = {
+    //blue number
+    bsX : 145,
+    bsY : 255,
+    bsWidth : 236 - 145,
+    bsHeight : 354 - 255,
+    bdY : 130,
+    bdX : 45,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
 
             }
-            //3ND STEP
-            if(2050 > frames && frames > 1950){
-                this.dY +=1.6*globalSpeed;
-                this.bdY +=1.6*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
+        }
+
+    }
+}
+const index01 = {
+    //blue number
+    bsX : 17,
+    bsY : 9,
+    bsWidth : 105 - 17,
+    bsHeight : 100 - 9,
+    bdY : 130,
+    bdX : 145,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
 
             }
+        }
 
-            //4TH STEP
-            if(2200 > frames && frames > 2100){
-                this.dY -=3.2*globalSpeed;
-                this.bdY -=3.2*globalSpeed;
-                //this.dX -=1.5*globalSpeed;
+    }
+}
+const index02 = {
+    //blue number
+    bsX : 140,
+    bsY : 9,
+    bsWidth : 236 - 140,
+    bsHeight : 100 - 9,
+    bdY : 130,
+    bdX : 245,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
 
             }
-            //THE END OF SIMULATION
-            if( frames == 2299){
+        }
 
-                this.sX = 430;
-                this.sY = 400;
-                this.sWidth = 168 - 24;
-                this.sHeight = 168 - 24;
-                this.dY = 70;
-                this.dX = 260;
-                this.dWidth = 100 - 24;
-                this.dHeight =100 - 24 ;
-                //blue number
-                this.bsX = 40;
-                this.bsY = 280;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
-                this.bdY = 70+15+155;
-                this.bdX = 20+15+10+400-7;
-                this.bdWidth = 100 - 54;
-                this.bdHeight =100 - 54 ;
+    }
+}
+const index03 = {
+    //blue number
+    bsX : 270,
+    bsY : 9,
+    bsWidth : 360 - 270,
+    bsHeight : 100 - 9,
+    bdY : 130,
+    bdX : 345,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index04 = {
+    //blue number
+    bsX : 390,
+    bsY : 9,
+    bsWidth : 490 - 390,
+    bsHeight : 100 - 9,
+    bdY : 130,
+    bdX : 445,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index05 = {
+    //blue number
+    bsX : 17,
+    bsY : 135,
+    bsWidth : 110 - 17,
+    bsHeight : 225 - 135,
+    bdY : 130,
+    bdX : 545,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
             }
         }
 
@@ -609,6 +963,669 @@ const nr9 = {
 
 
 
+//INDEX OF THE MIDDLE TABLE
+const index10 = {
+    //blue number
+    bsX : 145,
+    bsY : 255,
+    bsWidth : 236 - 145,
+    bsHeight : 354 - 255,
+    bdY : 230,
+    bdX : 45,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index11 = {
+    //blue number
+    bsX : 17,
+    bsY : 9,
+    bsWidth : 105 - 17,
+    bsHeight : 100 - 9,
+    bdY : 230,
+    bdX : 145,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index12 = {
+    //blue number
+    bsX : 140,
+    bsY : 9,
+    bsWidth : 236 - 140,
+    bsHeight : 100 - 9,
+    bdY : 230,
+    bdX : 245,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index13 = {
+    //blue number
+    bsX : 270,
+    bsY : 9,
+    bsWidth : 360 - 270,
+    bsHeight : 100 - 9,
+    bdY : 230,
+    bdX : 345,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index14 = {
+    //blue number
+    bsX : 390,
+    bsY : 9,
+    bsWidth : 490 - 390,
+    bsHeight : 100 - 9,
+    bdY : 230,
+    bdX : 445,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index15 = {
+    //blue number
+    bsX : 17,
+    bsY : 135,
+    bsWidth : 110 - 17,
+    bsHeight : 225 - 135,
+    bdY : 230,
+    bdX : 545,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+
+//INDEX OF THE BOTTOM TABLE
+const index20 = {
+    //blue number
+    bsX : 145,
+    bsY : 255,
+    bsWidth : 236 - 145,
+    bsHeight : 354 - 255,
+    bdY : 330,
+    bdX : 45,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index21 = {
+    //blue number
+    bsX : 17,
+    bsY : 9,
+    bsWidth : 105 - 17,
+    bsHeight : 100 - 9,
+    bdY : 330,
+    bdX : 145,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index22 = {
+    //blue number
+    bsX : 140,
+    bsY : 9,
+    bsWidth : 236 - 140,
+    bsHeight : 100 - 9,
+    bdY : 330,
+    bdX : 245,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index23 = {
+    //blue number
+    bsX : 270,
+    bsY : 9,
+    bsWidth : 360 - 270,
+    bsHeight : 100 - 9,
+    bdY : 330,
+    bdX : 345,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index24 = {
+    //blue number
+    bsX : 390,
+    bsY : 9,
+    bsWidth : 490 - 390,
+    bsHeight : 100 - 9,
+    bdY : 330,
+    bdX : 445,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
+const index25 = {
+    //blue number
+    bsX : 17,
+    bsY : 135,
+    bsWidth : 110 - 17,
+    bsHeight : 225 - 135,
+    bdY : 330,
+    bdX : 545,
+    bdWidth : 30,
+    bdHeight :30 ,
+
+
+
+
+    //frame can change the image of the images
+    frame : 0,
+
+    draw : function(){
+        ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            this.bdWidth,this.bdHeight);
+    },
+
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(state.current == state.getReady){
+        }else{
+            //this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1050 > frames && frames > 950){
+
+                this.dY +=1.5*globalSpeed;
+                this.dX +=3.3*globalSpeed;
+
+
+            }
+        }
+
+    }
+}
 //GET READY MESSAGE
 const getReady = {
     sX : 390,
@@ -646,52 +1663,41 @@ const gameOver = {
 
 //DRAW
 function draw(){
-    //background
+    //BACKGROUND
     ctx.fillStyle = "#70c5ce";
     ctx.fillRect(0,0,cvs.width,cvs.height);
 
-    //title of canvas
+    //TITILE OF CANVAS
     ctx.font = "30px Arial";
     ctx.strokeText("Counting Sort!",225,50);
 
-    //draw function
-    bg.draw();
-    //c2n.draw();
+    //DRAWING TABLES
+    table_top.draw();table_middle.draw();table_bottom.draw();
 
-    nr1.draw();
-    nr2.draw();
-    nr3.draw();
-    nr4.draw();
-    nr9.draw();
-    table_.draw();
-    //line.draw();
-    // nr3.piwot_draw();
-    getReady.draw();
-    gameOver.draw();
+    //DRAWING NUMBER OF NUMBER IN MIDDLE TABLE
+    how_many_numbers_at_index0.draw();
 
+    //DRAWING SORTED NUMBERS
+    nr1.draw();nr2.draw();nr3.draw();nr4_a.draw();nr4_b.draw();nr5.draw();
+
+    //DRAWING STATE
+    getReady.draw();gameOver.draw();
+
+    //DRAWING 1ST LINE OF INDEX
+    index00.draw();index01.draw(); index02.draw(); index03.draw(); index04.draw(); index05.draw();
+
+    //DRAWING 2ND LINE OF INDEX
+    index10.draw();index11.draw(); index12.draw(); index13.draw(); index14.draw(); index15.draw();
+
+    //DRAWING 3ND LINE OF INDEX
+    index20.draw();index21.draw(); index22.draw(); index23.draw(); index24.draw(); index25.draw();
 
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     if(state.current == state.getReady){}
     else{
-        if(13650 > frames && frames > 150){
-            nr3.piwot_draw();
-
-        }
-        if(13650 > frames && frames > 1200){
-            nr2.piwot_draw();
-
-        }
-        if(13650 > frames && frames > 1350){
-            nr4.piwot_draw();
-
-        }
-        if(13650 > frames && frames > 1700){
-            nr1.piwot_draw();
-
-        }
-        if(13650 > frames && frames > 1850){
-            nr9.piwot_draw();
-
+        if(13650 > frames && frames > 10){
+            red_circle01.draw();
+            red_circle02.draw();
         }
     }
 
@@ -702,8 +1708,10 @@ function update(){
     nr1.update();
     nr2.update();
     nr3.update();
-    nr4.update();
-    nr9.update();
+    nr4_a.update();
+    nr4_b.update();
+    nr5.update();
+    how_many_numbers_at_index0.update();
     //c2n.update();
     //line.update();
     if(frames == 2300){
