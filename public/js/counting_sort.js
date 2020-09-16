@@ -189,11 +189,50 @@ const red_circle01 = {
 
 
             }
-            //3RD STEP
+            //3RD STEP - SMALL CIRCLE
             if (1350 > frames && frames > 1300) {
 
                 this.dY += 2.8 * globalSpeed;
                 this.dX -= 7 * globalSpeed;
+
+
+            }
+            if (1550 > frames && frames > 1500) {
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (1750 > frames && frames > 1700) {
+
+                this.dX += 16 * globalSpeed;
+
+            }
+            if (1950 > frames && frames > 1900) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (2350 > frames && frames > 2300) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 310;
+                this.sY = 90;
+                this.sWidth = 490 - 310;
+                this.sHeight = 270 - 90;
+                this.dY = 55;
+                this.dX = 17;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
 
 
             }
@@ -321,11 +360,61 @@ const red_circle02 = {
 
 
             }
-            //3RD STEP
+            //3RD STEP - BIG CIRCLE
             if (1350 > frames && frames > 1300) {
 
                 this.dY -= 4 * globalSpeed;
                 //this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1550 > frames && frames > 1500) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 4 * globalSpeed;
+
+
+            }
+            if (1750 > frames && frames > 1700) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (1950 > frames && frames > 1900) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (2150 > frames && frames > 2100) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (2350 > frames && frames > 2300) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 310;
+                this.sY = 90;
+                this.sWidth = 490 - 310;
+                this.sHeight = 270 - 90;
+                this.dY = 225;
+                this.dX = 340;
+                this.dWidth = 40;
+                this.dHeight =40 ;
+
 
 
             }
@@ -344,7 +433,7 @@ const brown_circle01 = {
     sWidth : 490 - 310,
     sHeight : 270 - 90,
     dY : 155,
-    dX : 117,
+    dX : 217,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
 
@@ -379,11 +468,48 @@ const brown_circle01 = {
 
         if(state.current == state.getReady){
         }else {
-            //1ST STEM
-            if (350 > frames && frames > 300) {
 
-                //this.dY += 1.5 * globalSpeed;
-                this.dX += 4 * globalSpeed;
+            if (1550 > frames && frames > 1500) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 4 * globalSpeed;
+
+
+            }
+            if (1750 > frames && frames > 1700) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX += 16 * globalSpeed;
+
+            }
+            if (1950 > frames && frames > 1900) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            if (2350 > frames && frames > 2300) {
+
+                //this.dY -= 4 * globalSpeed;
+
+                this.dX -= 4 * globalSpeed;
+
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 310;
+                this.sY = 90;
+                this.sWidth = 490 - 310;
+                this.sHeight = 270 - 90;
+                this.dY = 155;
+                this.dX = 217;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
 
             }
 
@@ -444,16 +570,64 @@ const brown_circle02 = {
 
             if (state.current == state.getReady) {
             } else {
-                //1ST STEM
+                //1ST STEM - SMALLER CIRCLE
                 if (1350 > frames && frames > 1300) {
 
                     this.dY += 7 * globalSpeed;
-                    this.dX += 1 * globalSpeed;
+
+                    this.dX -= 3 * globalSpeed;
+
+                }
+                if (1550 > frames && frames > 1500) {
+
+                    //this.dY -= 4 * globalSpeed;
+                    this.dX -= 4 * globalSpeed;
 
 
                 }
+                if (1750 > frames && frames > 1700) {
+
+                    //this.dY -= 4 * globalSpeed;
+
+                    this.dX += 20 * globalSpeed;
+
+                }
+                if (1950 > frames && frames > 1900) {
+
+                    //this.dY -= 4 * globalSpeed;
+
+                    this.dX -= 4 * globalSpeed;
+
+                }
+                if (2150 > frames && frames > 2100) {
+
+                    //this.dY -= 4 * globalSpeed;
+
+                    this.dX -= 4 * globalSpeed;
+
+                }
+                if (2350 > frames && frames > 2300) {
+
+                    //this.dY -= 4 * globalSpeed;
+
+                    this.dX -= 4 * globalSpeed;
+
+                }
+                //THE END OF SIMULATION
+                if( frames == 2599){
+
+                    this.sX = 310;
+                    this.sY = 90;
+                    this.sWidth = 490 - 310;
+                    this.sHeight = 270 - 90;
+                    this.dY = 155;
+                    this.dX = 217;
+                    this.dWidth = 100 - 24;
+                    this.dHeight =100 - 24 ;
 
 
+
+                }
             }
         }
 }
@@ -510,13 +684,7 @@ const how_many_numbers_at_index0 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -546,11 +714,12 @@ const how_many_numbers_at_index1 = {
         if (state.current == state.getReady) {
         } else {
 
-            if ( frames > 675) {
+            if ( frames > 675 && frames <= 1500) {
                 let how_many_numbers_at_index1 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index1.bsX,how_many_numbers_at_index1.bsY,how_many_numbers_at_index1.bsWidth,how_many_numbers_at_index1.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else{
+            }
+            else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
@@ -579,13 +748,7 @@ const how_many_numbers_at_index1 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -618,18 +781,22 @@ const how_many_numbers_at_index2 = {
         if (state.current == state.getReady) {
         } else {
 
-            if ( frames < 975 && frames > 775) {
+
+            if ( frames <= 975 && frames > 775) {
                 let how_many_numbers_at_index2 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
 
-            }else{
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }
-            if ( frames > 975) {
+            }else if ( frames <= 1300 && frames > 975) {
                 let how_many_numbers_at_index2 = this.nr02[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            }else if ( frames > 1300 ) {
+                let how_many_numbers_at_index2 = this.nr01[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            } else{
+                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
         }
@@ -657,13 +824,7 @@ const how_many_numbers_at_index2 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -688,6 +849,10 @@ const how_many_numbers_at_index3 = {
         bsY : 9,
         bsWidth : 105 - 17,
         bsHeight : 100 - 9}],
+    nr02 : [{  bsX : 145,
+        bsY : 9,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
 
     //frame can change the image of the images
     frame : 0,
@@ -696,17 +861,20 @@ const how_many_numbers_at_index3 = {
         if (state.current == state.getReady) {
         } else {
 
-            if ( frames > 150) {
+            if ( frames > 150 && frames <=1075) {
                 let how_many_numbers_at_index3 = this.nr01[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            } else if ( frames > 1075 && frames <= 2300) {
+                let how_many_numbers_at_index3 = this.nr03[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            } else if ( frames > 2300) {
+                let how_many_numbers_at_index3 = this.nr02[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }
-            if ( frames > 1075) {
-                let how_many_numbers_at_index3 = this.nr03[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
         }
@@ -734,13 +902,7 @@ const how_many_numbers_at_index3 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -769,6 +931,18 @@ const how_many_numbers_at_index4 = {
         bsY : 135,
         bsWidth : 105 - 17,
         bsHeight : 100 - 9}],
+    nr03 : [{  bsX : 267,
+        bsY : 9,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
+    nr05 : [{  bsX : 18,
+        bsY : 135,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
+    nr04 : [{  bsX : 392,
+        bsY : 9,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
 
     //frame can change the image of the images
     frame : 0,
@@ -789,8 +963,18 @@ const how_many_numbers_at_index4 = {
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
 
-            } else if ( frames > 1175) {
+            } else if ( frames > 1175 && frames <= 1900) {
                 let how_many_numbers_at_index4 = this.nr05[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+
+            }else if ( frames > 1900 && frames <=2100) {
+                let how_many_numbers_at_index4 = this.nr04[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+
+            }if ( frames > 2100) {
+                let how_many_numbers_at_index4 = this.nr03[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
 
@@ -821,13 +1005,7 @@ const how_many_numbers_at_index4 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -853,6 +1031,14 @@ const how_many_numbers_at_index5 = {
         bsY : 135,
         bsWidth : 105 - 17,
         bsHeight : 100 - 9}],
+    nr05 : [{  bsX : 18,
+        bsY : 135,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
+    nr04 : [{  bsX : 392,
+        bsY : 9,
+        bsWidth : 105 - 17,
+        bsHeight : 100 - 9}],
     //frame can change the image of the images
     frame : 0,
 
@@ -866,8 +1052,12 @@ const how_many_numbers_at_index5 = {
                 let how_many_numbers_at_index5 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames > 1275) {
+            }else if ( frames <= 1700 && frames > 1275) {
                 let how_many_numbers_at_index5 = this.nr06[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            }if ( frames > 1700) {
+                let how_many_numbers_at_index5 = this.nr05[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
@@ -896,13 +1086,7 @@ const how_many_numbers_at_index5 = {
 
         if (state.current == state.getReady) {
         } else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if ( frames == 150) {
 
-
-
-            }
         }
 
 
@@ -1004,13 +1188,28 @@ const nr1 = {
         if(state.current == state.getReady){
         }else {
 
-            // if (1150 > frames && frames > 1050) {
-            //
-            //     this.dY += 1.5 * globalSpeed;
-            //     this.dX -= 4.8 * globalSpeed;
-            //
-            //
-            // }
+            if (1650 > frames && frames > 1600) {
+
+                this.dY += 8 * globalSpeed;
+                this.dX -= 16 * globalSpeed;
+
+
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 24;
+                this.sY = 24;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 410;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
+
         }
 
 
@@ -1061,12 +1260,29 @@ const nr2 = {
         if(state.current == state.getReady){
 
         }else{
-            // if(950 > frames && frames > 850){
-            //     this.dY +=1.5*globalSpeed;
-            //
-            // }
+
+            if (1450 > frames && frames > 1400) {
+
+                this.dY += 8 * globalSpeed;
+                this.dX -= 16 * globalSpeed;
 
 
+            }
+
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 230;
+                this.sY = 24;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 515;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
 
         }
 
@@ -1116,14 +1332,24 @@ const nr3 = {
 
         if(state.current == state.getReady){
         }else{
-            // if(650 > frames && frames > 350){
-            //     this.dX +=1.6*globalSpeed;
-            //     this.dY +=globalSpeed/2;
-            //     this.bdX +=1.6*globalSpeed;
-            //     this.bdY +=globalSpeed/2;
-            //
-            // }
+            if(2450 > frames && frames > 2400){
+                this.dY += 8 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
 
+                this.sX = 430;
+                this.sY = 24;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 20;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
 
         }
 
@@ -1165,11 +1391,24 @@ const nr4_a = {
 
         if(state.current == state.getReady){
         }else{
-            // if(850 > frames && frames > 700){
-            //     this.dY +=globalSpeed;
-            //     this.dX +=3.3*globalSpeed;
-            // }
+            if(2250 > frames && frames > 2200){
+                this.dY += 8 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
 
+                this.sX = 24;
+                this.sY = 215;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 115;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
 
         }
 
@@ -1211,11 +1450,24 @@ const nr4_b = {
 
         if(state.current == state.getReady){
         }else{
-            // if(850 > frames && frames > 700){
-            //     this.dY +=globalSpeed;
-            //     this.dX +=3.3*globalSpeed;
-            // }
+            if(2050 > frames && frames > 2000){
+                this.dY += 8 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
 
+                this.sX = 24;
+                this.sY = 215;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 215;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
 
         }
 
@@ -1263,13 +1515,28 @@ const nr5 = {
 
         if(state.current == state.getReady){
         }else{
-            // if(1050 > frames && frames > 950){
-            //
-            //     this.dY +=1.5*globalSpeed;
-            //     this.dX +=3.3*globalSpeed;
-            //
-            //
-            // }
+
+            if (1850 > frames && frames > 1800) {
+
+                this.dY += 8 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+
+
+            }
+            //THE END OF SIMULATION
+            if( frames == 2599){
+
+                this.sX = 230;
+                this.sY = 215;
+                this.sWidth = 168 - 24;
+                this.sHeight = 168 - 24;
+                this.dY = 55;
+                this.dX = 315;
+                this.dWidth = 100 - 24;
+                this.dHeight =100 - 24 ;
+
+
+            }
         }
 
     }
@@ -1318,15 +1585,7 @@ const index00 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1373,15 +1632,7 @@ const index01 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1428,15 +1679,7 @@ const index02 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1483,15 +1726,7 @@ const index03 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1538,15 +1773,7 @@ const index04 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1593,15 +1820,7 @@ const index05 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1652,15 +1871,7 @@ const index10 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1707,15 +1918,7 @@ const index11 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1762,15 +1965,7 @@ const index12 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1817,15 +2012,7 @@ const index13 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1872,15 +2059,7 @@ const index14 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1927,15 +2106,7 @@ const index15 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -1984,15 +2155,7 @@ const index20 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2039,15 +2202,7 @@ const index21 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2094,15 +2249,7 @@ const index22 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2149,15 +2296,7 @@ const index23 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2204,15 +2343,7 @@ const index24 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2259,15 +2390,7 @@ const index25 = {
 
         if(state.current == state.getReady){
         }else{
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(1050 > frames && frames > 950){
 
-                this.dY +=1.5*globalSpeed;
-                this.dX +=3.3*globalSpeed;
-
-
-            }
         }
 
     }
@@ -2346,12 +2469,12 @@ function draw(){
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     if(state.current == state.getReady){}
     else{
-        if(13000 > frames && frames > 10){
+        if(frames <= 2500   && frames > 10){
             red_circle01.draw();
             red_circle02.draw();
 
         }
-        if(frames > 1300){
+        if(frames > 1300  && frames <=2500){
             brown_circle01.draw();
             brown_circle02.draw();
         }
@@ -2379,7 +2502,7 @@ function update(){
     brown_circle02.update();
     //c2n.update();
     //line.update();
-    if(frames == 12300){
+    if(frames == 2600){
         state.current = state.getReady;
     };
 
