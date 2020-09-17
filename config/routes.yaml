@@ -34,3 +34,7 @@ quick_sort:
 counting_sort:
   path: /counting/sort
   controller: App\Controller\CountingSortController::index
+
+merge_sort:
+  path: /merge/sort
+  controller: App\Controller\MergeSortController::index
