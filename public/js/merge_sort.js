@@ -99,37 +99,54 @@ const red_circle01 = {
 
         if(state.current == state.getReady){
         }else {
-            //1ST STEM
-            if (350 > frames && frames > 300) {
+            //BACK
+            if(850 > frames && frames > 800){
+                this.dX +=3.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
 
-                //this.dY += 1.5 * globalSpeed;
-                this.dX += 4 * globalSpeed;
+            }
+            if(1000 > frames && frames > 950){
+                this.dX +=4*globalSpeed;
+                //this.dY -=6.5*globalSpeed;
 
+            }
+            if(1450 > frames && frames > 1400){
+                this.dX +=25.7*globalSpeed;
+                //this.dY +=2*globalSpeed;
 
+            }
+            if(1750 > frames && frames > 1700){
+                this.dX -=26.3*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+                //this.dY +=2*globalSpeed;
+
+            }
+            if(1900 > frames && frames > 1850){
+
+                //this.dY +=2*globalSpeed;
+                this.dX +=4*globalSpeed;
+            }
+            if(2050 > frames && frames > 2000){
+
+                //this.dY +=2*globalSpeed;
+                this.dX +=4*globalSpeed;
             }
 
 
-            //THE END OF SIMULATION
-            // if( frames == 2599){
-            //
-            //     this.sX = 310;
-            //     this.sY = 90;
-            //     this.sWidth = 490 - 310;
-            //     this.sHeight = 270 - 90;
-            //     this.dY = 55;
-            //     this.dX = 17;
-            //     this.dWidth = 100 - 24;
-            //     this.dHeight =100 - 24 ;
-            //
-            //
-            //
-            // }
+            //FINISH
+            if(2599==frames){
+                this.dY = 300;
+                this.dX = 17;
+
+
+            }
 
         }
 
 
     }
 }
+//RIGHT CIRCLE
 const red_circle02 = {
 
     //circle
@@ -175,31 +192,33 @@ const red_circle02 = {
 
         if(state.current == state.getReady){
         }else {
-            //1ST STEM
-            if (350 > frames && frames > 300) {
-
-                //this.dY += 1.5 * globalSpeed;
-                this.dX += 4 * globalSpeed;
-
+            //BACK
+            if(850 > frames && frames > 800){
+                this.dX +=8*globalSpeed;
+                this.dY -=6.5*globalSpeed;
 
             }
 
+            if(1450 > frames && frames > 1400){
+                this.dX +=24*globalSpeed;
+                //this.dY +=2*globalSpeed;
 
-            //THE END OF SIMULATION
-            // if( frames == 2599){
-            //
-            //     this.sX = 310;
-            //     this.sY = 90;
-            //     this.sWidth = 490 - 310;
-            //     this.sHeight = 270 - 90;
-            //     this.dY = 55;
-            //     this.dX = 17;
-            //     this.dWidth = 100 - 24;
-            //     this.dHeight =100 - 24 ;
-            //
-            //
-            //
-            // }
+            }
+            if(1750 > frames && frames > 1700){
+                this.dX -=6*globalSpeed;
+                this.dY -=6.8*globalSpeed;
+            }
+
+            if(2350 > frames && frames > 2300){
+                this.dX +=4*globalSpeed;
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 300;
+                this.dX = 127;
+
+
+            }
 
         }
 
@@ -1219,11 +1238,29 @@ const nr1 = {
                 this.dY +=6.5*globalSpeed;
 
             }
-            //THE END OF SIMULATION
-            // if( frames == 4999){
-            //     this.dX =180;
-            //     this.bdX =195;
-            // }
+            //BACK
+            if(700 > frames && frames > 650){
+                this.dX +=3.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(1000 > frames && frames > 950){
+                this.dX +=3.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(1900 > frames && frames > 1850){
+                this.dX +=8*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 60;
+                this.dX = 200;
+
+
+            }
         }
     }
 }
@@ -1286,6 +1323,25 @@ const nr2 = {
                 this.dY +=6.5*globalSpeed;
 
             }
+            //BACK
+            if(1150 > frames && frames > 1100){
+                this.dX -=6*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(2050 > frames && frames > 2000){
+                this.dX +=8.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 60;
+                this.dX = 305;
+
+
+            }
+
         }
 
 
@@ -1353,6 +1409,29 @@ const nr3 = {
                 this.dY +=6.5*globalSpeed;
 
             }
+            //BACK
+            if(850 > frames && frames > 800){
+                this.dX -=1.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(1300 > frames && frames > 1250){
+                this.dX +=7.5*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(2200 > frames && frames > 2150){
+                this.dX +=8.2*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 60;
+                this.dX = 253;
+
+
+            }
         }
 
     }
@@ -1391,9 +1470,25 @@ const nr4 = {
                 this.dY +=6.5*globalSpeed;
 
             }
-            if(1400 > frames && frames > 1350){
+            if(1450 > frames && frames > 1400){
                 this.dX -=2*globalSpeed;
                 this.dY +=6.5*globalSpeed;
+
+            }
+            if(1600 > frames && frames > 1550){
+                this.dX +=2*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(2350 > frames && frames > 2300){
+                this.dX -=8*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 60;
+                this.dX = 350;
 
             }
         }
@@ -1434,10 +1529,25 @@ const nr9 = {
                 this.dY +=6.5*globalSpeed;
 
             }
-            if(1400 > frames && frames > 1350){
+            if(1450 > frames && frames > 1400){
                 this.dX +=2*globalSpeed;
                 this.dY +=6.5*globalSpeed;
 
+            }
+            if(1750 > frames && frames > 1700){
+                this.dX -=2*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            if(2500 > frames && frames > 2450){
+                this.dX -=8*globalSpeed;
+                this.dY -=6.5*globalSpeed;
+
+            }
+            //FINISH
+            if(2599==frames){
+                this.dY = 60;
+                this.dX = 400;
             }
         }
 
@@ -1518,7 +1628,7 @@ function draw(){
 
         }
 
-        if( frames > 1450 && frames <=20000){
+        if( frames > 1350 && frames <=20000){
             table_3rd_c.draw();
             index20c.draw();
             table_3rd_d.draw();
@@ -1540,7 +1650,62 @@ function draw(){
     nr3.draw();
     nr4.draw();
     nr9.draw();
-    if( frames > 550 && frames <=20000){
+    if( frames > 550 && frames <=650){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 700 && frames <=800){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 850 && frames <=950){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1000 && frames <=1100){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1150 && frames <=1250){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1450 && frames <=1550){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1600 && frames <=1700){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1750 && frames <=1850){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 1900 && frames <=2000){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 2050 && frames <=2150){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 2200 && frames <=2300){
+        red_circle01.draw();
+        red_circle02.draw();
+
+    }
+    if( frames > 2350 && frames <=2450){
         red_circle01.draw();
         red_circle02.draw();
 
@@ -1557,9 +1722,11 @@ function update(){
     nr3.update();
     nr4.update();
     nr9.update();
+    red_circle01.update();
+    red_circle02.update();
     //c2n.update();
     //line.update();
-    if(frames == 5000){
+    if(frames == 2600){
         state.current = state.getReady;
     };
 

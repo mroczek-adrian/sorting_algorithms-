@@ -38,3 +38,7 @@ counting_sort:
 merge_sort:
   path: /merge/sort
   controller: App\Controller\MergeSortController::index
+
+heap_sort:
+  path: /heap/sort
+  controller: App\Controller\HeapSortController::index
