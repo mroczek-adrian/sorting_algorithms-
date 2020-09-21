@@ -23,6 +23,8 @@ const table_and_numbers=document.getElementById("table");
 const red_circle=document.getElementById("red_circle");
 //IMAGE OF THE TABLE WITH BROWN CIRCLE
 const brown_circle=document.getElementById("brown_circle");
+//IMAGE OF THE SQUARE AND TRAINGLE
+const square_triangle=document.getElementById("square-traingle");
 
 //GAME STATE
 const state = {
@@ -61,10 +63,10 @@ const red_circle01 = {
     sY : 90,
     sWidth : 490 - 310,
     sHeight : 270 - 90,
-    dY : 300,
-    dX : 17,
-    dWidth : 50,
-    dHeight :50 ,
+    dY : 55,
+    dX : 195,
+    dWidth : 60,
+    dHeight :60 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -99,13 +101,38 @@ const red_circle01 = {
 
         if(state.current == state.getReady){
         }else {
-            //BACK
-            if(850 > frames && frames > 800){
-                this.dX +=3.5*globalSpeed;
-                this.dY -=6.5*globalSpeed;
 
+            if(350 > frames && frames > 250){
+                this.dX +=2*globalSpeed;
+               // this.dY -=6.5*globalSpeed;
             }
 
+            if(500 > frames && frames > 400){
+                this.dX +=2*globalSpeed;
+                // this.dY -=6.5*globalSpeed;
+            }
+            if(650 > frames && frames > 550){
+                this.dX +=2*globalSpeed;
+                // this.dY -=6.5*globalSpeed;
+            }
+            if(800 > frames && frames > 700){
+                this.dX +=2*globalSpeed;
+                // this.dY -=6.5*globalSpeed;
+            }
+            //SWAP
+            if(950 > frames && frames > 850){
+                this.dX -=6.6*globalSpeed;
+                 this.dY +=6*globalSpeed;
+            }
+            if(1150 > frames && frames > 1100){
+                this.dX -=4.4*globalSpeed;
+                this.dY +=4.2*globalSpeed;
+
+            }
+            if(1350 > frames && frames > 1300){
+                this.dX +=9*globalSpeed;
+
+            }
 
         }
 
@@ -120,10 +147,10 @@ const red_circle02 = {
     sY : 90,
     sWidth : 490 - 310,
     sHeight : 270 - 90,
-    dY : 300,
-    dX : 127,
-    dWidth : 50,
-    dHeight :50 ,
+    dY : 155,
+    dX : 290,
+    dWidth : 60,
+    dHeight :60 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -158,12 +185,268 @@ const red_circle02 = {
 
         if(state.current == state.getReady){
         }else {
-            //BACK
-            if(850 > frames && frames > 800){
-                this.dX +=8*globalSpeed;
-                this.dY -=6.5*globalSpeed;
+
+            if(1150 > frames && frames > 1100){
+                this.dX -=4.8*globalSpeed;
+                this.dY +=4.2*globalSpeed;
 
             }
+            if(1350 > frames && frames > 1300){
+                this.dX +=4.8*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+            }
+
+
+        }
+
+
+    }
+}
+//BROWN CIRCLE
+const brown_circle01 = {
+
+    //circle
+    sX : 310,
+    sY : 90,
+    sWidth : 490 - 310,
+    sHeight : 270 - 90,
+    dY : 55,
+    dX : 195,
+    dWidth : 60,
+    dHeight :60 ,
+
+    //frame can change the image of the images
+    frame : 0,
+
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(brown_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    bubbleSort : function(){
+
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+
+            if (1200 > frames && frames > 1150) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1400 > frames && frames > 1350) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 4 * globalSpeed;
+
+
+            }
+
+
+        }
+    }
+}
+//BROWN CIRCLE
+const brown_circle02 = {
+
+    //circle
+    sX : 310,
+    sY : 90,
+    sWidth : 490 - 310,
+    sHeight : 270 - 90,
+    dY : 55,
+    dX : 245,
+    dWidth : 60,
+    dHeight :60 ,
+
+    //frame can change the image of the images
+    frame : 0,
+
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(brown_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    bubbleSort : function(){
+
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+
+
+            if (1200 > frames && frames > 1150) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+
+
+            }
+            if (1400 > frames && frames > 1350) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+
+
+        }
+    }
+}
+//TREE AND BRANCHES
+const branch01left = {
+
+    sX : 477,
+    sY : 53,
+    sWidth : 690 - 477,
+    sHeight : 290 - 53,
+    dY : 190,
+    dX : 245,
+    dWidth : 70,
+    dHeight :50 ,
+    dY2 : 232,
+    dX2 : 205,
+    //frame can change the image of the images
+    frame : 0,
+
+    smaller : [{ dWidth : 40,
+        dHeight :40 }],
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(square_triangle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    draw2 : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(square_triangle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX2,this.dY2,
+            this.dWidth,this.dHeight);
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+            //BACK
+            // if(850 > frames && frames > 800){
+            //     this.dX +=8*globalSpeed;
+            //     this.dY -=6.5*globalSpeed;
+            //
+            // }
+
+
+        }
+
+
+    }
+}
+const branch01right = {
+
+    sX : 687,
+    sY : 53,
+    sWidth : 917 - 687,
+    sHeight : 290 - 53,
+    dY : 190,
+    dX : 335,
+    dWidth : 70,
+    dHeight :50 ,
+    dY2 : 232,
+    dX2 : 255,
+    //frame can change the image of the images
+    frame : 0,
+
+    smaller : [{ dWidth : 40,
+        dHeight :40 }],
+
+    draw : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(square_triangle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+    draw2 : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(square_triangle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX2,this.dY2,
+            this.dWidth,this.dHeight);
+    },
+
+
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = state.current == state.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += frames % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
+        //this.frame = this.frame % this.animation.length;
+
+        if(state.current == state.getReady){
+        }else {
+            //BACK
+            // if(850 > frames && frames > 800){
+            //     this.dX +=8*globalSpeed;
+            //     this.dY -=6.5*globalSpeed;
+            //
+            // }
 
 
         }
@@ -431,15 +714,21 @@ const index04 = {
 //NUMBERS
 const nr1 = {
 
-
     sX : 24,
     sY : 24,
     sWidth : 168 - 24,
     sHeight : 168 - 24,
+    //table
     dY : 60,
-    dX : 200,
+    dX : 397,
+
     dWidth : 50,
     dHeight :50 ,
+    //tree
+    tdY : 260,
+    tdX : 295,
+    tdWidth : 50,
+    tdHeight :50 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -452,8 +741,11 @@ const nr1 = {
             this.dWidth,this.dHeight);
     },
 
-    bubbleSort : function(){
-
+    drawTree : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(numbers,nr1.sX,nr1.sY,this.sWidth,this.sHeight,nr1.tdX,nr1.tdY,
+            this.tdWidth,this.tdHeight);
     },
 
 
@@ -472,11 +764,15 @@ const nr1 = {
 
         }else{
 
-            // if(250 > frames && frames > 200){
-            //     this.dX -=8*globalSpeed;
-            //     this.dY +=6.5*globalSpeed;
-            //
-            // }
+            //REMOVE THE NODE
+            if( frames >1400 && frames < 1450){
+                this.dX -=16*globalSpeed;
+               // this.tdY =160;
+            }
+            if( frames ==1450){
+                this.tdX =300;
+                this.tdY =160;
+            }
 
         }
     }
@@ -489,14 +785,18 @@ const nr2 = {
     sWidth : 168 - 24,
     sHeight : 168 - 24,
     dY : 60,
-    dX : 305,
+    dX : 303,
     dWidth : 50,
     dHeight :50 ,
 
 
     //frame can change the image of the images
     frame : 0,
-
+    //tree
+    tdY : 210,
+    tdX : 360,
+    tdWidth : 50,
+    tdHeight :50 ,
     //temporary variable
     gravity : 0.25,
     jump : 4.6,
@@ -510,8 +810,11 @@ const nr2 = {
 
 
     },
-    bubbleSort : function(){
-
+    drawTree : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(numbers,nr2.sX,nr2.sY,this.sWidth,this.sHeight,nr2.tdX,nr2.tdY,
+            this.tdWidth,this.tdHeight);
     },
 
 
@@ -530,11 +833,7 @@ const nr2 = {
         if(state.current == state.getReady){
 
         }else{
-            // if(250 > frames && frames > 200){
-            //     this.dX -=8.5*globalSpeed;
-            //     this.dY +=6.5*globalSpeed;
-            //
-            // }
+
 
 
         }
@@ -550,11 +849,17 @@ const nr3 = {
     sWidth : 168 - 24,
     sHeight : 168 - 24,
     dY : 60,
-    dX : 253,
+    dX : 205,
+
     dWidth : 50,
     dHeight :50 ,
 
+    //tree
+    tdY : 160,
+    tdX : 300,
 
+    tdWidth : 50,
+    tdHeight :50 ,
 
     //frame can change the image of the images
     frame : 0,
@@ -565,10 +870,12 @@ const nr3 = {
         ctx.drawImage(numbers,nr3.sX,nr3.sY,this.sWidth,this.sHeight,nr3.dX,nr3.dY,
             this.dWidth,this.dHeight);
     },
-    bubbleSort : function(){
-
+    drawTree : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(numbers,nr3.sX,nr3.sY,this.sWidth,this.sHeight,nr3.tdX,nr3.tdY,
+            this.tdWidth,this.tdHeight);
     },
-
 
 
 
@@ -589,11 +896,30 @@ const nr3 = {
 
         if(state.current == state.getReady){
         }else{
-            // if(250 > frames && frames > 200){
-            //     this.dX -=8.2*globalSpeed;
-            //     this.dY +=6.5*globalSpeed;
-            //
-            // }
+            //SWAP
+            if( frames ==1000){
+                this.tdX =240;
+                this.tdY =210;
+
+            }
+            //SWAP IN TABLE
+            if( frames >1050 && frames <=1100){
+                    this.dX +=4*globalSpeed;
+                  //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==1200){
+                this.tdX =185;
+                this.tdY =260;
+
+            }
+            //SWAP IN TABLE
+            if( frames >1250 && frames <=1300){
+                this.dX +=7.7*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
 
         }
 
@@ -608,8 +934,15 @@ const nr4 = {
     dX : 350,
     dWidth : 50,
     dHeight :50 ,
+    //tree
+    tdY : 260,
+    tdX : 185,
     draw : function(){
         ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+    drawTree : function(){
+        ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.tdX,this.tdY,
             this.dWidth,this.dHeight);
     },
     update: function(){
@@ -628,11 +961,18 @@ const nr4 = {
 
         if(state.current == state.getReady){
         }else{
-            // if(250 > frames && frames > 200){
-            //     this.dX +=8*globalSpeed;
-            //     this.dY +=6.5*globalSpeed;
-            //
-            // }
+            //SWAP
+            if( frames ==1200){
+                this.tdX =240;
+                this.tdY =210;
+
+            }
+            //SWAP IN TABLE
+            if( frames >1250 && frames <=1300){
+                this.dX -=8*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
 
         }
 
@@ -644,12 +984,23 @@ const nr9 = {
     sWidth : 168 - 24,
     sHeight : 168 - 24,
     dY : 60,
-    dX : 400,
+    dX : 250,
+    //tree
+    tdY : 210,
+    tdX : 240,
+    tdWidth : 50,
+    tdHeight :50 ,
     dWidth : 50,
     dHeight :50 ,
     draw : function(){
         ctx.drawImage(numbers,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
+    },
+    drawTree : function(){
+        //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+        //let nr1 = this.animation[this.frame];
+        ctx.drawImage(numbers,nr9.sX,nr9.sY,this.sWidth,this.sHeight,nr9.tdX,nr9.tdY,
+            this.tdWidth,this.tdHeight);
     },
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -667,11 +1018,28 @@ const nr9 = {
 
         if(state.current == state.getReady){
         }else{
-            // if(250 > frames && frames > 200){
-            //     this.dX +=8*globalSpeed;
-            //     this.dY +=6.5*globalSpeed;
-            //
-            // }
+            //SWAP
+            if( frames ==1000){
+                this.tdX =300;
+                this.tdY =160;
+
+            }
+            //SWAP IN TABLE
+            if( frames >1050 && frames <=1100){
+                this.dX -=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //REMOVE THE NODE
+            if( frames >1400 && frames < 1450){
+                this.dX +=16*globalSpeed;
+                // this.tdY =160;
+            }
+            if( frames ==1450){
+                this.tdX =295;
+                this.tdY =260;
+            }
+
 
         }
 
@@ -729,13 +1097,51 @@ function draw(){
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     if(state.current == state.getReady){}
     else{
-        // if( frames > 100 && frames <=20000){
-        //     table_2nd_a.draw();
-        //     index10a.draw();index11a.draw();index12a.draw();
-        //     table_2nd_b.draw();
-        //     index10b.draw();index11b.draw();
-        //
-        // }
+
+        if( frames > 200 && frames <=25000){
+            red_circle01.draw();
+
+        }
+        if( frames > 200 && frames <=350){
+            nr3.drawTree();
+
+        }
+        if( frames > 350 && frames <=500){
+            branch01left.draw();
+            nr3.drawTree();
+            nr9.drawTree();
+        }
+        if( frames > 500 && frames <=650){
+            branch01left.draw();
+            branch01right.draw();
+            nr3.drawTree();
+            nr9.drawTree();
+            nr2.drawTree();
+        }
+        if( frames > 650 && frames <=800){
+            branch01left.draw();branch01left.draw2();
+            branch01right.draw();
+            nr3.drawTree();
+            nr9.drawTree();
+            nr2.drawTree();
+            nr4.drawTree();
+        }
+        if( frames > 800 && frames <=65000){
+            branch01left.draw();branch01left.draw2();
+            branch01right.draw();branch01right.draw2()
+            nr3.drawTree();
+            nr9.drawTree();
+            nr2.drawTree();
+            nr4.drawTree();
+            nr1.drawTree();
+        }
+        if( frames > 950 && frames <=65000){
+             red_circle02.draw();
+        }
+        if( frames > 1000 && frames <=65000){
+            brown_circle01.draw();
+            brown_circle02.draw();
+        }
 
 
     }
@@ -753,12 +1159,6 @@ function draw(){
     nr3.draw();
     nr4.draw();
     nr9.draw();
-    // if( frames > 550 && frames <=650){
-    //     red_circle01.draw();
-    //     red_circle02.draw();
-    //
-    // }
-
 
     //line.draw();
     getReady.draw();
@@ -766,6 +1166,7 @@ function draw(){
 }
 //UPDATE
 function update(){
+    branch01left.update();
     nr1.update();
     nr2.update();
     nr3.update();
@@ -773,9 +1174,11 @@ function update(){
     nr9.update();
     red_circle01.update();
     red_circle02.update();
+    brown_circle01.update();
+    brown_circle02.update();
     //c2n.update();
     //line.update();
-    if(frames == 2600){
+    if(frames == 26000){
         state.current = state.getReady;
     };
 
