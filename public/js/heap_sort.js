@@ -4,8 +4,10 @@ const ctx = cvs.getContext("2d");
 
 // GAME VARS AND CONSTS
 let frames = 0;
-let globalSpeed = 0.25;
-
+let a = 0;
+let globalSpeed = 0.125;//speed of movement
+let simulation_speed = 1 // number of frame
+let frame_speed = 0.5 // speed of simulation
 
 //IMAGE OF THE BIRD
 const sprite=document.getElementById("image");
@@ -102,38 +104,73 @@ const red_circle01 = {
         if(state.current == state.getReady){
         }else {
 
-            if(350 > frames && frames > 250){
+            if(350*simulation_speed > frames && frames > 250*simulation_speed){
                 this.dX +=2*globalSpeed;
                // this.dY -=6.5*globalSpeed;
             }
 
-            if(500 > frames && frames > 400){
+            if(500*simulation_speed > frames && frames > 400*simulation_speed){
                 this.dX +=2*globalSpeed;
                 // this.dY -=6.5*globalSpeed;
             }
-            if(650 > frames && frames > 550){
+            if(650*simulation_speed > frames && frames > 550*simulation_speed){
                 this.dX +=2*globalSpeed;
                 // this.dY -=6.5*globalSpeed;
             }
-            if(800 > frames && frames > 700){
+            if(800*simulation_speed > frames && frames > 700*simulation_speed){
                 this.dX +=2*globalSpeed;
                 // this.dY -=6.5*globalSpeed;
             }
             //SWAP
-            if(950 > frames && frames > 850){
+            if(950*simulation_speed > frames && frames > 850*simulation_speed){
                 this.dX -=6.6*globalSpeed;
                  this.dY +=6*globalSpeed;
             }
-            if(1150 > frames && frames > 1100){
+            if(1150*simulation_speed > frames && frames > 1100*simulation_speed){
                 this.dX -=4.4*globalSpeed;
                 this.dY +=4.2*globalSpeed;
 
             }
-            if(1350 > frames && frames > 1300){
+            if(1350*simulation_speed > frames && frames > 1300*simulation_speed){
                 this.dX +=9*globalSpeed;
 
             }
+            if(1550*simulation_speed > frames && frames > 1500*simulation_speed){
+                this.dX -=4.4*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+            }
+            if(1750*simulation_speed > frames && frames > 1700*simulation_speed){
+                this.dX -=4.4*globalSpeed;
+                this.dY +=4.2*globalSpeed;
+            }
+            if(2200*simulation_speed > frames && frames > 2150*simulation_speed){
+                this.dX +=4.4*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+            }
 
+            if (2400*simulation_speed > frames && frames > 2350*simulation_speed) {
+
+                this.dX +=4.8*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+
+
+            }
+            if (2600*simulation_speed > frames && frames > 2550*simulation_speed) {
+
+                this.dX -=4.8*globalSpeed;
+                this.dY +=4.2*globalSpeed;
+
+
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+
+                this.dX =195;
+                this.dY =55;
+
+
+            }
         }
 
 
@@ -186,17 +223,46 @@ const red_circle02 = {
         if(state.current == state.getReady){
         }else {
 
-            if(1150 > frames && frames > 1100){
+            if(1150*simulation_speed > frames && frames > 1100*simulation_speed){
                 this.dX -=4.8*globalSpeed;
                 this.dY +=4.2*globalSpeed;
 
             }
-            if(1350 > frames && frames > 1300){
+            if(1350*simulation_speed > frames && frames > 1300*simulation_speed){
                 this.dX +=4.8*globalSpeed;
                 this.dY -=4.2*globalSpeed;
             }
+            if(1750*simulation_speed > frames && frames > 1700*simulation_speed){
+                this.dX -=4.8*globalSpeed;
+                this.dY +=4.2*globalSpeed;
+            }
+            if(2050*simulation_speed > frames && frames > 2000*simulation_speed){
+                this.dX +=4.8*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+            }
+            if (2400*simulation_speed > frames && frames > 2350*simulation_speed) {
+
+                this.dX +=4.8*globalSpeed;
+                this.dY +=4.2*globalSpeed;
 
 
+            }
+            if (2600*simulation_speed > frames && frames > 2550*simulation_speed) {
+
+                this.dX -=4.8*globalSpeed;
+                this.dY -=4.2*globalSpeed;
+
+
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+
+                this.dX =290;
+                this.dY =155;
+
+
+            }
         }
 
 
@@ -247,17 +313,39 @@ const brown_circle01 = {
         if(state.current == state.getReady){
         }else {
 
-            if (1200 > frames && frames > 1150) {
+            if (1200*simulation_speed > frames && frames > 1150*simulation_speed) {
 
                 //this.dY -= 4 * globalSpeed;
                 this.dX += 4 * globalSpeed;
 
 
             }
-            if (1400 > frames && frames > 1350) {
+            if (1400*simulation_speed > frames && frames > 1350*simulation_speed) {
 
                 //this.dY -= 4 * globalSpeed;
                 this.dX -= 4 * globalSpeed;
+
+
+            }
+            if (1800*simulation_speed > frames && frames > 1750*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1950*simulation_speed > frames && frames > 1900*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 4 * globalSpeed;
+
+
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.dX =195;
+                this.dY =55;
 
 
             }
@@ -312,17 +400,59 @@ const brown_circle02 = {
         }else {
 
 
-            if (1200 > frames && frames > 1150) {
+            if (1200 *simulation_speed> frames && frames > 1150*simulation_speed) {
 
                 //this.dY -= 4 * globalSpeed;
                 this.dX += 8 * globalSpeed;
 
 
             }
-            if (1400 > frames && frames > 1350) {
+            if (1400*simulation_speed > frames && frames > 1350*simulation_speed) {
 
                 //this.dY -= 4 * globalSpeed;
                 this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1550 *simulation_speed> frames && frames > 1500*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 12 * globalSpeed;
+
+
+            }
+            if (1800*simulation_speed > frames && frames > 1750*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 8 * globalSpeed;
+
+
+            }
+            if (2250 *simulation_speed> frames && frames > 2200*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX -= 8 * globalSpeed;
+
+
+            }
+            if (2400*simulation_speed > frames && frames > 2350*simulation_speed) {
+
+                //this.dY -= 4 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (2600 *simulation_speed> frames && frames > 2550*simulation_speed) {
+
+                this.dX -= 4 * globalSpeed;
+
+
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.dX =245;
+                this.dY =55;
 
 
             }
@@ -765,13 +895,77 @@ const nr1 = {
         }else{
 
             //REMOVE THE NODE
-            if( frames >1400 && frames < 1450){
+            if( frames >1400*simulation_speed && frames < 1450*simulation_speed){
                 this.dX -=16*globalSpeed;
                // this.tdY =160;
             }
-            if( frames ==1450){
+            if( frames ==1450*simulation_speed){
                 this.tdX =300;
                 this.tdY =160;
+            }
+            if( frames ==1600*simulation_speed){
+                this.tdX =240;
+                this.tdY =210;
+            }
+            //SWAP IN TABLE
+            if( frames >1650*simulation_speed && frames <=1700*simulation_speed){
+                this.dX +=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            if( frames ==1800*simulation_speed){
+                this.tdX =185;
+                this.tdY =260;
+            }
+            //SWAP IN TABLE
+            if( frames >1850*simulation_speed && frames <=1900*simulation_speed){
+                this.dX +=8*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP IN TABLE - REMOVE THE NODE
+            if( frames >1950*simulation_speed && frames <=2000*simulation_speed){
+                this.dX -=12*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2050*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+            }
+            //SWAP
+            if( frames ==2200*simulation_speed){
+
+                this.tdX =240;
+                this.tdY =210;
+            }
+            //SWAP IN TABLE
+            if( frames >2250*simulation_speed && frames <=2300*simulation_speed){
+                this.dX +=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP IN TABLE
+            if( frames >2600*simulation_speed && frames <=2650*simulation_speed){
+                this.dX -=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2700*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.tdX =295;
+                this.tdY =260;
+                this.dX =397;
+                this.dY =60;
             }
 
         }
@@ -833,6 +1027,39 @@ const nr2 = {
         if(state.current == state.getReady){
 
         }else{
+            //SWAP IN TABLE
+            if( frames >2450*simulation_speed && frames <=2500*simulation_speed){
+                this.dX -=8*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2500*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+            }
+            //SWAP IN TABLE
+            if( frames >2600*simulation_speed && frames <=2650*simulation_speed){
+                this.dX +=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2700*simulation_speed){
+
+                this.tdX =240;
+                this.tdY =210;
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.tdX =360;
+                this.tdY =210;
+                this.dX =303;
+                this.dY =60;
+
+            }
 
 
 
@@ -897,27 +1124,71 @@ const nr3 = {
         if(state.current == state.getReady){
         }else{
             //SWAP
-            if( frames ==1000){
+            if( frames ==1000*simulation_speed){
                 this.tdX =240;
                 this.tdY =210;
 
             }
             //SWAP IN TABLE
-            if( frames >1050 && frames <=1100){
+            if( frames >1050*simulation_speed && frames <=1100*simulation_speed){
                     this.dX +=4*globalSpeed;
                   //  this.dY +=6.5*globalSpeed;
 
             }
             //SWAP
-            if( frames ==1200){
+            if( frames ==1200*simulation_speed){
                 this.tdX =185;
                 this.tdY =260;
 
             }
             //SWAP IN TABLE
-            if( frames >1250 && frames <=1300){
+            if( frames >1250*simulation_speed && frames <=1300*simulation_speed){
                 this.dX +=7.7*globalSpeed;
                 //  this.dY +=6.5*globalSpeed;
+
+            }
+            if( frames ==1800*simulation_speed){
+                this.tdX =240;
+                this.tdY =210;
+            }
+            //SWAP IN TABLE
+            if( frames >1850*simulation_speed && frames <=1900*simulation_speed){
+                this.dX -=8*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2200*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+            }
+            //SWAP IN TABLE
+            if( frames >2250*simulation_speed && frames <=2300*simulation_speed){
+                this.dX -=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP IN TABLE
+            if( frames >2450*simulation_speed && frames <=2500*simulation_speed){
+                this.dX +=8*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2500*simulation_speed){
+
+                this.tdX =360;
+                this.tdY =210;
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+                this.dX =205;
+                this.dY =60;
+
 
             }
 
@@ -962,15 +1233,49 @@ const nr4 = {
         if(state.current == state.getReady){
         }else{
             //SWAP
-            if( frames ==1200){
+            if( frames ==1200*simulation_speed){
                 this.tdX =240;
                 this.tdY =210;
 
             }
             //SWAP IN TABLE
-            if( frames >1250 && frames <=1300){
+            if( frames >1250*simulation_speed && frames <=1300*simulation_speed){
                 this.dX -=8*globalSpeed;
                 //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==1600*simulation_speed){
+
+                this.tdX =300;
+                this.tdY =160;
+            }
+            //SWAP IN TABLE
+            if( frames >1650*simulation_speed && frames <=1700*simulation_speed){
+                this.dX -=4*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP IN TABLE - REMOVE THE NODE
+            if( frames >1950*simulation_speed && frames <=2000*simulation_speed){
+                this.dX +=12*globalSpeed;
+                //  this.dY +=6.5*globalSpeed;
+
+            }
+            //SWAP
+            if( frames ==2050*simulation_speed){
+
+                this.tdX =185;
+                this.tdY =260;
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.tdX =185;
+                this.tdY =260;
+                this.dX =350;
+                this.dY =60;
+
 
             }
 
@@ -1019,25 +1324,35 @@ const nr9 = {
         if(state.current == state.getReady){
         }else{
             //SWAP
-            if( frames ==1000){
+            if( frames ==1000*simulation_speed){
                 this.tdX =300;
                 this.tdY =160;
 
             }
             //SWAP IN TABLE
-            if( frames >1050 && frames <=1100){
+            if( frames >1050*simulation_speed && frames <=1100*simulation_speed){
                 this.dX -=4*globalSpeed;
                 //  this.dY +=6.5*globalSpeed;
 
             }
             //REMOVE THE NODE
-            if( frames >1400 && frames < 1450){
+            if( frames >1400*simulation_speed && frames < 1450*simulation_speed){
                 this.dX +=16*globalSpeed;
                 // this.tdY =160;
             }
-            if( frames ==1450){
+            if( frames ==1450*simulation_speed){
                 this.tdX =295;
                 this.tdY =260;
+            }
+            //FINISH
+            if( frames ==2999*simulation_speed){
+
+                this.tdX =240;
+                this.tdY =210;
+                this.dX =250;
+                this.dY =60;
+
+
             }
 
 
@@ -1098,50 +1413,74 @@ function draw(){
     if(state.current == state.getReady){}
     else{
 
-        if( frames > 200 && frames <=25000){
+        if( frames > 200*simulation_speed && frames <=2850*simulation_speed){
             red_circle01.draw();
 
         }
-        if( frames > 200 && frames <=350){
+        if( frames > 200*simulation_speed && frames <=350*simulation_speed){
             nr3.drawTree();
 
         }
-        if( frames > 350 && frames <=500){
+        if( frames > 350*simulation_speed && frames <=500*simulation_speed){
             branch01left.draw();
             nr3.drawTree();
             nr9.drawTree();
         }
-        if( frames > 500 && frames <=650){
+        if( frames > 500*simulation_speed && frames <=650*simulation_speed){
             branch01left.draw();
             branch01right.draw();
             nr3.drawTree();
             nr9.drawTree();
             nr2.drawTree();
         }
-        if( frames > 650 && frames <=800){
+        if( frames > 650*simulation_speed && frames <=800*simulation_speed){
             branch01left.draw();branch01left.draw2();
             branch01right.draw();
             nr3.drawTree();
             nr9.drawTree();
             nr2.drawTree();
             nr4.drawTree();
+
         }
-        if( frames > 800 && frames <=65000){
-            branch01left.draw();branch01left.draw2();
-            branch01right.draw();branch01right.draw2()
-            nr3.drawTree();
-            nr9.drawTree();
-            nr2.drawTree();
-            nr4.drawTree();
+        if( frames > 800*simulation_speed && frames <=65000*simulation_speed){
+
+
+            if( frames < 2550 *simulation_speed){
+                branch01right.draw();
+            }
+            if( frames < 2800*simulation_speed ){
+                branch01left.draw();
+            }
+
+            if( frames > 650 *simulation_speed&& frames <=2100*simulation_speed){
+                branch01left.draw2();
+                if( frames > 800*simulation_speed && frames <=1450*simulation_speed){
+                    branch01right.draw2();
+                }
+                nr4.drawTree();
+                if( frames > 800*simulation_speed && frames <=1450*simulation_speed){
+                    nr9.drawTree();
+                }
+            }
+            if( frames < 2550 *simulation_speed){
+                nr3.drawTree();
+            }
+            if( frames < 2800 *simulation_speed){
+                nr2.drawTree();
+            }
+
+
             nr1.drawTree();
         }
-        if( frames > 950 && frames <=65000){
+        if( frames > 950*simulation_speed && frames <=2850*simulation_speed){
              red_circle02.draw();
         }
-        if( frames > 1000 && frames <=65000){
+        if( frames > 1000 *simulation_speed&& frames <=2850*simulation_speed){
             brown_circle01.draw();
             brown_circle02.draw();
         }
+
+
 
 
     }
@@ -1178,7 +1517,7 @@ function update(){
     brown_circle02.update();
     //c2n.update();
     //line.update();
-    if(frames == 26000){
+    if(frames == 3000*simulation_speed){
         state.current = state.getReady;
     };
 
@@ -1188,7 +1527,8 @@ function update(){
 function loop(){
     update();
     draw();
-    frames++;
+    frames=frames + frame_speed;
+
     requestAnimationFrame(loop);
 }
 loop();

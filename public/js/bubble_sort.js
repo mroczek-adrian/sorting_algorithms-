@@ -4,7 +4,7 @@ const ctx = cvs.getContext("2d");
 
 // GAME VARS AND CONSTS
 let frames = 0;
-let globalSpeed = 0.25;
+let globalSpeed = 0.5;
 
 
 //IMAGE OF THE BIRD
@@ -127,6 +127,10 @@ const c2n = {
             if(frames == 4250){
                 this.dX =50;
             }
+            //finish
+            if(frames==4998){
+                this.dX =50;
+            }
         }
 
 
@@ -229,13 +233,13 @@ const nr2 = {
 
     draw : function(){
         //let nr2 = this.animation[this.frame];
-        if(this.frame % 2==0){
+
             ctx.drawImage(numbers,nr2.sX,nr2.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
-        }else{
-            ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                this.bdWidth,this.bdHeight);
-        }
+
+            // ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //     this.bdWidth,this.bdHeight);
+
 
 
     },
@@ -263,12 +267,12 @@ const nr2 = {
             //50ms DELAY BEFORE MOVING THE NUMBER
             if(950 > frames && frames > 650){
                 this.dX -=globalSpeed;
-                this.bdX -=globalSpeed;
+
             }
             //THE END OF SIMULATION
-            if( frames == 4999){
+            if( frames == 4998){
                 this.dX =180;
-                this.bdX =195;
+
             }
         }
 
@@ -344,7 +348,7 @@ const nr3 = {
 
             }
             //THE END OF SIMULATION
-            if( frames == 4999){
+            if( frames == 4998){
                 this.dX =100;
 
             }
@@ -430,8 +434,9 @@ const line = {
             }
 
             //THE END OF SIMULATION
-            if( frames == 4999){
+            if( frames == 4998){
                 this.dX =450;
+                this.dY =150;
 
             }
         }
@@ -484,10 +489,11 @@ function draw(){
 
     //title of canvas
     ctx.font = "30px Arial";
-    ctx.strokeText("Bubble Sort!",10,50);
+
+    ctx.strokeText("Bubble Sort!",225,50);
 
     //draw function
-    bg.draw();
+   // bg.draw();
     c2n.draw();
 
     nr1.draw();
@@ -516,6 +522,7 @@ function update(){
 function loop(){
     update();
     draw();
+    frames++;
     frames++;
     requestAnimationFrame(loop);
 }
