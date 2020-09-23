@@ -1,5 +1,5 @@
 // SELECT CVS
-const cvs = document.getElementById("bird");
+const cvs = document.getElementById("bird1");
 const ctx = cvs.getContext("2d");
 
 // GAME VARS AND CONSTS

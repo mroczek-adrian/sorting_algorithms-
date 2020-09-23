@@ -1,13 +1,36 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello SortAlgorithmsController!{% endblock %}
+{# {% block stylesheets %}#}
+{#     <link rel="stylesheet" src="{{asset('css/sort_algorithms.css') }}">#}
 
+{# {% endblock %}#}
 {% block body %}
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 
+    body{
+        padding:50px;
+    }
+    canvas{
+        border : 1px solid #000;
+        display: block;
+        margin: 0 auto;
+    }
+    .swiper-container {
+        /*width: 1000px;*/
+        /*height: 500px;*/
 
+    }
+    .swiper-slide{
+        background:#ccc;
+        /*background-size:cover;*/
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size:40px;
+    }
 
 
 </style>
@@ -21,17 +44,55 @@
         </div>
         <div class="col-sm-8">
 
-            <h1>Hello {{ controller_name }}!  ✅</h1>
-            <h3>Algorithm which are included into project:</h3>
+{#            <h1>Hello {{ controller_name }}!  ✅</h1>#}
+{#            <h3>Algorithm which are included into project:</h3>#}
 
 
-            <div><a href="{{path('bubble_sort') }} ">Bubble sort</a></div>
+{#            <div><a href="{{path('bubble_sort') }} ">Bubble sort</a></div>#}
+{#            <div><a href="{{path('quick_sort') }} ">Quick sort</a></div>#}
+{#            <div><a href="{{path('counting_sort') }} ">Count sort</a></div>#}
+{#            <div><a href="{{path('merge_sort') }} ">Merge sort</a></div>#}
+{#            <div><a href="{{path('heap_sort') }} ">Heap sort</a></div>#}
 
 
-            <div><a href="{{path('quick_sort') }} ">Quick sort</a></div>
-            <div><a href="{{path('counting_sort') }} ">Count sort</a></div>
-            <div><a href="{{path('merge_sort') }} ">Merge sort</a></div>
-            <div><a href="{{path('heap_sort') }} ">Heap sort</a></div>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <canvas id="birdBUBBLE" width="600" height="380"></canvas>
+                    </div>
+                    <div class="swiper-slide">
+                        <canvas id="birdQUICK" width="600" height="380"></canvas>
+                    </div>
+                    <div class="swiper-slide">
+{#                        <canvas id="bird1" width="600" height="380"></canvas>#}
+                    </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div id="next_swiper" class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+
+            <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
+            <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
+            <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
+            <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >
+            <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
+            <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
+
+            <img id="table" style="width: 200px ; height: 200px; " src="{{ asset('js/img/table_broad.png') }}" >
+            <img id="red_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/red_circle.png') }}" >
+            <img id="brown_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/brown_circle.png') }}" >
 
 
         </div>
@@ -40,4 +101,17 @@
             <h1>under  title will be canvas with simulation</h1>
         </div>
     </div>
+{% endblock %}
+
+{%  block javascripts %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="{{asset('js/SA_quick_sort.js') }}"></script>
+    <script src="{{asset('js/SA_bubble_sort.js') }}"></script>
+    <script src="{{asset('js/sort_algorithms.js') }}"></script>
+
+{#    <script src="{{asset('js/counting_sort.js') }}"></script>#}
+
 {% endblock %}
