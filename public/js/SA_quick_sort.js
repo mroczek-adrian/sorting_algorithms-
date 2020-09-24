@@ -1,11 +1,10 @@
 // SELECT CVS
 const cvsQUICK = document.getElementById("birdQUICK");
 const ctxQUICK = cvsQUICK.getContext("2d");
-
 // GAME VARS AND CONSTS
 let framesQUICK = 0;
 let globalSpeedQUICK = 0.5;
-
+let framesRememberQUICK=0;
 
 //IMAGE OF THE BIRD
 const spriteQUICK=document.getElementById("image");
@@ -17,11 +16,12 @@ const blue_numbersQUICK=document.getElementById("blue_numbers");
 const compare2numbersQUICK=document.getElementById("compare2numbers");
 //IMAGE OF THE GET READY STATE
 const click2startQUICK=document.getElementById("click2start");
-
+//IMAGE OF THE GET OVER STATE
+const pauseQUICK=document.getElementById("pause");
 
 //GAME STATE
 const stateQUICK = {
-    current : 0 ,
+    current : 2 ,
     getReady : 0,
     game : 1,
     over : 2
@@ -33,16 +33,19 @@ cvsQUICK.addEventListener("click",function(evt){
    switch(stateQUICK.current){
        case stateQUICK.getReady:
            stateQUICK.current = stateQUICK.game;
-           framesQUICK = 0;
+           framesQUICK = framesRememberQUICK;
+           framesRememberQUICK=framesQUICK;
            break;
        case stateQUICK.game:
-
+           stateQUICK.current = stateQUICK.getReady;
+           framesRememberQUICK=framesQUICK;
            //HERE I WILL WRITE THE ALGORITHM
          //  bird.flap();
            nr1QUICK.bubbleSort();
            break;
        case stateQUICK.over:
-           stateQUICK.current = stateQUICK.getReady;
+           stateQUICK.current = stateQUICK.game;
+           framesQUICK = 0;
            break;
    }
 });
@@ -119,7 +122,7 @@ const nr1QUICK = {
         //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
         //this.frame = this.frame % this.animation.length;
 
-        if(stateQUICK.current == stateQUICK.getReady){
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
         }else{
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
@@ -165,10 +168,7 @@ const nr1QUICK = {
                 this.dWidth = 100 - 24;
                 this.dHeight =100 - 24 ;
                 //blue number
-                this.bsX = 40;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
+
                 this.bdY = 70+15+155;
                 this.bdX = 30+15;
                 this.bdWidth = 100 - 54;
@@ -236,7 +236,7 @@ const nr2QUICK = {
         //this.frame = this.frame % this.animation.length;
 
 
-        if(stateQUICK.current == stateQUICK.getReady){
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
 
         }else{
            // this.speed += this.gravity;
@@ -274,10 +274,7 @@ const nr2QUICK = {
                 this.dWidth = 100 - 24;
                 this.dHeight =100 - 24 ;
                 //blue number
-                this.bsX = 165;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
+
                 this.bdY = 70+15+75;
                 this.bdX = 180+15;
                 this.bdWidth = 100 - 54;
@@ -343,7 +340,7 @@ const nr3QUICK = {
 
 
 
-        if(stateQUICK.current == stateQUICK.getReady){
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
         }else{
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
@@ -369,10 +366,7 @@ const nr3QUICK = {
                 this.dWidth = 100 - 24;
                 this.dHeight =100 - 24 ;
                 //blue number
-                this.bsX = 290;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
+
                 this.bdY = 70+15;
                 this.bdX = 20+15;
                 this.bdWidth = 100 - 54;
@@ -431,7 +425,7 @@ const nr4QUICK = {
 
 
 
-        if(stateQUICK.current == stateQUICK.getReady){
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
         }else{
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
@@ -467,10 +461,7 @@ const nr4QUICK = {
                 this.dWidth = 100 - 24;
                 this.dHeight =100 - 24 ;
                 //blue number
-                this.bsX = 415;
-                this.bsY = 27;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
+
                 this.bdY = 70+15+75;
                 this.bdX = 100+15+250;
                 this.bdWidth = 100 - 54;
@@ -532,7 +523,7 @@ const nr9QUICK = {
 
 
 
-        if(stateQUICK.current == stateQUICK.getReady){
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
         }else{
             //this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
@@ -576,10 +567,7 @@ const nr9QUICK = {
                 this.dWidth = 100 - 24;
                 this.dHeight =100 - 24 ;
                 //blue number
-                this.bsX = 40;
-                this.bsY = 280;
-                this.bsWidth = 80 - 35;
-                this.bsHeight = 81 - 27;
+
                 this.bdY = 70+15+155;
                 this.bdX = 20+15+10+400-7;
                 this.bdWidth = 100 - 54;
@@ -594,6 +582,23 @@ const nr9QUICK = {
 
 //GET READY MESSAGE
 const getReadyQUICK = {
+    sX : 273,
+    sY : 110,
+    sWidth : 436 - 273,
+    sHeight : 177 - 110,
+    dY : 160,
+    dX : 220,
+    dWidth : 200 - 24,
+    dHeight :100 - 24 ,
+
+    draw : function(){
+        if(stateQUICK.current == stateQUICK.getReady){
+            ctxQUICK.drawImage(pauseQUICK,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        }
+    }
+}
+const gameOverQUICK = {
     sX : 390,
     sY : 230,
     sWidth : 760 - 390,
@@ -602,26 +607,9 @@ const getReadyQUICK = {
     dX : 220,
     dWidth : 200 - 24,
     dHeight :100 - 24 ,
-
-    draw : function(){
-        if(stateQUICK.current == stateQUICK.getReady){
-            ctxQUICK.drawImage(click2startQUICK,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
-                this.dWidth,this.dHeight);
-        }
-    }
-}
-const gameOverQUICK = {
-    sX : 24,
-    sY : 215,
-    sWidth : 168 - 24,
-    sHeight : 168 - 24,
-    dY : 200,
-    dX : 260,
-    dWidth : 100 - 24,
-    dHeight :100 - 24 ,
     draw : function(){
         if(stateQUICK.current == stateQUICK.over){
-            ctxQUICK.drawImage(numbersQUICK,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            ctxQUICK.drawImage(click2startQUICK,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
         }
     }
@@ -653,7 +641,7 @@ function draw(){
 
 
     //DRAWING ACTION FOR 'PIWOT' NUMBER
-    if(stateQUICK.current == stateQUICK.getReady){}
+    if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){}
     else{
         if(13650 > framesQUICK && framesQUICK > 150){
             nr3QUICK.piwot_draw();
@@ -688,10 +676,13 @@ function update(){
     nr9QUICK.update();
     //c2n.update();
     //line.update();
-    if(framesQUICK == 2300){
-        stateQUICK.current = stateQUICK.getReady;
-    };
+    if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
 
+    }else {
+        if (framesQUICK == 2300) {
+            stateQUICK.current = stateQUICK.getReady;
+        };
+    }
 
 }
 //LOOP

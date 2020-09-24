@@ -30,6 +30,8 @@ var mySwiper = new Swiper('.swiper-container', {
     },
 })
 
+//VARIABLE
+
 const next_swiper = document.getElementById("next_swiper");
 //PAGE
 const pages = {
@@ -38,7 +40,7 @@ const pages = {
     second: 2,
     third : 3
 }
-//CONTROL THE GAME
+//LEFT AND RIGHT SWIPPER BUTTON
 next_swiper.addEventListener("click",function(evt){
     switch(pages.current){
         case pages.first:
@@ -56,3 +58,7 @@ next_swiper.addEventListener("click",function(evt){
 
     }
 });
+
+
+
+
