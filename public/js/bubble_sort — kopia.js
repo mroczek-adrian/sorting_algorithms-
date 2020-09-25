@@ -5,20 +5,8 @@
 
 
 function myFunction() {
-    // TEMPORARY VARIABLE
+
     var x, text;
-    // TABLE OF 5 NUMBERS (FROM 'nr1BUBBLE') : dY,dX,dWidth,dHeight
-    const destination_number_table = [
-        [200,20, 100-24,100-24],
-        [200,100, 100-24,100-24],
-        [200,180, 100-24,100-24],
-        [200,260, 100-24,100-24],
-        [200,340, 100-24,100-24],
-    ];
-
-
-
-//EXAMPLE AND CONST VARIABLE
     // SELECT CVS
     const cvsBUBBLE = document.getElementById("birdBUBBLE");
     cvsBUBBLE.style.display = "block";
@@ -29,57 +17,16 @@ function myFunction() {
     // }
     const ctxBUBBLE = cvsBUBBLE.getContext("2d");
     // Get the value of the input field with id="numb"
-    x1 = document.getElementById("numb").value;
-    x2 = document.getElementById("numb1").value;
-    x3 = document.getElementById("numb2").value;
-    x4 = document.getElementById("numb3").value;
-    x5 = document.getElementById("numb4").value;
+    x = document.getElementById("numb").value;
+    x1 = document.getElementById("numb1").value;
+    x2 = document.getElementById("numb2").value;
     // If x is Not a Number or less than one or greater than 10
-
-
-
-
-    //GLOBAL TABLE WHICH IS SORTED IN THE BACKGROUND
-    const numbers_to_sort=[x1,x2,x3,x4,x5];
-
-    //FUNCTION WHICH IS BUBBLE SORT
-    function bubble_sort( A,  n ) {
-        var temp;
-        for(var k = 0; k< n-1; k++) {
-            // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations
-            if(k==0)
-            {
-                text = "[0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo").innerHTML = text;
-            }
-            if(k==1)
-            {
-                text = "[0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo1").innerHTML = text;
-            }
-            if(k==2)
-            {
-                text = "[0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo2").innerHTML = text;
-            }
-
-            for(var i = 0; i < n-k-1; i++) {
-                if(A[ i ] > A[ i+1] ) {
-                    // here swapping of positions is being done.
-                    temp = A[ i ];
-                    A[ i ] = A[ i+1 ];
-                    A[ i + 1] = temp;
-                }
-            }
-        }
-
-
-        text = "[0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-        document.getElementById("demo4").innerHTML = text;
-
+    if (isNaN(x) || x < 1 || x > 10) {
+        text = "Input not valid";
+    } else {
+        text = "Input OK" + x1 + "number" + x2  + x;
     }
-    bubble_sort(numbers_to_sort,5);
-
+    document.getElementById("demo").innerHTML = text;
 
 
 
@@ -185,42 +132,42 @@ function myFunction() {
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
 
             }else{
-                // // this.speed += this.gravity;
-                // //COMPARISON VALUE OF NUMBERS-1st run
-                // if(600 > framesBUBBLE && framesBUBBLE > 250){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // if(1200 > framesBUBBLE && framesBUBBLE > 850){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // if(1800 > framesBUBBLE && framesBUBBLE > 1450){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // //COMPARISON VALUE OF NUMBERS-2nd run
-                // if( framesBUBBLE == 2050){
-                //     this.dX =50;
-                // }
-                // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // //COMPARISON VALUE OF NUMBERS-3rd run
-                // if( framesBUBBLE == 3500){
-                //     this.dX =50;
-                // }
-                // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
-                //     this.dX +=globalSpeedBUBBLE;
-                // }
-                // //COMPARISON VALUE OF NUMBERS-4th run
-                // if(framesBUBBLE == 4250){
-                //     this.dX =50;
-                // }
-                // //finish
-                // if(framesBUBBLE==4998){
-                //     this.dX =50;
-                // }
+                // this.speed += this.gravity;
+                //COMPARISON VALUE OF NUMBERS-1st run
+                if(600 > framesBUBBLE && framesBUBBLE > 250){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                if(1200 > framesBUBBLE && framesBUBBLE > 850){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                if(1800 > framesBUBBLE && framesBUBBLE > 1450){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-2nd run
+                if( framesBUBBLE == 2050){
+                    this.dX =50;
+                }
+                if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-3rd run
+                if( framesBUBBLE == 3500){
+                    this.dX =50;
+                }
+                if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    this.dX +=globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-4th run
+                if(framesBUBBLE == 4250){
+                    this.dX =50;
+                }
+                //finish
+                if(framesBUBBLE==4998){
+                    this.dX =50;
+                }
             }
 
 
@@ -249,15 +196,11 @@ function myFunction() {
         //         dY : 210, dX : 20}
         // ],
 
-        //TRUE VALUE
-        value:1,
-
-
         sX : 24,
         sY : 24,
         sWidth : 168 - 24,
         sHeight : 168 - 24,
-        dY : 20,
+        dY : 200,
         dX : 20,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
@@ -277,17 +220,6 @@ function myFunction() {
 
         },
 
-        logic : function(){
-            if(numbers_to_table[0] == 1){
-                nr1BUBBLE.dY = destination_number_table[0][0];
-                nr1BUBBLE.dX = destination_number_table[0][1];
-                nr1BUBBLE.dWidth = destination_number_table[0][2];
-                nr1BUBBLE.dHeight = destination_number_table[0][3];
-
-
-
-            }
-        },
 
         update: function(){
             //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -368,17 +300,17 @@ function myFunction() {
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
 
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX -=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =180;
-                //
-                // }
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(950 > framesBUBBLE && framesBUBBLE > 650){
+                    this.dX -=globalSpeedBUBBLE;
+
+                }
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =180;
+
+                }
             }
 
 
@@ -446,17 +378,17 @@ function myFunction() {
 
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX +=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =100;
-                //
-                // }
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(950 > framesBUBBLE && framesBUBBLE > 650){
+                    this.dX +=globalSpeedBUBBLE;
+
+                }
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =100;
+
+                }
             }
 
         }
@@ -523,27 +455,27 @@ function myFunction() {
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
 
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(2500 > framesBUBBLE && framesBUBBLE > 2050){
-                //     this.dX -=globalSpeedBUBBLE;
-                //
-                // }
-                // if(3850 > framesBUBBLE && framesBUBBLE > 3500){
-                //     this.dX -=globalSpeedBUBBLE;
-                //
-                // }
-                // if(4600 > framesBUBBLE && framesBUBBLE > 4250){
-                //     this.dX -=globalSpeedBUBBLE;
-                //
-                // }
-                //
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =450;
-                //     this.dY =150;
-                //
-                // }
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(2500 > framesBUBBLE && framesBUBBLE > 2050){
+                    this.dX -=globalSpeedBUBBLE;
+
+                }
+                if(3850 > framesBUBBLE && framesBUBBLE > 3500){
+                    this.dX -=globalSpeedBUBBLE;
+
+                }
+                if(4600 > framesBUBBLE && framesBUBBLE > 4250){
+                    this.dX -=globalSpeedBUBBLE;
+
+                }
+
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =450;
+                    this.dY =150;
+
+                }
             }
 
 
@@ -624,10 +556,6 @@ function myFunction() {
 
 
     }
-//FUCTION WHICH CHOSE PROPERTY NUMBERS INTO ALGORITHM
-    function logic_for_all(){
-        nr1BUBBLE.logic();
-    }
 //LOOP
     function loop(){
         update();
@@ -636,7 +564,6 @@ function myFunction() {
         framesBUBBLE++;
         requestAnimationFrame(loop);
     }
-    logic_for_all();
     loop();
 
 }

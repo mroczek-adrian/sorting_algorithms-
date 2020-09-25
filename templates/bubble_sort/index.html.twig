@@ -11,7 +11,9 @@
         display: block;
         margin: 0 auto;
     }
-
+#birdBUBBLE{
+    display: none;
+}
 </style>
 
 
@@ -29,7 +31,26 @@
 
 
             {#            here will be canvas#}
+
+
+
+            <h2>JavaScript Can Validate Input</h2>
+
+            <p>Please input a three numbers</p>
+
+            <input id="numb"><input id="numb1"><input id="numb2"><input id="numb3"><input id="numb4">
+
+            <button type="button" onclick="myFunction()">Submit</button>
+
+            <p id="demo"></p>
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+
             <canvas id="birdBUBBLE" width="600" height="380"></canvas>
+
+
             <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
             <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
             <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
@@ -46,6 +67,8 @@
 {% endblock %}
 {%  block javascripts %}
 
+    <script>
 
+    </script>
     <script src="{{asset('js/bubble_sort.js') }}"></script>
 {% endblock %}
