@@ -278,7 +278,7 @@ function myFunction() {
         },
 
         logic : function(){
-            if(numbers_to_table[0] == 1){
+            // if(numbers_to_table[0] == 1){
                 nr1BUBBLE.dY = destination_number_table[0][0];
                 nr1BUBBLE.dX = destination_number_table[0][1];
                 nr1BUBBLE.dWidth = destination_number_table[0][2];
@@ -286,7 +286,7 @@ function myFunction() {
 
 
 
-            }
+           // }
         },
 
         update: function(){
