@@ -278,15 +278,33 @@ function myFunction() {
         },
 
         logic : function(){
-            // if(numbers_to_table[0] == 1){
+
+             if(x1 == 1){
                 nr1BUBBLE.dY = destination_number_table[0][0];
                 nr1BUBBLE.dX = destination_number_table[0][1];
-                nr1BUBBLE.dWidth = destination_number_table[0][2];
-                nr1BUBBLE.dHeight = destination_number_table[0][3];
-
-
-
-           // }
+                nr1BUBBLE.dWidth = 2*destination_number_table[0][2];
+                nr1BUBBLE.dHeight = 2*destination_number_table[0][3];
+            }else if(x2 == 1){
+                 nr1BUBBLE.dY = destination_number_table[1][0];
+                 nr1BUBBLE.dX = destination_number_table[1][1];
+                 nr1BUBBLE.dWidth = 2*destination_number_table[1][2];
+                 nr1BUBBLE.dHeight = 2*destination_number_table[1][3];
+             }else if(x3 == 1){
+                 nr1BUBBLE.dY = destination_number_table[2][0];
+                 nr1BUBBLE.dX = destination_number_table[2][1];
+                 nr1BUBBLE.dWidth =2* destination_number_table[2][2];
+                 nr1BUBBLE.dHeight = 2*destination_number_table[2][3];
+             }else if(x4 == 1){
+                 nr1BUBBLE.dY = destination_number_table[3][0];
+                 nr1BUBBLE.dX = destination_number_table[3][1];
+                 nr1BUBBLE.dWidth = 2*destination_number_table[3][2];
+                 nr1BUBBLE.dHeight =2* destination_number_table[3][3];
+             }else if(x5 == 1){
+                 nr1BUBBLE.dY = destination_number_table[4][0];
+                 nr1BUBBLE.dX = destination_number_table[4][1];
+                 nr1BUBBLE.dWidth = 2*destination_number_table[4][2];
+                 nr1BUBBLE.dHeight = 2*destination_number_table[4][3];
+             }
         },
 
         update: function(){
@@ -352,7 +370,35 @@ function myFunction() {
 
         },
 
+        logic : function(){
 
+            if(x1 == 2){
+                nr1BUBBLE.dY = destination_number_table[0][0];
+                nr1BUBBLE.dX = destination_number_table[0][1];
+                nr1BUBBLE.dWidth = destination_number_table[0][2];
+                nr1BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(x2 == 2){
+                nr1BUBBLE.dY = destination_number_table[1][0];
+                nr1BUBBLE.dX = destination_number_table[1][1];
+                nr1BUBBLE.dWidth = destination_number_table[1][2];
+                nr1BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(x3 == 2){
+                nr1BUBBLE.dY = destination_number_table[2][0];
+                nr1BUBBLE.dX = destination_number_table[2][1];
+                nr1BUBBLE.dWidth = destination_number_table[2][2];
+                nr1BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(x4 == 2){
+                nr1BUBBLE.dY = destination_number_table[3][0];
+                nr1BUBBLE.dX = destination_number_table[3][1];
+                nr1BUBBLE.dWidth = destination_number_table[3][2];
+                nr1BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(x5 == 2){
+                nr1BUBBLE.dY = destination_number_table[4][0];
+                nr1BUBBLE.dX = destination_number_table[4][1];
+                nr1BUBBLE.dWidth = destination_number_table[4][2];
+                nr1BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
         update: function(){
             //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
             //this.period = state.current == state.getReady ? 10 : 5;
@@ -425,6 +471,35 @@ function myFunction() {
         bubbleSort : function(){
 
         },
+        logic : function(){
+
+            if(x1 == 3){
+                nr1BUBBLE.dY = destination_number_table[0][0];
+                nr1BUBBLE.dX = destination_number_table[0][1];
+                nr1BUBBLE.dWidth = destination_number_table[0][2];
+                nr1BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(x2 == 3){
+                nr1BUBBLE.dY = destination_number_table[1][0];
+                nr1BUBBLE.dX = destination_number_table[1][1];
+                nr1BUBBLE.dWidth = destination_number_table[1][2];
+                nr1BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(x3 == 3){
+                nr1BUBBLE.dY = destination_number_table[2][0];
+                nr1BUBBLE.dX = destination_number_table[2][1];
+                nr1BUBBLE.dWidth = destination_number_table[2][2];
+                nr1BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(x4 == 3){
+                nr1BUBBLE.dY = destination_number_table[3][0];
+                nr1BUBBLE.dX = destination_number_table[3][1];
+                nr1BUBBLE.dWidth = destination_number_table[3][2];
+                nr1BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(x5 == 3){
+                nr1BUBBLE.dY = destination_number_table[4][0];
+                nr1BUBBLE.dX = destination_number_table[4][1];
+                nr1BUBBLE.dWidth = destination_number_table[4][2];
+                nr1BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
 
 
 
@@ -470,6 +545,35 @@ function myFunction() {
         dX : 260,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
+        logic : function(){
+
+            if(x1 == 4){
+                nr1BUBBLE.dY = destination_number_table[0][0];
+                nr1BUBBLE.dX = destination_number_table[0][1];
+                nr1BUBBLE.dWidth = destination_number_table[0][2];
+                nr1BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(x2 == 4){
+                nr1BUBBLE.dY = destination_number_table[1][0];
+                nr1BUBBLE.dX = destination_number_table[1][1];
+                nr1BUBBLE.dWidth = destination_number_table[1][2];
+                nr1BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(x3 == 4){
+                nr1BUBBLE.dY = destination_number_table[2][0];
+                nr1BUBBLE.dX = destination_number_table[2][1];
+                nr1BUBBLE.dWidth = destination_number_table[2][2];
+                nr1BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(x4 == 4){
+                nr1BUBBLE.dY = destination_number_table[3][0];
+                nr1BUBBLE.dX = destination_number_table[3][1];
+                nr1BUBBLE.dWidth = destination_number_table[3][2];
+                nr1BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(x5 == 4){
+                nr1BUBBLE.dY = destination_number_table[4][0];
+                nr1BUBBLE.dX = destination_number_table[4][1];
+                nr1BUBBLE.dWidth = destination_number_table[4][2];
+                nr1BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
         draw : function(){
             ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
@@ -484,6 +588,35 @@ function myFunction() {
         dX : 340,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
+        logic : function(){
+
+            if(x1 == 9){
+                nr1BUBBLE.dY = destination_number_table[0][0];
+                nr1BUBBLE.dX = destination_number_table[0][1];
+                nr1BUBBLE.dWidth = destination_number_table[0][2];
+                nr1BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(x2 == 9){
+                nr1BUBBLE.dY = destination_number_table[1][0];
+                nr1BUBBLE.dX = destination_number_table[1][1];
+                nr1BUBBLE.dWidth = destination_number_table[1][2];
+                nr1BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(x3 == 9){
+                nr1BUBBLE.dY = destination_number_table[2][0];
+                nr1BUBBLE.dX = destination_number_table[2][1];
+                nr1BUBBLE.dWidth = destination_number_table[2][2];
+                nr1BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(x4 == 9){
+                nr1BUBBLE.dY = destination_number_table[3][0];
+                nr1BUBBLE.dX = destination_number_table[3][1];
+                nr1BUBBLE.dWidth = destination_number_table[3][2];
+                nr1BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(x5 == 9){
+                nr1BUBBLE.dY = destination_number_table[4][0];
+                nr1BUBBLE.dX = destination_number_table[4][1];
+                nr1BUBBLE.dWidth = destination_number_table[4][2];
+                nr1BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
         draw : function(){
             ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
@@ -627,6 +760,10 @@ function myFunction() {
 //FUCTION WHICH CHOSE PROPERTY NUMBERS INTO ALGORITHM
     function logic_for_all(){
         nr1BUBBLE.logic();
+        //nr2BUBBLE.logic();
+       // nr3BUBBLE.logic();
+       // nr4BUBBLE.logic();
+       // nr9BUBBLE.logic();
     }
 //LOOP
     function loop(){
