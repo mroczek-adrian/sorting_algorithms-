@@ -536,12 +536,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
         }
     }
@@ -748,12 +742,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
 
 
@@ -959,12 +947,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
 
         }
@@ -1146,13 +1128,6 @@ function myFunction() {
                         this.dX -=3.2*globalSpeedBUBBLE;
 
                     }
-
-                }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
                 }
             }
 
@@ -1336,12 +1311,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
 
         }
@@ -1523,12 +1492,6 @@ function myFunction() {
                         this.dX -=3.2*globalSpeedBUBBLE;
 
                     }
-                }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
                 }
             }
 
@@ -1712,12 +1675,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
 
         }
@@ -1900,12 +1857,6 @@ function myFunction() {
 
                     }
                 }
-                //THE END OF SIMULATION
-                if( framesBUBBLE == 4998){
-                    this.logic();
-
-
-                }
             }
 
         }
@@ -1995,12 +1946,6 @@ function myFunction() {
                         this.dX +=3.2*globalSpeedBUBBLE;
 
                     }
-                    //THE END OF SIMULATION
-                    if( framesBUBBLE == 4998){
-                        this.logic();
-
-
-                    }
 
                 }else if(tab_step4[3] == 9){
                     if(250 > framesBUBBLE && framesBUBBLE > 150){
@@ -2018,12 +1963,6 @@ function myFunction() {
                     }
                     if(3450 > framesBUBBLE && framesBUBBLE > 3350){
                         this.dX +=3.2*globalSpeedBUBBLE;
-
-                    }
-                    //THE END OF SIMULATION
-                    if( framesBUBBLE == 4998){
-                        this.logic();
-
 
                     }
 
@@ -2052,12 +1991,6 @@ function myFunction() {
                         this.dX +=3.2*globalSpeedBUBBLE;
 
                     }
-                    //THE END OF SIMULATION
-                    if( framesBUBBLE == 4998){
-                        this.logic();
-
-
-                    }
 
                 }else if(tab_step4[1] == 9){
                     if(1400 > framesBUBBLE && framesBUBBLE > 1300){
@@ -2082,12 +2015,6 @@ function myFunction() {
                         this.dX +=3.2*globalSpeedBUBBLE;
 
                     }
-                    //THE END OF SIMULATION
-                    if( framesBUBBLE == 4998){
-                        this.logic();
-
-
-                    }
 
                 }else if(tab_step4[0] == 9){
                     if(2000 > framesBUBBLE && framesBUBBLE > 1900){
@@ -2107,12 +2034,6 @@ function myFunction() {
                     //4TH STEP
                     if(4450 > framesBUBBLE && framesBUBBLE > 4350){
                         this.dX -=3.2*globalSpeedBUBBLE;
-
-                    }
-                    //THE END OF SIMULATION
-                    if( framesBUBBLE == 4998){
-                        this.logic();
-
 
                     }
                 }
