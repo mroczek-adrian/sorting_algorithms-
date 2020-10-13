@@ -5,6 +5,80 @@
 
 
 function myFunction() {
+    //VALIDATION
+    var validation1 = document.forms["myForm"]["fname"].value;
+    var validation2 = document.forms["myForm"]["fname1"].value;
+    var validation3 = document.forms["myForm"]["fname2"].value;
+    var validation4 = document.forms["myForm"]["fname3"].value;
+    var validation5 = document.forms["myForm"]["fname4"].value;
+    if (validation1 == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    if (validation2 == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    if (validation3 == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    if (validation4 == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    if (validation5 == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+    x1 = document.getElementById("numb").value;
+    x2 = document.getElementById("numb1").value;
+    x3 = document.getElementById("numb2").value;
+    x4 = document.getElementById("numb3").value;
+    x5 = document.getElementById("numb4").value;
+    if(x1 > 9 || x1 < 1 || x2 < 1 || x2 > 9  || x3 < 1 || x3 > 9  || x4 < 1 || x4 > 9  || x5 < 1 || x5 > 9   ){
+        alert("To big or to small number - write a property number from [1-9]");
+        return false;
+    }
+    if(x1 == x2 || x1 == x3  || x1 == x4 || x1 == x5 || x2 == x3 || x2 == x4 || x2 == x5 || x3 == x4 ||  x3 == x5 || x4 == x5   ){
+        alert("There is a repetition - write numbers without repetition");
+        return false;
+    }
+    if(x1 == 1 ||x1 == 2 || x1 == 3 ||x1 == 4 ||x1 == 5 ||x1 == 6 ||x1 == 7 ||x1 == 8 ||x1 == 9  ){
+    }else{
+        alert(" Write the numbers");
+        return false;
+    }
+    if(x2 == 1 ||x2 == 2 || x2 == 3 ||x2 == 4 ||x2 == 5 ||x2 == 6 ||x2 == 7 ||x2 == 8 ||x2 == 9  ){
+    }else{
+        alert(" Write the numbers");
+        return false;
+    }
+    if(x3 == 1 ||x3 == 2 || x3 == 3 ||x3 == 4 ||x3 == 5 ||x3 == 6 ||x3 == 7 ||x3 == 8 ||x3 == 9  ){
+    }else{
+        alert(" Write the numbers");
+        return false;
+    }
+    if(x4 == 1 ||x4 == 2 || x4 == 3 ||x4 == 4 ||x4 == 5 ||x4 == 6 ||x4 == 7 ||x4 == 8 ||x4 == 9  ){
+    }else{
+        alert(" Write the numbers");
+        return false;
+    }
+    if(x5 == 1 ||x5 == 2 || x5 == 3 ||x5 == 4 ||x5 == 5 ||x5 == 6 ||x5 == 7 ||x5 == 8 ||x5 == 9  ){
+    }else{
+        alert(" Write the numbers");
+        return false;
+    }
+
+
+
+
+
+
+
+
+
+
     // TEMPORARY VARIABLE
     var x, text;
     // TABLE OF 5 NUMBERS (FROM 'nr1BUBBLE') : dY,dX,dWidth,dHeight
@@ -28,12 +102,7 @@ function myFunction() {
     //     cvsBUBBLE.style.display = "none";
     // }
     const ctxBUBBLE = cvsBUBBLE.getContext("2d");
-    // Get the value of the input field with id="numb"
-    x1 = document.getElementById("numb").value;
-    x2 = document.getElementById("numb1").value;
-    x3 = document.getElementById("numb2").value;
-    x4 = document.getElementById("numb3").value;
-    x5 = document.getElementById("numb4").value;
+
     // If x is Not a Number or less than one or greater than 10
 
 
@@ -1064,6 +1133,734 @@ function myFunction() {
 
         }
     }
+    const nr5BUBBLE = {
+        sX : 227,
+        sY : 215,
+        sWidth : 168 - 24,
+        sHeight : 168 - 24,
+        dY : 200,
+        dX : 260,
+        dWidth : 100 - 24,
+        dHeight :100 - 24 ,
+        logic : function(){
+
+            if(tab_step4[4]  == 5){
+                nr5BUBBLE.dY = destination_number_table[0][0];
+                nr5BUBBLE.dX = destination_number_table[0][1];
+                nr5BUBBLE.dWidth = destination_number_table[0][2];
+                nr5BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(tab_step4[3]  == 5){
+                nr5BUBBLE.dY = destination_number_table[1][0];
+                nr5BUBBLE.dX = destination_number_table[1][1];
+                nr5BUBBLE.dWidth = destination_number_table[1][2];
+                nr5BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(tab_step4[2]  == 5){
+                nr5BUBBLE.dY = destination_number_table[2][0];
+                nr5BUBBLE.dX = destination_number_table[2][1];
+                nr5BUBBLE.dWidth = destination_number_table[2][2];
+                nr5BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(tab_step4[1]  == 5){
+                nr5BUBBLE.dY = destination_number_table[3][0];
+                nr5BUBBLE.dX = destination_number_table[3][1];
+                nr5BUBBLE.dWidth = destination_number_table[3][2];
+                nr5BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(tab_step4[0]  == 5){
+                nr5BUBBLE.dY = destination_number_table[4][0];
+                nr5BUBBLE.dX = destination_number_table[4][1];
+                nr5BUBBLE.dWidth = destination_number_table[4][2];
+                nr5BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
+        draw : function(){
+            ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                if(tab_step4[4] == 5){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 5){
+                    // if( framesBUBBLE == 2050){
+                    //     this.dX =50;
+                    // }
+                    // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[2] == 5){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 5){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 5){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
+            }
+
+        }
+    }
+    const nr6BUBBLE = {
+        sX : 431,
+        sY : 215,
+        sWidth : 168 - 24,
+        sHeight : 168 - 24,
+        dY : 200,
+        dX : 260,
+        dWidth : 100 - 24,
+        dHeight :100 - 24 ,
+        logic : function(){
+
+            if(tab_step4[4]  == 6){
+                nr6BUBBLE.dY = destination_number_table[0][0];
+                nr6BUBBLE.dX = destination_number_table[0][1];
+                nr6BUBBLE.dWidth = destination_number_table[0][2];
+                nr6BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(tab_step4[3]  == 6){
+                nr6BUBBLE.dY = destination_number_table[1][0];
+                nr6BUBBLE.dX = destination_number_table[1][1];
+                nr6BUBBLE.dWidth = destination_number_table[1][2];
+                nr6BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(tab_step4[2]  == 6){
+                nr6BUBBLE.dY = destination_number_table[2][0];
+                nr6BUBBLE.dX = destination_number_table[2][1];
+                nr6BUBBLE.dWidth = destination_number_table[2][2];
+                nr6BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(tab_step4[1]  == 6){
+                nr6BUBBLE.dY = destination_number_table[3][0];
+                nr6BUBBLE.dX = destination_number_table[3][1];
+                nr6BUBBLE.dWidth = destination_number_table[3][2];
+                nr6BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(tab_step4[0]  == 6){
+                nr6BUBBLE.dY = destination_number_table[4][0];
+                nr6BUBBLE.dX = destination_number_table[4][1];
+                nr6BUBBLE.dWidth = destination_number_table[4][2];
+                nr6BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
+        draw : function(){
+            ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                if(tab_step4[4] == 6){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 6){
+                    // if( framesBUBBLE == 2050){
+                    //     this.dX =50;
+                    // }
+                    // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[2] == 6){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 6){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 6){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
+            }
+
+        }
+    }
+    const nr7BUBBLE = {
+        sX : 34,
+        sY : 403,
+        sWidth : 168 - 24,
+        sHeight : 168 - 24,
+        dY : 200,
+        dX : 260,
+        dWidth : 100 - 24,
+        dHeight :100 - 24 ,
+        logic : function(){
+
+            if(tab_step4[4]  == 7){
+                nr7BUBBLE.dY = destination_number_table[0][0];
+                nr7BUBBLE.dX = destination_number_table[0][1];
+                nr7BUBBLE.dWidth = destination_number_table[0][2];
+                nr7BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(tab_step4[3]  == 7){
+                nr7BUBBLE.dY = destination_number_table[1][0];
+                nr7BUBBLE.dX = destination_number_table[1][1];
+                nr7BUBBLE.dWidth = destination_number_table[1][2];
+                nr7BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(tab_step4[2]  == 7){
+                nr7BUBBLE.dY = destination_number_table[2][0];
+                nr7BUBBLE.dX = destination_number_table[2][1];
+                nr7BUBBLE.dWidth = destination_number_table[2][2];
+                nr7BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(tab_step4[1]  == 7){
+                nr7BUBBLE.dY = destination_number_table[3][0];
+                nr7BUBBLE.dX = destination_number_table[3][1];
+                nr7BUBBLE.dWidth = destination_number_table[3][2];
+                nr7BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(tab_step4[0]  == 7){
+                nr7BUBBLE.dY = destination_number_table[4][0];
+                nr7BUBBLE.dX = destination_number_table[4][1];
+                nr7BUBBLE.dWidth = destination_number_table[4][2];
+                nr7BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
+        draw : function(){
+            ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                if(tab_step4[4] == 7){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 7){
+                    // if( framesBUBBLE == 2050){
+                    //     this.dX =50;
+                    // }
+                    // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[2] == 7){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 7){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 7){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
+            }
+
+        }
+    }
+    const nr8BUBBLE = {
+        sX : 230,
+        sY : 403,
+        sWidth : 168 - 24,
+        sHeight : 168 - 24,
+        dY : 200,
+        dX : 260,
+        dWidth : 100 - 24,
+        dHeight :100 - 24 ,
+        logic : function(){
+
+            if(tab_step4[4]  == 8){
+                nr8BUBBLE.dY = destination_number_table[0][0];
+                nr8BUBBLE.dX = destination_number_table[0][1];
+                nr8BUBBLE.dWidth = destination_number_table[0][2];
+                nr8BUBBLE.dHeight = destination_number_table[0][3];
+            }else if(tab_step4[3]  == 8){
+                nr8BUBBLE.dY = destination_number_table[1][0];
+                nr8BUBBLE.dX = destination_number_table[1][1];
+                nr8BUBBLE.dWidth = destination_number_table[1][2];
+                nr8BUBBLE.dHeight = destination_number_table[1][3];
+            }else if(tab_step4[2]  == 8){
+                nr8BUBBLE.dY = destination_number_table[2][0];
+                nr8BUBBLE.dX = destination_number_table[2][1];
+                nr8BUBBLE.dWidth = destination_number_table[2][2];
+                nr8BUBBLE.dHeight = destination_number_table[2][3];
+            }else if(tab_step4[1]  == 8){
+                nr8BUBBLE.dY = destination_number_table[3][0];
+                nr8BUBBLE.dX = destination_number_table[3][1];
+                nr8BUBBLE.dWidth = destination_number_table[3][2];
+                nr8BUBBLE.dHeight = destination_number_table[3][3];
+            }else if(tab_step4[0]  == 8){
+                nr8BUBBLE.dY = destination_number_table[4][0];
+                nr8BUBBLE.dX = destination_number_table[4][1];
+                nr8BUBBLE.dWidth = destination_number_table[4][2];
+                nr8BUBBLE.dHeight = destination_number_table[4][3];
+            }
+        },
+        draw : function(){
+            ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                if(tab_step4[4] == 8){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 8){
+                    // if( framesBUBBLE == 2050){
+                    //     this.dX =50;
+                    // }
+                    // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[2] == 8){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 8){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 8){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
+            }
+
+        }
+    }
     const nr9BUBBLE = {
         sX : 430,
         sY : 400,
@@ -1355,14 +2152,48 @@ function myFunction() {
 
         //draw function
         // bg.draw();
-        c2nBUBBLE.draw();
+        if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+        }else {
+            if (framesBUBBLE > 100 && framesBUBBLE < 4700) {
+                c2nBUBBLE.draw();
+            }
+        }
 
-        nr1BUBBLE.draw();
-        nr2BUBBLE.draw();
-        nr3BUBBLE.draw();
-        nr4BUBBLE.draw();
-        nr9BUBBLE.draw();
-        lineBUBBLE.draw();
+        //if user write the first number into form
+        if(x1==1 || x2==1|| x3==1|| x4==1|| x5==1){
+            nr1BUBBLE.draw();
+        }
+        if(x1==2 || x2==2|| x3==2|| x4==2|| x5==2){
+            nr2BUBBLE.draw();
+        }
+        if(x1==3 || x2==3|| x3==3|| x4==3|| x5==3){
+            nr3BUBBLE.draw();
+        }
+        if(x1==4 || x2==4|| x3==4|| x4==4|| x5==4){
+            nr4BUBBLE.draw();
+        }
+        if(x1==5 || x2==5|| x3==5|| x4==5|| x5==5){
+            nr5BUBBLE.draw();
+        }
+        if(x1==6 || x2==6|| x3==6|| x4==6|| x5==6){
+            nr6BUBBLE.draw();
+        }
+        if(x1==7 || x2==7|| x3==7|| x4==7|| x5==7){
+            nr7BUBBLE.draw();
+        }
+        if(x1==8 || x2==8|| x3==8|| x4==8|| x5==8){
+            nr8BUBBLE.draw();
+        }
+        if(x1==9 || x2==9|| x3==9|| x4==9|| x5==9){
+            nr9BUBBLE.draw();
+        }
+        if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+        }else{
+            if(framesBUBBLE > 100 && framesBUBBLE<4700){
+                lineBUBBLE.draw();
+            }
+        }
+
         getReadyBUBBLE.draw();
         gameOverBUBBLE.draw();
     }
@@ -1372,6 +2203,10 @@ function myFunction() {
         nr2BUBBLE.update();
         nr3BUBBLE.update();
         nr4BUBBLE.update();
+        nr5BUBBLE.update();
+        nr6BUBBLE.update();
+        nr7BUBBLE.update();
+        nr8BUBBLE.update();
         nr9BUBBLE.update();
         c2nBUBBLE.update();
         lineBUBBLE.update();
@@ -1385,9 +2220,13 @@ function myFunction() {
     function logic_for_all(){
         nr1BUBBLE.logic();
         nr2BUBBLE.logic();
-       nr3BUBBLE.logic();
-       nr4BUBBLE.logic();
-       nr9BUBBLE.logic();
+        nr3BUBBLE.logic();
+        nr4BUBBLE.logic();
+        nr5BUBBLE.logic();
+        nr6BUBBLE.logic();
+        nr7BUBBLE.logic();
+        nr8BUBBLE.logic();
+        nr9BUBBLE.logic();
     }
 //LOOP
     function loop(){
