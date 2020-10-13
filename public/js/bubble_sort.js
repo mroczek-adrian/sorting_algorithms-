@@ -317,28 +317,28 @@ function myFunction() {
              if(tab_step4[4] == 1){
                 nr1BUBBLE.dY = destination_number_table[0][0];
                 nr1BUBBLE.dX = destination_number_table[0][1];
-                nr1BUBBLE.dWidth = 2*destination_number_table[0][2];
-                nr1BUBBLE.dHeight = 2*destination_number_table[0][3];
+                nr1BUBBLE.dWidth = destination_number_table[0][2];
+                nr1BUBBLE.dHeight = destination_number_table[0][3];
             }else if(tab_step4[3] == 1){
                  nr1BUBBLE.dY = destination_number_table[1][0];
                  nr1BUBBLE.dX = destination_number_table[1][1];
-                 nr1BUBBLE.dWidth = 2*destination_number_table[1][2];
-                 nr1BUBBLE.dHeight =2* destination_number_table[1][3];
+                 nr1BUBBLE.dWidth = destination_number_table[1][2];
+                 nr1BUBBLE.dHeight = destination_number_table[1][3];
              }else if(tab_step4[2] == 1){
                  nr1BUBBLE.dY = destination_number_table[2][0];
                  nr1BUBBLE.dX = destination_number_table[2][1];
-                 nr1BUBBLE.dWidth = 2*destination_number_table[2][2];
-                 nr1BUBBLE.dHeight = 2*destination_number_table[2][3];
+                 nr1BUBBLE.dWidth = destination_number_table[2][2];
+                 nr1BUBBLE.dHeight = destination_number_table[2][3];
              }else if(tab_step4[1] == 1){
                  nr1BUBBLE.dY = destination_number_table[3][0];
                  nr1BUBBLE.dX = destination_number_table[3][1];
-                 nr1BUBBLE.dWidth = 2*destination_number_table[3][2];
-                 nr1BUBBLE.dHeight = 2*destination_number_table[3][3];
+                 nr1BUBBLE.dWidth = destination_number_table[3][2];
+                 nr1BUBBLE.dHeight = destination_number_table[3][3];
              }else if(tab_step4[0] == 1){
                  nr1BUBBLE.dY = destination_number_table[4][0];
                  nr1BUBBLE.dX = destination_number_table[4][1];
-                 nr1BUBBLE.dWidth = 2*destination_number_table[4][2];
-                 nr1BUBBLE.dHeight = 2*destination_number_table[4][3];
+                 nr1BUBBLE.dWidth = destination_number_table[4][2];
+                 nr1BUBBLE.dHeight = destination_number_table[4][3];
              }
         },
 
@@ -353,6 +353,121 @@ function myFunction() {
             //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
             //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
             //this.frame = this.frame % this.animation.length;
+
+            //choose the way of moving which depends on position on canvas
+            //the biggest number
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                if(tab_step4[4] == 1){
+
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[3] == 1){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                }else if(tab_step4[2] == 1){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 1){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                }else if(tab_step4[0] == 1){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
+            }
         }
     }
     const nr2BUBBLE = {
@@ -449,17 +564,115 @@ function myFunction() {
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
 
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX -=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =180;
-                //
-                // }
+                if(tab_step4[4] == 2){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 2){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[2] == 2){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 2){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 2){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
             }
 
 
@@ -555,18 +768,116 @@ function myFunction() {
 
 
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX +=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =100;
-                //
-                // }
+                if(tab_step4[4] == 3){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 3){
+
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                }else if(tab_step4[2] == 3){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 3){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                }else if(tab_step4[0] == 3){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
             }
 
         }
@@ -628,18 +939,127 @@ function myFunction() {
 
 
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
             }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX +=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =100;
-                //
-                // }
+                if(tab_step4[4] == 4){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[3] == 4){
+                    // if( framesBUBBLE == 2050){
+                    //     this.dX =50;
+                    // }
+                    // if(2650 > framesBUBBLE && framesBUBBLE > 2300){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(3250 > framesBUBBLE && framesBUBBLE > 2900){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+
+                }else if(tab_step4[2] == 4){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 4){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 4){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
             }
 
         }
@@ -701,19 +1121,125 @@ function myFunction() {
 
 
             if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
-            }else{
-                // // this.speed += this.gravity;
-                // //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(950 > framesBUBBLE && framesBUBBLE > 650){
-                //     this.dX +=globalSpeedBUBBLE;
-                //
-                // }
-                // //THE END OF SIMULATION
-                // if( framesBUBBLE == 4998){
-                //     this.dX =100;
-                //
-                // }
 
+            }else{
+                if(tab_step4[4] == 9){
+                    // if(600 > framesBUBBLE && framesBUBBLE > 250){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(1200 > framesBUBBLE && framesBUBBLE > 850){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    // if(1800 > framesBUBBLE && framesBUBBLE > 1450){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[3] == 9){
+                    if(250 > framesBUBBLE && framesBUBBLE > 150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[2] == 9){
+                    if(800 > framesBUBBLE && framesBUBBLE > 700){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2250 > framesBUBBLE && framesBUBBLE > 2150){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    // if( framesBUBBLE == 3500){
+                    //     this.dX =50;
+                    // }
+                    // if(4000 > framesBUBBLE && framesBUBBLE > 3750){
+                    //     this.dX +=globalSpeedBUBBLE;
+                    // }
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[1] == 9){
+                    if(1400 > framesBUBBLE && framesBUBBLE > 1300){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(2850 > framesBUBBLE && framesBUBBLE > 2750){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(3700 > framesBUBBLE && framesBUBBLE > 3600){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    // if(framesBUBBLE == 4250){
+                    //     this.dX =50;
+                    // }
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX +=3.2*globalSpeedBUBBLE;
+
+                    }
+
+                }else if(tab_step4[0] == 9){
+                    if(2000 > framesBUBBLE && framesBUBBLE > 1900){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //2ND STEP
+                    if(3450 > framesBUBBLE && framesBUBBLE > 3350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //3RD STEP
+                    if(4200 > framesBUBBLE && framesBUBBLE > 4100){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                    //4TH STEP
+                    if(4450 > framesBUBBLE && framesBUBBLE > 4350){
+                        this.dX -=3.2*globalSpeedBUBBLE;
+
+                    }
+                }
             }
 
         }
