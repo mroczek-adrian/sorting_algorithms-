@@ -85,16 +85,17 @@ const red_circle01 = {
     smaller : [{ dWidth : 40,
         dHeight :40 }],
 
-    draw : function(){
+    draw : function() {
         //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
         //let nr1 = this.animation[this.frame];
-        if ( frames > 1300) {
-            let smaller_cycle = this.smaller[0];
-            ctx.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
-                smaller_cycle.dWidth,smaller_cycle.dHeight);
-        }else
-        ctx.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
-            this.dWidth,this.dHeight);
+        // if ( frames > 1300) {
+        //     let smaller_cycle = this.smaller[0];
+        //     ctx.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+        //         smaller_cycle.dWidth,smaller_cycle.dHeight);
+        // }else{
+        ctx.drawImage(red_circle, this.sX, this.sY, this.sWidth, this.sHeight, this.dX, this.dY,
+            this.dWidth, this.dHeight);
+    //}
     },
 
 
@@ -117,78 +118,78 @@ const red_circle01 = {
 
         if(state.current == state.getReady){
         }else {
-            // //1ST STEM
-            // if (350 > frames && frames > 300) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (450 > frames && frames > 400) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (550 > frames && frames > 500) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (650 > frames && frames > 600) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (750 > frames && frames > 700) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // //2ND STEP
-            // if (850 > frames && frames > 800) {
-            //
-            //     this.dY += 4 * globalSpeed;
-            //     this.dX -= 20 * globalSpeed;
-            //
-            //
-            // }
-            // if (950 > frames && frames > 900) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1050 > frames && frames > 1000) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1150 > frames && frames > 1100) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1250 > frames && frames > 1200) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
+            //1ST STEM
+            if (350 > frames && frames > 300) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (450 > frames && frames > 400) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (550 > frames && frames > 500) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (650 > frames && frames > 600) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (750 > frames && frames > 700) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            //2ND STEP
+            if (850 > frames && frames > 800) {
+
+                this.dY += 4 * globalSpeed;
+                this.dX -= 20 * globalSpeed;
+
+
+            }
+            if (950 > frames && frames > 900) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1050 > frames && frames > 1000) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1150 > frames && frames > 1100) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1250 > frames && frames > 1200) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
             // //3RD STEP - SMALL CIRCLE
             // if (1350 > frames && frames > 1300) {
             //
@@ -250,7 +251,7 @@ const red_circle02 = {
     sWidth : 490 - 310,
     sHeight : 270 - 90,
     dY : 225,
-    dX : 340,
+    dX : 195,
     dWidth : 40,
     dHeight :40 ,
 
@@ -294,72 +295,79 @@ const red_circle02 = {
 
         if(state.current == state.getReady){
         }else {
-            //this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            // if (350 > frames && frames > 300) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (550 > frames && frames > 500) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (650 > frames && frames > 600) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX -= 16 * globalSpeed;
-            //
-            //
-            // }
-            // if (750 > frames && frames > 700) {
-            //
-            //     //this.dY += 1.5 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // //2ND STEP
-            // if (850 > frames && frames > 800) {
-            //
-            //     this.dY -= 3 * globalSpeed;
-            //     this.dX -= 5 * globalSpeed;
-            //
-            //
-            // }
-            // if (950 > frames && frames > 900) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1050 > frames && frames > 1000) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1150 > frames && frames > 1100) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
-            // if (1250 > frames && frames > 1200) {
-            //
-            //     //this.dY -= 3 * globalSpeed;
-            //     this.dX += 4 * globalSpeed;
-            //
-            //
-            // }
+            // this.speed += this.gravity;
+            // 50ms DELAY BEFORE MOVING THE NUMBER
+            if (350 > frames && frames > 300) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 2.5 * globalSpeed;
+
+
+            }
+            if (450 > frames && frames > 400) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 5 * globalSpeed;
+
+
+            }
+            if (550 > frames && frames > 500) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX -= 2.5 * globalSpeed;
+
+
+            }
+            if (650 > frames && frames > 600) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX -= 10 * globalSpeed;
+
+
+            }
+            if (750 > frames && frames > 700) {
+
+                //this.dY += 1.5 * globalSpeed;
+                this.dX += 2.5 * globalSpeed;
+
+
+            }
+            //2ND STEP
+            if (850 > frames && frames > 800) {
+
+                this.dY -= 3 * globalSpeed;
+                this.dX -= 5 * globalSpeed;
+
+
+            }
+            if (950 > frames && frames > 900) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1050 > frames && frames > 1000) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1150 > frames && frames > 1100) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
+            if (1250 > frames && frames > 1200) {
+
+                //this.dY -= 3 * globalSpeed;
+                this.dX += 4 * globalSpeed;
+
+
+            }
             // //3RD STEP - BIG CIRCLE
             // if (1350 > frames && frames > 1300) {
             //
@@ -516,8 +524,6 @@ const brown_circle01 = {
         }
     }
 }
-
-
 const brown_circle02 = {
 
         //circle
@@ -713,16 +719,22 @@ const how_many_numbers_at_index1 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-
-            if ( frames > 675 && frames <= 1500) {
+            if (  frames > 675) {
                 let how_many_numbers_at_index1 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index1.bsX,how_many_numbers_at_index1.bsY,how_many_numbers_at_index1.bsWidth,how_many_numbers_at_index1.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }
-            else{
+            }else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
+            // if ( frames > 675 && frames <= 1500) {
+            //     let how_many_numbers_at_index1 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index1.bsX,how_many_numbers_at_index1.bsY,how_many_numbers_at_index1.bsWidth,how_many_numbers_at_index1.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }
+            // else{
+
+            //}
         }
 
 
@@ -782,23 +794,25 @@ const how_many_numbers_at_index2 = {
         } else {
 
 
-            if ( frames <= 975 && frames > 775) {
+            if (  frames > 775) {
                 let how_many_numbers_at_index2 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-
-            }else if ( frames <= 1300 && frames > 975) {
-                let how_many_numbers_at_index2 = this.nr02[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }else if ( frames > 1300 ) {
-                let how_many_numbers_at_index2 = this.nr01[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            } else{
+            }else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
+            // }else if ( frames <= 1300 && frames > 975) {
+            //     let how_many_numbers_at_index2 = this.nr02[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames > 1300 ) {
+            //     let how_many_numbers_at_index2 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index2.bsX,how_many_numbers_at_index2.bsY,how_many_numbers_at_index2.bsWidth,how_many_numbers_at_index2.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // } else{
+
+            // }
         }
 
 
@@ -861,22 +875,25 @@ const how_many_numbers_at_index3 = {
         if (state.current == state.getReady) {
         } else {
 
-            if ( frames > 150 && frames <=1075) {
+            if ( frames > 150 ) {
                 let how_many_numbers_at_index3 = this.nr01[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            } else if ( frames > 1075 && frames <= 2300) {
-                let how_many_numbers_at_index3 = this.nr03[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            } else if ( frames > 2300) {
-                let how_many_numbers_at_index3 = this.nr02[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
+                ctx.drawImage(blue_numbers, how_many_numbers_at_index3.bsX, how_many_numbers_at_index3.bsY, how_many_numbers_at_index3.bsWidth, how_many_numbers_at_index3.bsHeight, this.bdX, this.bdY,
+                    this.bdWidth, this.bdHeight);
             }else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
+            // } else if ( frames > 1075 && frames <= 2300) {
+            //     let how_many_numbers_at_index3 = this.nr03[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // } else if ( frames > 2300) {
+            //     let how_many_numbers_at_index3 = this.nr02[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index3.bsX,how_many_numbers_at_index3.bsY,how_many_numbers_at_index3.bsWidth,how_many_numbers_at_index3.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else{
+
+            // }
         }
 
 
@@ -950,35 +967,40 @@ const how_many_numbers_at_index4 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames < 375){
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            } else if ( frames <= 475 && frames > 375) {
+            if (  frames > 375) {
                 let how_many_numbers_at_index4 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-
-            }  else if ( frames <= 1175 && frames > 475) {
-                let how_many_numbers_at_index4 = this.nr02[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+            }else{
+                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-
-            } else if ( frames > 1175 && frames <= 1900) {
-                let how_many_numbers_at_index4 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-
-            }else if ( frames > 1900 && frames <=2100) {
-                let how_many_numbers_at_index4 = this.nr04[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-
-            }if ( frames > 2100) {
-                let how_many_numbers_at_index4 = this.nr03[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-
             }
+
+            // } else if ( frames <= 475 && frames > 375) {
+            //     let how_many_numbers_at_index4 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            //
+            // }  else if ( frames <= 1175 && frames > 475) {
+            //     let how_many_numbers_at_index4 = this.nr02[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            //
+            // } else if ( frames > 1175 && frames <= 1900) {
+            //     let how_many_numbers_at_index4 = this.nr05[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            //
+            // }else if ( frames > 1900 && frames <=2100) {
+            //     let how_many_numbers_at_index4 = this.nr04[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            //
+            // }if ( frames > 2100) {
+            //     let how_many_numbers_at_index4 = this.nr03[0];
+
+            //
+            // }
 
         }
 
@@ -1045,22 +1067,29 @@ const how_many_numbers_at_index5 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames <= 575){
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1275 && frames > 575) {
+            if (  frames > 575) {
                 let how_many_numbers_at_index5 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1700 && frames > 1275) {
-                let how_many_numbers_at_index5 = this.nr06[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }if ( frames > 1700) {
-                let how_many_numbers_at_index5 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            }else{
+                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
+            // if(frames <= 575){
+            //     ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //     this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1275 && frames > 575) {
+            //     let how_many_numbers_at_index5 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1700 && frames > 1275) {
+            //     let how_many_numbers_at_index5 = this.nr06[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }if ( frames > 1700) {
+            //     let how_many_numbers_at_index5 = this.nr05[0];
+
+            // }
         }
 
 
@@ -1126,22 +1155,30 @@ const how_many_numbers_at_index6 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames <= 575){
+            if (  frames > 475) {
+                let how_many_numbers_at_index6 = this.nr01[0];
+                ctx.drawImage(blue_numbers,how_many_numbers_at_index6.bsX,how_many_numbers_at_index6.bsY,how_many_numbers_at_index6.bsWidth,how_many_numbers_at_index6.bsHeight,this.bdX,this.bdY,
+                    this.bdWidth,this.bdHeight);
+            }else{
                 ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1275 && frames > 575) {
-                let how_many_numbers_at_index5 = this.nr01[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1700 && frames > 1275) {
-                let how_many_numbers_at_index5 = this.nr06[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }if ( frames > 1700) {
-                let how_many_numbers_at_index5 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
             }
+
+            // if(frames <= 575){
+            //     ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1275 && frames > 575) {
+            //     let how_many_numbers_at_index5 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1700 && frames > 1275) {
+            //     let how_many_numbers_at_index5 = this.nr06[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }if ( frames > 1700) {
+            //     let how_many_numbers_at_index5 = this.nr05[0];
+
+            // }
         }
 
 
@@ -1207,22 +1244,22 @@ const how_many_numbers_at_index7 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames <= 575){
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1275 && frames > 575) {
-                let how_many_numbers_at_index5 = this.nr01[0];
+            // if(frames <= 575){
+            //     ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1275 && frames > 575) {
+            //     let how_many_numbers_at_index5 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1700 && frames > 1275) {
+            //     let how_many_numbers_at_index5 = this.nr06[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }if ( frames > 1700) {
+            //     let how_many_numbers_at_index5 = this.nr05[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1700 && frames > 1275) {
-                let how_many_numbers_at_index5 = this.nr06[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }if ( frames > 1700) {
-                let how_many_numbers_at_index5 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }
+            // }
         }
 
 
@@ -1288,22 +1325,22 @@ const how_many_numbers_at_index8 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames <= 575){
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1275 && frames > 575) {
-                let how_many_numbers_at_index5 = this.nr01[0];
+            // if(frames <= 575){
+            //     ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1275 && frames > 575) {
+            //     let how_many_numbers_at_index5 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1700 && frames > 1275) {
+            //     let how_many_numbers_at_index5 = this.nr06[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }if ( frames > 1700) {
+            //     let how_many_numbers_at_index5 = this.nr05[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1700 && frames > 1275) {
-                let how_many_numbers_at_index5 = this.nr06[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }if ( frames > 1700) {
-                let how_many_numbers_at_index5 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }
+            // }
         }
 
 
@@ -1369,22 +1406,22 @@ const how_many_numbers_at_index9 = {
     draw : function(){
         if (state.current == state.getReady) {
         } else {
-            if(frames <= 575){
-                ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1275 && frames > 575) {
-                let how_many_numbers_at_index5 = this.nr01[0];
+            // if(frames <= 575){
+            //     ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1275 && frames > 575) {
+            //     let how_many_numbers_at_index5 = this.nr01[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }else if ( frames <= 1700 && frames > 1275) {
+            //     let how_many_numbers_at_index5 = this.nr06[0];
+            //     ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
+            //         this.bdWidth,this.bdHeight);
+            // }if ( frames > 1700) {
+            //     let how_many_numbers_at_index5 = this.nr05[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
-            }else if ( frames <= 1700 && frames > 1275) {
-                let how_many_numbers_at_index5 = this.nr06[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }if ( frames > 1700) {
-                let how_many_numbers_at_index5 = this.nr05[0];
-                ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
-                    this.bdWidth,this.bdHeight);
-            }
+            // }
         }
 
 
@@ -2993,15 +3030,15 @@ function draw(){
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     // if(state.current == state.getReady){}
     // else{
-    //     if(frames <= 2500   && frames > 10){
-    //         red_circle01.draw();
-    //         red_circle02.draw();
-    //
-    //     }
-    //     if(frames > 1300  && frames <=2500){
-    //         brown_circle01.draw();
-    //         brown_circle02.draw();
-    //     }
+        if(frames <= 2500   && frames > 10){
+            red_circle01.draw();
+            red_circle02.draw();
+
+        }
+        if(frames > 1300  && frames <=2500){
+            brown_circle01.draw();
+            brown_circle02.draw();
+        }
     // }
 
 
@@ -3024,8 +3061,8 @@ function update(){
     how_many_numbers_at_index7.update();
     how_many_numbers_at_index8.update();
     how_many_numbers_at_index9.update();
-    // red_circle01.update();
-    // red_circle02.update();
+    red_circle01.update();
+    red_circle02.update();
     // brown_circle01.update();
     // brown_circle02.update();
     //c2n.update();
