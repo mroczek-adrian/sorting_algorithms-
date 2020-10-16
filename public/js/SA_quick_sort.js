@@ -3283,8 +3283,8 @@ function myFunction() {
 
 
         //DRAWING ACTION FOR 'PIWOT' NUMBER
-        if (stateQUICK.current == stateQUICK.over || stateQUICK.current == stateQUICK.getReady) {
-        } else {
+        // if (stateQUICK.current == stateQUICK.over || stateQUICK.current == stateQUICK.getReady) {
+        // } else {
 
                 if (13650 > framesQUICK && framesQUICK > 150) {
                     if(tab_step4[2]==3){nr3QUICK.piwot_draw();}
@@ -3347,7 +3347,7 @@ function myFunction() {
                 if(tab_step4[4]==9){nr9QUICK.piwot_draw();}
 
             }
-        }
+       // }
 
 
     }
@@ -3391,7 +3391,11 @@ function myFunction() {
     function loop() {
         update();
         draw();
-        framesQUICK++;
+        if (stateQUICK.current == stateQUICK.over || stateQUICK.current == stateQUICK.getReady) {
+        }else{
+            framesQUICK++;
+        }
+
         requestAnimationFrame(loop);
     }
     logic_for_all();

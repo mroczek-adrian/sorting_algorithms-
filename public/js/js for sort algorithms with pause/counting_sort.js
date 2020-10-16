@@ -525,7 +525,49 @@ const red_circle02 = {
 
 
             }
-
+            // //3RD STEP - BIG CIRCLE
+            // if (1350 > frames && frames > 1300) {
+            //
+            //     this.dY -= 4 * globalSpeed;
+            //     //this.dX += 4 * globalSpeed;
+            //
+            //
+            // }
+            // if (1550 > frames && frames > 1500) {
+            //
+            //     //this.dY -= 4 * globalSpeed;
+            //     this.dX -= 4 * globalSpeed;
+            //
+            //
+            // }
+            // if (1750 > frames && frames > 1700) {
+            //
+            //     //this.dY -= 4 * globalSpeed;
+            //
+            //     this.dX -= 4 * globalSpeed;
+            //
+            // }
+            // if (1950 > frames && frames > 1900) {
+            //
+            //     //this.dY -= 4 * globalSpeed;
+            //
+            //     this.dX -= 4 * globalSpeed;
+            //
+            // }
+            // if (2150 > frames && frames > 2100) {
+            //
+            //     //this.dY -= 4 * globalSpeed;
+            //
+            //     this.dX -= 4 * globalSpeed;
+            //
+            // }
+            // if (2350 > frames && frames > 2300) {
+            //
+            //     //this.dY -= 4 * globalSpeed;
+            //
+            //     this.dX -= 4 * globalSpeed;
+            //
+            // }
             //THE END OF SIMULATION
 
 
@@ -543,9 +585,8 @@ const red_circle02 = {
 
 
             }
+
         }
-
-
 
 
     }
@@ -778,13 +819,13 @@ const how_many_numbers_at_index0 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             ctx.drawImage(blue_numbers,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
 
-        //}
+        }
 
 
     },
@@ -836,9 +877,9 @@ const how_many_numbers_at_index1 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if (  frames > 675 && frames <=2400) {
                 let how_many_numbers_at_index1 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index1.bsX,how_many_numbers_at_index1.bsY,how_many_numbers_at_index1.bsWidth,how_many_numbers_at_index1.bsHeight,this.bdX,this.bdY,
@@ -859,7 +900,7 @@ const how_many_numbers_at_index1 = {
             // else{
 
             //}
-        //}
+        }
 
 
     },
@@ -914,9 +955,9 @@ const how_many_numbers_at_index2 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
 
 
             if ( frames <= 975 && frames > 775) {
@@ -943,7 +984,7 @@ const how_many_numbers_at_index2 = {
             // } else{
 
             // }
-
+        }
 
 
     },
@@ -1002,9 +1043,9 @@ const how_many_numbers_at_index3 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
 
             if (frames <= 1075 && frames > 150 ) {
                 let how_many_numbers_at_index3 = this.nr01[0];
@@ -1030,7 +1071,7 @@ const how_many_numbers_at_index3 = {
             // }else{
 
             // }
-        //}
+        }
 
 
     },
@@ -1101,9 +1142,9 @@ const how_many_numbers_at_index4 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if (  frames <= 1175 && frames > 375) {
                 let how_many_numbers_at_index4 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index4.bsX,how_many_numbers_at_index4.bsY,how_many_numbers_at_index4.bsWidth,how_many_numbers_at_index4.bsHeight,this.bdX,this.bdY,
@@ -1147,7 +1188,7 @@ const how_many_numbers_at_index4 = {
             //
             // }
 
-       // }
+        }
 
 
     },
@@ -1210,9 +1251,9 @@ const how_many_numbers_at_index5 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if ( frames <= 1275 && frames > 575) {
                 let how_many_numbers_at_index5 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index5.bsX,how_many_numbers_at_index5.bsY,how_many_numbers_at_index5.bsWidth,how_many_numbers_at_index5.bsHeight,this.bdX,this.bdY,
@@ -1244,7 +1285,7 @@ const how_many_numbers_at_index5 = {
             //     let how_many_numbers_at_index5 = this.nr05[0];
 
             // }
-        //}
+        }
 
 
     },
@@ -1307,9 +1348,9 @@ const how_many_numbers_at_index6 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if ( frames <= 1375 && frames > 475) {
                 let how_many_numbers_at_index6 = this.nr01[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index6.bsX,how_many_numbers_at_index6.bsY,how_many_numbers_at_index6.bsWidth,how_many_numbers_at_index6.bsHeight,this.bdX,this.bdY,
@@ -1342,7 +1383,7 @@ const how_many_numbers_at_index6 = {
             //     let how_many_numbers_at_index5 = this.nr05[0];
 
             // }
-        //}
+        }
 
 
     },
@@ -1405,9 +1446,9 @@ const how_many_numbers_at_index7 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
              if( frames <= 3000 && frames > 1475){
                 let how_many_numbers_at_index7 = this.nr06[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index7.bsX,how_many_numbers_at_index7.bsY,how_many_numbers_at_index7.bsWidth,how_many_numbers_at_index7.bsHeight,this.bdX,this.bdY,
@@ -1431,7 +1472,7 @@ const how_many_numbers_at_index7 = {
             //     let how_many_numbers_at_index5 = this.nr05[0];
 
             // }
-        //}
+        }
 
 
     },
@@ -1494,9 +1535,9 @@ const how_many_numbers_at_index8 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if( frames <= 3000 && frames > 1575){
                 let how_many_numbers_at_index8 = this.nr06[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index8.bsX,how_many_numbers_at_index8.bsY,how_many_numbers_at_index8.bsWidth,how_many_numbers_at_index8.bsHeight,this.bdX,this.bdY,
@@ -1520,7 +1561,7 @@ const how_many_numbers_at_index8 = {
             //     let how_many_numbers_at_index5 = this.nr05[0];
 
             // }
-        //}
+        }
 
 
     },
@@ -1583,9 +1624,9 @@ const how_many_numbers_at_index9 = {
     frame : 0,
 
     draw : function(){
-        // if(state.current == state.over ||state.current == state.getReady){
-        //
-        // } else {
+        if(state.current == state.over ||state.current == state.getReady){
+
+        } else {
             if( frames <= 3000 && frames > 1675){
                 let how_many_numbers_at_index9 = this.nr06[0];
                 ctx.drawImage(blue_numbers,how_many_numbers_at_index9.bsX,how_many_numbers_at_index9.bsY,how_many_numbers_at_index9.bsWidth,how_many_numbers_at_index9.bsHeight,this.bdX,this.bdY,
@@ -1609,7 +1650,7 @@ const how_many_numbers_at_index9 = {
             //     let how_many_numbers_at_index5 = this.nr05[0];
 
             // }
-        //}
+        }
 
 
     },
@@ -3222,9 +3263,9 @@ function draw(){
     //DRAWING ACTION FOR 'PIWOT' NUMBER
     // if(state.current == state.getReady){}
     // else{
-    // if(state.current == state.over ||state.current == state.getReady){
-    //
-    // }else{
+    if(state.current == state.over ||state.current == state.getReady){
+
+    }else{
         if(frames <= 2800   && frames > 10){
             red_circle01.draw();
             red_circle02.draw();
@@ -3234,7 +3275,7 @@ function draw(){
             // brown_circle01.draw();
             // brown_circle02.draw();
         }
-    //}
+    }
 
     // }
 
@@ -3274,12 +3315,7 @@ function update(){
 function loop(){
     update();
     draw();
-    if(state.current == state.over ||state.current == state.getReady){
-
-    }else {
-        frames++;
-    }
-
+    frames++;
     requestAnimationFrame(loop);
 }
 loop();

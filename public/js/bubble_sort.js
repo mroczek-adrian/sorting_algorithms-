@@ -2231,12 +2231,12 @@ function myFunction() {
 
         //draw function
         // bg.draw();
-        if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
-        }else {
-            if (framesBUBBLE > 100 && framesBUBBLE < 4700) {
+        // if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+        // }else {
+            if (framesBUBBLE > 0 && framesBUBBLE < 4700) {
                 c2nBUBBLE.draw();
             }
-        }
+       // }
 
         //if user write the first number into form
         if(x1==1 || x2==1|| x3==1|| x4==1|| x5==1){
@@ -2266,12 +2266,12 @@ function myFunction() {
         if(x1==9 || x2==9|| x3==9|| x4==9|| x5==9){
             nr9BUBBLE.draw();
         }
-        if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
-        }else{
-            if(framesBUBBLE > 100 && framesBUBBLE<4700){
+        // if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+        // }else{
+            if(framesBUBBLE > 0 && framesBUBBLE<4700){
                 lineBUBBLE.draw();
             }
-        }
+        //}
 
         getReadyBUBBLE.draw();
         gameOverBUBBLE.draw();
@@ -2311,6 +2311,7 @@ function myFunction() {
     function loop(){
         update();
         draw();
+
         framesBUBBLE++;
         framesBUBBLE++;
         requestAnimationFrame(loop);
