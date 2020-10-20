@@ -1530,7 +1530,7 @@ function update(){
     //c2n.update();
     //line.update();
     if(frames == 3000*simulation_speed){
-        state.current = state.getReady;
+        state.current = 2;
     };
 
 
