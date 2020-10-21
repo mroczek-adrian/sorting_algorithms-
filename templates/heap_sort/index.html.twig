@@ -11,6 +11,9 @@
         display: block;
         margin: 0 auto;
     }
+    #bird{
+        display: none;
+    }
 </style>
     <div class="form-group row">
         <div class="col-sm-1">
@@ -24,6 +27,22 @@
             <h1>Hello {{ controller_name }}!  ✅</h1>
 
 
+            <h2>JavaScript Can Validate Input</h2>
+
+            <p>Please input a 5 numbers - without repetition[1-9]</p>
+            <form name="myForm">
+                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">
+                <button onclick="  myFunction()"  type="button">Submit</button>
+
+            </form>
+
+
+            <p id="demo"></p>
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+            <p id="demo5"></p>
             {#            here will be canvas#}
             <canvas id="bird" width="600" height="380"></canvas>
             <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
