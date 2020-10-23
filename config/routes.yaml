@@ -42,3 +42,8 @@ merge_sort:
 heap_sort:
   path: /heap/sort
   controller: App\Controller\HeapSortController::index
+
+
+test:
+  path: /test
+  controller: App\Controller\TestController::index
