@@ -47,3 +47,8 @@ heap_sort:
 test:
   path: /test
   controller: App\Controller\TestController::index
+
+
+first_page:
+  path: /first/page
+  controller: App\Controller\FirstPageController::index

@@ -1,0 +1,207 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FirstPageController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    body{
+        padding:50px;
+    }
+    canvas{
+        border : 1px solid #000;
+        display: block;
+        margin: 0 auto;
+    }
+    .swiper-container {
+        /*width: 1000px;*/
+        /*height: 500px;*/
+
+    }
+    .swiper-slide{
+        background:#ccc;
+        /*background-size:cover;*/
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        font-size:40px;
+    }
+
+
+</style>
+
+    <div class="form-group row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-1">
+            <li><a href="{{path('hello_page') }} ">back</a></li>
+        </div>
+        <div class="col-sm-8">
+
+            <h1>Algorithms which use "insertion"</h1>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                     insertion
+                    </div>
+                    <div class="swiper-slide">
+                insertion with improve
+                    </div>
+                    <div class="swiper-slide">
+                        shell method
+                    </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div id="next_swiper" class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+            <h1>Algorithms which use "choosing" </h1>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                     choosing
+                    </div>
+                    <div class="swiper-slide">
+                        optional "drzewiaste" and "stogowe"
+                    </div>
+
+
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div id="next_swiper" class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+            <h1>Algorithms which use "changing" </h1>
+
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      bubble sort
+                    </div>
+                    <div class="swiper-slide">
+                  quick sort - and other
+                    </div>
+
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div id="next_swiper" class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+
+            <h1>Compare the complexity of the algorithms and speed  </h1>
+
+
+            <h2>-------------------------------------</h2>
+
+            <p>How many numbers you want to sort with bubble sort? najlepiej do 12000 w zaleznosci od mocy obliczeniowej</p>
+            <form name="myForm">
+                <input id="numb" name="fname">
+                <button onclick="  myFunction()"  type="button">Submit</button>
+
+            </form>
+
+
+            <p id="demo"></p>
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+            <p id="demo5"></p>
+
+            <canvas id="birdBUBBLE" width="600" height="380"></canvas>
+
+
+            <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
+            <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
+            <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
+            <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >
+            <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
+            <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
+
+{#            <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >#}
+{#            <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >#}
+{#            <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >#}
+{#            <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >#}
+{#            <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >#}
+{#            <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >#}
+
+{#            <img id="table" style="width: 200px ; height: 200px; " src="{{ asset('js/img/table_broad.png') }}" >#}
+{#            <img id="red_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/red_circle.png') }}" >#}
+{#            <img id="brown_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/brown_circle.png') }}" >#}
+{#            <img id="square-traingle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/square-triangle.png') }}" >#}
+
+
+        </div>
+        <div class="col-sm-2">
+{#            <div class="start-algorithms">#}
+{#                <img id="bubble--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/BUBBLE-start-small.png') }}" >#}
+{#            </div>#}
+{#            <br>#}
+{#            <div class="start-algorithms">#}
+{#                <img id="quick--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/QUICK-start-small.png') }}" >#}
+{#            </div>#}
+{#            <br>#}
+{#            <div class="start-algorithms">#}
+{#                <img id="count--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/COUNT-start-small.png') }}" >#}
+{#            </div>#}
+{#            <br>#}
+{#            <div class="start-algorithms">#}
+{#                <img id="merge--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/MERGE-start-small.png') }}" >#}
+{#            </div>#}
+{#            <br>#}
+{#            <div class="start-algorithms">#}
+{#                <img id="heap--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/HEAP-start-small.png') }}" >#}
+{#            </div>#}
+            {#            <h1>under  title will be canvas with simulation</h1>#}
+        </div>
+    </div>
+{% endblock %}
+
+{%  block javascripts %}
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+    <script src="{{asset('js/first_page.js') }}"></script>
+    {#    <script src="{{asset('js/SA_quick_sort.js') }}"></script>#}
+{#    <script src="{{asset('js/sort_algorithms.js') }}"></script>#}
+
+    {#    <script src="{{asset('js/counting_sort.js') }}"></script>#}
+
+{% endblock %}
