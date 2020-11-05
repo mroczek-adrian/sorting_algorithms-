@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello TestController!{% endblock %}
+{% block title %}Hello SelectSortController!{% endblock %}
 
 {% block body %}
 <style>
@@ -11,7 +11,9 @@
         display: block;
         margin: 0 auto;
     }
+    #birdSELECT{
 
+    }
 </style>
 
     <div class="form-group row">
@@ -25,30 +27,29 @@
 
             <h1>Hello {{ controller_name }}!  ✅</h1>
 
-            <h2>JavaScript Can Validate Input</h2>
-
-            <p>Please input a 5 numbers - without repetition[1-9]</p>
 
             {#            here will be canvas#}
-            <canvas id="birdHEAP" width="600" height="380"></canvas>
-
-                        <h1>Hello {{ controller_name }}!  ✅</h1>
-                        <h3>Algorithm which are included into project:</h3>
-
-
-                        <div><a href="{{path('bubble_sort') }} ">Bubble sort</a></div>
-                        <div><a href="{{path('quick_sort') }} ">Quick sort</a></div>
-                        <div><a href="{{path('counting_sort') }} ">Count sort</a></div>
-                        <div><a href="{{path('merge_sort') }} ">Merge sort</a></div>
-                        <div><a href="{{path('heap_sort') }} ">Heap sort</a></div>
 
 
 
+            <h2>JavaScript Can Validate Input</h2>
+
+{#            <p>Please input a 5 numbers - without repetition[1-9]</p>#}
+{#            <form name="myForm">#}
+{#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
+{#                <button onclick="  myFunction()"  type="button">Submit</button>#}
+
+{#            </form>#}
 
 
+{#            <p id="demo"></p>#}
+{#            <p id="demo1"></p>#}
+{#            <p id="demo2"></p>#}
+{#            <p id="demo3"></p>#}
+{#            <p id="demo4"></p>#}
+{#            <p id="demo5"></p>#}
 
-
-
+            <canvas id="birdSELECT" width="600" height="380"></canvas>
 
 
 
@@ -58,6 +59,7 @@
             <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >
             <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
             <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
+
             <img id="table" style="width: 200px ; height: 200px; " src="{{ asset('js/img/table_broad.png') }}" >
             <img id="red_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/red_circle.png') }}" >
             <img id="brown_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/brown_circle.png') }}" >
@@ -72,6 +74,8 @@
 {% endblock %}
 {%  block javascripts %}
 
+    <script>
 
-    <script src="{{asset('js/heap_sort_przed_zmiana.js') }}"></script>
+    </script>
+    <script src="{{asset('js/select_sort.js') }}"></script>
 {% endblock %}

@@ -42,7 +42,9 @@ merge_sort:
 heap_sort:
   path: /heap/sort
   controller: App\Controller\HeapSortController::index
-
+select_sort:
+  path: /select/sort
+  controller: App\Controller\SelectSortController::index
 
 test:
   path: /test
