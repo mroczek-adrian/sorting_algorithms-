@@ -137,7 +137,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Untitled1.cpp" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -198,7 +198,9 @@
       <workItem from="1603438011485" duration="11246000" />
       <workItem from="1604425046933" duration="4842000" />
       <workItem from="1604478297727" duration="3617000" />
-      <workItem from="1604570222516" duration="1491000" />
+      <workItem from="1604570222516" duration="2115000" />
+      <workItem from="1604654173396" duration="3016000" />
+      <workItem from="1604935557127" duration="4179000" />
     </task>
     <servers />
   </component>
@@ -206,10 +208,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1603458082688">
+    <state x="293" y="293" key="FileChooserDialogImpl" timestamp="1604654377251">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603458082688" />
+    <state x="293" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604654377251" />
     <state x="150" y="242" key="run.anything.popup" timestamp="1600766074069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

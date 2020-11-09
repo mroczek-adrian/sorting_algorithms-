@@ -102,64 +102,84 @@ const red_circle01 = {
 
 
     update: function(){
-        //IF THE GAME STATESELECT IS GET READY STATESELECT, THE BIRD MUST FLAP SLOWLY
-        //this.period = stateSELECT.current == stateSELECT.getReady ? 10 : 5;
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
 
         //SPEED DEPENDS ON THE NUMBER OF PERIOD
         this.period = stateSELECT.current == stateSELECT.getReady ? 0 : 55;
         //WE INCREMENT THE FRAME BY 1, EACH PERIOD
-        this.frame += frames % this.period == 0 ? 1 : 0;
+        this.frame += framesSELECT % this.period == 0 ? 1 : 0;
         //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
-        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATESELECTS
         //this.frame = this.frame % this.animation.length;
 
+
+
+
         if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
-
-        }else {
-            //BACK
-            if(850 > frames && frames > 800){
-                this.dX +=3.5*globalSpeed;
-                this.dY -=6.5*globalSpeed;
-
-            }
-            if(1000 > frames && frames > 950){
-                this.dX +=4*globalSpeed;
-                //this.dY -=6.5*globalSpeed;
+        }else{
+            // this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(450 > framesSELECT && framesSELECT > 350){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
-            if(1450 > frames && frames > 1400){
-                this.dX +=25.7*globalSpeed;
-                //this.dY +=2*globalSpeed;
+            if(650 > framesSELECT && framesSELECT > 550){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
-            if(1750 > frames && frames > 1700){
-                this.dX -=26.3*globalSpeed;
-                this.dY -=6.5*globalSpeed;
-                //this.dY +=2*globalSpeed;
+            if(850 > framesSELECT && framesSELECT > 750){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
-            if(1900 > frames && frames > 1850){
-
-                //this.dY +=2*globalSpeed;
-                this.dX +=4*globalSpeed;
-            }
-            if(2050 > frames && frames > 2000){
-
-                //this.dY +=2*globalSpeed;
-                this.dX +=4*globalSpeed;
-            }
-
-
-            //FINISH
-            if(2599==frames){
-                this.dY = 300;
-                this.dX = 17;
-
+            if(1050 > framesSELECT && framesSELECT > 950){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
+            if(1450 > framesSELECT && framesSELECT > 1350){
+                this.dX -=4.8 * globalSpeedSELECT;
 
+            }
+            if(1650 > framesSELECT && framesSELECT > 1550){
+                this.dX +=1.6* globalSpeedSELECT;
+
+            }
+            if(1850 > framesSELECT && framesSELECT > 1750){
+                this.dX +=1.6* globalSpeedSELECT;
+
+            }
+            if(2050 > framesSELECT && framesSELECT > 1950){
+                this.dX +=1.6* globalSpeedSELECT;
+
+            }
+            if(2250 > framesSELECT && framesSELECT > 2150){
+                this.dX-=3.2* globalSpeedSELECT;
+
+            }//3rd
+            if(2450 > framesSELECT && framesSELECT > 2350){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            if(2650 > framesSELECT && framesSELECT > 2550){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            if(2850 > framesSELECT && framesSELECT > 2750){
+                this.dX-=1.6* globalSpeedSELECT;
+
+            }
+            //4th
+            if(3050 > framesSELECT && framesSELECT > 2950){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+
+            //THE END OF SIMULATION
+            if( framesSELECT == 3998){
+                this.dX =10;
+                this.dY =this.dY;
+
+            }
         }
-
 
     }
 }
@@ -196,50 +216,59 @@ const brown_circle01 = {
 
 
     update: function(){
-        //IF THE GAME STATESELECT IS GET READY STATESELECT, THE BIRD MUST FLAP SLOWLY
-        //this.period = stateSELECT.current == stateSELECT.getReady ? 10 : 5;
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
 
         //SPEED DEPENDS ON THE NUMBER OF PERIOD
         this.period = stateSELECT.current == stateSELECT.getReady ? 0 : 55;
         //WE INCREMENT THE FRAME BY 1, EACH PERIOD
-        this.frame += frames % this.period == 0 ? 1 : 0;
+        this.frame += framesSELECT % this.period == 0 ? 1 : 0;
         //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
-        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATESELECTS
         //this.frame = this.frame % this.animation.length;
 
+
+
+
         if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
-
-        }else {
-            //BACK
-            if(850 > frames && frames > 800){
-                this.dX +=8*globalSpeed;
-                this.dY -=6.5*globalSpeed;
-
-            }
-
-            if(1450 > frames && frames > 1400){
-                this.dX +=24*globalSpeed;
-                //this.dY +=2*globalSpeed;
+        }else{
+            // this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(550 > framesSELECT && framesSELECT > 450){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
-            if(1750 > frames && frames > 1700){
-                this.dX -=6*globalSpeed;
-                this.dY -=6.8*globalSpeed;
-            }
-
-            if(2350 > frames && frames > 2300){
-                this.dX +=4*globalSpeed;
-            }
-            //FINISH
-            if(2599==frames){
-                this.dY = 300;
-                this.dX = 127;
-
+            if(750 > framesSELECT && framesSELECT > 650){
+                this.dX +=1.6* globalSpeedSELECT;
 
             }
+            if(1150 > framesSELECT && framesSELECT > 1050){
+                this.dX +=3.2* globalSpeedSELECT;
 
+            }
+            if(1450 > framesSELECT && framesSELECT > 1350){
+                this.dX -=4.8 * globalSpeedSELECT;
+
+            }
+            //2nd
+            if(1750 > framesSELECT && framesSELECT > 1650){
+                this.dX +=1.6* globalSpeedSELECT;
+
+            }
+            if(2550 > framesSELECT && framesSELECT > 2450){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            if(3150 > framesSELECT && framesSELECT > 3050){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            //THE END OF SIMULATION
+            if( framesSELECT == 3998){
+                this.dX =5;
+                this.dY =this.dY;
+
+            }
         }
-
 
     }
 }
@@ -310,7 +339,7 @@ const c2nSELECT = {
                 this.dX =50;
             }
             //finish
-            if(framesSELECT==4998){
+            if(framesSELECT==3998){
                 this.dX =50;
             }
         }
@@ -343,7 +372,7 @@ const nr1SELECT = {
     sWidth : 168 - 24,
     sHeight : 168 - 24,
     dY : 200,
-    dX : 340,
+    dX : 338,
     dWidth : 100 - 24,
     dHeight :100 - 24 ,
 
@@ -372,8 +401,27 @@ const nr1SELECT = {
         //WE INCREMENT THE FRAME BY 1, EACH PERIOD
         this.frame += framesSELECT % this.period == 0 ? 1 : 0;
         //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
-        //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
         //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
+        }else{
+            // this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1350 > framesSELECT && framesSELECT > 1250){
+                this.dX -=6.5 * globalSpeedSELECT;
+
+            }
+            //THE END OF SIMULATION
+            if( framesSELECT == 3998){
+                this.dX =338;
+                this.dY =this.dY;
+
+            }
+        }
+
     }
 }
 const nr2SELECT = {
@@ -434,27 +482,29 @@ const nr2SELECT = {
         //SPEED DEPENDS ON THE NUMBER OF PERIOD
         this.period = stateSELECT.current == stateSELECT.getReady ? 0 : 55;
         //WE INCREMENT THE FRAME BY 1, EACH PERIOD
-        this.frame += frames % this.period == 0 ? 1 : 0;
+        this.frame += framesSELECT % this.period == 0 ? 1 : 0;
         //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
         //this.frame = this.frame % this.animation.length;
 
 
-        if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
 
+
+        if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
         }else{
             // this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            if(950 > framesSELECT && framesSELECT > 650){
-                this.dX -=globalSpeedSELECT;
+
+            //2nd
+            if(2150 > framesSELECT && framesSELECT > 2050){
+                this.dX-=1.6* globalSpeedSELECT;
 
             }
             //THE END OF SIMULATION
-            if( framesSELECT == 4998){
+            if( framesSELECT == 3998){
                 this.dX =180;
+                this.dY =this.dY;
 
             }
         }
-
 
     }
 }
@@ -522,13 +572,14 @@ const nr3SELECT = {
         }else{
             // this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
-            if(950 > framesSELECT && framesSELECT > 650){
-                this.dX +=globalSpeedSELECT;
+            if(2750 > framesSELECT && framesSELECT > 2650){
+                this.dX-=1.6* globalSpeedSELECT;
 
             }
             //THE END OF SIMULATION
-            if( framesSELECT == 4998){
-                this.dX =100;
+            if( framesSELECT == 3998){
+                this.dX =260;
+                this.dY =this.dY;
 
             }
         }
@@ -548,6 +599,41 @@ const nr4SELECT = {
     draw : function(){
         ctxSELECT.drawImage(numbersSELECT,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
+    },
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = stateSELECT.current == stateSELECT.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += framesSELECT % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
+        }else{
+            // this.speed += this.gravity;
+            //2nd
+            if(2150 > framesSELECT && framesSELECT > 2050){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            if(2750 > framesSELECT && framesSELECT > 2650){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
+            //THE END OF SIMULATION
+            if( framesSELECT == 3998){
+                this.dX =100;
+                this.dY =this.dY;
+
+            }
+        }
+
     }
 }
 const nr9SELECT = {
@@ -563,6 +649,36 @@ const nr9SELECT = {
     draw : function(){
         ctxSELECT.drawImage(numbersSELECT,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
+    },
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = stateSELECT.current == stateSELECT.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += framesSELECT % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+
+
+        if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
+        }else{
+            // this.speed += this.gravity;
+            //50ms DELAY BEFORE MOVING THE NUMBER
+            if(1350 > framesSELECT && framesSELECT > 1250){
+                this.dX +=6.5 * globalSpeedSELECT;
+
+            }
+            //THE END OF SIMULATION
+            if( framesSELECT == 3998){
+                this.dX =20;
+                this.dY =this.dY;
+            }
+        }
+
     }
 }
 
@@ -601,23 +717,30 @@ const lineSELECT = {
         }else{
             // this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
-            if(2500 > framesSELECT && framesSELECT > 2050){
-                this.dX -=globalSpeedSELECT;
+            if(1450 > framesSELECT && framesSELECT > 1350){
+                this.dX +=1.6 * globalSpeedSELECT;
 
             }
-            if(3850 > framesSELECT && framesSELECT > 3500){
-                this.dX -=globalSpeedSELECT;
+            if(2250 > framesSELECT && framesSELECT > 2150){
+                this.dX+=1.6* globalSpeedSELECT;
 
             }
-            if(4600 > framesSELECT && framesSELECT > 4250){
-                this.dX -=globalSpeedSELECT;
+            if(2850 > framesSELECT && framesSELECT > 2750){
+                this.dX+=1.6* globalSpeedSELECT;
 
             }
+            if(3150 > framesSELECT && framesSELECT > 3050){
+                this.dX+=1.6* globalSpeedSELECT;
 
+            }
+            if(3350 > framesSELECT && framesSELECT > 3250){
+                this.dX+=1.6* globalSpeedSELECT;
+
+            }
             //THE END OF SIMULATION
-            if( framesSELECT == 4998){
-                this.dX =450;
-                this.dY =150;
+            if( framesSELECT == 3998){
+                this.dX =10;
+                this.dY =this.dY;
 
             }
         }
@@ -695,12 +818,14 @@ function updateSELECT(){
     nr1SELECT.update();
     nr2SELECT.update();
     nr3SELECT.update();
+    nr4SELECT.update();
+    nr9SELECT.update();
   //  c2nSELECT.update();
     lineSELECT.update();
     if(stateSELECT.current == stateSELECT.over ||stateSELECT.current == stateSELECT.getReady){
 
     }else{
-        if(framesSELECT == 5000){
+        if(framesSELECT == 4000){
             stateSELECT.current = stateSELECT.over;
         };
     }
@@ -718,7 +843,7 @@ function loop(){
     if (stateSELECT.current == stateSELECT.over || stateSELECT.current == stateSELECT.getReady) {
     }else{
         framesSELECT++;
-        framesSELECT++;
+       // framesSELECT++;
     }
 
     requestAnimationFrame(loop);
