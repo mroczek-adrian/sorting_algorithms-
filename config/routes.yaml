@@ -45,7 +45,9 @@ heap_sort:
 select_sort:
   path: /select/sort
   controller: App\Controller\SelectSortController::index
-
+insertion_sort:
+  path: /insertion/sort
+  controller: App\Controller\InsertionSortController::index
 test:
   path: /test
   controller: App\Controller\TestController::index
