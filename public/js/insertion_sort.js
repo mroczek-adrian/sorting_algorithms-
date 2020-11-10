@@ -1,5 +1,8 @@
 // INSERTION CVS
 const cvsINSERTION = document.getElementById("birdINSERTION");
+const restartINSERTION = document.getElementById("img4");
+const startINSERTION = document.getElementById("img5");
+
 const ctxINSERTION = cvsINSERTION.getContext("2d");
 // GAME VARS AND CONSTS
 let framesINSERTION = 0;
@@ -23,6 +26,11 @@ const red_circle=document.getElementById("red_circle");
 //IMAGE OF THE TABLE WITH BROWN CIRCLE
 const brown_circle=document.getElementById("brown_circle");
 
+const img1=document.getElementById("img1");//rectangle
+const img2=document.getElementById("img2");//steps
+const img3=document.getElementById("img3");//sorted,unsorted
+const img4=document.getElementById("img4");//RESTART
+const img5=document.getElementById("img5");//START
 
 const stateINSERTION = {
     current : 2 ,
@@ -33,7 +41,7 @@ const stateINSERTION = {
 
 
 //CONTROL THE GAME
-cvsINSERTION.addEventListener("click",function(evt){
+startINSERTION.addEventListener("click",function(evt){
     switch(stateINSERTION.current){
         case stateINSERTION.getReady:
             stateINSERTION.current = stateINSERTION.game;
@@ -53,22 +61,244 @@ cvsINSERTION.addEventListener("click",function(evt){
             break;
     }
 });
+restartINSERTION.addEventListener("click",function(evt){
+    switch(stateINSERTION.current){
+        case stateINSERTION.getReady:
+        case stateINSERTION.game:
+            stateINSERTION.current = 2;
+
+            bgRectangle.dX =185;
+            bgRectangle.dY =1;
+            bgRectangle.dHeight =30;
+            red_circle01.dX =10;
+            red_circle01.dY =190;
+            brown_circle01.dX =85;
+            brown_circle01.dY =265;
+            nr1INSERTION.dX =260;
+            nr1INSERTION.dY =200;
+            nr2INSERTION.dX =338;
+            nr2INSERTION.dY =200;
+            nr3INSERTION.dX =180;
+            nr3INSERTION.dY =200;
+            nr4INSERTION.dX =20;
+            nr4INSERTION.dY =200;
+            nr9INSERTION.dX =100;
+            nr9INSERTION.dY =200;
+            lineINSERTION.dX =6;
+
+
+
+
+
+            framesINSERTION = 0;
+
+
+            break;
+    }
+});
 
 
 //BACKGROUD
-const bgINSERTION = {
-    sX : 0,
-    sY : 0,
-    w : 275,
-    h : 226,
-    x : 0,
-    y : cvsINSERTION.height - 226,
+//COMPARE 2 NUMBERS
+const bgRectangle = {
+
+    sX : 33,
+    sY : 33,
+    sWidth : 670-33,
+    sHeight : 270-33,
+    dY : 1,
+    dX : 185,
+    dWidth : 420,
+    dHeight :30  ,
 
     draw : function(){
-        ctxINSERTION.drawImage(spriteINSERTION,this.sX,this.sY,this.w,this.h,this.x,this.y,
-            this.w,this.h);
+        ctxINSERTION.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+
+
+    },
+    startPosition : function(){
+        bgRectangle.dX =185;
+        bgRectangle.dHeight =30;
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = stateINSERTION.current == stateINSERTION.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += framesINSERTION % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+        if(stateINSERTION.current == stateINSERTION.over ||stateINSERTION.current == stateINSERTION.getReady){
+
+        }else{
+            // go to 2nd
+            if(250 > framesINSERTION && framesINSERTION > 200){
+                this.dHeight +=1.5*globalSpeedINSERTION;
+                this.dY +=1.4* globalSpeedINSERTION;
+            }
+            // go to 3rd
+            if(400 > framesINSERTION && framesINSERTION > 350){
+                this.dHeight -=0.5*globalSpeedINSERTION;
+                this.dY +=2.5* globalSpeedINSERTION;
+            }  // go to 1rd
+            if(600 > framesINSERTION && framesINSERTION > 550){
+                this.dY -=3.9* globalSpeedINSERTION;
+                this.dHeight -=1*globalSpeedINSERTION;
+            }
+            if(800 > framesINSERTION && framesINSERTION > 750){
+                this.dHeight +=1.5*globalSpeedINSERTION;
+                this.dY +=1.4* globalSpeedINSERTION;
+
+            }
+            if(1200 > framesINSERTION && framesINSERTION > 1150){
+                this.dHeight -=0.5*globalSpeedINSERTION;
+                this.dY +=2.5* globalSpeedINSERTION;
+            }
+            if(1600 > framesINSERTION && framesINSERTION > 1550){
+                this.dY -=3.9* globalSpeedINSERTION;
+                this.dHeight -=1*globalSpeedINSERTION;
+
+            }
+            if(1800 > framesINSERTION && framesINSERTION > 1750){
+                this.dHeight +=1.5*globalSpeedINSERTION;
+                this.dY +=1.4* globalSpeedINSERTION;
+
+            }
+            if(2500 > framesINSERTION && framesINSERTION > 2450){
+                this.dHeight -=0.5*globalSpeedINSERTION;
+                this.dY +=2.5* globalSpeedINSERTION;
+            }
+            if(2800 > framesINSERTION && framesINSERTION > 2750){
+                this.dY -=3.9* globalSpeedINSERTION;
+                this.dHeight -=1*globalSpeedINSERTION;
+            }
+            if(3000 > framesINSERTION && framesINSERTION > 2950){
+                this.dHeight +=1.5*globalSpeedINSERTION;
+                this.dY +=1.4* globalSpeedINSERTION;
+            }
+            if(3600 > framesINSERTION && framesINSERTION > 3550){
+                this.dHeight -=0.5*globalSpeedINSERTION;
+                this.dY +=2.5* globalSpeedINSERTION;
+            }
+            // if(1200 > framesINSERTION && framesINSERTION > 850){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // if(1800 > framesINSERTION && framesINSERTION > 1450){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-2nd run
+            // if( framesINSERTION == 2050){
+            //     this.dX =50;
+            // }
+            // if(2650 > framesINSERTION && framesINSERTION > 2300){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // if(3250 > framesINSERTION && framesINSERTION > 2900){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-3rd run
+            // if( framesINSERTION == 3500){
+            //     this.dX =50;
+            // }
+            // if(4000 > framesINSERTION && framesINSERTION > 3750){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-4th run
+            // if(framesINSERTION == 4250){
+            //     this.dX =50;
+            // }
+            // //finish
+            if(framesINSERTION==3998){
+                this.dX =185;
+                this.dHeight =30;
+
+            }
+        }
+
+
     }
 }
+const bgSteps = {
+
+    sX : 28,
+    sY : 82,
+    sWidth : 680-28,
+    sHeight : 360-82,
+    dY : 10,
+    dX : 200,
+    dWidth : 400,
+    dHeight :150  ,
+    draw : function(){
+
+        ctxINSERTION.drawImage(img2,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = stateINSERTION.current == stateINSERTION.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += framesINSERTION % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+        if(stateINSERTION.current == stateINSERTION.over ||stateINSERTION.current == stateINSERTION.getReady){
+
+        }else{
+            // this.speed += this.gravity;
+            //COMPARISON VALUE OF NUMBERS-1st run
+            // if(600 > framesINSERTION && framesINSERTION > 250){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // if(1200 > framesINSERTION && framesINSERTION > 850){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // if(1800 > framesINSERTION && framesINSERTION > 1450){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-2nd run
+            // if( framesINSERTION == 2050){
+            //     this.dX =50;
+            // }
+            // if(2650 > framesINSERTION && framesINSERTION > 2300){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // if(3250 > framesINSERTION && framesINSERTION > 2900){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-3rd run
+            // if( framesINSERTION == 3500){
+            //     this.dX =50;
+            // }
+            // if(4000 > framesINSERTION && framesINSERTION > 3750){
+            //     this.dX +=globalSpeedINSERTION;
+            // }
+            // //COMPARISON VALUE OF NUMBERS-4th run
+            // if(framesINSERTION == 4250){
+            //     this.dX =50;
+            // }
+            // //finish
+            // if(framesINSERTION==3998){
+            //     this.dX =50;
+            // }
+        }
+
+
+    }
+}
+
 
 const red_circle01 = {
 
@@ -94,7 +324,10 @@ const red_circle01 = {
         ctxINSERTION.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
     },
-
+    startPosition : function(){
+        red_circle01.dX =10;
+        red_circle01.dY =190;
+    },
 
     bubbleSort : function(){
 
@@ -117,66 +350,49 @@ const red_circle01 = {
 
         if(stateINSERTION.current == stateINSERTION.over ||stateINSERTION.current == stateINSERTION.getReady){
         }else{
-            // this.speed += this.gravity;
-            //50ms DELAY BEFORE MOVING THE NUMBER
-            // if(450 > framesINSERTION && framesINSERTION > 350){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(650 > framesINSERTION && framesINSERTION > 550){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(850 > framesINSERTION && framesINSERTION > 750){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(1050 > framesINSERTION && framesINSERTION > 950){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(1450 > framesINSERTION && framesINSERTION > 1350){
-            //     this.dX -=4.8 * globalSpeedINSERTION;
-            //
-            // }
-            // if(1650 > framesINSERTION && framesINSERTION > 1550){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(1850 > framesINSERTION && framesINSERTION > 1750){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(2050 > framesINSERTION && framesINSERTION > 1950){
-            //     this.dX +=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(2250 > framesINSERTION && framesINSERTION > 2150){
-            //     this.dX-=3.2* globalSpeedINSERTION;
-            //
-            // }//3rd
-            // if(2450 > framesINSERTION && framesINSERTION > 2350){
-            //     this.dX+=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(2650 > framesINSERTION && framesINSERTION > 2550){
-            //     this.dX+=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // if(2850 > framesINSERTION && framesINSERTION > 2750){
-            //     this.dX-=1.6* globalSpeedINSERTION;
-            //
-            // }
-            // //4th
-            // if(3050 > framesINSERTION && framesINSERTION > 2950){
-            //     this.dX+=1.6* globalSpeedINSERTION;
-            //
-            // }
+            if(450 > framesINSERTION && framesINSERTION > 350){
+                this.dX +=1.6* globalSpeedINSERTION;
+
+            }
+            if(850 > framesINSERTION && framesINSERTION > 750){
+                this.dX -=1.6* globalSpeedINSERTION;
+
+            }
+            if(1450 > framesINSERTION && framesINSERTION > 1350){
+                this.dX +=3.2* globalSpeedINSERTION;
+
+            }
+            if(1850 > framesINSERTION && framesINSERTION > 1750){
+                this.dX -=1.6* globalSpeedINSERTION;
+
+            }
+            if(2050 > framesINSERTION && framesINSERTION > 1950){
+                this.dX -=1.6* globalSpeedINSERTION;
+
+            }
+            if(2650 > framesINSERTION && framesINSERTION > 2550){
+                this.dX +=4.8* globalSpeedINSERTION;
+                // this.dX -=4.8* globalSpeedINSERTION;
+            }
+            if(3050 > framesINSERTION && framesINSERTION > 2950){
+                this.dX -=1.6* globalSpeedINSERTION;
+                //this.dX -=4.8* globalSpeedINSERTION;
+            }
+            if(3250 > framesINSERTION && framesINSERTION > 3150){
+                this.dX -=1.6* globalSpeedINSERTION;
+                //this.dX -=4.8* globalSpeedINSERTION;
+            }
+            if(3450 > framesINSERTION && framesINSERTION > 3350){
+                this.dX -=1.6* globalSpeedINSERTION;
+                //this.dX -=4.8* globalSpeedINSERTION;
+            }
+
+
 
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
                 this.dX =10;
-                this.dY =this.dY;
+                this.dY =190;
 
             }
         }
@@ -191,8 +407,8 @@ const brown_circle01 = {
     sY : 90,
     sWidth : 490 - 310,
     sHeight : 270 - 90,
-    dY : 185,
-    dX : 5,
+    dY : 265,
+    dX : 85,
     dWidth : 100,
     dHeight :100 ,
 
@@ -213,7 +429,10 @@ const brown_circle01 = {
     bubbleSort : function(){
 
     },
-
+    startPosition : function(){
+        brown_circle01.dX =85;
+        brown_circle01.dY =265;
+    },
 
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -231,6 +450,18 @@ const brown_circle01 = {
 
         if(stateINSERTION.current == stateINSERTION.over ||stateINSERTION.current == stateINSERTION.getReady){
         }else{
+            if(450 > framesINSERTION && framesINSERTION > 350){
+                this.dX +=1.6* globalSpeedINSERTION;
+
+            }
+            if(1450 > framesINSERTION && framesINSERTION > 1350){
+                this.dX +=1.6* globalSpeedINSERTION;
+
+            }
+            if(2650 > framesINSERTION && framesINSERTION > 2550){
+                this.dX +=1.6* globalSpeedINSERTION;
+                // this.dX -=4.8* globalSpeedINSERTION;
+            }
             // this.speed += this.gravity;
             //50ms DELAY BEFORE MOVING THE NUMBER
             // if(550 > framesINSERTION && framesINSERTION > 450){
@@ -264,8 +495,8 @@ const brown_circle01 = {
             // }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =5;
-                this.dY =this.dY;
+                this.dX =85;
+                this.dY =265;
 
             }
         }
@@ -391,7 +622,9 @@ const nr1INSERTION = {
     INSERTIONSort : function(){
 
     },
-
+    startPosition : function(){
+        nr1INSERTION.dX =260;
+    },
 
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -421,7 +654,7 @@ const nr1INSERTION = {
             }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =338;
+                this.dX =260;
                 this.dY =this.dY;
 
             }
@@ -479,7 +712,10 @@ const nr2INSERTION = {
     INSERTIONSort : function(){
 
     },
+    startPosition : function(){
+        nr2INSERTION.dX =338;
 
+    },
 
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -509,7 +745,7 @@ const nr2INSERTION = {
             }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =180;
+                this.dX =338;
                 this.dY =this.dY;
 
             }
@@ -559,7 +795,11 @@ const nr3INSERTION = {
     INSERTIONSort : function(){
 
     },
+    startPosition : function(){
+        nr3INSERTION.dX =180;
 
+
+    },
 
 
 
@@ -600,7 +840,7 @@ const nr3INSERTION = {
             }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =260;
+                this.dX =180;
                 this.dY =this.dY;
 
             }
@@ -621,6 +861,11 @@ const nr4INSERTION = {
     draw : function(){
         ctxINSERTION.drawImage(numbersINSERTION,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
+    },
+    startPosition : function(){
+        nr4INSERTION.dX =20;
+       // this.dY =this.dY;
+
     },
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -654,7 +899,7 @@ const nr4INSERTION = {
             }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =100;
+                this.dX =20;
                 this.dY =this.dY;
 
             }
@@ -675,6 +920,10 @@ const nr9INSERTION = {
     draw : function(){
         ctxINSERTION.drawImage(numbersINSERTION,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
+    },
+    startPosition : function(){
+        nr9INSERTION.dX =100;
+
     },
     update: function(){
         //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
@@ -717,7 +966,7 @@ const nr9INSERTION = {
             }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =20;
+                this.dX =100;
                 this.dY =this.dY;
             }
         }
@@ -726,19 +975,22 @@ const nr9INSERTION = {
 }
 
 const lineINSERTION = {
-    sX : 115,
-    sY : 47,
-    sWidth : 5,
-    sHeight : 60,
+    sX : 100,
+    sY : 10,
+    sWidth : 350-100,
+    sHeight : 180-10,
     dY : 150,
-    dX : 90,
-    dWidth : 10,
+    dX : 6,
+    dWidth : 200,
     dHeight :200  ,
     draw : function(){
-        ctxINSERTION.drawImage(numbersINSERTION,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+        ctxINSERTION.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
     },
+    startPosition : function(){
+        lineINSERTION.dX =6;
 
+    },
 
     //frame can change the image of the images
     frame : 0,
@@ -798,8 +1050,8 @@ const lineINSERTION = {
             // }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =10;
-                this.dY =this.dY;
+                this.dX =6;
+             //   this.dY =this.dY;
 
             }
         }
@@ -854,13 +1106,31 @@ function drawINSERTION(){
     //title of canvas
     ctxINSERTION.font = "20px Arial";
 
-    ctxINSERTION.strokeText("INSERTION Sort! - click if you want to pause or start simulation",25,50);
-
+    ctxINSERTION.strokeText("INSERTION Sort! ",25,70);
+    //ctxINSERTION.strokeText("Click to pause ",25,100);
     //draw function
     // bg.draw();
    // c2nINSERTION.draw();
-    red_circle01.draw();
-    brown_circle01.draw();
+    bgSteps.draw();
+    bgRectangle.draw();
+
+    if(250 > framesINSERTION && framesINSERTION > 150){
+        brown_circle01.draw();
+        red_circle01.draw();
+    }
+    if(950 > framesINSERTION && framesINSERTION > 650){
+        brown_circle01.draw();
+        red_circle01.draw();
+    }
+    if(2250 > framesINSERTION && framesINSERTION > 1650){
+        brown_circle01.draw();
+        red_circle01.draw();
+    }
+    if(3550 > framesINSERTION && framesINSERTION > 2850){
+        brown_circle01.draw();
+        red_circle01.draw();
+    }
+
     nr1INSERTION.draw();
     nr2INSERTION.draw();
     nr3INSERTION.draw();
@@ -872,6 +1142,7 @@ function drawINSERTION(){
 }
 function updateINSERTION(){
 
+    bgRectangle.update();
     red_circle01.update();
     brown_circle01.update();
     nr1INSERTION.update();
