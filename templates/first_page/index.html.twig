@@ -40,7 +40,7 @@
             <li><a href="{{path('hello_page') }} ">back</a></li>
         </div>
         <div class="col-sm-8">
-           
+
             <h1>Algorithms which use "insertion"</h1>
             <!-- Slider main container -->
             <div class="swiper-container">
@@ -48,7 +48,8 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
+                         <a href="{{path('insertion_sort') }} "> <img id="click2start"   src="{{ asset('js/img/insertion_sort/insertion-sort.png') }}" >
+                         </a>
 
 {#                        insertion#}
                     </div>
@@ -133,7 +134,9 @@
 
             <h2>-------------------------------------</h2>
 
-            <p>How many numbers you want to sort with bubble sort? najlepiej do 12000 w zaleznosci od mocy obliczeniowej</p>
+            <p>How many numbers you want to sort ? najlepiej do 12000 w zaleznosci od mocy obliczeniowej - pod spodem opis wszystkich algorytmow i porowananie ich szybkosci dzialania ew ze zlozonoscia</p>
+            <h2>o co chodzi z jednym procesorem?</h2>
+
             <form name="myForm">
                 <input id="numb" name="fname">
                 <button onclick="  myFunction()"  type="button">Submit</button>
@@ -147,7 +150,7 @@
             <p id="demo3"></p>
             <p id="demo4"></p>
             <p id="demo5"></p>
-
+            <p id="demo6"></p>
 {#            <canvas id="birdBUBBLE" width="600" height="380"></canvas>#}
 
 
@@ -206,7 +209,7 @@
 
     <script src="{{asset('js/first_page.js') }}"></script>
     {#    <script src="{{asset('js/SA_quick_sort.js') }}"></script>#}
-{#    <script src="{{asset('js/sort_algorithms.js') }}"></script>#}
+{   <script src="{{asset('js/sort_algorithms.js') }}"></script>
 
     {#    <script src="{{asset('js/counting_sort.js') }}"></script>#}
 

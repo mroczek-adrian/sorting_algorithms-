@@ -74,14 +74,14 @@ function myFunction() {
 
 //EXAMPLE AND CONST VARIABLE
     // SELECT CVS
-    const cvsBUBBLE = document.getElementById("birdBUBBLE");
-    cvsBUBBLE.style.display = "block";
+    //const cvsBUBBLE = document.getElementById("birdBUBBLE");
+   // cvsBUBBLE.style.display = "block";
     // if (cvsBUBBLE.style.display === "none") {
     //     cvsBUBBLE.style.display = "block";
     // } else {
     //     cvsBUBBLE.style.display = "none";
     // }
-    const ctxBUBBLE = cvsBUBBLE.getContext("2d");
+    //const ctxBUBBLE = cvsBUBBLE.getContext("2d");
 
     // If x is Not a Number or less than one or greater than 10
 
@@ -161,6 +161,21 @@ function myFunction() {
 
 
 
+    function insertionSort(inputArr) {
+        let n = inputArr.length;
+        for (let i = 1; i < n; i++) {
+            // Choosing the first element in our unsorted subarray
+            let current = inputArr[i];
+            // The last element of our sorted subarray
+            let j = i-1;
+            while ((j > -1) && (current < inputArr[j])) {
+                inputArr[j+1] = inputArr[j];
+                j--;
+            }
+            inputArr[j+1] = current;
+        }
+        return inputArr;
+    }
 
 
 
@@ -190,16 +205,22 @@ function myFunction() {
         return array;
     }
 
-    array = shuffle(array);
+    arrayBUBBLE = shuffle(array);
+    arrayINSERTION = shuffle(array);
     text = "array [0]=   "+array[0];
     document.getElementById("demo4").innerHTML = text;
 
     var start = new Date().getTime();
-    //bubble_sort(numbers_to_sort,5);
-    //const numbers_to_sort1=[312,2,3,1,2,3,21312,123,12,312,312,31,23,12,31,23,12,31,23,12,31,23,123,12,3,123,123,1,2312,31,231,23,123,123,123];
-    bubble_sort(array,array.length);
+    insertionSort(arrayINSERTION);
     var elapsed = new Date().getTime() - start;
-    text = "Time of the algorithm: "+elapsed+ " ms";
+    text = "Time of the insertion sort: "+elapsed+ " ms";
+    document.getElementById("demo6").innerHTML = text;
+
+
+    var start = new Date().getTime();
+    bubble_sort(arrayBUBBLE,arrayBUBBLE.length);
+    var elapsed = new Date().getTime() - start;
+    text = "Time of the bubble sort: "+elapsed+ " ms";
     document.getElementById("demo5").innerHTML = text;
 
 
