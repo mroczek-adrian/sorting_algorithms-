@@ -48,6 +48,9 @@ select_sort:
 insertion_sort:
   path: /insertion/sort
   controller: App\Controller\InsertionSortController::index
+insertion_half_sort:
+  path: /insertion/half/sort
+  controller: App\Controller\InsertionHalfSortController::index
 test:
   path: /test
   controller: App\Controller\TestController::index

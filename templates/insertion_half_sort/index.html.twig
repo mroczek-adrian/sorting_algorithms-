@@ -1,0 +1,110 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello InsertionSortController!{% endblock %}
+
+{% block body %}
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        canvas{
+            border : 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+        #birdInsertion{
+
+        }
+    </style>
+
+    <div class="form-group row">
+        <div class="col-sm-1">
+
+        </div>
+        <div class="col-sm-1">
+            <li><a href="{{path('sort_algorithms') }} ">back</a></li>
+        </div>
+        <div class="col-sm-8">
+
+            <h1>Hello {{ controller_name }}!  ✅</h1>
+
+
+            {#            here will be canvas#}
+
+
+
+            <h2>JavaScript Can Validate Input</h2>
+
+            {#            <p>Please input a 5 numbers - without repetition[1-9]</p>#}
+            {#            <form name="myForm">#}
+            {#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
+            {#                <button onclick="  myFunction()"  type="button">Submit</button>#}
+
+            {#            </form>#}
+
+
+            {#            <p id="demo"></p>#}
+            {#            <p id="demo1"></p>#}
+            {#            <p id="demo2"></p>#}
+            {#            <p id="demo3"></p>#}
+            {#            <p id="demo4"></p>#}
+            {#            <p id="demo5"></p>#}
+
+            <canvas id="birdINSERTIONHALF" width="600" height="380"></canvas>
+            <img id="img4" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_sort/RESTART1.png') }}" >
+            <img id="img5" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_sort/START1.png') }}" >
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <p>How many numbers you want to sort with bubble sort? najlepiej do 12000 w zaleznosci od mocy obliczeniowej</p>
+            <form name="myForm">
+                <input id="numb" name="fname">
+                <button onclick="  myFunction()"  type="button">Submit</button>
+
+            </form>
+
+
+            <p id="demo"></p>
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+            <p id="demo5"></p>
+
+
+
+
+
+
+
+
+
+
+            <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
+            <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
+            <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
+            <img id="compare2numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/porownanie2liczb.png') }}" >
+            <img id="click2start" style="width: 200px ; height: 200px; " src="{{ asset('js/img/click_to_start01.png') }}" >
+            <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
+
+            <img id="table" style="width: 200px ; height: 200px; " src="{{ asset('js/img/table_broad.png') }}" >
+            <img id="red_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/red_circle.png') }}" >
+            <img id="brown_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/brown_circle.png') }}" >
+            <img id="square-traingle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/square-triangle.png') }}" >
+            <img id="img1" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_half_sort/prostokat1.png') }}" >
+            <img id="img2" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_half_sort/MOVES1.png') }}" >
+            <img id="img3" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_half_sort/SORTEDUNSORTED1.png') }}" >
+
+        </div>
+        <div class="col-sm-2">
+
+            <h1>Restart simulation</h1>
+            <img id="img11" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_half_sort/prostokat1.png') }}" >
+
+        </div>
+    </div>
+{% endblock %}
+{%  block javascripts %}
+
+    <script>
+
+    </script>
+    <script src="{{asset('js/insertion_half_sort.js') }}"></script>
+{% endblock %}

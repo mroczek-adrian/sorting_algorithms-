@@ -128,15 +128,6 @@ function myFunction() {
                     tab_step2[i]=A[i];
                 }
             }
-            if(k==3)
-            {
-                text = "k == 3    [0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo3").innerHTML = text;
-                //fill the table
-                for(var i = 0;i<5;i++){
-                    tab_step3[i]=A[i];
-                }
-            }
 
             for(var i = 0; i < n-k-1; i++) {
                 if(A[ i ] > A[ i+1] ) {
@@ -179,7 +170,42 @@ function myFunction() {
 
 
 
+    function insertion_half_Sort(inputArr) {
+        let n = inputArr.length;
+        // text = " CZY TO DZIALA [0]=   "+ n;
+        // document.getElementById("demo3").innerHTML = text;
+        for (let i = 1; i < n; i++) {
+            // Choosing the first element in our unsorted subarray
+            let current = inputArr[i];
 
+            //let j = i-1;
+            let l = 0 ,p = i -1;
+            while (l<=p){
+                let m = Math.round((l + p) /2 )       //uwaga bo moze byc 2.5 zamiast 2
+
+                if(current < inputArr[m]){
+                    p = m -1;
+                }else{
+                    l = m +1;
+                }
+            }
+            // The last element of our sorted subarray
+            for (let j = i -1 ; j>l ; j++){
+                inputArr[j+1]=inputArr[j];
+                inputArr[l] = current;
+            }
+
+
+            //
+            // //to sie dzieje na koncu
+            // while ((j > -1) && (current < inputArr[j])) {
+            //     inputArr[j+1] = inputArr[j];
+            //     j--;
+            // }
+            // inputArr[j+1] = current;
+        }
+        return inputArr;
+    }
 
 
 
@@ -205,8 +231,13 @@ function myFunction() {
         return array;
     }
 
+
+
+
+
     arrayBUBBLE = shuffle(array);
     arrayINSERTION = shuffle(array);
+    arrayINSERTION_HALF = shuffle(array);
     text = "array [0]=   "+array[0];
     document.getElementById("demo4").innerHTML = text;
 
@@ -224,6 +255,21 @@ function myFunction() {
     document.getElementById("demo5").innerHTML = text;
 
 
+    var start = new Date().getTime();
+    insertion_half_Sort(arrayINSERTION_HALF);
+    var elapsed = new Date().getTime() - start;
+    text = "Time of the insertion half sort: "+elapsed+ " ms";
+    document.getElementById("demo7").innerHTML = text;
+
+
+
+
+    //fill the table
+    for(var i = 0;i<5;i++){
+        tab_step3[i]=arrayBUBBLE[i];
+    }
+    text = " CZY TO DZIALA [0]=   "+arrayBUBBLE[0]+"[1]=   "+arrayBUBBLE[1]+"[2]=   "+arrayBUBBLE[2]+"[3]=   "+arrayBUBBLE[3]+"[4]=   "+arrayBUBBLE[4];
+    document.getElementById("demo3").innerHTML = text;
 
 
 
