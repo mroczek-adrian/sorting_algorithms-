@@ -3,18 +3,18 @@
 {% block title %}Hello BubbleSortController!{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    canvas{
-        border : 1px solid #000;
-        display: block;
-        margin: 0 auto;
-    }
-/*#birdBUBBLE{*/
-/*    display: none;*/
-/*}*/
-</style>
+    <style>
+        .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+        .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+        canvas{
+            border : 1px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+        /*#birdBUBBLE{*/
+        /*    display: none;*/
+        /*}*/
+    </style>
 
 
 
@@ -36,22 +36,22 @@
 
             <h2>JavaScript Can Validate Input</h2>
 
-{#            <p>Please input a 5 numbers - without repetition[1-9]</p>#}
-{#            <form name="myForm">#}
-{#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
-{#                <button onclick="  myFunction()"  type="button">Submit</button>#}
+            {#            <p>Please input a 5 numbers - without repetition[1-9]</p>#}
+            {#            <form name="myForm">#}
+            {#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
+            {#                <button onclick="  myFunction()"  type="button">Submit</button>#}
 
-{#            </form>#}
+            {#            </form>#}
 
 
-{#            <p id="demo"></p>#}
-{#            <p id="demo1"></p>#}
-{#            <p id="demo2"></p>#}
-{#            <p id="demo3"></p>#}
-{#            <p id="demo4"></p>#}
-{#            <p id="demo5"></p>#}
+            {#            <p id="demo"></p>#}
+            {#            <p id="demo1"></p>#}
+            {#            <p id="demo2"></p>#}
+            {#            <p id="demo3"></p>#}
+            {#            <p id="demo4"></p>#}
+            {#            <p id="demo5"></p>#}
 
-            <canvas id="birdBUBBLE" width="600" height="380"></canvas>
+            <canvas id="birdBUBBLE_WITH_FLAG" width="600" height="380"></canvas>
 
 
             <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
@@ -73,5 +73,5 @@
     <script>
 
     </script>
-    <script src="{{asset('js/bubble_sort — kopia.js') }}"></script>
+    <script src="{{asset('js/bubble_sort_with_flag.js') }}"></script>
 {% endblock %}

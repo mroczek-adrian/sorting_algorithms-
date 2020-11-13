@@ -28,6 +28,10 @@ sort_algorithms:
 bubble_sort:
   path: /bubble/sort
   controller: App\Controller\BubbleSortController::index
+bubble_sort_with_flag:
+  path: /bubble/sort/with/flag
+  controller: App\Controller\BubbleSortWithFlagController::index
+
 quick_sort:
   path: /quick/sort
   controller: App\Controller\QuickSortController::index

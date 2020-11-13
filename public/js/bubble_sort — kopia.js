@@ -4,7 +4,6 @@
 
 
 
-function myFunction() {
 
     var x, text;
     // SELECT CVS
@@ -16,17 +15,17 @@ function myFunction() {
     //     cvsBUBBLE.style.display = "none";
     // }
     const ctxBUBBLE = cvsBUBBLE.getContext("2d");
-    // Get the value of the input field with id="numb"
-    x = document.getElementById("numb").value;
-    x1 = document.getElementById("numb1").value;
-    x2 = document.getElementById("numb2").value;
-    // If x is Not a Number or less than one or greater than 10
-    if (isNaN(x) || x < 1 || x > 10) {
-        text = "Input not valid";
-    } else {
-        text = "Input OK" + x1 + "number" + x2  + x;
-    }
-    document.getElementById("demo").innerHTML = text;
+    // // Get the value of the input field with id="numb"
+    // x = document.getElementById("numb").value;
+    // x1 = document.getElementById("numb1").value;
+    // x2 = document.getElementById("numb2").value;
+    // // If x is Not a Number or less than one or greater than 10
+    // if (isNaN(x) || x < 1 || x > 10) {
+    //     text = "Input not valid";
+    // } else {
+    //     text = "Input OK" + x1 + "number" + x2  + x;
+    // }
+    // document.getElementById("demo").innerHTML = text;
 
 
 
@@ -566,5 +565,5 @@ function myFunction() {
     }
     loop();
 
-}
+
 

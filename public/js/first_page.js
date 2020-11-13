@@ -102,32 +102,6 @@ function myFunction() {
         var temp;
         for(var k = 0; k< n-1; k++) {
             // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations
-            if(k==0)
-            {
-                text = "k == 0    [0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo").innerHTML = text;
-            }
-            if(k==1)
-            {
-                text = "k == 1    [0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo1").innerHTML = text;
-
-                //fill the table
-                for(var i = 0;i<5;i++){
-                    tab_step1[i]=A[i];
-                }
-
-
-            }
-            if(k==2)
-            {
-                text = "k == 2    [0]=   "+A[0]+"[1]=   "+A[1]+"[2]=   "+A[2]+"[3]=   "+A[3]+"[4]=   "+A[4];
-                document.getElementById("demo2").innerHTML = text;
-                //fill the table
-                for(var i = 0;i<5;i++){
-                    tab_step2[i]=A[i];
-                }
-            }
 
             for(var i = 0; i < n-k-1; i++) {
                 if(A[ i ] > A[ i+1] ) {
@@ -139,15 +113,27 @@ function myFunction() {
                 }
             }
         }
-
-
-       //fill the table
-        for(var i = 0;i<5;i++){
-            tab_step4[i]=A[i];
-        }
-
     }
 
+    function bubble_sort_with_flag( A,  n ) {
+        var temp;
+        for(var k = 0; k< n-1; k++) {
+            // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations
+            var flag = 0;
+            for(var i = 0; i < n-k-1; i++) {
+                if(A[ i ] > A[ i+1] ) {
+                    flag++;
+                    //nr1BUBBLE.update()
+                    // here swapping of positions is being done.
+                    temp = A[ i ];
+                    A[ i ] = A[ i+1 ];
+                    A[ i + 1] = temp;
+                }
+
+            }
+            if(flag == 0)break; //  there is no changes in the last turn
+        }
+    }
 
 
 
@@ -238,6 +224,7 @@ function myFunction() {
     arrayBUBBLE = shuffle(array);
     arrayINSERTION = shuffle(array);
     arrayINSERTION_HALF = shuffle(array);
+    arrayBUBBLE_FLAG = shuffle(array);
     text = "array [0]=   "+array[0];
     document.getElementById("demo4").innerHTML = text;
 
@@ -247,6 +234,11 @@ function myFunction() {
     text = "Time of the insertion sort: "+elapsed+ " ms";
     document.getElementById("demo6").innerHTML = text;
 
+    var start = new Date().getTime();
+    bubble_sort_with_flag(arrayBUBBLE_FLAG,arrayBUBBLE_FLAG.length);
+    var elapsed = new Date().getTime() - start;
+    text = "Time of the bubble sort with flag: "+elapsed+ " ms";
+    document.getElementById("demo8").innerHTML = text;
 
     var start = new Date().getTime();
     bubble_sort(arrayBUBBLE,arrayBUBBLE.length);
@@ -254,12 +246,14 @@ function myFunction() {
     text = "Time of the bubble sort: "+elapsed+ " ms";
     document.getElementById("demo5").innerHTML = text;
 
-
     var start = new Date().getTime();
     insertion_half_Sort(arrayINSERTION_HALF);
     var elapsed = new Date().getTime() - start;
     text = "Time of the insertion half sort: "+elapsed+ " ms";
     document.getElementById("demo7").innerHTML = text;
+
+
+
 
 
 
