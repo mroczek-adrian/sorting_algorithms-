@@ -42,6 +42,9 @@ counting_sort:
 merge_sort:
   path: /merge/sort
   controller: App\Controller\MergeSortController::index
+mix_sort:
+  path: /mix/sort
+  controller: App\Controller\MixSortController::index
 
 heap_sort:
   path: /heap/sort

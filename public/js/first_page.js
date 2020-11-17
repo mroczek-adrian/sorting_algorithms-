@@ -98,8 +98,9 @@ function myFunction() {
     const tab_step4=[];
 
     //FUNCTION WHICH IS BUBBLE SORT
-    function bubble_sort( A,  n ) {
+    function bubble_sort( A) {
         var temp;
+        let n = A.length;
         for(var k = 0; k< n-1; k++) {
             // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations
 
@@ -115,8 +116,9 @@ function myFunction() {
         }
     }
 
-    function bubble_sort_with_flag( A,  n ) {
+    function bubble_sort_with_flag( A) {
         var temp;
+        let n = A.length;
         for(var k = 0; k< n-1; k++) {
             // (n-k-1) is for ignoring comparisons of elements which have already been compared in earlier iterations
             var flag = 0;
@@ -196,6 +198,69 @@ function myFunction() {
 
 
 
+//NIE DZIALA
+    function mixSort(inputArr) {
+        var n = inputArr.length   - 1;
+        var l = 1 ;
+        var p = n ;
+        var k = n;
+        while(l<=p) {
+            for (var j = p; j >= l; j--) {
+                if (inputArr[j - 1] > inputArr[j]) {
+
+                    // zmiana
+                    x = inputArr[j - 1];
+                    inputArr[j - 1] = inputArr[j];
+                    inputArr[j] = x;
+
+                    //zapamietanie ostatniej zmiany na danym indeksie
+                    k = j;
+                }
+            }
+
+
+           // l = l + 1;
+            l = k+1;
+            for (let j = l; j <= p; j++) {
+                if (inputArr[j - 1] > inputArr[j]) {
+                    x = inputArr[j - 1];
+                    inputArr[j - 1] = inputArr[j];
+                    inputArr[j] = x;
+                    k = j;
+                }
+            }
+            p = k-1;
+           // p = p - 1;
+        }
+        return inputArr;
+    }
+
+
+    // //
+    //
+    // for (var array1=[],i=10,j=0;i>0;--i,j++) array1[j]=i*11;
+    //
+    // text = "arrayMIX przed sortowaniu [0]=  "+array1[0]+
+    //     "[1]= "+array1[1]+ " [2]=   "+array1[2]+
+    //     " [3]=   "+array1[3]+ " [4]=   "+array1[4]+
+    //     " [5]=   "+array1[5]+ " [6]=   "+array1[6]+
+    //     " [7]=   "+array1[7]+ " [8]=   "+array1[8]+
+    //     " [9]=   "+array1[9]
+    // document.getElementById("demo10").innerHTML = text;
+    //
+    //
+    //
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -225,45 +290,132 @@ function myFunction() {
     arrayINSERTION = shuffle(array);
     arrayINSERTION_HALF = shuffle(array);
     arrayBUBBLE_FLAG = shuffle(array);
-    text = "array [0]=   "+array[0];
-    document.getElementById("demo4").innerHTML = text;
+    arrayMIX = shuffle(array);
 
+    text = "arrayMIX przed sortowaniem [0]=  "+arrayMIX[0]+
+        "[1]= "+arrayMIX[1]+ " [2]=   "+arrayMIX[2]+
+        " [3]=   "+arrayMIX[3]+ " [4]=   "+arrayMIX[4]+
+        " [5]=   "+arrayMIX[5]+ " [6]=   "+arrayMIX[6]+
+        " [7]=   "+arrayMIX[7]+ " [8]=   "+arrayMIX[8]+
+        " [9]=   "+arrayMIX[9]+ " [10]=   "+arrayMIX[10]
+    document.getElementById("demo10").innerHTML = text;
+
+    text = "arrayBUBBLE przed sortowaniem [0]=  "+arrayBUBBLE[0]+
+        "[1]= "+arrayBUBBLE[1]+ " [2]=   "+arrayBUBBLE[2]+
+        " [3]=   "+arrayBUBBLE[3]+ " [4]=   "+arrayBUBBLE[4]+
+        " [5]=   "+arrayBUBBLE[5]+ " [6]=   "+arrayBUBBLE[6]+
+        " [7]=   "+arrayBUBBLE[7]+ " [8]=   "+arrayBUBBLE[8]+
+        " [9]=   "+arrayBUBBLE[9]+ " [10]=   "+arrayBUBBLE[10]
+    document.getElementById("demo12").innerHTML = text;
+
+    text = "arrayINSERTION przed sortowaniem [0]=  "+arrayINSERTION[0]+
+        "[1]= "+arrayINSERTION[1]+ " [2]=   "+arrayINSERTION[2]+
+        " [3]=   "+arrayINSERTION[3]+ " [4]=   "+arrayINSERTION[4]+
+        " [5]=   "+arrayINSERTION[5]+ " [6]=   "+arrayINSERTION[6]+
+        " [7]=   "+arrayINSERTION[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayINSERTION[9]+ " [10]=   "+arrayINSERTION[10]
+    document.getElementById("demo14").innerHTML = text;
+
+    text = "arrayINSERTION_HALF przed sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
+        "[1]= "+arrayINSERTION_HALF[1]+ " [2]=   "+arrayINSERTION_HALF[2]+
+        " [3]=   "+arrayINSERTION_HALF[3]+ " [4]=   "+arrayINSERTION_HALF[4]+
+        " [5]=   "+arrayINSERTION_HALF[5]+ " [6]=   "+arrayINSERTION_HALF[6]+
+        " [7]=   "+arrayINSERTION_HALF[7]+ " [8]=   "+arrayINSERTION_HALF[8]+
+        " [9]=   "+arrayINSERTION_HALF[9]+ " [10]=   "+arrayINSERTION_HALF[10]
+    document.getElementById("demo16").innerHTML = text;
+
+
+    text = "arrayBUBBLE_FLAG przed sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
+        "[1]= "+arrayBUBBLE_FLAG[1]+ " [2]=   "+arrayBUBBLE_FLAG[2]+
+        " [3]=   "+arrayBUBBLE_FLAG[3]+ " [4]=   "+arrayBUBBLE_FLAG[4]+
+        " [5]=   "+arrayBUBBLE_FLAG[5]+ " [6]=   "+arrayBUBBLE_FLAG[6]+
+        " [7]=   "+arrayBUBBLE_FLAG[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayBUBBLE_FLAG[9]+ " [10]=   "+arrayBUBBLE_FLAG[10]
+    document.getElementById("demo18").innerHTML = text;
+
+
+//szybkosc dzialania
     var start = new Date().getTime();
     insertionSort(arrayINSERTION);
     var elapsed = new Date().getTime() - start;
     text = "Time of the insertion sort: "+elapsed+ " ms";
-    document.getElementById("demo6").innerHTML = text;
+    document.getElementById("demo7").innerHTML = text;
+
+    text = "arrayINSERTION po sortowaniem [0]=  "+arrayINSERTION[0]+
+        "[1]= "+arrayINSERTION[1]+ " [2]=   "+arrayINSERTION[2]+
+        " [3]=   "+arrayINSERTION[3]+ " [4]=   "+arrayINSERTION[4]+
+        " [5]=   "+arrayINSERTION[5]+ " [6]=   "+arrayINSERTION[6]+
+        " [7]=   "+arrayINSERTION[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayINSERTION[9]+ " [10]=   "+arrayINSERTION[10]
+    document.getElementById("demo15").innerHTML = text;
 
     var start = new Date().getTime();
-    bubble_sort_with_flag(arrayBUBBLE_FLAG,arrayBUBBLE_FLAG.length);
+    bubble_sort_with_flag(arrayBUBBLE_FLAG);
     var elapsed = new Date().getTime() - start;
     text = "Time of the bubble sort with flag: "+elapsed+ " ms";
-    document.getElementById("demo8").innerHTML = text;
+    document.getElementById("demo6").innerHTML = text;
+    text = "arrayBUBBLE_FLAG po sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
+        "[1]= "+arrayBUBBLE_FLAG[1]+ " [2]=   "+arrayBUBBLE_FLAG[2]+
+        " [3]=   "+arrayBUBBLE_FLAG[3]+ " [4]=   "+arrayBUBBLE_FLAG[4]+
+        " [5]=   "+arrayBUBBLE_FLAG[5]+ " [6]=   "+arrayBUBBLE_FLAG[6]+
+        " [7]=   "+arrayBUBBLE_FLAG[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayBUBBLE_FLAG[9]+ " [10]=   "+arrayBUBBLE_FLAG[10]
+    document.getElementById("demo19").innerHTML = text;
+
+
 
     var start = new Date().getTime();
-    bubble_sort(arrayBUBBLE,arrayBUBBLE.length);
+    bubble_sort(arrayBUBBLE);
     var elapsed = new Date().getTime() - start;
     text = "Time of the bubble sort: "+elapsed+ " ms";
     document.getElementById("demo5").innerHTML = text;
+    text = "arrayBUBBLE po sortowaniem [0]=  "+arrayBUBBLE[0]+
+        "[1]= "+arrayBUBBLE[1]+ " [2]=   "+arrayBUBBLE[2]+
+        " [3]=   "+arrayBUBBLE[3]+ " [4]=   "+arrayBUBBLE[4]+
+        " [5]=   "+arrayBUBBLE[5]+ " [6]=   "+arrayBUBBLE[6]+
+        " [7]=   "+arrayBUBBLE[7]+ " [8]=   "+arrayBUBBLE[8]+
+        " [9]=   "+arrayBUBBLE[9]+ " [10]=   "+arrayBUBBLE[10]
+    document.getElementById("demo13").innerHTML = text;
+
+
 
     var start = new Date().getTime();
     insertion_half_Sort(arrayINSERTION_HALF);
     var elapsed = new Date().getTime() - start;
     text = "Time of the insertion half sort: "+elapsed+ " ms";
-    document.getElementById("demo7").innerHTML = text;
+    document.getElementById("demo8").innerHTML = text;
+    //sprawdzenie array mix
+    text = "arrayINSERTION_HALF po sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
+        "[1]= "+arrayINSERTION_HALF[1]+ " [2]=   "+arrayINSERTION_HALF[2]+
+        " [3]=   "+arrayINSERTION_HALF[3]+ " [4]=   "+arrayINSERTION_HALF[4]+
+        " [5]=   "+arrayINSERTION_HALF[5]+ " [6]=   "+arrayINSERTION_HALF[6]+
+        " [7]=   "+arrayINSERTION_HALF[7]+ " [8]=   "+arrayINSERTION_HALF[8]+
+        " [9]=   "+arrayINSERTION_HALF[9]+ " [10]=   "+arrayINSERTION_HALF[10]
+    document.getElementById("demo17").innerHTML = text;
 
 
-
-
+    var start = new Date().getTime();
+    mixSort(arrayMIX);
+    var elapsed = new Date().getTime() - start;
+    text = "Time of the MIX  sort: "+elapsed+ " ms";
+    document.getElementById("demo9").innerHTML = text;
+    //sprawdzenie array mix
+    text = "arrayMIX po sortowaniu [0]=  "+arrayMIX[0]+
+        "[1]= "+arrayMIX[1]+ " [2]=   "+arrayMIX[2]+
+        " [3]=   "+arrayMIX[3]+ " [4]=   "+arrayMIX[4]+
+        " [5]=   "+arrayMIX[5]+ " [6]=   "+arrayMIX[6]+
+        " [7]=   "+arrayMIX[7]+ " [8]=   "+arrayMIX[8]+
+        " [9]=   "+arrayMIX[9]+ " [10]=   "+arrayMIX[10]
+    document.getElementById("demo11").innerHTML = text;
 
 
 
     //fill the table
-    for(var i = 0;i<5;i++){
-        tab_step3[i]=arrayBUBBLE[i];
-    }
-    text = " CZY TO DZIALA [0]=   "+arrayBUBBLE[0]+"[1]=   "+arrayBUBBLE[1]+"[2]=   "+arrayBUBBLE[2]+"[3]=   "+arrayBUBBLE[3]+"[4]=   "+arrayBUBBLE[4];
-    document.getElementById("demo3").innerHTML = text;
+    // for(var i = 0;i<5;i++){
+    //     tab_step3[i]=arrayBUBBLE[i];
+    // }
+    // text = " CZY TO DZIALA [0]=   "+arrayBUBBLE[0]+"[1]=   "+arrayBUBBLE[1]+"[2]=   "+arrayBUBBLE[2]+"[3]=   "+arrayBUBBLE[3]+"[4]=   "+arrayBUBBLE[4];
+    // document.getElementById("demo3").innerHTML = text;
 
 
 

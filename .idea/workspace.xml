@@ -137,21 +137,21 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Untitled1.cpp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\projInzyn\public\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\projInzyn\public\js\img" />
       <recent name="C:\xampp\htdocs\projInzyn\public\img" />
       <recent name="C:\xampp\htdocs\projInzyn\templates" />
       <recent name="C:\xampp\htdocs\projInzyn\public\css" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\xampp\htdocs\projInzyn\public\js" />
     </key>
   </component>
   <component name="TaskManager">
@@ -204,7 +204,10 @@
       <workItem from="1605001015384" duration="13864000" />
       <workItem from="1605112576763" duration="5159000" />
       <workItem from="1605193064239" duration="10243000" />
-      <workItem from="1605260911078" duration="4139000" />
+      <workItem from="1605260911078" duration="4902000" />
+      <workItem from="1605367042285" duration="4960000" />
+      <workItem from="1605528578182" duration="5376000" />
+      <workItem from="1605603211977" duration="9950000" />
     </task>
     <servers />
   </component>
@@ -212,10 +215,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="293" y="293" key="FileChooserDialogImpl" timestamp="1604654377251">
+    <state x="293" y="293" key="FileChooserDialogImpl" timestamp="1605539631916">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="293" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1604654377251" />
+    <state x="293" y="293" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1605539631916" />
     <state x="150" y="242" key="run.anything.popup" timestamp="1600766074069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

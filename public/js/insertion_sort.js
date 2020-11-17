@@ -454,6 +454,7 @@ const bgRectangle = {
             // //finish
             if(framesINSERTION==3998){
                 this.dX =185;
+                this.dY =1;
                 this.dHeight =30;
 
             }
@@ -1337,7 +1338,9 @@ const gameOverINSERTION = {
 //DRAW - dopisac drawBUBBLE
 function drawINSERTION(){
     //background
+    //ctxINSERTION.fillStyle = "#70c5ce";
     ctxINSERTION.fillStyle = "#70c5ce";
+
     ctxINSERTION.fillRect(0,0,cvsINSERTION.width,cvsINSERTION.height);
 
     //title of canvas
