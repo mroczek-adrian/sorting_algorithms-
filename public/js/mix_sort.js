@@ -8,6 +8,7 @@
     var x, text;
     // SELECT CVS
     const cvsMIX = document.getElementById("birdMIX");
+    const restartMIX = document.getElementById("restart_img");
     cvsMIX.style.display = "block";
     // if (cvsMIX.style.display === "none") {
     //     cvsMIX.style.display = "block";
@@ -55,9 +56,13 @@
     const img1=document.getElementById("img1");//rectangle
     //IMAGE OF THE TABLE WITH RED CIRCLE
     const red_circle=document.getElementById("red_circle");
-
     //IMAGE OF THE TABLE WITH RED CIRCLE
     const bg_steps=document.getElementById("bg");
+
+    const img3=document.getElementById("img3");//sorted,unsorted
+    const img4=document.getElementById("img4");//RESTART
+    const img5=document.getElementById("img5");//START
+
 
 
     //GAME STATE
@@ -90,7 +95,38 @@
                 break;
         }
     });
+    restartMIX.addEventListener("click",function(evt){
+        switch(stateMIX.current){
+            case stateMIX.getReady:
+            case stateMIX.game:
+                stateMIX.current = 2;
 
+                bgRectangle.dX =100;
+                bgRectangle.dY =1;
+                bgRectangle.dHeight =62;
+                red_circle01.dX = 250;
+                red_circle02.dX = 330;
+                //red_circle01.dY =190;
+                // brown_circle01.dX =85;
+                // brown_circle01.dY =265;
+                //nr1MIX.dX =260;
+               // nr1MIX.dY =200;
+                nr2MIX.dX =340;
+               // nr2MIX.dY =200;
+                nr3MIX.dX =260;
+              //  nr3MIX.dY =200;
+                nr4MIX.dX =180;
+              //  nr4MIX.dY =200;
+                nr9MIX.dX =100;
+             //   nr9MIX.dY =200;
+                lineMIX.dX =410;
+                lineleftMIX.dX= -70;
+                framesMIX = 0;
+
+
+                break;
+        }
+    });
 //CIRCLE
 
 
@@ -102,7 +138,7 @@
         sWidth : 490 - 310,
         sHeight : 270 - 90,
         dY : 190,
-        dX : 10,
+        dX : 250,
         dWidth : 90,
         dHeight :90 ,
 
@@ -144,26 +180,46 @@
 
             if(stateMIX.current == stateMIX.over ||stateMIX.current == stateMIX.getReady){
             }else{
+                if(250 > framesMIX && framesMIX > 150){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
                 if(450 > framesMIX && framesMIX > 350){
-                    this.dX +=1.6* globalSpeedMIX;
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
-                if(850 > framesMIX && framesMIX > 750){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(650 > framesMIX && framesMIX > 550){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
-                if(1450 > framesMIX && framesMIX > 1350){
-                    this.dX +=3.2* globalSpeedMIX;
+                if(750 > framesMIX && framesMIX > 650){
+                    this.dX +=3.2*globalSpeedMIX;
 
                 }
-                if(1850 > framesMIX && framesMIX > 1750){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(1050 > framesMIX && framesMIX > 950){
+                    this.dX +=1.6*globalSpeedMIX;
 
                 }
-                if(2050 > framesMIX && framesMIX > 1950){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(1250 > framesMIX && framesMIX > 1150){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
+                // if(850 > framesMIX && framesMIX > 750){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
+                // if(1450 > framesMIX && framesMIX > 1350){
+                //     this.dX +=3.2* globalSpeedMIX;
+                //
+                // }
+                // if(1850 > framesMIX && framesMIX > 1750){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
+                // if(2050 > framesMIX && framesMIX > 1950){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
                 if(2650 > framesMIX && framesMIX > 2550){
                     this.dX +=4.8* globalSpeedMIX;
                     // this.dX -=4.8* globalSpeedMIX;
@@ -184,9 +240,9 @@
 
 
                 //THE END OF SIMULATION
-                if( framesMIX == 3998){
-                    this.dX =10;
-                    this.dY =190;
+                if( framesMIX == 1798){
+                    this.dX =250;
+
 
                 }
             }
@@ -201,7 +257,7 @@
         sWidth : 490 - 310,
         sHeight : 270 - 90,
         dY : 190,
-        dX : 210,
+        dX : 330,
         dWidth : 90,
         dHeight :90 ,
 
@@ -243,30 +299,50 @@
 
             if(stateMIX.current == stateMIX.over ||stateMIX.current == stateMIX.getReady){
             }else{
+                if(250 > framesMIX && framesMIX > 150){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
                 if(450 > framesMIX && framesMIX > 350){
-                    this.dX +=1.6* globalSpeedMIX;
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
-                if(850 > framesMIX && framesMIX > 750){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(650 > framesMIX && framesMIX > 550){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
-                if(1450 > framesMIX && framesMIX > 1350){
-                    this.dX +=3.2* globalSpeedMIX;
+                if(750 > framesMIX && framesMIX > 650){
+                    this.dX +=3.2*globalSpeedMIX;
 
                 }
-                if(1850 > framesMIX && framesMIX > 1750){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(1050 > framesMIX && framesMIX > 950){
+                    this.dX +=1.6*globalSpeedMIX;
 
                 }
-                if(2050 > framesMIX && framesMIX > 1950){
-                    this.dX -=1.6* globalSpeedMIX;
+                if(1250 > framesMIX && framesMIX > 1150){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
-                if(2650 > framesMIX && framesMIX > 2550){
-                    this.dX +=4.8* globalSpeedMIX;
-                    // this.dX -=4.8* globalSpeedMIX;
-                }
+                // if(850 > framesMIX && framesMIX > 750){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
+                // if(1450 > framesMIX && framesMIX > 1350){
+                //     this.dX +=3.2* globalSpeedMIX;
+                //
+                // }
+                // if(1850 > framesMIX && framesMIX > 1750){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
+                // if(2050 > framesMIX && framesMIX > 1950){
+                //     this.dX -=1.6* globalSpeedMIX;
+                //
+                // }
+                // if(2650 > framesMIX && framesMIX > 2550){
+                //     this.dX +=4.8* globalSpeedMIX;
+                //     // this.dX -=4.8* globalSpeedMIX;
+                // }
                 if(3050 > framesMIX && framesMIX > 2950){
                     this.dX -=1.6* globalSpeedMIX;
                     //this.dX -=4.8* globalSpeedMIX;
@@ -283,9 +359,9 @@
 
 
                 //THE END OF SIMULATION
-                if( framesMIX == 3998){
-                    this.dX =10;
-                    this.dY =190;
+                if( framesMIX == 1798){
+                    this.dX =     330;
+
 
                 }
             }
@@ -300,9 +376,9 @@
         sWidth : 670-33,
         sHeight : 270-33,
         dY : 1,
-        dX : 185,
-        dWidth : 420,
-        dHeight :30  ,
+        dX : 100,
+        dWidth : 520,
+        dHeight :62  ,
 
         draw : function(){
             ctxMIX.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
@@ -332,55 +408,67 @@
 
             }else{
                 // go to 2nd
-                if(250 > framesMIX && framesMIX > 200){
-                    this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY +=1.4* globalSpeedMIX;
-                }
-                // go to 3rd
-                if(400 > framesMIX && framesMIX > 350){
-                    this.dHeight -=0.5*globalSpeedMIX;
-                    this.dY +=2.5* globalSpeedMIX;
-                }  // go to 1rd
-                if(600 > framesMIX && framesMIX > 550){
-                    this.dY -=3.9* globalSpeedMIX;
-                    this.dHeight -=1*globalSpeedMIX;
+                if(700 > framesMIX && framesMIX > 650){
+                    this.dHeight -=1.5*globalSpeedMIX;
+                    this.dY +=2.4* globalSpeedMIX;
                 }
                 if(800 > framesMIX && framesMIX > 750){
                     this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY +=1.4* globalSpeedMIX;
-
+                    this.dY +=0.7* globalSpeedMIX;
                 }
                 if(1200 > framesMIX && framesMIX > 1150){
-                    this.dHeight -=0.5*globalSpeedMIX;
-                    this.dY +=2.5* globalSpeedMIX;
+                    this.dHeight -=1.5*globalSpeedMIX;
+                    this.dY +=2.4* globalSpeedMIX;
                 }
-                if(1600 > framesMIX && framesMIX > 1550){
-                    this.dY -=3.9* globalSpeedMIX;
-                    this.dHeight -=1*globalSpeedMIX;
-
-                }
-                if(1800 > framesMIX && framesMIX > 1750){
+                if(1300 > framesMIX && framesMIX > 1250){
                     this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY +=1.4* globalSpeedMIX;
-
+                    this.dY -=5.5* globalSpeedMIX;
                 }
-                if(2500 > framesMIX && framesMIX > 2450){
-                    this.dHeight -=0.5*globalSpeedMIX;
-                    this.dY +=2.5* globalSpeedMIX;
-                }
-                if(2800 > framesMIX && framesMIX > 2750){
-                    this.dY -=3.9* globalSpeedMIX;
-                    this.dHeight -=1*globalSpeedMIX;
-                }
-                if(3000 > framesMIX && framesMIX > 2950){
-                    this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY +=1.4* globalSpeedMIX;
-                }
-                if(3600 > framesMIX && framesMIX > 3550){
-                    this.dHeight -=0.5*globalSpeedMIX;
-                    this.dY +=2.5* globalSpeedMIX;
-                }
-                // if(1200 > framesMIX && framesMIX > 850){
+                // // go to 3rd
+                // if(400 > framesMIX && framesMIX > 350){
+                //     this.dHeight -=0.5*globalSpeedMIX;
+                //     this.dY +=2.5* globalSpeedMIX;
+                // }  // go to 1rd
+                // if(600 > framesMIX && framesMIX > 550){
+                //     this.dY -=3.9* globalSpeedMIX;
+                //     this.dHeight -=1*globalSpeedMIX;
+                // }
+                // if(800 > framesMIX && framesMIX > 750){
+                //     this.dHeight +=1.5*globalSpeedMIX;
+                //     this.dY +=1.4* globalSpeedMIX;
+                //
+                // }
+                // if(1200 > framesMIX && framesMIX > 1150){
+                //     this.dHeight -=0.5*globalSpeedMIX;
+                //     this.dY +=2.5* globalSpeedMIX;
+                // }
+                // if(1600 > framesMIX && framesMIX > 1550){
+                //     this.dY -=3.9* globalSpeedMIX;
+                //     this.dHeight -=1*globalSpeedMIX;
+                //
+                // }
+                // if(1800 > framesMIX && framesMIX > 1750){
+                //     this.dHeight +=1.5*globalSpeedMIX;
+                //     this.dY +=1.4* globalSpeedMIX;
+                //
+                // }
+                // if(2500 > framesMIX && framesMIX > 2450){
+                //     this.dHeight -=0.5*globalSpeedMIX;
+                //     this.dY +=2.5* globalSpeedMIX;
+                // }
+                // if(2800 > framesMIX && framesMIX > 2750){
+                //     this.dY -=3.9* globalSpeedMIX;
+                //     this.dHeight -=1*globalSpeedMIX;
+                // }
+                // if(3000 > framesMIX && framesMIX > 2950){
+                //     this.dHeight +=1.5*globalSpeedMIX;
+                //     this.dY +=1.4* globalSpeedMIX;
+                // }
+                // if(3600 > framesMIX && framesMIX > 3550){
+                //     this.dHeight -=0.5*globalSpeedMIX;
+                //     this.dY +=2.5* globalSpeedMIX;
+                // }
+                // // if(1200 > framesMIX && framesMIX > 850){
                 //     this.dX +=globalSpeedMIX;
                 // }
                 // if(1800 > framesMIX && framesMIX > 1450){
@@ -426,8 +514,8 @@
         sWidth : 720,
         sHeight : 320,
         dY : 0,
-        dX : 210,
-        dWidth : 400,
+        dX : 110,
+        dWidth : 500,
         dHeight :150  ,
         draw : function(){
 
@@ -484,8 +572,12 @@
                     this.dX =50;
                 }
                 //finish
-                if(framesMIX==4998){
-                    this.dX =50;
+                if(framesMIX==1798){
+                    this.dX =110;
+                    this.dY =0;
+                    this.dWidth =500;
+                    this.dHeight =150;
+
                 }
             }
 
@@ -951,6 +1043,7 @@
             //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
             //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
             //this.frame = this.frame % this.animation.length;
+
         }
     }
     const nr2MIX = {
@@ -966,7 +1059,8 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 180,
+        dX : 340,
+
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
         //blue number
@@ -1021,13 +1115,21 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(950 > framesMIX && framesMIX > 650){
-                    this.dX -=globalSpeedMIX;
+                if(150 > framesMIX && framesMIX > 50){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
+                if(350 > framesMIX && framesMIX > 250){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
+                if(550 > framesMIX && framesMIX > 450){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
                 //THE END OF SIMULATION
-                if( framesMIX == 4998){
-                    this.dX =180;
+                if( framesMIX == 1798){
+                    this.dX =340;
 
                 }
             }
@@ -1058,7 +1160,8 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 100,
+        dX : 260,
+
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
 
@@ -1099,13 +1202,21 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(950 > framesMIX && framesMIX > 650){
-                    this.dX +=globalSpeedMIX;
+                if(150 > framesMIX && framesMIX > 50){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                if(1150 > framesMIX && framesMIX > 1050){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
+                if(1450 > framesMIX && framesMIX > 1350){
+                    this.dX -=1.6*globalSpeedMIX;
 
                 }
                 //THE END OF SIMULATION
-                if( framesMIX == 4998){
-                    this.dX =100;
+                if( framesMIX == 1798){
+                    this.dX =260;
 
                 }
             }
@@ -1118,12 +1229,54 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 260,
+        dX : 180,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
         draw : function(){
             ctxMIX.drawImage(numbersMIX,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateMIX.current == stateMIX.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += frames % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(stateMIX.current == stateMIX.over ||stateMIX.current == stateMIX.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                // if(150 > framesMIX && framesMIX > 50){
+                //     this.dX -=globalSpeedMIX;
+                //
+                // }
+                if(350 > framesMIX && framesMIX > 250){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                if(950 > framesMIX && framesMIX > 850){
+                    this.dX -=1.6*globalSpeedMIX;
+
+                }
+                if(1450 > framesMIX && framesMIX > 1350){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                //THE END OF SIMULATION
+                if( framesMIX == 1798){
+                    this.dX =180;
+
+                }
+            }
+
+
         }
     }
     const nr9MIX = {
@@ -1132,26 +1285,72 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 340,
+        dX : 100,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
         draw : function(){
             ctxMIX.drawImage(numbersMIX,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateMIX.current == stateMIX.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += frames % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(stateMIX.current == stateMIX.over ||stateMIX.current == stateMIX.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                // if(150 > framesMIX && framesMIX > 50){
+                //     this.dX -=globalSpeedMIX;
+                //
+                // }
+                // if(350 > framesMIX && framesMIX > 250){
+                //     this.dX +=1.6*globalSpeedMIX;
+                //
+                // }
+                if(550 > framesMIX && framesMIX > 450){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                if(950 > framesMIX && framesMIX > 850){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                if(1150 > framesMIX && framesMIX > 1050){
+                    this.dX +=1.6*globalSpeedMIX;
+
+                }
+                //THE END OF SIMULATION
+                if( framesMIX == 1798){
+                    this.dX =100;
+
+                }
+            }
+
+
         }
     }
 
     const lineMIX = {
-        sX : 115,
-        sY : 47,
-        sWidth : 5,
-        sHeight : 60,
+        sX : 260,
+        sY : 10,
+        sWidth : 390-260,
+        sHeight : 190-10,
         dY : 150,
-        dX : 450,
-        dWidth : 10,
+        dX : 410,
+        dWidth : 100,
         dHeight :200  ,
         draw : function(){
-            ctxMIX.drawImage(numbersMIX,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            ctxMIX.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
         },
 
@@ -1176,10 +1375,7 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(2500 > framesMIX && framesMIX > 2050){
-                    this.dX -=globalSpeedMIX;
 
-                }
                 // if(3850 > framesMIX && framesMIX > 3500){
                 //     this.dX -=globalSpeedMIX;
                 //
@@ -1188,11 +1384,14 @@
                 //     this.dX -=globalSpeedMIX;
                 //
                 // }
+                if(1250 > framesMIX && framesMIX > 1150){
+                    this.dX -=1.6*globalSpeedMIX;
 
+                }
                 //THE END OF SIMULATION
-                if( framesMIX == 4998){
-                    this.dX =450;
-                    this.dY =150;
+                if( framesMIX == 1798){
+                    this.dX =410;
+                   // this.dY =150;
 
                 }
             }
@@ -1201,16 +1400,16 @@
         }
     }
     const lineleftMIX = {
-        sX : 115,
-        sY : 47,
-        sWidth : 5,
-        sHeight : 60,
+        sX : 30,
+        sY : 15,
+        sWidth : 260-30,
+        sHeight : 200-15,
         dY : 150,
-        dX : 10,
-        dWidth : 10,
+        dX :-70,
+        dWidth : 200,
         dHeight :200  ,
         draw : function(){
-            ctxMIX.drawImage(numbersMIX,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            ctxMIX.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
         },
 
@@ -1235,8 +1434,8 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(2500 > framesMIX && framesMIX > 2050){
-                    this.dX -=globalSpeedMIX;
+                if(750 > framesMIX && framesMIX > 650){
+                    this.dX +=3.2*globalSpeedMIX;
 
                 }
                 // if(3850 > framesMIX && framesMIX > 3500){
@@ -1249,9 +1448,9 @@
                 // }
 
                 //THE END OF SIMULATION
-                if( framesMIX == 4998){
-                    this.dX =10;
-                    this.dY =150;
+                if( framesMIX == 1798){
+                    this.dX =-70;
+                    //this.dY =150;
 
                 }
             }
@@ -1306,27 +1505,44 @@
         ctxMIX.font = "20px Arial";
 
         ctxMIX.strokeText("MIX Sort! ",25,50);
-        ctxMIX.strokeText("p=          l=          k= ",5,100);
+        //ctxMIX.strokeText("p=          l=          k= ",5,100);
 
         //draw function
         // bg.draw();
-        if(3400 > framesMIX && framesMIX > 0){
+        if(1550 > framesMIX && framesMIX > 0){
            // c2nMIX.draw();
             lineMIX.draw();
             lineleftMIX.draw();
+            bgRectangle.draw();
+        }
+        if(650 > framesMIX && framesMIX > 0){
+            // c2nMIX.draw();
+
             red_circle01.draw();
             red_circle02.draw();
         }
-        l_MIX.draw();
-        p_MIX.draw();
-        k_MIX.draw();
+        if(1150 > framesMIX && framesMIX > 750){
+            // c2nMIX.draw();
+
+            red_circle01.draw();
+            red_circle02.draw();
+        }
+        if(1550 > framesMIX && framesMIX > 1250){
+            // c2nMIX.draw();
+
+            red_circle01.draw();
+            red_circle02.draw();
+        }
+        // l_MIX.draw();
+        // p_MIX.draw();
+        // k_MIX.draw();
         nr1MIX.draw();
         nr2MIX.draw();
         nr3MIX.draw();
         nr4MIX.draw();
         nr9MIX.draw();
         bgsteps1.draw();
-        bgRectangle.draw();
+        //bgRectangle.draw();
         getReadyMIX.draw();
         gameOverMIX.draw();
     }
@@ -1337,10 +1553,13 @@
         nr1MIX.update();
         nr2MIX.update();
         nr3MIX.update();
+        nr4MIX.update();
+        nr9MIX.update();
         c2nMIX.update();
         lineMIX.update();
+        bgRectangle.update();
         lineleftMIX.update();
-        if(framesMIX == 5000){
+        if(framesMIX == 1800){
             stateMIX.current = stateMIX.over;
         };
 
@@ -1353,7 +1572,7 @@
         if (stateMIX.current == stateMIX.over || stateMIX.current == stateMIX.getReady) {
         }else{
             framesMIX++;
-            framesMIX++;
+          //  framesMIX++;
         }
 
 

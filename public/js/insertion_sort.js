@@ -323,10 +323,6 @@ restartINSERTION.addEventListener("click",function(evt){
             nr9INSERTION.dY =200;
             lineINSERTION.dX =6;
 
-
-
-
-
             framesINSERTION = 0;
 
 
