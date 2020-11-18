@@ -249,7 +249,62 @@ function myFunction() {
     // document.getElementById("demo10").innerHTML = text;
     //
     //
+
+    function shellSort(arr) {
+        var increment = arr.length / 2;
+        while (increment > 0) {
+            for (i = increment; i < arr.length; i++) {
+                var j = i;
+                var temp = arr[i];
+
+                while (j >= increment && arr[j-increment] > temp) {
+                    arr[j] = arr[j-increment];
+                    j = j - increment;
+                }
+
+                arr[j] = temp;
+            }
+
+            if (increment == 2) {
+                increment = 1;
+            } else {
+                increment = parseInt(increment*5 / 11);
+            }
+        }
+        return arr;
+    }
+
+
+
+    // /* function to sort arr using shellSort */
+    // function shellSort(arr)
+    // {
+    //     var n = arr.length ;
+    //     // Start with a big gap, then reduce the gap
+    //     for (var gap = n/2; gap > 0; gap /= 2)
+    //     {
+    //         // Do a gapped insertion sort for this gap size.
+    //         // The first gap elements a[0..gap-1] are already in gapped order
+    //         // keep adding one more element until the entire array is
+    //         // gap sorted
+    //         for (var i = gap; i < n; i += 1)
+    //         {
+    //             // add a[i] to the elements that have been gap sorted
+    //             // save a[i] in temp and make a hole at position i
+    //             var temp = arr[i];
     //
+    //             // shift earlier gap-sorted elements up until the correct
+    //             // location for a[i] is found
+    //             var j;
+    //             for (j = i; j >= gap && arr[j - gap] > temp; j -= gap)
+    //                 arr[j] = arr[j - gap];
+    //
+    //             //  put temp (the original a[i]) in its correct location
+    //             arr[j] = temp;
+    //         }
+    //     }
+    //     return arr;
+    // }
 
 
 
@@ -291,6 +346,7 @@ function myFunction() {
     arrayINSERTION_HALF = shuffle(array);
     arrayBUBBLE_FLAG = shuffle(array);
     arrayMIX = shuffle(array);
+    arraySHELL = shuffle(array);
 
     text = "arrayMIX przed sortowaniem [0]=  "+arrayMIX[0]+
         "[1]= "+arrayMIX[1]+ " [2]=   "+arrayMIX[2]+
@@ -333,6 +389,14 @@ function myFunction() {
         " [9]=   "+arrayBUBBLE_FLAG[9]+ " [10]=   "+arrayBUBBLE_FLAG[10]
     document.getElementById("demo18").innerHTML = text;
 
+
+    text = "arraySHELL przed sortowaniem [0]=  "+arraySHELL[0]+
+        "[1]= "+arraySHELL[1]+ " [2]=   "+arraySHELL[2]+
+        " [3]=   "+arraySHELL[3]+ " [4]=   "+arraySHELL[4]+
+        " [5]=   "+arraySHELL[5]+ " [6]=   "+arraySHELL[6]+
+        " [7]=   "+arraySHELL[7]+ " [8]=   "+arraySHELL[8]+
+        " [9]=   "+arraySHELL[9]+ " [10]=   "+arraySHELL[10]
+    document.getElementById("demo20").innerHTML = text;
 
 //szybkosc dzialania
     var start = new Date().getTime();
@@ -408,6 +472,18 @@ function myFunction() {
         " [9]=   "+arrayMIX[9]+ " [10]=   "+arrayMIX[10]
     document.getElementById("demo11").innerHTML = text;
 
+    var start = new Date().getTime();
+    shellSort(arraySHELL);
+    var elapsed = new Date().getTime() - start;
+    text = "Time of the SHELL  sort: "+elapsed+ " ms";
+    document.getElementById("demo22").innerHTML = text;
+    text = "arraySHELL przed sortowaniem [0]=  "+arraySHELL[0]+
+        "[1]= "+arraySHELL[1]+ " [2]=   "+arraySHELL[2]+
+        " [3]=   "+arraySHELL[3]+ " [4]=   "+arraySHELL[4]+
+        " [5]=   "+arraySHELL[5]+ " [6]=   "+arraySHELL[6]+
+        " [7]=   "+arraySHELL[7]+ " [8]=   "+arraySHELL[8]+
+        " [9]=   "+arraySHELL[9]+ " [10]=   "+arraySHELL[10]
+    document.getElementById("demo21").innerHTML = text;
 
 
     //fill the table

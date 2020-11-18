@@ -45,6 +45,9 @@ merge_sort:
 mix_sort:
   path: /mix/sort
   controller: App\Controller\MixSortController::index
+shell_sort:
+  path: /shell/sort
+  controller: App\Controller\ShellSortController::index
 
 heap_sort:
   path: /heap/sort
