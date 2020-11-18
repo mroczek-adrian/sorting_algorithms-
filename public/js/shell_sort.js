@@ -103,26 +103,26 @@
             case stateSHELL.game:
                 stateSHELL.current = 2;
 
-                bgRectangle.dX =100;
+               // bgRectangle.dX =100;
                 bgRectangle.dY =1;
-                bgRectangle.dHeight =62;
-                red_circle01.dX = 250;
-                brown_circle01.dX = 330;
+               // bgRectangle.dHeight =62;
+                red_circle01.dX = 10;
+                brown_circle01.dX = 170;
                 //red_circle01.dY =190;
                 // brown_circle01.dX =85;
                 // brown_circle01.dY =265;
-                //nr1SHELL.dX =260;
+                nr1SHELL.dX =260;
                // nr1SHELL.dY =200;
                 nr2SHELL.dX =340;
                // nr2SHELL.dY =200;
-                nr3SHELL.dX =260;
+                nr3SHELL.dX =20;
               //  nr3SHELL.dY =200;
-                nr4SHELL.dX =180;
+                nr4SHELL.dX =100;
               //  nr4SHELL.dY =200;
-                nr9SHELL.dX =100;
+                nr9SHELL.dX =180;
              //   nr9SHELL.dY =200;
-                lineSHELL.dX =410;
-                lineleftSHELL.dX= -70;
+             //   lineSHELL.dX =410;
+              //  lineleftSHELL.dX= -70;
                 framesSHELL = 0;
 
 
@@ -140,7 +140,7 @@
         sWidth : 490 - 310,
         sHeight : 270 - 90,
         dY : 190,
-        dX : 250,
+        dX : 10,
         dWidth : 90,
         dHeight :90 ,
 
@@ -183,29 +183,45 @@
             if(stateSHELL.current == stateSHELL.over ||stateSHELL.current == stateSHELL.getReady){
             }else{
                 if(250 > framesSHELL && framesSHELL > 150){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(450 > framesSHELL && framesSHELL > 350){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(650 > framesSHELL && framesSHELL > 550){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(750 > framesSHELL && framesSHELL > 650){
-                    this.dX +=3.2*globalSpeedSHELL;
-
-                }
-                if(1050 > framesSHELL && framesSHELL > 950){
                     this.dX +=1.6*globalSpeedSHELL;
 
                 }
-                if(1250 > framesSHELL && framesSHELL > 1150){
-                    this.dX -=1.6*globalSpeedSHELL;
+                if(550 > framesSHELL && framesSHELL > 450){
+                    this.dX +=1.6*globalSpeedSHELL;
 
                 }
+                if(850 > framesSHELL && framesSHELL > 750){
+                    this.dX -=3.2*globalSpeedSHELL;
+
+                }
+                if(1550 > framesSHELL && framesSHELL > 1450){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(1750 > framesSHELL && framesSHELL > 1650){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(1950 > framesSHELL && framesSHELL > 1850){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                // if(650 > framesSHELL && framesSHELL > 550){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(750 > framesSHELL && framesSHELL > 650){
+                //     this.dX +=3.2*globalSpeedSHELL;
+                //
+                // }
+                // if(1050 > framesSHELL && framesSHELL > 950){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1250 > framesSHELL && framesSHELL > 1150){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
                 // if(850 > framesSHELL && framesSHELL > 750){
                 //     this.dX -=1.6* globalSpeedSHELL;
                 //
@@ -242,8 +258,8 @@
 
 
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
-                    this.dX =250;
+                if( framesSHELL == 2498){
+                    this.dX =10;
 
 
                 }
@@ -259,7 +275,7 @@
         sWidth : 490 - 310,
         sHeight : 270 - 90,
         dY : 190,
-        dX : 330,
+        dX : 170,
         dWidth : 90,
         dHeight :90 ,
 
@@ -302,29 +318,53 @@
             if(stateSHELL.current == stateSHELL.over ||stateSHELL.current == stateSHELL.getReady){
             }else{
                 if(250 > framesSHELL && framesSHELL > 150){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(450 > framesSHELL && framesSHELL > 350){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(650 > framesSHELL && framesSHELL > 550){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(750 > framesSHELL && framesSHELL > 650){
-                    this.dX +=3.2*globalSpeedSHELL;
-
-                }
-                if(1050 > framesSHELL && framesSHELL > 950){
                     this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(550 > framesSHELL && framesSHELL > 450){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(850 > framesSHELL && framesSHELL > 750){
+                    this.dX -=3.2*globalSpeedSHELL;
 
                 }
                 if(1250 > framesSHELL && framesSHELL > 1150){
                     this.dX -=1.6*globalSpeedSHELL;
 
                 }
+                if(1550 > framesSHELL && framesSHELL > 1450){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(1750 > framesSHELL && framesSHELL > 1650){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                if(1950 > framesSHELL && framesSHELL > 1850){
+                    this.dX +=1.6*globalSpeedSHELL;
+
+                }
+                // if(450 > framesSHELL && framesSHELL > 350){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(650 > framesSHELL && framesSHELL > 550){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(750 > framesSHELL && framesSHELL > 650){
+                //     this.dX +=3.2*globalSpeedSHELL;
+                //
+                // }
+                // if(1050 > framesSHELL && framesSHELL > 950){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1250 > framesSHELL && framesSHELL > 1150){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
                 // if(850 > framesSHELL && framesSHELL > 750){
                 //     this.dX -=1.6* globalSpeedSHELL;
                 //
@@ -361,8 +401,8 @@
 
 
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
-                    this.dX =     330;
+                if( framesSHELL == 2498){
+                    this.dX =     170;
 
 
                 }
@@ -377,10 +417,10 @@
         sY : 33,
         sWidth : 670-33,
         sHeight : 270-33,
-        dY : 1,
-        dX : 100,
-        dWidth : 520,
-        dHeight :62  ,
+        dY : -3,
+        dX : 200,
+        dWidth : 420,
+        dHeight :70  ,
 
         draw : function(){
             ctxSHELL.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
@@ -410,22 +450,21 @@
 
             }else{
                 // go to 2nd
-                if(700 > framesSHELL && framesSHELL > 650){
-                    this.dHeight -=1.5*globalSpeedSHELL;
-                    this.dY +=2.4* globalSpeedSHELL;
+                if(300 > framesSHELL && framesSHELL > 250){
+                   // this.dHeight -=1.5*globalSpeedSHELL;
+                    this.dY +=2.7* globalSpeedSHELL;
                 }
-                if(800 > framesSHELL && framesSHELL > 750){
-                    this.dHeight +=1.5*globalSpeedSHELL;
-                    this.dY +=0.7* globalSpeedSHELL;
-                }
-                if(1200 > framesSHELL && framesSHELL > 1150){
-                    this.dHeight -=1.5*globalSpeedSHELL;
-                    this.dY +=2.4* globalSpeedSHELL;
-                }
-                if(1300 > framesSHELL && framesSHELL > 1250){
-                    this.dHeight +=1.5*globalSpeedSHELL;
-                    this.dY -=5.5* globalSpeedSHELL;
-                }
+                // if(1200 > framesSHELL && framesSHELL > 1150){
+                //     this.dY -=2.7* globalSpeedSHELL;
+                // }
+                // if(1200 > framesSHELL && framesSHELL > 1150){
+                //     this.dHeight -=1.5*globalSpeedSHELL;
+                //     this.dY +=2.4* globalSpeedSHELL;
+                // }
+                // if(1300 > framesSHELL && framesSHELL > 1250){
+                //     this.dHeight +=1.5*globalSpeedSHELL;
+                //     this.dY -=5.5* globalSpeedSHELL;
+                // }
                 // // go to 3rd
                 // if(400 > framesSHELL && framesSHELL > 350){
                 //     this.dHeight -=0.5*globalSpeedSHELL;
@@ -498,10 +537,10 @@
                 //     this.dX =50;
                 // }
                 // //finish
-                if(framesSHELL==3998){
-                    this.dX =185;
+                if(framesSHELL==2498){
+
                     this.dY =1;
-                    this.dHeight =30;
+
 
                 }
             }
@@ -516,9 +555,9 @@
         sWidth : 720,
         sHeight : 320,
         dY : 0,
-        dX : 110,
-        dWidth : 500,
-        dHeight :150  ,
+        dX : 210,
+        dWidth : 400,
+        dHeight :200  ,
         draw : function(){
 
             ctxSHELL.drawImage(bg_steps,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
@@ -574,7 +613,7 @@
                     this.dX =50;
                 }
                 //finish
-                if(framesSHELL==1798){
+                if(framesSHELL==2498){
                     this.dX =110;
                     this.dY =0;
                     this.dWidth =500;
@@ -1041,10 +1080,43 @@
             //SPEED DEPENDS ON THE NUMBER OF PERIOD
             this.period = stateSHELL.current == stateSHELL.getReady ? 0 : 55;
             //WE INCREMENT THE FRAME BY 1, EACH PERIOD
-            this.frame += framesSHELL % this.period == 0 ? 1 : 0;
+            this.frame += frames % this.period == 0 ? 1 : 0;
             //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
-            //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
             //this.frame = this.frame % this.animation.length;
+
+
+            if(stateSHELL.current == stateSHELL.over ||stateSHELL.current == stateSHELL.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(450 > framesSHELL && framesSHELL > 350){
+                    this.dX -=3.2*globalSpeedSHELL;
+
+                }
+                if(1450 > framesSHELL && framesSHELL > 1350){
+                    this.dX -=1.6*globalSpeedSHELL;
+
+                }
+                // if(350 > framesSHELL && framesSHELL > 250){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(950 > framesSHELL && framesSHELL > 850){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1450 > framesSHELL && framesSHELL > 1350){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                //THE END OF SIMULATION
+                if( framesSHELL == 2498){
+                    this.dX =260;
+
+                }
+            }
+
 
         }
     }
@@ -1117,20 +1189,28 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(150 > framesSHELL && framesSHELL > 50){
-                    this.dX -=1.6*globalSpeedSHELL;
+                if(750 > framesSHELL && framesSHELL > 650){
+                    this.dX -=3.2*globalSpeedSHELL;
 
                 }
-                if(350 > framesSHELL && framesSHELL > 250){
-                    this.dX -=1.6*globalSpeedSHELL;
+                if(1050 > framesSHELL && framesSHELL > 950){
+                    this.dX -=3.2*globalSpeedSHELL;
 
                 }
-                if(550 > framesSHELL && framesSHELL > 450){
-                    this.dX -=1.6*globalSpeedSHELL;
+                if(1450 > framesSHELL && framesSHELL > 1350){
+                    this.dX +=1.6*globalSpeedSHELL;
 
                 }
+                // if(350 > framesSHELL && framesSHELL > 250){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(550 > framesSHELL && framesSHELL > 450){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
+                if( framesSHELL == 2498){
                     this.dX =340;
 
                 }
@@ -1204,21 +1284,25 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(150 > framesSHELL && framesSHELL > 50){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
-                if(1150 > framesSHELL && framesSHELL > 1050){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(1450 > framesSHELL && framesSHELL > 1350){
-                    this.dX -=1.6*globalSpeedSHELL;
+                // if(150 > framesSHELL && framesSHELL > 50){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1150 > framesSHELL && framesSHELL > 1050){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1450 > framesSHELL && framesSHELL > 1350){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                if(1050 > framesSHELL && framesSHELL > 950){
+                    this.dX +=3.2*globalSpeedSHELL;
 
                 }
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
-                    this.dX =260;
+                if( framesSHELL == 2498){
+                    this.dX =20;
 
                 }
             }
@@ -1257,25 +1341,25 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                // if(150 > framesSHELL && framesSHELL > 50){
-                //     this.dX -=globalSpeedSHELL;
+                if(450 > framesSHELL && framesSHELL > 350){
+                    this.dX +=3.2*globalSpeedSHELL;
+
+                }
+                // if(350 > framesSHELL && framesSHELL > 250){
+                //     this.dX +=1.6*globalSpeedSHELL;
                 //
                 // }
-                if(350 > framesSHELL && framesSHELL > 250){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
-                if(950 > framesSHELL && framesSHELL > 850){
-                    this.dX -=1.6*globalSpeedSHELL;
-
-                }
-                if(1450 > framesSHELL && framesSHELL > 1350){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
+                // if(950 > framesSHELL && framesSHELL > 850){
+                //     this.dX -=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1450 > framesSHELL && framesSHELL > 1350){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
-                    this.dX =180;
+                if( framesSHELL == 2498){
+                    this.dX =100;
 
                 }
             }
@@ -1311,6 +1395,10 @@
             if(stateSHELL.current == stateSHELL.over ||stateSHELL.current == stateSHELL.getReady){
 
             }else{
+                if(750 > framesSHELL && framesSHELL > 650){
+                    this.dX +=3.2*globalSpeedSHELL;
+
+                }
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
                 // if(150 > framesSHELL && framesSHELL > 50){
@@ -1321,21 +1409,21 @@
                 //     this.dX +=1.6*globalSpeedSHELL;
                 //
                 // }
-                if(550 > framesSHELL && framesSHELL > 450){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
-                if(950 > framesSHELL && framesSHELL > 850){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
-                if(1150 > framesSHELL && framesSHELL > 1050){
-                    this.dX +=1.6*globalSpeedSHELL;
-
-                }
+                // if(550 > framesSHELL && framesSHELL > 450){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(950 > framesSHELL && framesSHELL > 850){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
+                // if(1150 > framesSHELL && framesSHELL > 1050){
+                //     this.dX +=1.6*globalSpeedSHELL;
+                //
+                // }
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
-                    this.dX =100;
+                if( framesSHELL == 2498){
+                    this.dX =180;
 
                 }
             }
@@ -1386,12 +1474,13 @@
             // if(state.current == state.over ||state.current == state.getReady){
             //
             // } else {
-            if (  framesSHELL <= 2100 && framesSHELL > 700) {
+            if (  framesSHELL <= 2100 && framesSHELL > 1200) {
                 let flagSHELL = this.nr01[0];
                 ctxSHELL.drawImage(blue_numbersSHELL,flagSHELL.bsX,flagSHELL.bsY,flagSHELL.bsWidth,flagSHELL.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }  else{
-                ctxSHELL.drawImage(blue_numbersSHELL,this.bsX,this.bsY,this.bsWidth,this.bsHeight,this.bdX,this.bdY,
+                let flagSHELL = this.nr02[0];
+                ctxSHELL.drawImage(blue_numbersSHELL,flagSHELL.bsX,flagSHELL.bsY,flagSHELL.bsWidth,flagSHELL.bsHeight,this.bdX,this.bdY,
                     this.bdWidth,this.bdHeight);
             }
 
@@ -1501,7 +1590,7 @@
 
                 }
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
+                if( framesSHELL == 2498){
                     this.dX =410;
                    // this.dY =150;
 
@@ -1560,7 +1649,7 @@
                 // }
 
                 //THE END OF SIMULATION
-                if( framesSHELL == 1798){
+                if( framesSHELL == 2498){
                     this.dX =-70;
                     //this.dY =150;
 
@@ -1621,31 +1710,33 @@
 
         //draw function
         // bg.draw();
-        if(1550 > framesSHELL && framesSHELL > 0){
+        if(2100 > framesSHELL && framesSHELL > 0){
            // c2nSHELL.draw();
           //  lineSHELL.draw();
            // lineleftSHELL.draw();
             bgRectangle.draw();
             flagSHELL.draw();
-        }
-        if(650 > framesSHELL && framesSHELL > 0){
-            // c2nSHELL.draw();
-
             red_circle01.draw();
             brown_circle01.draw();
         }
-        if(1150 > framesSHELL && framesSHELL > 750){
-            // c2nSHELL.draw();
-
-            red_circle01.draw();
-            brown_circle01.draw();
-        }
-        if(1550 > framesSHELL && framesSHELL > 1250){
-            // c2nSHELL.draw();
-
-            red_circle01.draw();
-            brown_circle01.draw();
-        }
+        // if(650 > framesSHELL && framesSHELL > 0){
+        //     // c2nSHELL.draw();
+        //
+        //     red_circle01.draw();
+        //     brown_circle01.draw();
+        // }
+        // if(1150 > framesSHELL && framesSHELL > 750){
+        //     // c2nSHELL.draw();
+        //
+        //     red_circle01.draw();
+        //     brown_circle01.draw();
+        // }
+        // if(1550 > framesSHELL && framesSHELL > 1250){
+        //     // c2nSHELL.draw();
+        //
+        //     red_circle01.draw();
+        //     brown_circle01.draw();
+        // }
         // l_SHELL.draw();
         // p_SHELL.draw();
         // k_SHELL.draw();
@@ -1672,7 +1763,7 @@
         lineSHELL.update();
         bgRectangle.update();
         lineleftSHELL.update();
-        if(framesSHELL == 1800){
+        if(framesSHELL == 2500){
             stateSHELL.current = stateSHELL.over;
         };
 
