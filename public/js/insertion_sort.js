@@ -278,7 +278,7 @@ const stateINSERTION = {
 
 
 //CONTROL THE GAME
-startINSERTION.addEventListener("click",function(evt){
+cvsINSERTION.addEventListener("click",function(evt){
     switch(stateINSERTION.current){
         case stateINSERTION.getReady:
             stateINSERTION.current = stateINSERTION.game;
@@ -1209,10 +1209,10 @@ const nr9INSERTION = {
 }
 
 const lineINSERTION = {
-    sX : 100,
-    sY : 10,
-    sWidth : 350-100,
-    sHeight : 180-10,
+    sX : 31,
+    sY : 13,
+    sWidth : 260-31,
+    sHeight : 190-13,
     dY : 150,
     dX : 6,
     dWidth : 200,

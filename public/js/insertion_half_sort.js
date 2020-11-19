@@ -278,7 +278,7 @@ const stateINSERTIONHALF = {
 
 
 //CONTROL THE GAME
-startINSERTIONHALF.addEventListener("click",function(evt){
+cvsINSERTIONHALF.addEventListener("click",function(evt){
     switch(stateINSERTIONHALF.current){
         case stateINSERTIONHALF.getReady:
             stateINSERTIONHALF.current = stateINSERTIONHALF.game;
