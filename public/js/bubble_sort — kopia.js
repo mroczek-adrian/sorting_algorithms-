@@ -6,7 +6,7 @@
 
 
     var x, text;
-    // SELECT CVS
+    // BUBBLE CVS
     const cvsBUBBLE = document.getElementById("birdBUBBLE");
     cvsBUBBLE.style.display = "block";
     // if (cvsBUBBLE.style.display === "none") {
@@ -51,7 +51,8 @@
     const click2startBUBBLE=document.getElementById("click2start");
 //IMAGE OF THE GET OVER STATE
     const pauseBUBBLE=document.getElementById("pause");
-
+    const red_circle=document.getElementById("red_circle");
+    const restartBUBBLE = document.getElementById("img4");
 //GAME STATE
     const stateBUBBLE = {
         current : 2 ,
@@ -82,8 +83,217 @@
                 break;
         }
     });
+    restartBUBBLE.addEventListener("click",function(evt){
+        switch(stateBUBBLE.current){
+            case stateBUBBLE.getReady:
+            case stateBUBBLE.game:
+                stateBUBBLE.current = 2;
+                red_circle01.dX=10;
+                red_circle02.dX=90;
+                // bgRectangle.dX =185;
+               // bgRectangle.dY =5;
+                // bgRectangle.dHeight =30;
+                // red_circle01.dX =10;
+                // red_circle01.dY =190;
+                //brown_circle01.dX =5;
+                //brown_circle01.dY =265;
+                nr1BUBBLE.dX =340;
+                //nr1BUBBLE.dY =200;
+                nr2BUBBLE.dX =180;
+                //   nr2BUBBLE.dY =200;
+                nr3BUBBLE.dX =100;
+                //  nr3BUBBLE.dY =200;
+                nr4BUBBLE.dX =260;
+                //  nr4BUBBLE.dY =200;
+                nr9BUBBLE.dX =20;
+                //  nr9BUBBLE.dY =200;
+                lineBUBBLE.dX =320;
 
 
+
+
+
+                framesBUBBLE = 0;
+
+
+                break;
+        }
+    });
+
+    const red_circle01 = {
+
+        //circle
+        sX : 310,
+        sY : 90,
+        sWidth : 490 - 310,
+        sHeight : 270 - 90,
+        dY : 190,
+        dX : 10,
+        dWidth : 90,
+        dHeight :90 ,
+
+        //frame can change the image of the images
+        frame : 0,
+
+        smaller : [{ dWidth : 40,
+            dHeight :40 }],
+
+        draw : function(){
+            //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+            //let nr1 = this.animation[this.frame]
+            ctxBUBBLE.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+
+
+        bubbleSort : function(){
+
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(450 > framesBUBBLE && framesBUBBLE > 350){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(650 > framesBUBBLE && framesBUBBLE > 550){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(850 > framesBUBBLE && framesBUBBLE > 750){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-2nd run
+                if(1050 > framesBUBBLE && framesBUBBLE > 950){
+                    this.dX -=4.8*globalSpeedBUBBLE;
+                }
+                if(1250 > framesBUBBLE && framesBUBBLE > 1150){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(1450 > framesBUBBLE && framesBUBBLE > 1350){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-3rd run
+                if(1650 > framesBUBBLE && framesBUBBLE > 1550){
+                    this.dX -=3.2*globalSpeedBUBBLE;
+                }
+                if(1850 > framesBUBBLE && framesBUBBLE > 1750){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-4th run
+                if(2050 > framesBUBBLE && framesBUBBLE > 1950){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+                }
+                //finish
+                if(framesBUBBLE==2498){
+                    this.dX =10;
+                }
+            }
+
+        }
+    }
+    const red_circle02 = {
+
+        //circle
+        sX : 310,
+        sY : 90,
+        sWidth : 490 - 310,
+        sHeight : 270 - 90,
+        dY : 190,
+        dX : 90,
+        dWidth : 90,
+        dHeight :90 ,
+
+        //frame can change the image of the images
+        frame : 0,
+
+        smaller : [{ dWidth : 40,
+            dHeight :40 }],
+
+        draw : function(){
+            //2/3 CODE WHICH IS IMPORTANT FOR ANIMATION
+            //let nr1 = this.animation[this.frame]
+            ctxBUBBLE.drawImage(red_circle,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+
+
+        bubbleSort : function(){
+
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(450 > framesBUBBLE && framesBUBBLE > 350){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(650 > framesBUBBLE && framesBUBBLE > 550){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(850 > framesBUBBLE && framesBUBBLE > 750){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-2nd run
+                if(1050 > framesBUBBLE && framesBUBBLE > 950){
+                    this.dX -=4.8*globalSpeedBUBBLE;
+                }
+                if(1250 > framesBUBBLE && framesBUBBLE > 1150){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                if(1450 > framesBUBBLE && framesBUBBLE > 1350){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-3rd run
+                if(1650 > framesBUBBLE && framesBUBBLE > 1550){
+                    this.dX -=3.2*globalSpeedBUBBLE;
+                }
+                if(1850 > framesBUBBLE && framesBUBBLE > 1750){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+                }
+                //COMPARISON VALUE OF NUMBERS-4th run
+                if(2050 > framesBUBBLE && framesBUBBLE > 1950){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+                }
+                //finish
+                if(framesBUBBLE==2498){
+                    this.dX =90;
+                }
+            }
+
+        }
+    }
 //BACKGROUD
     const bgBUBBLE = {
         sX : 0,
@@ -200,7 +410,7 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 20,
+        dX : 340,
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
 
@@ -231,6 +441,34 @@
             //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
             //3/3 CODE WHICH IS IMPORTANT FOR ANIMATION-4 STATES
             //this.frame = this.frame % this.animation.length;
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(950 > framesBUBBLE && framesBUBBLE > 850){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1550 > framesBUBBLE && framesBUBBLE > 1450){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1950 > framesBUBBLE && framesBUBBLE > 1850){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(2150 > framesBUBBLE && framesBUBBLE > 2050){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =180;
+
+                }
+            }
+
         }
     }
     const nr2BUBBLE = {
@@ -301,8 +539,16 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(950 > framesBUBBLE && framesBUBBLE > 650){
-                    this.dX -=globalSpeedBUBBLE;
+                if(550 > framesBUBBLE && framesBUBBLE > 450){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1150 > framesBUBBLE && framesBUBBLE > 1050){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(2150 > framesBUBBLE && framesBUBBLE > 2050){
+                    this.dX +=1.6*globalSpeedBUBBLE;
 
                 }
                 //THE END OF SIMULATION
@@ -379,8 +625,16 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(950 > framesBUBBLE && framesBUBBLE > 650){
-                    this.dX +=globalSpeedBUBBLE;
+                if(350 > framesBUBBLE && framesBUBBLE > 250){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1150 > framesBUBBLE && framesBUBBLE > 1050){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1950 > framesBUBBLE && framesBUBBLE > 1850){
+                    this.dX +=1.6*globalSpeedBUBBLE;
 
                 }
                 //THE END OF SIMULATION
@@ -404,6 +658,40 @@
         draw : function(){
             ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(750 > framesBUBBLE && framesBUBBLE > 650){
+                    this.dX -=1.6*globalSpeedBUBBLE;
+
+                }
+                if(1550 > framesBUBBLE && framesBUBBLE > 1450){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =100;
+
+                }
+            }
+
         }
     }
     const nr9BUBBLE = {
@@ -412,26 +700,70 @@
         sWidth : 168 - 24,
         sHeight : 168 - 24,
         dY : 200,
-        dX : 340,
+
+        dX : 20,
+
         dWidth : 100 - 24,
         dHeight :100 - 24 ,
         draw : function(){
             ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
+        },
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateBUBBLE.current == stateBUBBLE.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesBUBBLE % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+
+
+            if(stateBUBBLE.current == stateBUBBLE.over ||stateBUBBLE.current == stateBUBBLE.getReady){
+            }else{
+                // this.speed += this.gravity;
+                //50ms DELAY BEFORE MOVING THE NUMBER
+                if(350 > framesBUBBLE && framesBUBBLE > 250){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                if(550 > framesBUBBLE && framesBUBBLE > 450){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                if(750 > framesBUBBLE && framesBUBBLE > 650){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                if(950 > framesBUBBLE && framesBUBBLE > 850){
+                    this.dX +=1.6*globalSpeedBUBBLE;
+
+                }
+                //THE END OF SIMULATION
+                if( framesBUBBLE == 4998){
+                    this.dX =100;
+
+                }
+            }
+
         }
     }
 
     const lineBUBBLE = {
-        sX : 115,
-        sY : 47,
-        sWidth : 5,
-        sHeight : 60,
+        sX : 153,
+        sY : 15,
+        sWidth : 390-153,
+        sHeight : 190-15,
         dY : 150,
-        dX : 450,
-        dWidth : 10,
+        dX : 320,
+        dWidth : 200,
         dHeight :200  ,
         draw : function(){
-            ctxBUBBLE.drawImage(numbersBUBBLE,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            ctxBUBBLE.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
         },
 
@@ -456,16 +788,16 @@
             }else{
                 // this.speed += this.gravity;
                 //50ms DELAY BEFORE MOVING THE NUMBER
-                if(2500 > framesBUBBLE && framesBUBBLE > 2050){
-                    this.dX -=globalSpeedBUBBLE;
+                if(1050 > framesBUBBLE && framesBUBBLE > 950){
+                    this.dX -=1.6*globalSpeedBUBBLE;
 
                 }
-                if(3850 > framesBUBBLE && framesBUBBLE > 3500){
-                    this.dX -=globalSpeedBUBBLE;
+                if(1650 > framesBUBBLE && framesBUBBLE > 1550){
+                    this.dX -=1.6*globalSpeedBUBBLE;
 
                 }
-                if(4600 > framesBUBBLE && framesBUBBLE > 4250){
-                    this.dX -=globalSpeedBUBBLE;
+                if(2050 > framesBUBBLE && framesBUBBLE > 1950){
+                    this.dX -=1.6*globalSpeedBUBBLE;
 
                 }
 
@@ -527,18 +859,23 @@
         //title of canvas
         ctxBUBBLE.font = "20px Arial";
 
-        ctxBUBBLE.strokeText("Bubble Sort! - click if you want to pause or start simulation",25,50);
+        ctxBUBBLE.strokeText("Bubble Sort!",25,50);
 
         //draw function
         // bg.draw();
-        c2nBUBBLE.draw();
+       // c2nBUBBLE.draw();
+        if(2300 > framesBUBBLE && framesBUBBLE > 0){
+            red_circle01.draw();
+            red_circle02.draw();
+            lineBUBBLE.draw();
+        }
 
         nr1BUBBLE.draw();
         nr2BUBBLE.draw();
         nr3BUBBLE.draw();
         nr4BUBBLE.draw();
         nr9BUBBLE.draw();
-        lineBUBBLE.draw();
+
         getReadyBUBBLE.draw();
         gameOverBUBBLE.draw();
     }
@@ -547,9 +884,14 @@
         nr1BUBBLE.update();
         nr2BUBBLE.update();
         nr3BUBBLE.update();
-        c2nBUBBLE.update();
+        nr4BUBBLE.update();
+        nr9BUBBLE.update();
+       // c2nBUBBLE.update();
         lineBUBBLE.update();
-        if(framesBUBBLE == 5000){
+
+        red_circle01.update();
+        red_circle02.update();
+        if(framesBUBBLE == 11111){
             stateBUBBLE.current = stateBUBBLE.over;
         };
 
@@ -559,8 +901,14 @@
     function loop(){
         update();
         draw();
-        framesBUBBLE++;
-        framesBUBBLE++;
+
+        if (stateBUBBLE.current == stateBUBBLE.over || stateBUBBLE.current == stateBUBBLE.getReady) {
+        }else{
+            framesBUBBLE++;
+
+        }
+
+
         requestAnimationFrame(loop);
     }
     loop();
