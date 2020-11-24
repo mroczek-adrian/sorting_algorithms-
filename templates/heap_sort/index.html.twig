@@ -11,9 +11,7 @@
         display: block;
         margin: 0 auto;
     }
-    #bird{
-        display: none;
-    }
+
 </style>
     <div class="form-group row">
         <div class="col-sm-1">
@@ -30,11 +28,11 @@
             <h2>JavaScript Can Validate Input</h2>
 
             <p>Please input a 5 numbers - without repetition[1-9]</p>
-            <form name="myForm">
-                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">
-                <button onclick="  myFunction()"  type="button">Submit</button>
+{#            <form name="myForm">#}
+{#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
+{#                <button onclick="  myFunction()"  type="button">Submit</button>#}
 
-            </form>
+{#            </form>#}
 
 
             <p id="demo"></p>
@@ -45,6 +43,9 @@
             <p id="demo5"></p>
             {#            here will be canvas#}
             <canvas id="bird" width="600" height="380"></canvas>
+            <br><br><br>
+            <img id="restart_img" style="width: 200px ; height: 200px;display: block;margin-left: auto; margin-right: auto;text-align: center;  " src="{{ asset('js/img/mix-sort/RESTART.png') }}" >
+            <br><br><br>
             <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
             <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
             <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
@@ -55,6 +56,8 @@
             <img id="brown_circle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/brown_circle.png') }}" >
             <img id="square-traingle" style="width: 200px ; height: 200px; " src="{{ asset('js/img/square-triangle.png') }}" >
             <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
+            <img id="bg" style="width: 200px ; height: 200px; " src="{{ asset('js/img/HEAP-SORT/HEAP.png') }}" >
+            <img id="img1" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_sort/prostokat1.png') }}" >
 
         </div>
         <div class="col-sm-2">

@@ -101,8 +101,8 @@
             case stateMIX.game:
                 stateMIX.current = 2;
 
-                bgRectangle.dX =100;
-                bgRectangle.dY =1;
+                //bgRectangle.dX =100;
+                bgRectangle.dY =-10;
                 bgRectangle.dHeight =62;
                 red_circle01.dX = 250;
                 red_circle02.dX = 330;
@@ -119,7 +119,7 @@
               //  nr4MIX.dY =200;
                 nr9MIX.dX =100;
              //   nr9MIX.dY =200;
-                lineMIX.dX =410;
+                lineMIX.dX =290;
                 lineleftMIX.dX= -70;
                 framesMIX = 0;
 
@@ -375,9 +375,9 @@
         sY : 33,
         sWidth : 670-33,
         sHeight : 270-33,
-        dY : 1,
-        dX : 100,
-        dWidth : 520,
+        dY : -10,
+        dX : 130,
+        dWidth : 480,
         dHeight :62  ,
 
         draw : function(){
@@ -414,7 +414,7 @@
                 }
                 if(800 > framesMIX && framesMIX > 750){
                     this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY +=0.7* globalSpeedMIX;
+                    this.dY +=0.5* globalSpeedMIX;
                 }
                 if(1200 > framesMIX && framesMIX > 1150){
                     this.dHeight -=1.5*globalSpeedMIX;
@@ -422,7 +422,7 @@
                 }
                 if(1300 > framesMIX && framesMIX > 1250){
                     this.dHeight +=1.5*globalSpeedMIX;
-                    this.dY -=5.5* globalSpeedMIX;
+                    this.dY -=5.3* globalSpeedMIX;
                 }
                 // // go to 3rd
                 // if(400 > framesMIX && framesMIX > 350){
@@ -509,13 +509,13 @@
     }
     const bgsteps1 = {
 
-        sX : 0,
-        sY : 0,
-        sWidth : 720,
-        sHeight : 320,
+        sX : 6,
+        sY : 16,
+        sWidth : 723,
+        sHeight : 310,
         dY : 0,
-        dX : 110,
-        dWidth : 500,
+        dX : 150,
+        dWidth : 440,
         dHeight :150  ,
         draw : function(){
 
@@ -1341,14 +1341,14 @@
     }
 
     const lineMIX = {
-        sX : 260,
-        sY : 10,
-        sWidth : 390-260,
-        sHeight : 190-10,
+        sX : 140,
+        sY : 12,
+        sWidth : 400-140,
+        sHeight : 190-12,
         dY : 150,
-        dX : 410,
-        dWidth : 100,
-        dHeight :200  ,
+        dX : 290,
+        dWidth : 250,
+        dHeight :190  ,
         draw : function(){
             ctxMIX.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
                 this.dWidth,this.dHeight);
@@ -1504,8 +1504,8 @@
         //title of canvas
         ctxMIX.font = "20px Arial";
 
-        ctxMIX.strokeText("MIX Sort! ",25,50);
-        //ctxMIX.strokeText("p=          l=          k= ",5,100);
+        ctxMIX.strokeText("Sortowanie",10,50);
+        ctxMIX.strokeText("mieszane!",10,75);
 
         //draw function
         // bg.draw();

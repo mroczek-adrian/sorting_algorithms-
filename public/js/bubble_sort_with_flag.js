@@ -108,7 +108,7 @@ restartBUBBLE_WITH_FLAG.addEventListener("click",function(evt){
             //  nr4BUBBLE_WITH_FLAG.dY =200;
             nr9BUBBLE_WITH_FLAG.dX =20;
             //  nr9BUBBLE_WITH_FLAG.dY =200;
-            lineBUBBLE_WITH_FLAG.dX =320;
+            lineBUBBLE_WITH_FLAG.dX =295;
             bgRectangle.dY=5;
 
 
@@ -170,23 +170,23 @@ const bgRectangle = {
             }
             if(1600 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG > 1550) {
                 //this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
-                this.dY += 2 * globalSpeedBUBBLE_WITH_FLAG;
+                this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
                 this.dY +=1.8* globalSpeedBUBBLE_WITH_FLAG;
             }
             if(1700 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG > 1650) {
                 //this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
-                this.dY -= 2 * globalSpeedBUBBLE_WITH_FLAG;
+                this.dHeight -=2*globalSpeedBUBBLE_WITH_FLAG;
                 this.dY -= 1.8 * globalSpeedBUBBLE_WITH_FLAG;
 
             }
             if(2000 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG > 1950){
                 //this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
-                this.dY += 2*globalSpeedBUBBLE_WITH_FLAG;
+                this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
                 this.dY +=1.8* globalSpeedBUBBLE_WITH_FLAG;
             }
             if(2100 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG > 2050){
                 //this.dHeight +=2*globalSpeedBUBBLE_WITH_FLAG;
-                this.dY -= 2*globalSpeedBUBBLE_WITH_FLAG;
+                this.dHeight -=2*globalSpeedBUBBLE_WITH_FLAG;
                 this.dY -= 1.8 * globalSpeedBUBBLE_WITH_FLAG;
 
             }
@@ -275,10 +275,10 @@ const bgRectangle = {
 }
 const bgSteps = {
 
-    sX : 32,
-    sY : 30,
-    sWidth :664 -32,
-    sHeight : 255-30,
+    sX : 2,
+    sY : 33,
+    sWidth :660 -2,
+    sHeight : 321-33,
     dY : 10,
     dX : 200,
     dWidth : 400,
@@ -352,8 +352,8 @@ const flagBUBBLE_WITH_FLAG = {
     bsY : 255,
     bsWidth : 236 - 145,
     bsHeight : 354 - 255,
-    bdY : 90,
-    bdX : 100,
+    bdY : 70,
+    bdX : 147,
     bdWidth : 55,
     bdHeight :55 ,
 
@@ -1119,14 +1119,14 @@ const nr9BUBBLE_WITH_FLAG = {
 }
 
 const lineBUBBLE_WITH_FLAG = {
-    sX : 153,
-    sY : 15,
-    sWidth : 390-153,
-    sHeight : 190-15,
+    sX : 4,
+    sY : 10,
+    sWidth : 269-4,
+    sHeight : 160-10,
     dY : 150,
-    dX : 320,
-    dWidth : 200,
-    dHeight :200  ,
+    dX : 295,
+    dWidth : 250,
+    dHeight :220  ,
     draw : function(){
         ctxBUBBLE_WITH_FLAG.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
@@ -1223,10 +1223,11 @@ function draw(){
 
     //title of canvas
     ctxBUBBLE_WITH_FLAG.font = "20px Arial";
-
-    ctxBUBBLE_WITH_FLAG.strokeText("Bubble Sort!",25,50);
-    ctxBUBBLE_WITH_FLAG.strokeText("Number of swap:",25,75);
-    ctxBUBBLE_WITH_FLAG.strokeText("Flag = ",25,125);
+    ctxBUBBLE_WITH_FLAG.strokeText("Sortowanie  ",25,25);
+    ctxBUBBLE_WITH_FLAG.strokeText("bąbelkowe ",25,50);
+    ctxBUBBLE_WITH_FLAG.strokeText("ze znacznikiem! ",25,75);
+    ctxBUBBLE_WITH_FLAG.strokeText("Numer zmian:",25,100);
+   // ctxBUBBLE_WITH_FLAG.strokeText("Flag = ",25,125);
 
     //draw function
     // bg.draw();

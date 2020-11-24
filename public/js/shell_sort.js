@@ -104,7 +104,7 @@
                 stateSHELL.current = 2;
 
                // bgRectangle.dX =100;
-                bgRectangle.dY =1;
+                bgRectangle.dY =-3;
                // bgRectangle.dHeight =62;
                 red_circle01.dX = 10;
                 brown_circle01.dX = 170;
@@ -418,9 +418,9 @@
         sWidth : 670-33,
         sHeight : 270-33,
         dY : -3,
-        dX : 200,
+        dX : 190,
         dWidth : 420,
-        dHeight :70  ,
+        dHeight :100  ,
 
         draw : function(){
             ctxSHELL.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
@@ -450,9 +450,9 @@
 
             }else{
                 // go to 2nd
-                if(300 > framesSHELL && framesSHELL > 250){
+                if(1250 > framesSHELL && framesSHELL > 1200){
                    // this.dHeight -=1.5*globalSpeedSHELL;
-                    this.dY +=2.7* globalSpeedSHELL;
+                    this.dY +=3.5* globalSpeedSHELL;
                 }
                 // if(1200 > framesSHELL && framesSHELL > 1150){
                 //     this.dY -=2.7* globalSpeedSHELL;
@@ -550,10 +550,10 @@
     }
     const bgsteps1 = {
 
-        sX : 0,
-        sY : 0,
-        sWidth : 720,
-        sHeight : 320,
+        sX : 17,
+        sY : 21,
+        sWidth : 690,
+        sHeight : 241,
         dY : 0,
         dX : 210,
         dWidth : 400,
@@ -1437,8 +1437,8 @@
         bsY : 255,
         bsWidth : 236 - 145,
         bsHeight : 354 - 255,
-        bdY : 65,
-        bdX : 80,
+        bdY : 85,
+        bdX : 100,
         bdWidth : 55,
         bdHeight :55 ,
 
@@ -1705,8 +1705,9 @@
         //title of canvas
         ctxSHELL.font = "20px Arial";
 
-        ctxSHELL.strokeText("SHELL Sort! ",25,50);
-        ctxSHELL.strokeText("GAP =   ",25,100);
+        ctxSHELL.strokeText("Sortowanie",25,50);
+        ctxSHELL.strokeText("metodą Shella!",25,75);
+        ctxSHELL.strokeText("Odstęp=   ",25,125);
 
         //draw function
         // bg.draw();

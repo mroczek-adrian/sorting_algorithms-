@@ -1,70 +1,10 @@
 
-function myFunction() {
 
-//VALIDATION
-    var validation1 = document.forms["myForm"]["fname"].value;
-    var validation2 = document.forms["myForm"]["fname1"].value;
-    var validation3 = document.forms["myForm"]["fname2"].value;
-    var validation4 = document.forms["myForm"]["fname3"].value;
-    var validation5 = document.forms["myForm"]["fname4"].value;
-    if (validation1 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation2 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation3 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation4 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation5 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    x1 = document.getElementById("numb").value;
-    x2 = document.getElementById("numb1").value;
-    x3 = document.getElementById("numb2").value;
-    x4 = document.getElementById("numb3").value;
-    x5 = document.getElementById("numb4").value;
-    if(x1 > 9 || x1 < 1 || x2 < 1 || x2 > 9  || x3 < 1 || x3 > 9  || x4 < 1 || x4 > 9  || x5 < 1 || x5 > 9   ){
-        alert("To big or to small number - write a property number from [1-9]");
-        return false;
-    }
-    if(x1 == x2 || x1 == x3  || x1 == x4 || x1 == x5 || x2 == x3 || x2 == x4 || x2 == x5 || x3 == x4 ||  x3 == x5 || x4 == x5   ){
-        alert("There is a repetition - write numbers without repetition");
-        return false;
-    }
-    if(x1 == 1 ||x1 == 2 || x1 == 3 ||x1 == 4 ||x1 == 5 ||x1 == 6 ||x1 == 7 ||x1 == 8 ||x1 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x2 == 1 ||x2 == 2 || x2 == 3 ||x2 == 4 ||x2 == 5 ||x2 == 6 ||x2 == 7 ||x2 == 8 ||x2 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x3 == 1 ||x3 == 2 || x3 == 3 ||x3 == 4 ||x3 == 5 ||x3 == 6 ||x3 == 7 ||x3 == 8 ||x3 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x4 == 1 ||x4 == 2 || x4 == 3 ||x4 == 4 ||x4 == 5 ||x4 == 6 ||x4 == 7 ||x4 == 8 ||x4 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x5 == 1 ||x5 == 2 || x5 == 3 ||x5 == 4 ||x5 == 5 ||x5 == 6 ||x5 == 7 ||x5 == 8 ||x5 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
+    x1 = 5;
+    x2 = 4;
+    x3 = 1;
+    x4 = 3;
+    x5 = 2;
 
 
 
@@ -209,7 +149,10 @@ function myFunction() {
     const square_triangle=document.getElementById("square-traingle");
 //IMAGE OF THE GET OVER STATE
     const pauseHEAP=document.getElementById("pause");
-//GAME STATE
+    const restartHEAP = document.getElementById("restart_img");
+    const bg_steps=document.getElementById("bg");
+    const img1=document.getElementById("img1");//rectangle
+    //GAME STATE
     const state = {
         current : 2 ,
         getReady : 0,
@@ -231,7 +174,7 @@ function myFunction() {
                 framesRemember=frames;
                 //HERE I WILL WRITE THE ALGORITHM
                 //  bird.flap();
-                nr1.bubbleSort();
+                //nr1.bubbleSort();
                 break;
             case state.over:
                 state.current = state.game;
@@ -239,7 +182,66 @@ function myFunction() {
                 break;
         }
     });
+    restartHEAP.addEventListener("click",function(evt){
+        switch(state.current){
+            case state.getReady:
+            case state.game:
+                state.current = 2;
 
+                // bgRectangle.dX =100;
+                bgRectangle.dY =95;
+                bgRectangle.dHeight =50;
+                red_circle01.dX = 195;
+                red_circle01.dY = 55;
+                red_circle02.dX = 290;
+                red_circle02.dY = 155;
+                brown_circle01.dX = 195;
+                brown_circle01.dY = 55;
+                brown_circle02.dX = 245;
+                brown_circle02.dY = 55;
+
+
+
+                //red_circle01.dY =190;
+                // brown_circle01.dX =85;
+                // brown_circle01.dY =265;
+                nr1.dX =397;
+                nr1.tdY =260;
+                nr1.tdX =295;
+
+
+                // nr1HEAP.dY =200;
+                nr2.dX =303;
+                nr2.tdY =210;
+                nr2.tdX =360;
+
+
+                // nr2HEAP.dY =200;
+                nr3.dX =205;
+                nr3.tdY =160;
+                nr3.tdX =300;
+
+
+                //  nr3HEAP.dY =200;
+                nr4.dX =350;
+                nr4.tdY =260;
+                nr4.tdX =185;
+
+
+                //  nr4HEAP.dY =200;
+                nr5.dX =250;
+                nr5.tdY =210;
+                nr5.tdX =240;
+
+                //   nr9HEAP.dY =200;
+                //   lineHEAP.dX =410;
+                //  lineleftHEAP.dX= -70;
+                frames = 0;
+
+
+                break;
+        }
+    });
 //CIRCLE
 //RED CIRCLE
     const red_circle01 = {
@@ -3999,8 +4001,253 @@ function myFunction() {
 
         }
     }
+    const bgRectangle = {
+
+        sX : 33,
+        sY : 33,
+        sWidth : 670-33,
+        sHeight : 270-33,
+        dY : 95,
+        dX : 8,
+        dWidth : 200,
+        dHeight :50  ,
+
+        draw : function(){
+            ctx.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
 
 
+        },
+        startPosition : function(){
+            bgRectangle.dX =185;
+            bgRectangle.dHeight =30;
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = state.current == state.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += frames % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(state.current == state.over ||state.current == state.getReady){
+
+            }else{
+                // go to 2nd
+                if(1050 > frames && frames > 1000){
+                    this.dHeight +=3.6*globalSpeed;
+                    this.dY +=3.5* globalSpeed;
+                }
+                if(1450 > frames && frames > 1400){
+                    this.dHeight -=2*globalSpeed;
+                    this.dY +=7* globalSpeed;
+                }
+                if(1550 > frames && frames > 1500){
+                    this.dHeight +=2*globalSpeed;
+                    this.dY -=7* globalSpeed;
+                }
+                if(2000 > frames && frames > 1950){
+                    this.dHeight -=2*globalSpeed;
+                    this.dY +=7* globalSpeed;
+                }
+                if(2100 > frames && frames > 2050){
+                    this.dHeight +=2*globalSpeed;
+                    this.dY -=7* globalSpeed;
+                }
+                if(2600 > frames && frames > 2550){
+                    this.dHeight -=2*globalSpeed;
+                    this.dY +=7* globalSpeed;
+                }
+                if(2700 > frames && frames > 2650){
+                    this.dHeight +=2*globalSpeed;
+                    this.dY -=7* globalSpeed;
+                }
+                if(2850 > frames && frames > 2800){
+                    this.dHeight -=2*globalSpeed;
+                    this.dY +=7* globalSpeed;
+                }
+                if(2950 > frames && frames > 2900){
+                    this.dHeight +=2*globalSpeed;
+                    this.dY -=7* globalSpeed;
+                }
+                // if(1200 > frames && frames > 1150){
+                //     this.dY -=2.7* globalSpeed;
+                // }
+                // if(1200 > frames && frames > 1150){
+                //     this.dHeight -=1.5*globalSpeed;
+                //     this.dY +=2.4* globalSpeed;
+                // }
+                // if(1300 > frames && frames > 1250){
+                //     this.dHeight +=1.5*globalSpeed;
+                //     this.dY -=5.5* globalSpeed;
+                // }
+                // // go to 3rd
+                // if(400 > frames && frames > 350){
+                //     this.dHeight -=0.5*globalSpeed;
+                //     this.dY +=2.5* globalSpeed;
+                // }  // go to 1rd
+                // if(600 > frames && frames > 550){
+                //     this.dY -=3.9* globalSpeed;
+                //     this.dHeight -=1*globalSpeed;
+                // }
+                // if(800 > frames && frames > 750){
+                //     this.dHeight +=1.5*globalSpeed;
+                //     this.dY +=1.4* globalSpeed;
+                //
+                // }
+                // if(1200 > frames && frames > 1150){
+                //     this.dHeight -=0.5*globalSpeed;
+                //     this.dY +=2.5* globalSpeed;
+                // }
+                // if(1600 > frames && frames > 1550){
+                //     this.dY -=3.9* globalSpeed;
+                //     this.dHeight -=1*globalSpeed;
+                //
+                // }
+                // if(1800 > frames && frames > 1750){
+                //     this.dHeight +=1.5*globalSpeed;
+                //     this.dY +=1.4* globalSpeed;
+                //
+                // }
+                // if(2500 > frames && frames > 2450){
+                //     this.dHeight -=0.5*globalSpeed;
+                //     this.dY +=2.5* globalSpeed;
+                // }
+                // if(2800 > frames && frames > 2750){
+                //     this.dY -=3.9* globalSpeed;
+                //     this.dHeight -=1*globalSpeed;
+                // }
+                // if(3000 > frames && frames > 2950){
+                //     this.dHeight +=1.5*globalSpeed;
+                //     this.dY +=1.4* globalSpeed;
+                // }
+                // if(3600 > frames && frames > 3550){
+                //     this.dHeight -=0.5*globalSpeed;
+                //     this.dY +=2.5* globalSpeed;
+                // }
+                // // if(1200 > frames && frames > 850){
+                //     this.dX +=globalSpeed;
+                // }
+                // if(1800 > frames && frames > 1450){
+                //     this.dX +=globalSpeed;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-2nd run
+                // if( frames == 2050){
+                //     this.dX =50;
+                // }
+                // if(2650 > frames && frames > 2300){
+                //     this.dX +=globalSpeed;
+                // }
+                // if(3250 > frames && frames > 2900){
+                //     this.dX +=globalSpeed;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-3rd run
+                // if( frames == 3500){
+                //     this.dX =50;
+                // }
+                // if(4000 > frames && frames > 3750){
+                //     this.dX +=globalSpeed;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-4th run
+                // if(frames == 4250){
+                //     this.dX =50;
+                // }
+                // //finish
+                if(frames==2998){
+
+                    this.dY =95;
+
+
+                }
+            }
+
+
+        }
+    }
+
+    const bgsteps1 = {
+
+        sX : 42,
+        sY : 32,
+        sWidth : 504,
+        sHeight : 321,
+        dY : 100,
+        dX : 20,
+        dWidth : 200,
+        dHeight :200  ,
+        draw : function(){
+
+            ctx.drawImage(bg_steps,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = state.current == state.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += frames % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(state.current == state.over ||state.current == state.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //COMPARISON VALUE OF NUMBERS-1st run
+                if(600 > frames && frames > 250){
+                    this.dX +=globalSpeed;
+                }
+                if(1200 > frames && frames > 850){
+                    this.dX +=globalSpeed;
+                }
+                if(1800 > frames && frames > 1450){
+                    this.dX +=globalSpeed;
+                }
+                //COMPARISON VALUE OF NUMBERS-2nd run
+                if( frames == 2050){
+                    this.dX =50;
+                }
+                if(2650 > frames && frames > 2300){
+                    this.dX +=globalSpeed;
+                }
+                if(3250 > frames && frames > 2900){
+                    this.dX +=globalSpeed;
+                }
+                //COMPARISON VALUE OF NUMBERS-3rd run
+                if( frames == 3500){
+                    this.dX =50;
+                }
+                if(4000 > frames && frames > 3750){
+                    this.dX +=globalSpeed;
+                }
+                //COMPARISON VALUE OF NUMBERS-4th run
+                if(frames == 4250){
+                    this.dX =50;
+                }
+                //finish
+                if(frames==2498){
+                    this.dX =110;
+                    this.dY =0;
+                    this.dWidth =500;
+                    this.dHeight =150;
+
+                }
+            }
+
+
+        }
+    }
 
 //GET READY MESSAGE
     const getReady = {
@@ -4042,8 +4289,10 @@ function myFunction() {
         //background
         ctx.fillStyle = "#70c5ce";
         ctx.fillRect(0,0,cvs.width,cvs.height);
+        bgRectangle.draw();
         table_top.draw();
         index00.draw();index01.draw();index02.draw();index03.draw();index04.draw();
+
 
 
 
@@ -4052,7 +4301,7 @@ function myFunction() {
         // if(state.current == state.getReady){}
         // else{
 
-        if( frames > 200*simulation_speed && frames <=2850*simulation_speed){
+        if( frames > 200*simulation_speed && frames <=2498*simulation_speed){
             red_circle01.draw();
 
         }
@@ -4284,7 +4533,7 @@ function myFunction() {
             }
 
         }
-        if( frames > 800*simulation_speed && frames <=65000*simulation_speed){
+        if( frames > 800*simulation_speed && frames <=2999*simulation_speed){
 
 
             if( frames < 2550 *simulation_speed){
@@ -4423,9 +4672,9 @@ function myFunction() {
 
 
         //title of canvas
-        ctx.font = "30px Arial";
-        ctx.strokeText("Heap Sort!",225,50);
-
+        ctx.font = "20px Arial";
+        ctx.strokeText("Sortowanie ",25,50);
+        ctx.strokeText("stogowe! ",25,75);
         //draw function
         // bg.draw();
         //c2n.draw();
@@ -4459,10 +4708,11 @@ function myFunction() {
             nr9.draw();
         }
 
-
+        bgsteps1.draw();
         //line.draw();
         getReady.draw();
         gameOver.draw();
+
     }
 //UPDATE
     function update(){
@@ -4476,6 +4726,7 @@ function myFunction() {
         nr7.update();
         nr8.update();
         nr9.update();
+        bgRectangle.update();
         red_circle01.update();
         red_circle02.update();
         brown_circle01.update();
@@ -4515,4 +4766,4 @@ function myFunction() {
     }
     logic_for_all();
     loop();
-}
+
