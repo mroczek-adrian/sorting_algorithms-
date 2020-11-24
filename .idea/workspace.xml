@@ -137,7 +137,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../projInzy4 — projekt przygotowany dla prof" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -216,6 +216,8 @@
       <workItem from="1606135376797" duration="3034000" />
       <workItem from="1606159029970" duration="600000" />
       <workItem from="1606224217333" duration="2450000" />
+      <workItem from="1606228064952" duration="407000" />
+      <workItem from="1606230829729" duration="2989000" />
     </task>
     <servers />
   </component>

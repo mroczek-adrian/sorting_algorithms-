@@ -321,7 +321,7 @@ restartINSERTIONHALF.addEventListener("click",function(evt){
             nr4INSERTIONHALF.dY =200;
             nr9INSERTIONHALF.dX =100;
             nr9INSERTIONHALF.dY =200;
-            lineINSERTIONHALF.dX =6;
+            lineINSERTIONHALF.dX =-25;
 
 
 
@@ -465,11 +465,11 @@ const bgRectangle = {
 }
 const bgSteps = {
 
-    sX : 100,
-    sY : 100,
-    sWidth :724 -100,
-    sHeight : 338-100,
-    dY : 10,
+    sX : 3,
+    sY : 23,
+    sWidth :720 -3,
+    sHeight : 240-23,
+    dY : 15,
     dX : 200,
     dWidth : 400,
     dHeight :150  ,
@@ -1213,14 +1213,14 @@ const nr9INSERTIONHALF = {
 }
 
 const lineINSERTIONHALF = {
-    sX : 100,
+    sX : 4,
     sY : 10,
-    sWidth : 350-100,
-    sHeight : 180-10,
-    dY : 150,
-    dX : 6,
-    dWidth : 200,
-    dHeight :200  ,
+    sWidth : 269-4,
+    sHeight : 160-10,
+    dY : 145,
+    dX : -25,
+    dWidth : 250,
+    dHeight :220  ,
     draw : function(){
         ctxINSERTIONHALF.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
@@ -1344,8 +1344,8 @@ function drawINSERTIONHALF(){
     //title of canvas
     ctxINSERTIONHALF.font = "20px Arial";
 
-    ctxINSERTIONHALF.strokeText("Insertion Half Sort! ",25,70);
-    //ctxINSERTIONHALF.strokeText("Click to pause ",25,100);
+    ctxINSERTIONHALF.strokeText("Wstawianie  ",25,70);
+    ctxINSERTIONHALF.strokeText("połówkowe !",25,100);
     //draw function
     // bg.draw();
    // c2nINSERTIONHALF.draw();

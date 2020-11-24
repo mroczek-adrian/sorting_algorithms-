@@ -107,7 +107,7 @@
                 //  nr4BUBBLE.dY =200;
                 nr9BUBBLE.dX =20;
                 //  nr9BUBBLE.dY =200;
-                lineBUBBLE.dX =320;
+                lineBUBBLE.dX =310;
                 bgRectangle.dY=5;
 
 
@@ -125,7 +125,7 @@
         sY : 33,
         sWidth : 670-33,
         sHeight : 270-33,
-        dY : 5,
+        dY : 2,
         dX : 185,
         dWidth : 420,
         dHeight :75  ,
@@ -268,10 +268,10 @@
     }
     const bgSteps = {
 
-        sX : 38,
-        sY : 1,
-        sWidth :710 -38,
-        sHeight : 140-1,
+        sX : 23,
+        sY : 26,
+        sWidth :650 -23,
+        sHeight : 176-26,
         dY : 10,
         dX : 200,
         dWidth : 400,
@@ -971,12 +971,12 @@
     }
 
     const lineBUBBLE = {
-        sX : 153,
-        sY : 15,
-        sWidth : 390-153,
-        sHeight : 190-15,
+        sX : 140,
+        sY : 12,
+        sWidth : 390-140,
+        sHeight : 190-12,
         dY : 150,
-        dX : 320,
+        dX : 310,
         dWidth : 200,
         dHeight :200  ,
         draw : function(){
@@ -1076,7 +1076,8 @@
         //title of canvas
         ctxBUBBLE.font = "20px Arial";
 
-        ctxBUBBLE.strokeText("Bubble Sort!",25,50);
+        ctxBUBBLE.strokeText("Sortowanie ",25,50);
+        ctxBUBBLE.strokeText("bąbelkowe!",25,75);
 
         //draw function
         // bg.draw();

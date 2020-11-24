@@ -373,52 +373,52 @@ const bgRectangle = {
         }else{
             // go to 2nd
             if(250 > framesINSERTION && framesINSERTION > 200){
-                this.dHeight +=1.5*globalSpeedINSERTION;
-                this.dY +=1.4* globalSpeedINSERTION;
+                this.dHeight +=1.8*globalSpeedINSERTION;
+                this.dY +=1.2* globalSpeedINSERTION;
             }
             // go to 3rd
             if(400 > framesINSERTION && framesINSERTION > 350){
                 this.dHeight -=0.5*globalSpeedINSERTION;
-                this.dY +=2.5* globalSpeedINSERTION;
+                this.dY +=2.8* globalSpeedINSERTION;
             }  // go to 1rd
             if(600 > framesINSERTION && framesINSERTION > 550){
-                this.dY -=3.9* globalSpeedINSERTION;
-                this.dHeight -=1*globalSpeedINSERTION;
+                this.dY -=4* globalSpeedINSERTION;
+                this.dHeight -=1.3*globalSpeedINSERTION;
             }
             if(800 > framesINSERTION && framesINSERTION > 750){
-                this.dHeight +=1.5*globalSpeedINSERTION;
-                this.dY +=1.4* globalSpeedINSERTION;
+                this.dHeight +=1.8*globalSpeedINSERTION;
+                this.dY +=1.2* globalSpeedINSERTION;
 
             }
             if(1200 > framesINSERTION && framesINSERTION > 1150){
                 this.dHeight -=0.5*globalSpeedINSERTION;
-                this.dY +=2.5* globalSpeedINSERTION;
+                this.dY +=2.8* globalSpeedINSERTION;
             }
             if(1600 > framesINSERTION && framesINSERTION > 1550){
-                this.dY -=3.9* globalSpeedINSERTION;
-                this.dHeight -=1*globalSpeedINSERTION;
+                this.dY -=4* globalSpeedINSERTION;
+                this.dHeight -=1.3*globalSpeedINSERTION;
 
             }
             if(1800 > framesINSERTION && framesINSERTION > 1750){
-                this.dHeight +=1.5*globalSpeedINSERTION;
-                this.dY +=1.4* globalSpeedINSERTION;
+                this.dHeight +=1.8*globalSpeedINSERTION;
+                this.dY +=1.2* globalSpeedINSERTION;
 
             }
             if(2500 > framesINSERTION && framesINSERTION > 2450){
                 this.dHeight -=0.5*globalSpeedINSERTION;
-                this.dY +=2.5* globalSpeedINSERTION;
+                this.dY +=2.8* globalSpeedINSERTION;
             }
             if(2800 > framesINSERTION && framesINSERTION > 2750){
-                this.dY -=3.9* globalSpeedINSERTION;
-                this.dHeight -=1*globalSpeedINSERTION;
+                this.dY -=4* globalSpeedINSERTION;
+                this.dHeight -=1.3*globalSpeedINSERTION;
             }
             if(3000 > framesINSERTION && framesINSERTION > 2950){
-                this.dHeight +=1.5*globalSpeedINSERTION;
-                this.dY +=1.4* globalSpeedINSERTION;
+                this.dHeight +=1.8*globalSpeedINSERTION;
+                this.dY +=1.2* globalSpeedINSERTION;
             }
             if(3600 > framesINSERTION && framesINSERTION > 3550){
                 this.dHeight -=0.5*globalSpeedINSERTION;
-                this.dY +=2.5* globalSpeedINSERTION;
+                this.dY +=2.8* globalSpeedINSERTION;
             }
             // if(1200 > framesINSERTION && framesINSERTION > 850){
             //     this.dX +=globalSpeedINSERTION;
@@ -465,10 +465,10 @@ const bgSteps = {
     sY : 5,
     sWidth : 720-5,
     sHeight : 228-5,
-    dY : 15,
+    dY : 10,
     dX : 200,
     dWidth : 400,
-    dHeight :140  ,
+    dHeight :150  ,
     draw : function(){
 
         ctxINSERTION.drawImage(img2,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,

@@ -78,7 +78,7 @@ restartSELECT.addEventListener("click",function(evt){
           //  nr4SELECT.dY =200;
             nr9SELECT.dX =20;
           //  nr9SELECT.dY =200;
-            lineSELECT.dX =-80;
+            lineSELECT.dX =-110;
 
 
 
@@ -457,10 +457,10 @@ const bgRectangle = {
 }
 const bgSteps = {
 
-    sX : 43,
-    sY : 8,
-    sWidth :724 -43,
-    sHeight : 238-8,
+    sX : 16,
+    sY : 6,
+    sWidth :705 -16,
+    sHeight : 231-6,
     dY : 10,
     dX : 200,
     dWidth : 400,
@@ -937,14 +937,14 @@ const nr9SELECT = {
     }
 }
 const lineSELECT = {
-    sX : 100,
+    sX : 4,
     sY : 10,
-    sWidth : 350-100,
-    sHeight : 180-10,
+    sWidth : 269-4,
+    sHeight : 160-10,
     dY : 150,
-     dX : -80,
-    dWidth : 200,
-    dHeight :200  ,
+    dX : -110,
+    dWidth : 250,
+    dHeight :220  ,
     draw : function(){
         ctxSELECT.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
@@ -1139,7 +1139,7 @@ function drawSELECT(){
     //title of canvas
     ctxSELECT.font = "20px Arial";
 
-    ctxSELECT.strokeText("Select Sort! ",25,50);
+    ctxSELECT.strokeText("Wybieranie proste! ",25,50);
 
     //draw function
     // bg.draw();
