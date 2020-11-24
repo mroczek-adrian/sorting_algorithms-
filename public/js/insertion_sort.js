@@ -321,7 +321,7 @@ restartINSERTION.addEventListener("click",function(evt){
             nr4INSERTION.dY =200;
             nr9INSERTION.dX =100;
             nr9INSERTION.dY =200;
-            lineINSERTION.dX =6;
+            lineINSERTION.dX =-25;
 
             framesINSERTION = 0;
 
@@ -461,14 +461,14 @@ const bgRectangle = {
 }
 const bgSteps = {
 
-    sX : 28,
-    sY : 82,
-    sWidth : 680-28,
-    sHeight : 360-82,
-    dY : 10,
+    sX : 5,
+    sY : 5,
+    sWidth : 720-5,
+    sHeight : 228-5,
+    dY : 15,
     dX : 200,
     dWidth : 400,
-    dHeight :150  ,
+    dHeight :140  ,
     draw : function(){
 
         ctxINSERTION.drawImage(img2,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
@@ -1209,14 +1209,14 @@ const nr9INSERTION = {
 }
 
 const lineINSERTION = {
-    sX : 31,
-    sY : 13,
-    sWidth : 260-31,
-    sHeight : 190-13,
-    dY : 150,
-    dX : 6,
-    dWidth : 200,
-    dHeight :200  ,
+    sX : 4,
+    sY : 10,
+    sWidth : 269-4,
+    sHeight : 160-10,
+    dY : 145,
+    dX : -25,
+    dWidth : 250,
+    dHeight :220  ,
     draw : function(){
         ctxINSERTION.drawImage(img3,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
             this.dWidth,this.dHeight);
@@ -1342,7 +1342,7 @@ function drawINSERTION(){
     //title of canvas
     ctxINSERTION.font = "20px Arial";
 
-    ctxINSERTION.strokeText("INSERTION Sort! ",25,70);
+    ctxINSERTION.strokeText("Wstawianie proste! ",25,70);
     //ctxINSERTION.strokeText("Click to pause ",25,100);
     //draw function
     // bg.draw();
