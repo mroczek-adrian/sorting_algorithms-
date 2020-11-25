@@ -1,90 +1,31 @@
 
 
 
-function myFunction() {
-//VALIDATION
-    var validation1 = document.forms["myForm"]["fname"].value;
-    var validation2 = document.forms["myForm"]["fname1"].value;
-    var validation3 = document.forms["myForm"]["fname2"].value;
-    var validation4 = document.forms["myForm"]["fname3"].value;
-    var validation5 = document.forms["myForm"]["fname4"].value;
-    if (validation1 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation2 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation3 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation4 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    if (validation5 == "") {
-        alert("Name must be filled out");
-        return false;
-    }
-    x1 = document.getElementById("numb").value;
-    x2 = document.getElementById("numb1").value;
-    x3 = document.getElementById("numb2").value;
-    x4 = document.getElementById("numb3").value;
-    x5 = document.getElementById("numb4").value;
-    if(x1 > 9 || x1 < 1 || x2 < 1 || x2 > 9  || x3 < 1 || x3 > 9  || x4 < 1 || x4 > 9  || x5 < 1 || x5 > 9   ){
-        alert("To big or to small number - write a property number from [1-9]");
-        return false;
-    }
-    if(x1 == x2 || x1 == x3  || x1 == x4 || x1 == x5 || x2 == x3 || x2 == x4 || x2 == x5 || x3 == x4 ||  x3 == x5 || x4 == x5   ){
-        alert("There is a repetition - write numbers without repetition");
-        return false;
-    }
-    if(x1 == 1 ||x1 == 2 || x1 == 3 ||x1 == 4 ||x1 == 5 ||x1 == 6 ||x1 == 7 ||x1 == 8 ||x1 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x2 == 1 ||x2 == 2 || x2 == 3 ||x2 == 4 ||x2 == 5 ||x2 == 6 ||x2 == 7 ||x2 == 8 ||x2 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x3 == 1 ||x3 == 2 || x3 == 3 ||x3 == 4 ||x3 == 5 ||x3 == 6 ||x3 == 7 ||x3 == 8 ||x3 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x4 == 1 ||x4 == 2 || x4 == 3 ||x4 == 4 ||x4 == 5 ||x4 == 6 ||x4 == 7 ||x4 == 8 ||x4 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
-    if(x5 == 1 ||x5 == 2 || x5 == 3 ||x5 == 4 ||x5 == 5 ||x5 == 6 ||x5 == 7 ||x5 == 8 ||x5 == 9  ){
-    }else{
-        alert(" Write the numbers");
-        return false;
-    }
+    x1 = 1;
+    x2 = 2;
+    x3 = 3;
+    x4 = 4;
+    x5 = 9;
+
 
 // TEMPORARY VARIABLE
     var x, text;
     // TABLE OF 5 NUMBERS : dY,dX,dWidth,dHeight
     const destination_number_table = [
-        [70,20, 100-24,100-24],
-        [70,100, 100-24,100-24],
-        [70,180, 100-24,100-24],
-        [70,260, 100-24,100-24],
-        [70,340, 100-24,100-24],
+        [80,20, 100-24,100-24],
+        [80,100, 100-24,100-24],
+        [80,180, 100-24,100-24],
+        [80,260, 100-24,100-24],
+        [80,340, 100-24,100-24],
     ];
 
     // TABLE OF 5 NUMBERS : bdY,bdX,bdWidth,bdHeight
     const destination_number_table_blue = [
-        [70 + 15,20 + 15, 100-54,100-54],
-        [70 + 15 + 75,100 + 15 + 250, 100-54,100-54],
-        [70 + 15 + 75,180 + 15, 100-54,100-54],
-        [70 + 15 + 155,20 + 15 + 10 + 400 - 7, 100-54,100-54],
-        [70 + 15 + 155,20 + 15 + 10, 100-54,100-54],
+        [80 + 15,20 + 15, 100-54,100-54],
+        [80 + 15 + 75,100 + 15 + 250, 100-54,100-54],
+        [80 + 15 + 75,180 + 15, 100-54,100-54],
+        [80 + 15 + 155,20 + 15 + 10 + 400 - 7, 100-54,100-54],
+        [80 + 15 + 155,20 + 15 + 10, 100-54,100-54],
     ];
 
 
@@ -192,6 +133,9 @@ function myFunction() {
     let globalSpeedQUICK = 0.5;
     let framesRememberQUICK = 0;
 
+
+    const restart = document.getElementById("restart_img");
+
 //IMAGE OF THE BIRD
     const spriteQUICK = document.getElementById("image");
 //IMAGE OF NUMBERS
@@ -213,7 +157,89 @@ function myFunction() {
         over: 2
     }
 
+    restart.addEventListener("click",function(evt){
+        switch(stateQUICK.current){
+            case stateQUICK.getReady:
+            case stateQUICK.game:
+                stateQUICK.current = 2;
 
+                // bgRectangle.dX =100;
+                // bgRectangle.dY =95;
+                // bgRectangle.dHeight =50;
+                // red_circle01.dX = 195;
+                // red_circle01.dY = 55;
+                // red_circle02.dX = 290;
+                // red_circle02.dY = 155;
+                // brown_circle01.dX = 195;
+                // brown_circle01.dY = 55;
+                // brown_circle02.dX = 245;
+                // brown_circle02.dY = 55;
+
+
+
+                // TABLE OF 5 NUMBERS : bdY,bdX,bdWidth,bdHeight
+                const destination_number_table_blue = [
+                    [80 + 15,20 + 15, 100-54,100-54],
+                    [80 + 15 + 75,100 + 15 + 250, 100-54,100-54],
+                    [80 + 15 + 75,180 + 15, 100-54,100-54],
+                    [80 + 15 + 155,20 + 15 + 10 + 400 - 7, 100-54,100-54],
+                    [80 + 15 + 155,20 + 15 + 10, 100-54,100-54],
+                ];
+
+                //red_circle01.dY =190;
+                // brown_circle01.dX =85;
+                // brown_circle01.dY =265;
+                nr1QUICK.dX =340;
+                nr1QUICK.dY =80;
+                //nr1.tdY =260;
+                //nr1.tdX =295;
+                nr1QUICK.bdY= 80 + 15 + 155;
+                nr1QUICK.bdX=20 + 15 + 10;
+
+                // nr1HEAP.dY =200;
+                nr2QUICK.dX =180;
+                nr2QUICK.dY =80;
+                nr2QUICK.bdY= 80 + 15 + 75;
+                nr2QUICK.bdX=180 + 15;
+                //nr2.tdY =210;
+                //nr2.tdX =360;
+
+
+                // nr2HEAP.dY =200;
+                nr3QUICK.dX =20;
+                nr3QUICK.dY =80;
+                nr3QUICK.bdY= 80 + 15;
+                nr3QUICK.bdX=20 + 15;
+                //nr3.tdY =160;
+                //nr3.tdX =300;
+
+
+                //  nr3HEAP.dY =200;
+                nr4QUICK.dX =100;
+                nr4QUICK.dY =80;
+                nr4QUICK.bdY= 80 + 15 + 75;
+                nr4QUICK.bdX=100 + 15 + 250;
+                //nr4.tdY =260;
+                //nr4.tdX =185;
+
+
+                //  nr4HEAP.dY =200;
+                nr9QUICK.dX =260;
+                nr9QUICK.dY =80;
+                nr9QUICK.bdY= 80 + 15 + 155;
+                nr9QUICK.bdX=20 + 15 + 10 + 400 - 7;
+                //nr5.tdY =210;
+                //nr5.tdX =240;
+
+                //   nr9HEAP.dY =200;
+                //   lineHEAP.dX =410;
+                //  lineleftHEAP.dX= -70;
+                framesQUICK = 0;
+
+
+                break;
+        }
+    });
 //CONTROL THE GAME
     cvsQUICK.addEventListener("click", function (evt) {
         switch (stateQUICK.current) {
@@ -3241,11 +3267,13 @@ function myFunction() {
         ctxQUICK.fillRect(0, 0, cvsQUICK.width, cvsQUICK.height);
 
         //title of canvas
-        ctxQUICK.font = "30px Arial";
-        ctxQUICK.strokeText("Quick Sort!", 225, 50);
+        ctxQUICK.font = "20px Arial";
+        ctxQUICK.strokeText("Sortowanie", 25, 50);
+        ctxQUICK.strokeText("szybkie!", 25, 75);
+
 
         //draw function
-        bgQUICK.draw();
+       // bgQUICK.draw();
         //c2n.draw();
         //if user write the first number into form
         if(x1==1 || x2==1|| x3==1|| x4==1|| x5==1){
@@ -3400,4 +3428,3 @@ function myFunction() {
     }
     logic_for_all();
     loop();
-}
