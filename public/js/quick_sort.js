@@ -64,7 +64,83 @@ const bgQUICK = {
 }
 
 
+const bgsteps1 = {
 
+    sX : 3,
+    sY : 34,
+    sWidth : 723-3,
+    sHeight : 350-34,
+    dY : 0,
+    dX : 150,
+    dWidth : 440,
+    dHeight :150  ,
+    draw : function(){
+
+        ctxQUICK.drawImage(bg_steps,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+            this.dWidth,this.dHeight);
+    },
+
+
+    update: function(){
+        //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+        //this.period = state.current == state.getReady ? 10 : 5;
+
+        //SPEED DEPENDS ON THE NUMBER OF PERIOD
+        this.period = stateQUICK.current == stateQUICK.getReady ? 0 : 55;
+        //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+        this.frame += framesQUICK % this.period == 0 ? 1 : 0;
+        //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+        //this.frame = this.frame % this.animation.length;
+
+
+        if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
+
+        }else{
+            // this.speed += this.gravity;
+            //COMPARISON VALUE OF NUMBERS-1st run
+            if(600 > framesQUICK && framesQUICK > 250){
+                this.dX +=globalSpeedQUICK;
+            }
+            if(1200 > framesQUICK && framesQUICK > 850){
+                this.dX +=globalSpeedQUICK;
+            }
+            if(1800 > framesQUICK && framesQUICK > 1450){
+                this.dX +=globalSpeedQUICK;
+            }
+            //COMPARISON VALUE OF NUMBERS-2nd run
+            if( framesQUICK == 2050){
+                this.dX =50;
+            }
+            if(2650 > framesQUICK && framesQUICK > 2300){
+                this.dX +=globalSpeedQUICK;
+            }
+            if(3250 > framesQUICK && framesQUICK > 2900){
+                this.dX +=globalSpeedQUICK;
+            }
+            //COMPARISON VALUE OF NUMBERS-3rd run
+            if( framesQUICK == 3500){
+                this.dX =50;
+            }
+            if(4000 > framesQUICK && framesQUICK > 3750){
+                this.dX +=globalSpeedQUICK;
+            }
+            //COMPARISON VALUE OF NUMBERS-4th run
+            if(framesQUICK == 4250){
+                this.dX =50;
+            }
+            //finish
+            if(framesQUICK==1798){
+                this.dX =110;
+                this.dY =0;
+                this.dWidth =500;
+                this.dHeight =150;
+
+            }
+        }
+
+
+    }
+}
 
 //NUMBERS
 const nr1QUICK = {
@@ -625,7 +701,6 @@ function draw(){
     //draw function
     bgQUICK.draw();
     //c2n.draw();
-
     nr1QUICK.draw();
     nr2QUICK.draw();
     nr3QUICK.draw();

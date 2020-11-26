@@ -33,6 +33,7 @@
     const cvsQUICK = document.getElementById("birdQUICK");
     cvsQUICK.style.display = "block";
     const ctxQUICK = cvsQUICK.getContext("2d");
+    const bg_steps=document.getElementById("bg");
 
 
 
@@ -148,7 +149,7 @@
     const click2startQUICK = document.getElementById("click2start");
 //IMAGE OF THE GET OVER STATE
     const pauseQUICK = document.getElementById("pause");
-
+    const img1=document.getElementById("img1");//rectangle
 //GAME STATE
     const stateQUICK = {
         current: 2,
@@ -178,14 +179,8 @@
 
 
                 // TABLE OF 5 NUMBERS : bdY,bdX,bdWidth,bdHeight
-                const destination_number_table_blue = [
-                    [80 + 15,20 + 15, 100-54,100-54],
-                    [80 + 15 + 75,100 + 15 + 250, 100-54,100-54],
-                    [80 + 15 + 75,180 + 15, 100-54,100-54],
-                    [80 + 15 + 155,20 + 15 + 10 + 400 - 7, 100-54,100-54],
-                    [80 + 15 + 155,20 + 15 + 10, 100-54,100-54],
-                ];
 
+                bgRectangle.dX = 250;
                 //red_circle01.dY =190;
                 // brown_circle01.dX =85;
                 // brown_circle01.dY =265;
@@ -277,7 +272,225 @@
                 this.w, this.h);
         }
     }
+    const bgRectangle = {
 
+        sX : 33,
+        sY : 33,
+        sWidth : 670-33,
+        sHeight : 270-33,
+        dY : -20,
+        dX : 250,
+        dWidth : 170,
+        dHeight :140  ,
+
+        draw : function(){
+            ctxQUICK.drawImage(img1,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+
+
+        },
+        startPosition : function(){
+            bgRectangle.dX =185;
+            bgRectangle.dHeight =30;
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateQUICK.current == stateQUICK.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesQUICK % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
+
+            }else{
+                // go to 2nd
+                if(700 > framesQUICK && framesQUICK > 650){
+                    //this.dHeight -=1.5*globalSpeedQUICK;
+                    this.dX +=7.2* globalSpeedQUICK;
+                }
+                if(1200 > framesQUICK && framesQUICK > 1150){
+                    this.dX -=7.2* globalSpeedQUICK;
+                }
+                if(1550 > framesQUICK && framesQUICK > 1500){
+                    this.dX +=7.2* globalSpeedQUICK;
+                }
+                if(1750 > framesQUICK && framesQUICK > 1700){
+                    this.dX -=7.2* globalSpeedQUICK;
+                }
+                if(1950 > framesQUICK && framesQUICK > 1900){
+                    this.dX +=7.2* globalSpeedQUICK;
+                }
+                // if(1300 > framesQUICK && framesQUICK > 1250){
+                //     this.dHeight +=1.5*globalSpeedQUICK;
+                //     this.dY -=5.3* globalSpeedQUICK;
+                // }
+                // // go to 3rd
+                // if(400 > framesQUICK && framesQUICK > 350){
+                //     this.dHeight -=0.5*globalSpeedQUICK;
+                //     this.dY +=2.5* globalSpeedQUICK;
+                // }  // go to 1rd
+                // if(600 > framesQUICK && framesQUICK > 550){
+                //     this.dY -=3.9* globalSpeedQUICK;
+                //     this.dHeight -=1*globalSpeedQUICK;
+                // }
+                // if(800 > framesQUICK && framesQUICK > 750){
+                //     this.dHeight +=1.5*globalSpeedQUICK;
+                //     this.dY +=1.4* globalSpeedQUICK;
+                //
+                // }
+                // if(1200 > framesQUICK && framesQUICK > 1150){
+                //     this.dHeight -=0.5*globalSpeedQUICK;
+                //     this.dY +=2.5* globalSpeedQUICK;
+                // }
+                // if(1600 > framesQUICK && framesQUICK > 1550){
+                //     this.dY -=3.9* globalSpeedQUICK;
+                //     this.dHeight -=1*globalSpeedQUICK;
+                //
+                // }
+                // if(1800 > framesQUICK && framesQUICK > 1750){
+                //     this.dHeight +=1.5*globalSpeedQUICK;
+                //     this.dY +=1.4* globalSpeedQUICK;
+                //
+                // }
+                // if(2500 > framesQUICK && framesQUICK > 2450){
+                //     this.dHeight -=0.5*globalSpeedQUICK;
+                //     this.dY +=2.5* globalSpeedQUICK;
+                // }
+                // if(2800 > framesQUICK && framesQUICK > 2750){
+                //     this.dY -=3.9* globalSpeedQUICK;
+                //     this.dHeight -=1*globalSpeedQUICK;
+                // }
+                // if(3000 > framesQUICK && framesQUICK > 2950){
+                //     this.dHeight +=1.5*globalSpeedQUICK;
+                //     this.dY +=1.4* globalSpeedQUICK;
+                // }
+                // if(3600 > framesQUICK && framesQUICK > 3550){
+                //     this.dHeight -=0.5*globalSpeedQUICK;
+                //     this.dY +=2.5* globalSpeedQUICK;
+                // }
+                // // if(1200 > framesQUICK && framesQUICK > 850){
+                //     this.dX +=globalSpeedQUICK;
+                // }
+                // if(1800 > framesQUICK && framesQUICK > 1450){
+                //     this.dX +=globalSpeedQUICK;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-2nd run
+                // if( framesQUICK == 2050){
+                //     this.dX =50;
+                // }
+                // if(2650 > framesQUICK && framesQUICK > 2300){
+                //     this.dX +=globalSpeedQUICK;
+                // }
+                // if(3250 > framesQUICK && framesQUICK > 2900){
+                //     this.dX +=globalSpeedQUICK;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-3rd run
+                // if( framesQUICK == 3500){
+                //     this.dX =50;
+                // }
+                // if(4000 > framesQUICK && framesQUICK > 3750){
+                //     this.dX +=globalSpeedQUICK;
+                // }
+                // //COMPARISON VALUE OF NUMBERS-4th run
+                // if(framesQUICK == 4250){
+                //     this.dX =50;
+                // }
+                // //finish
+                if(framesQUICK==3998){
+                    this.dX =185;
+                    this.dY =1;
+                    this.dHeight =30;
+
+                }
+            }
+
+
+        }
+    }
+    const bgsteps1 = {
+
+        sX : 3,
+        sY : 34,
+        sWidth : 487-3,
+        sHeight : 350-34,
+        dY : -20,
+        dX : 300,
+        dWidth : 300,
+        dHeight :150  ,
+        draw : function(){
+
+            ctxQUICK.drawImage(bg_steps,this.sX,this.sY,this.sWidth,this.sHeight,this.dX,this.dY,
+                this.dWidth,this.dHeight);
+        },
+
+
+        update: function(){
+            //IF THE GAME STATE IS GET READY STATE, THE BIRD MUST FLAP SLOWLY
+            //this.period = state.current == state.getReady ? 10 : 5;
+
+            //SPEED DEPENDS ON THE NUMBER OF PERIOD
+            this.period = stateQUICK.current == stateQUICK.getReady ? 0 : 55;
+            //WE INCREMENT THE FRAME BY 1, EACH PERIOD
+            this.frame += framesQUICK % this.period == 0 ? 1 : 0;
+            //FRAME GOES FROM 0 TO 4, THEN AGAIN TO 0
+            //this.frame = this.frame % this.animation.length;
+
+
+            if(stateQUICK.current == stateQUICK.over ||stateQUICK.current == stateQUICK.getReady){
+
+            }else{
+                // this.speed += this.gravity;
+                //COMPARISON VALUE OF NUMBERS-1st run
+                if(600 > framesQUICK && framesQUICK > 250){
+                    this.dX +=globalSpeedQUICK;
+                }
+                if(1200 > framesQUICK && framesQUICK > 850){
+                    this.dX +=globalSpeedQUICK;
+                }
+                if(1800 > framesQUICK && framesQUICK > 1450){
+                    this.dX +=globalSpeedQUICK;
+                }
+                //COMPARISON VALUE OF NUMBERS-2nd run
+                if( framesQUICK == 2050){
+                    this.dX =50;
+                }
+                if(2650 > framesQUICK && framesQUICK > 2300){
+                    this.dX +=globalSpeedQUICK;
+                }
+                if(3250 > framesQUICK && framesQUICK > 2900){
+                    this.dX +=globalSpeedQUICK;
+                }
+                //COMPARISON VALUE OF NUMBERS-3rd run
+                if( framesQUICK == 3500){
+                    this.dX =50;
+                }
+                if(4000 > framesQUICK && framesQUICK > 3750){
+                    this.dX +=globalSpeedQUICK;
+                }
+                //COMPARISON VALUE OF NUMBERS-4th run
+                if(framesQUICK == 4250){
+                    this.dX =50;
+                }
+                //finish
+                if(framesQUICK==1798){
+                    this.dX =110;
+                    this.dY =0;
+                    this.dWidth =500;
+                    this.dHeight =150;
+
+                }
+            }
+
+
+        }
+    }
 
 //NUMBERS
     const nr1QUICK = {
@@ -3270,7 +3483,8 @@
         ctxQUICK.font = "20px Arial";
         ctxQUICK.strokeText("Sortowanie", 25, 50);
         ctxQUICK.strokeText("szybkie!", 25, 75);
-
+        bgRectangle.draw();
+        bgsteps1.draw();
 
         //draw function
        // bgQUICK.draw();
@@ -3306,15 +3520,14 @@
 
         //line.draw();
         // nr3.piwot_draw();
-        getReadyQUICK.draw();
-        gameOverQUICK.draw();
+
 
 
         //DRAWING ACTION FOR 'PIWOT' NUMBER
         // if (stateQUICK.current == stateQUICK.over || stateQUICK.current == stateQUICK.getReady) {
         // } else {
 
-                if (13650 > framesQUICK && framesQUICK > 150) {
+                if (2298 > framesQUICK && framesQUICK > 150) {
                     if(tab_step4[2]==3){nr3QUICK.piwot_draw();}
                     if(tab_step4[2]==1){nr1QUICK.piwot_draw();}
                     if(tab_step4[2]==2){nr2QUICK.piwot_draw();}
@@ -3327,7 +3540,7 @@
 
                 }
 
-            if (13650 > framesQUICK && framesQUICK > 1200) {
+            if (2298 > framesQUICK && framesQUICK > 1200) {
                 if(tab_step4[1]==3){nr3QUICK.piwot_draw();}
                 if(tab_step4[1]==1){nr1QUICK.piwot_draw();}
                 if(tab_step4[1]==2){nr2QUICK.piwot_draw();}
@@ -3339,7 +3552,7 @@
                 if(tab_step4[1]==9){nr9QUICK.piwot_draw();}
 
             }
-            if (13650 > framesQUICK && framesQUICK > 1350) {
+            if (2298 > framesQUICK && framesQUICK > 1350) {
                 if(tab_step4[3]==3){nr3QUICK.piwot_draw();}
                 if(tab_step4[3]==1){nr1QUICK.piwot_draw();}
                 if(tab_step4[3]==2){nr2QUICK.piwot_draw();}
@@ -3351,7 +3564,7 @@
                 if(tab_step4[3]==9){nr9QUICK.piwot_draw();}
 
             }
-            if (13650 > framesQUICK && framesQUICK > 1700) {
+            if (2298 > framesQUICK && framesQUICK > 1700) {
                 if(tab_step4[0]==3){nr3QUICK.piwot_draw();}
                 if(tab_step4[0]==1){nr1QUICK.piwot_draw();}
                 if(tab_step4[0]==2){nr2QUICK.piwot_draw();}
@@ -3363,7 +3576,7 @@
                 if(tab_step4[0]==9){nr9QUICK.piwot_draw();}
 
             }
-            if (13650 > framesQUICK && framesQUICK > 1850) {
+            if (2298 > framesQUICK && framesQUICK > 1850) {
                 if(tab_step4[4]==3){nr3QUICK.piwot_draw();}
                 if(tab_step4[4]==1){nr1QUICK.piwot_draw();}
                 if(tab_step4[4]==2){nr2QUICK.piwot_draw();}
@@ -3378,6 +3591,8 @@
        // }
 
 
+        getReadyQUICK.draw();
+        gameOverQUICK.draw();
     }
 
 //UPDATE
@@ -3391,6 +3606,7 @@
         nr7QUICK.update();
         nr8QUICK.update();
         nr9QUICK.update();
+        bgRectangle.update();
         //c2n.update();
         //line.update();
         if (stateQUICK.current == stateQUICK.over || stateQUICK.current == stateQUICK.getReady) {
