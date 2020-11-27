@@ -1390,7 +1390,7 @@
                 }
                 //THE END OF SIMULATION
                 if( framesMIX == 1798){
-                    this.dX =410;
+                    this.dX =290;
                    // this.dY =150;
 
                 }

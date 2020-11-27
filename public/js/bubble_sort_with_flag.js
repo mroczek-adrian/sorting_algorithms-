@@ -1168,7 +1168,7 @@ const lineBUBBLE_WITH_FLAG = {
 
             //THE END OF SIMULATION
             if( framesBUBBLE_WITH_FLAG == 2599){
-                this.dX =320;
+                this.dX =295;
                 //  this.dY =150;
 
             }

@@ -405,7 +405,7 @@
                 // //finish
                 if(framesQUICK==3998){
                     this.dX =185;
-                    this.dY =1;
+                    this.dY =-20;
                     this.dHeight =30;
 
                 }

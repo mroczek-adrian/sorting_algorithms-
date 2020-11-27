@@ -1016,7 +1016,7 @@ const lineSELECT = {
             // }
             //THE END OF SIMULATION
             if( framesSELECT == 3998){
-                this.dX =6;
+                this.dX =-110;
                 //   this.dY =this.dY;
 
             }

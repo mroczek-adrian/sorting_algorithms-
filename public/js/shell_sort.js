@@ -539,7 +539,7 @@
                 // //finish
                 if(framesSHELL==2498){
 
-                    this.dY =1;
+                    this.dY =-3;
 
 
                 }

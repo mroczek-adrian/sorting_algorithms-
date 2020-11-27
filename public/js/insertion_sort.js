@@ -1284,7 +1284,7 @@ const lineINSERTION = {
             // }
             //THE END OF SIMULATION
             if( framesINSERTION == 3998){
-                this.dX =6;
+                this.dX =-25;
              //   this.dY =this.dY;
 
             }
