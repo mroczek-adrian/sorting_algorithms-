@@ -1082,7 +1082,7 @@
         //draw function
         // bg.draw();
        // c2nBUBBLE.draw();
-        if(2300 > framesBUBBLE && framesBUBBLE > 0){
+        if(2300 > framesBUBBLE && framesBUBBLE >= 0){
             red_circle01.draw();
             red_circle02.draw();
             lineBUBBLE.draw();

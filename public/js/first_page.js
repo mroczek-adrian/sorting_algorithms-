@@ -308,13 +308,110 @@ function myFunction() {
 
 
 
+// create max heap
+    function maxHeap(input, i) {
+        const left = 2 * i + 1
+        const right = 2 * i + 2
+        let max = i
+
+        if (left < arrLength && input[left] > input[max]) {
+            max = left
+        }
+
+        if (right < arrLength && input[right] > input[max])     {
+            max = right
+        }
+
+        if (max != i) {
+            swap(input, i, max)
+            maxHeap(input, max)
+        }
+    }
+
+    function swap(input, indexA, indexB) {
+        const temp = input[indexA]
+
+        input[indexA] = input[indexB]
+        input[indexB] = temp
+    }
+
+    function heapSort(input) {
+        arrLength = input.length
+
+        for (let i = Math.floor(arrLength / 2); i >= 0; i -= 1)      {
+            maxHeap(input, i)
+        }
+
+        for (i = input.length - 1; i > 0; i--) {
+            swap(input, 0, i)
+            arrLength--
+
+            maxHeap(input, 0)
+        }
+        return input;
+    }
 
 
+    //const list = [4, 2, 3, 1, 5]
+
+    //const sorted = heapSort(list)
+
+    //console.log(list)
 
 
+    function selectionSort(inputArr) {
+        let n = inputArr.length;
 
+        for(let i = 0; i < n; i++) {
+            // Finding the smallest number in the subarray
+            let min = i;
+            for(let j = i+1; j < n; j++){
+                if(inputArr[j] < inputArr[min]) {
+                    min=j;
+                }
+            }
+            if (min != i) {
+                // Swapping the elements
+                let tmp = inputArr[i];
+                inputArr[i] = inputArr[min];
+                inputArr[min] = tmp;
+            }
+        }
+        return inputArr;
+    }
 
+//Quick sort runs with the Time Complexity of O(nlogn).
+    function partition(arr, start, end){
+        // Taking the last element as the pivot
+        const pivotValue = arr[end];
+        let pivotIndex = start;
+        for (let i = start; i < end; i++) {
+            if (arr[i] < pivotValue) {
+                // Swapping elements
+                [arr[i], arr[pivotIndex]] = [arr[pivotIndex], arr[i]];
+                // Moving to next element
+                pivotIndex++;
+            }
+        }
 
+        // Putting the pivot value in the middle
+        [arr[pivotIndex], arr[end]] = [arr[end], arr[pivotIndex]]
+        return pivotIndex;
+    }
+    //https://stackabuse.com/quicksort-in-javascript/
+    function quickSortRecursive(arr, start, end) {
+        // Base case or terminating case
+        if (start >= end) {
+            return;
+        }
+
+        // Returns pivotIndex
+        let index = partition(arr, start, end);
+
+        // Recursively apply the same logic to the left and right subarrays
+        quickSortRecursive(arr, start, index - 1);
+        quickSortRecursive(arr, index + 1, end);
+    }
 
 
 
@@ -338,25 +435,88 @@ function myFunction() {
     }
 
 
+    function merge(arr1, arr2){
+        let result = []; // the array to hold results.
+        let i = 0;
+        let j = 0;
+
+// as the pseudo-code implies, we have to loop through the
+// arrays at the same time and it has to be done once.
+// note that if one array completes its iteration, we will
+// have to stop the while loop.
+
+        while(i < arr1.length && j < arr2.length){
+// compare the elements one at a time.
+            if(arr1[i] > arr2[j]) {
+                result.push(arr2[j]);
+                j++;
+            } else {
+                result.push(arr1[i]);
+                i++;
+            }
+        }
+
+        // these other while loops checks if there's some item left
+        // in the arrays so that we can push their elements in the result array.
+        while(i < arr1.length){
+            result.push(arr1[i]);
+            i++;
+        }
+
+        while(j < arr2.length){
+            result.push(arr2[j]);
+            j++;
+        }
+
+        return result;
+    }
+    function mergeSort(arr){
+
+// recursion base case
+// it checks if the array length is less than or equal to 1.
+// if that's the case return the arr else keep splicing.
+
+        if(arr.length <= 1) return arr;
+        // remember that we said merge sort uses divide and conquer
+// algorithm pattern
+
+// it firsts know the half point of the array.
+        let halfPoint = Math.ceil(arr.length / 2);
+
+// and then splice the array from the beginning up to the half point.
+// but for the fact that merge sort needs the array to be of one element, it will keep splicing that half till it fulfills the condition of having one element array.
+
+        let firstHalf = mergeSort(arr.splice(0, halfPoint));
+
+// second array from the half point up to the end of the array.
+        let secondHalf = mergeSort(arr.splice(-halfPoint));
+
+// merge the array back and return the result.
+// note that we are using the helper function we created above.
+        return merge(firstHalf, secondHalf);
+    }
 
 
+    arrayINSERTION = shuffle(array);//wstawianie proste
+    arrayINSERTION_HALF = shuffle(array);//wstawianie polowkowe
+    arraySELECT = shuffle(array)//wybieranie proste
+    arrayBUBBLE = shuffle(array);//sortowanie babelkowe
+    arrayBUBBLE_FLAG = shuffle(array);//sortowanie babelkowe ze znacznikiem
+    arrayMIX = shuffle(array);//sort mieszane
+    arraySHELL = shuffle(array);//sort metoda shela
+    arrayHEAP = shuffle(array);//sortowanie stogowe
+    arrayQUICK = shuffle(array);//sortowanie szybkie
+    arrayMERGE= shuffle(array);//sortowanie przez laczenie
 
-    arrayBUBBLE = shuffle(array);
-    arrayINSERTION = shuffle(array);
-    arrayINSERTION_HALF = shuffle(array);
-    arrayBUBBLE_FLAG = shuffle(array);
-    arrayMIX = shuffle(array);
-    arraySHELL = shuffle(array);
-
-    text = "arrayMIX przed sortowaniem [0]=  "+arrayMIX[0]+
+    text = "6. arrayMIX przed sortowaniem [0]=  "+arrayMIX[0]+
         "[1]= "+arrayMIX[1]+ " [2]=   "+arrayMIX[2]+
         " [3]=   "+arrayMIX[3]+ " [4]=   "+arrayMIX[4]+
         " [5]=   "+arrayMIX[5]+ " [6]=   "+arrayMIX[6]+
         " [7]=   "+arrayMIX[7]+ " [8]=   "+arrayMIX[8]+
         " [9]=   "+arrayMIX[9]+ " [10]=   "+arrayMIX[10]
-    document.getElementById("demo10").innerHTML = text;
+    document.getElementById("demo11").innerHTML = text;
 
-    text = "arrayBUBBLE przed sortowaniem [0]=  "+arrayBUBBLE[0]+
+    text = "4. arrayBUBBLE przed sortowaniem [0]=  "+arrayBUBBLE[0]+
         "[1]= "+arrayBUBBLE[1]+ " [2]=   "+arrayBUBBLE[2]+
         " [3]=   "+arrayBUBBLE[3]+ " [4]=   "+arrayBUBBLE[4]+
         " [5]=   "+arrayBUBBLE[5]+ " [6]=   "+arrayBUBBLE[6]+
@@ -364,24 +524,94 @@ function myFunction() {
         " [9]=   "+arrayBUBBLE[9]+ " [10]=   "+arrayBUBBLE[10]
     document.getElementById("demo12").innerHTML = text;
 
-    text = "arrayINSERTION przed sortowaniem [0]=  "+arrayINSERTION[0]+
+    text = "1. arrayINSERTION przed sortowaniem [0]=  "+arrayINSERTION[0]+
         "[1]= "+arrayINSERTION[1]+ " [2]=   "+arrayINSERTION[2]+
         " [3]=   "+arrayINSERTION[3]+ " [4]=   "+arrayINSERTION[4]+
         " [5]=   "+arrayINSERTION[5]+ " [6]=   "+arrayINSERTION[6]+
         " [7]=   "+arrayINSERTION[7]+ " [8]=   "+arrayINSERTION[8]+
         " [9]=   "+arrayINSERTION[9]+ " [10]=   "+arrayINSERTION[10]
-    document.getElementById("demo14").innerHTML = text;
+    document.getElementById("demo13").innerHTML = text;
 
-    text = "arrayINSERTION_HALF przed sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
+    text = "2. arrayINSERTION_HALF przed sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
         "[1]= "+arrayINSERTION_HALF[1]+ " [2]=   "+arrayINSERTION_HALF[2]+
         " [3]=   "+arrayINSERTION_HALF[3]+ " [4]=   "+arrayINSERTION_HALF[4]+
         " [5]=   "+arrayINSERTION_HALF[5]+ " [6]=   "+arrayINSERTION_HALF[6]+
         " [7]=   "+arrayINSERTION_HALF[7]+ " [8]=   "+arrayINSERTION_HALF[8]+
         " [9]=   "+arrayINSERTION_HALF[9]+ " [10]=   "+arrayINSERTION_HALF[10]
+    document.getElementById("demo14").innerHTML = text;
+
+
+    text = "5. arrayBUBBLE_FLAG przed sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
+        "[1]= "+arrayBUBBLE_FLAG[1]+ " [2]=   "+arrayBUBBLE_FLAG[2]+
+        " [3]=   "+arrayBUBBLE_FLAG[3]+ " [4]=   "+arrayBUBBLE_FLAG[4]+
+        " [5]=   "+arrayBUBBLE_FLAG[5]+ " [6]=   "+arrayBUBBLE_FLAG[6]+
+        " [7]=   "+arrayBUBBLE_FLAG[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayBUBBLE_FLAG[9]+ " [10]=   "+arrayBUBBLE_FLAG[10]
+    document.getElementById("demo15").innerHTML = text;
+
+
+    text = "7. arraySHELL przed sortowaniem [0]=  "+arraySHELL[0]+
+        "[1]= "+arraySHELL[1]+ " [2]=   "+arraySHELL[2]+
+        " [3]=   "+arraySHELL[3]+ " [4]=   "+arraySHELL[4]+
+        " [5]=   "+arraySHELL[5]+ " [6]=   "+arraySHELL[6]+
+        " [7]=   "+arraySHELL[7]+ " [8]=   "+arraySHELL[8]+
+        " [9]=   "+arraySHELL[9]+ " [10]=   "+arraySHELL[10]
     document.getElementById("demo16").innerHTML = text;
 
+    //
+    text = "8. arrayHEAP przed sortowaniem [0]=  "+arrayHEAP[0]+
+        "[1]= "+arrayHEAP[1]+ " [2]=   "+arrayHEAP[2]+
+        " [3]=   "+arrayHEAP[3]+ " [4]=   "+arrayHEAP[4]+
+        " [5]=   "+arrayHEAP[5]+ " [6]=   "+arrayHEAP[6]+
+        " [7]=   "+arrayHEAP[7]+ " [8]=   "+arrayHEAP[8]+
+        " [9]=   "+arrayHEAP[9]+ " [10]=   "+arrayHEAP[10]
+    document.getElementById("demo23").innerHTML = text;
 
-    text = "arrayBUBBLE_FLAG przed sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
+    text = "3. arraySELECT przed sortowaniem [0]=  "+arraySELECT[0]+
+        "[1]= "+arraySELECT[1]+ " [2]=   "+arraySELECT[2]+
+        " [3]=   "+arraySELECT[3]+ " [4]=   "+arraySELECT[4]+
+        " [5]=   "+arraySELECT[5]+ " [6]=   "+arraySELECT[6]+
+        " [7]=   "+arraySELECT[7]+ " [8]=   "+arraySELECT[8]+
+        " [9]=   "+arraySELECT[9]+ " [10]=   "+arraySELECT[10]
+    document.getElementById("demo25").innerHTML = text;
+
+    text = "9. arrayQUICK przed sortowaniem [0]=  "+arrayQUICK[0]+
+        "[1]= "+arrayQUICK[1]+ " [2]=   "+arrayQUICK[2]+
+        " [3]=   "+arrayQUICK[3]+ " [4]=   "+arrayQUICK[4]+
+        " [5]=   "+arrayQUICK[5]+ " [6]=   "+arrayQUICK[6]+
+        " [7]=   "+arrayQUICK[7]+ " [8]=   "+arrayQUICK[8]+
+        " [9]=   "+arrayQUICK[9]+ " [10]=   "+arrayQUICK[10]
+    document.getElementById("demo27").innerHTML = text;
+
+    text = "10. arrayMERGE przed sortowaniem [0]=  "+arrayMERGE[0]+
+        "[1]= "+arrayMERGE[1]+ " [2]=   "+arrayMERGE[2]+
+        " [3]=   "+arrayMERGE[3]+ " [4]=   "+arrayMERGE[4]+
+        " [5]=   "+arrayMERGE[5]+ " [6]=   "+arrayMERGE[6]+
+        " [7]=   "+arrayMERGE[7]+ " [8]=   "+arrayMERGE[8]+
+        " [9]=   "+arrayMERGE[9]+ " [10]=   "+arrayMERGE[10]
+    document.getElementById("demo29").innerHTML = text;
+
+//szybkosc dzialania
+    var start = new Date().getTime();
+    insertionSort(arrayINSERTION);
+    var elapsed = new Date().getTime() - start;
+    text = "1. Time of the insertion sort: "+elapsed+ " ms";
+    document.getElementById("demo1").innerHTML = text;
+
+    text = "1. arrayINSERTION po sortowaniem [0]=  "+arrayINSERTION[0]+
+        "[1]= "+arrayINSERTION[1]+ " [2]=   "+arrayINSERTION[2]+
+        " [3]=   "+arrayINSERTION[3]+ " [4]=   "+arrayINSERTION[4]+
+        " [5]=   "+arrayINSERTION[5]+ " [6]=   "+arrayINSERTION[6]+
+        " [7]=   "+arrayINSERTION[7]+ " [8]=   "+arrayINSERTION[8]+
+        " [9]=   "+arrayINSERTION[9]+ " [10]=   "+arrayINSERTION[10]
+    document.getElementById("demo17").innerHTML = text;
+
+    var start = new Date().getTime();
+    bubble_sort_with_flag(arrayBUBBLE_FLAG);
+    var elapsed = new Date().getTime() - start;
+    text = "5. Time of the bubble sort with flag: "+elapsed+ " ms";
+    document.getElementById("demo5").innerHTML = text;
+    text = "5. arrayBUBBLE_FLAG po sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
         "[1]= "+arrayBUBBLE_FLAG[1]+ " [2]=   "+arrayBUBBLE_FLAG[2]+
         " [3]=   "+arrayBUBBLE_FLAG[3]+ " [4]=   "+arrayBUBBLE_FLAG[4]+
         " [5]=   "+arrayBUBBLE_FLAG[5]+ " [6]=   "+arrayBUBBLE_FLAG[6]+
@@ -390,109 +620,136 @@ function myFunction() {
     document.getElementById("demo18").innerHTML = text;
 
 
-    text = "arraySHELL przed sortowaniem [0]=  "+arraySHELL[0]+
-        "[1]= "+arraySHELL[1]+ " [2]=   "+arraySHELL[2]+
-        " [3]=   "+arraySHELL[3]+ " [4]=   "+arraySHELL[4]+
-        " [5]=   "+arraySHELL[5]+ " [6]=   "+arraySHELL[6]+
-        " [7]=   "+arraySHELL[7]+ " [8]=   "+arraySHELL[8]+
-        " [9]=   "+arraySHELL[9]+ " [10]=   "+arraySHELL[10]
-    document.getElementById("demo20").innerHTML = text;
-
-//szybkosc dzialania
-    var start = new Date().getTime();
-    insertionSort(arrayINSERTION);
-    var elapsed = new Date().getTime() - start;
-    text = "Time of the insertion sort: "+elapsed+ " ms";
-    document.getElementById("demo7").innerHTML = text;
-
-    text = "arrayINSERTION po sortowaniem [0]=  "+arrayINSERTION[0]+
-        "[1]= "+arrayINSERTION[1]+ " [2]=   "+arrayINSERTION[2]+
-        " [3]=   "+arrayINSERTION[3]+ " [4]=   "+arrayINSERTION[4]+
-        " [5]=   "+arrayINSERTION[5]+ " [6]=   "+arrayINSERTION[6]+
-        " [7]=   "+arrayINSERTION[7]+ " [8]=   "+arrayINSERTION[8]+
-        " [9]=   "+arrayINSERTION[9]+ " [10]=   "+arrayINSERTION[10]
-    document.getElementById("demo15").innerHTML = text;
-
-    var start = new Date().getTime();
-    bubble_sort_with_flag(arrayBUBBLE_FLAG);
-    var elapsed = new Date().getTime() - start;
-    text = "Time of the bubble sort with flag: "+elapsed+ " ms";
-    document.getElementById("demo6").innerHTML = text;
-    text = "arrayBUBBLE_FLAG po sortowaniem [0]=  "+arrayBUBBLE_FLAG[0]+
-        "[1]= "+arrayBUBBLE_FLAG[1]+ " [2]=   "+arrayBUBBLE_FLAG[2]+
-        " [3]=   "+arrayBUBBLE_FLAG[3]+ " [4]=   "+arrayBUBBLE_FLAG[4]+
-        " [5]=   "+arrayBUBBLE_FLAG[5]+ " [6]=   "+arrayBUBBLE_FLAG[6]+
-        " [7]=   "+arrayBUBBLE_FLAG[7]+ " [8]=   "+arrayINSERTION[8]+
-        " [9]=   "+arrayBUBBLE_FLAG[9]+ " [10]=   "+arrayBUBBLE_FLAG[10]
-    document.getElementById("demo19").innerHTML = text;
-
-
 
     var start = new Date().getTime();
     bubble_sort(arrayBUBBLE);
     var elapsed = new Date().getTime() - start;
-    text = "Time of the bubble sort: "+elapsed+ " ms";
-    document.getElementById("demo5").innerHTML = text;
-    text = "arrayBUBBLE po sortowaniem [0]=  "+arrayBUBBLE[0]+
+    text = "4. Time of the bubble sort: "+elapsed+ " ms";
+    document.getElementById("demo4").innerHTML = text;
+    text = "4. arrayBUBBLE po sortowaniem [0]=  "+arrayBUBBLE[0]+
         "[1]= "+arrayBUBBLE[1]+ " [2]=   "+arrayBUBBLE[2]+
         " [3]=   "+arrayBUBBLE[3]+ " [4]=   "+arrayBUBBLE[4]+
         " [5]=   "+arrayBUBBLE[5]+ " [6]=   "+arrayBUBBLE[6]+
         " [7]=   "+arrayBUBBLE[7]+ " [8]=   "+arrayBUBBLE[8]+
         " [9]=   "+arrayBUBBLE[9]+ " [10]=   "+arrayBUBBLE[10]
-    document.getElementById("demo13").innerHTML = text;
+    document.getElementById("demo19").innerHTML = text;
 
 
 
     var start = new Date().getTime();
     insertion_half_Sort(arrayINSERTION_HALF);
     var elapsed = new Date().getTime() - start;
-    text = "Time of the insertion half sort: "+elapsed+ " ms";
-    document.getElementById("demo8").innerHTML = text;
+    text = "2. Time of the insertion half sort: "+elapsed+ " ms";
+    document.getElementById("demo2").innerHTML = text;
     //sprawdzenie array mix
-    text = "arrayINSERTION_HALF po sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
+    text = "2. arrayINSERTION_HALF po sortowaniem [0]=  "+arrayINSERTION_HALF[0]+
         "[1]= "+arrayINSERTION_HALF[1]+ " [2]=   "+arrayINSERTION_HALF[2]+
         " [3]=   "+arrayINSERTION_HALF[3]+ " [4]=   "+arrayINSERTION_HALF[4]+
         " [5]=   "+arrayINSERTION_HALF[5]+ " [6]=   "+arrayINSERTION_HALF[6]+
         " [7]=   "+arrayINSERTION_HALF[7]+ " [8]=   "+arrayINSERTION_HALF[8]+
         " [9]=   "+arrayINSERTION_HALF[9]+ " [10]=   "+arrayINSERTION_HALF[10]
-    document.getElementById("demo17").innerHTML = text;
+    document.getElementById("demo20").innerHTML = text;
 
 
     var start = new Date().getTime();
     mixSort(arrayMIX);
     var elapsed = new Date().getTime() - start;
-    text = "Time of the MIX  sort: "+elapsed+ " ms";
-    document.getElementById("demo9").innerHTML = text;
+    text = "6. Time of the MIX  sort: "+elapsed+ " ms";
+    document.getElementById("demo6").innerHTML = text;
     //sprawdzenie array mix
-    text = "arrayMIX po sortowaniu [0]=  "+arrayMIX[0]+
+    text = "6. arrayMIX po sortowaniu [0]=  "+arrayMIX[0]+
         "[1]= "+arrayMIX[1]+ " [2]=   "+arrayMIX[2]+
         " [3]=   "+arrayMIX[3]+ " [4]=   "+arrayMIX[4]+
         " [5]=   "+arrayMIX[5]+ " [6]=   "+arrayMIX[6]+
         " [7]=   "+arrayMIX[7]+ " [8]=   "+arrayMIX[8]+
         " [9]=   "+arrayMIX[9]+ " [10]=   "+arrayMIX[10]
-    document.getElementById("demo11").innerHTML = text;
+    document.getElementById("demo21").innerHTML = text;
 
     var start = new Date().getTime();
     shellSort(arraySHELL);
     var elapsed = new Date().getTime() - start;
-    text = "Time of the SHELL  sort: "+elapsed+ " ms";
-    document.getElementById("demo22").innerHTML = text;
-    text = "arraySHELL przed sortowaniem [0]=  "+arraySHELL[0]+
+    text = "7. Time of the SHELL  sort: "+elapsed+ " ms";
+    document.getElementById("demo7").innerHTML = text;
+    text = "7. arraySHELL po sortowaniem [0]=   "+arraySHELL[0]+
         "[1]= "+arraySHELL[1]+ " [2]=   "+arraySHELL[2]+
         " [3]=   "+arraySHELL[3]+ " [4]=   "+arraySHELL[4]+
         " [5]=   "+arraySHELL[5]+ " [6]=   "+arraySHELL[6]+
         " [7]=   "+arraySHELL[7]+ " [8]=   "+arraySHELL[8]+
         " [9]=   "+arraySHELL[9]+ " [10]=   "+arraySHELL[10]
-    document.getElementById("demo21").innerHTML = text;
+    document.getElementById("demo22").innerHTML = text;
+
+    var start = new Date().getTime();
+    heapSort(arrayHEAP);
+    var elapsed = new Date().getTime() - start;
+    text = "8. Time of the HEAP  sort: "+elapsed+ " ms";
+    document.getElementById("demo8").innerHTML = text;
+    text = "8. arrayHEAP po sortowaniem [0]=   "+arrayHEAP[0]+
+        "[1]= "+arrayHEAP[1]+ " [2]=   "+arrayHEAP[2]+
+        " [3]=   "+arrayHEAP[3]+ " [4]=   "+arrayHEAP[4]+
+        " [5]=   "+arrayHEAP[5]+ " [6]=   "+arrayHEAP[6]+
+        " [7]=   "+arrayHEAP[7]+ " [8]=   "+arrayHEAP[8]+
+        " [9]=   "+arrayHEAP[9]+ " [10]=   "+arrayHEAP[10]
+    document.getElementById("demo24").innerHTML = text;
 
 
-    //fill the table
-    // for(var i = 0;i<5;i++){
-    //     tab_step3[i]=arrayBUBBLE[i];
-    // }
-    // text = " CZY TO DZIALA [0]=   "+arrayBUBBLE[0]+"[1]=   "+arrayBUBBLE[1]+"[2]=   "+arrayBUBBLE[2]+"[3]=   "+arrayBUBBLE[3]+"[4]=   "+arrayBUBBLE[4];
-    // document.getElementById("demo3").innerHTML = text;
 
+
+    var start = new Date().getTime();
+    selectionSort(arraySELECT);
+    var elapsed = new Date().getTime() - start;
+    text = "3. Time of the SELECT  sort: "+elapsed+ " ms";
+    document.getElementById("demo3").innerHTML = text;
+    text = "3. arraySELECT po sortowaniem [0]=   "+arraySELECT[0]+
+        "[1]= "+arraySELECT[1]+ " [2]=   "+arraySELECT[2]+
+        " [3]=   "+arraySELECT[3]+ " [4]=   "+arraySELECT[4]+
+        " [5]=   "+arraySELECT[5]+ " [6]=   "+arraySELECT[6]+
+        " [7]=   "+arraySELECT[7]+ " [8]=   "+arraySELECT[8]+
+        " [9]=   "+arraySELECT[9]+ " [10]=   "+arraySELECT[10]
+    document.getElementById("demo26").innerHTML = text;
+
+
+
+
+    var start = new Date().getTime();
+    quickSortRecursive(arrayQUICK,0,arrayQUICK.length);
+    var elapsed = new Date().getTime() - start;
+    text = "9. Time of the QUICK  sort: "+elapsed+ " ms";
+    document.getElementById("demo9").innerHTML = text;
+    text = "9. arrayQUICK po sortowaniem [0]=   "+arrayQUICK[0]+
+        "[1]= "+arrayQUICK[1]+ " [2]=   "+arrayQUICK[2]+
+        " [3]=   "+arrayQUICK[3]+ " [4]=   "+arrayQUICK[4]+
+        " [5]=   "+arrayQUICK[5]+ " [6]=   "+arrayQUICK[6]+
+        " [7]=   "+arrayQUICK[7]+ " [8]=   "+arrayQUICK[8]+
+        " [9]=   "+arrayQUICK[9]+ " [10]=   "+arrayQUICK[10]
+    document.getElementById("demo28").innerHTML = text;
+
+
+    var start = new Date().getTime();
+    arrayMERGE=mergeSort(arrayMERGE);
+    var elapsed = new Date().getTime() - start;
+    text = "10. Time of the MERGE  sort: "+elapsed+ " ms";
+    document.getElementById("demo10").innerHTML = text;
+    text = "10. arrayMERGE po sortowaniem [0]=   "+arrayMERGE[0]+
+        "[1]= "+arrayMERGE[1]+ " [2]=   "+arrayMERGE[2]+
+        " [3]=   "+arrayMERGE[3]+ " [4]=   "+arrayMERGE[4]+
+        " [5]=   "+arrayMERGE[5]+ " [6]=   "+arrayMERGE[6]+
+        " [7]=   "+arrayMERGE[7]+ " [8]=   "+arrayMERGE[8]+
+        " [9]=   "+arrayMERGE[9]+ " [10]=   "+arrayMERGE[10]
+    document.getElementById("demo30").innerHTML = text;
+
+    //
+    // var start = new Date().getTime();
+    // mergeSort(arrayMERGE);
+    // var elapsed = new Date().getTime() - start;
+    // text = "10. Time of the MERGE  sort: "+elapsed+ " ms";
+    // document.getElementById("demo10").innerHTML = text;
+    // text = "10. arrayMERGE po sortowaniem [0]=   "+arrayMERGE[0]+
+    //     "[1]= "+arrayMERGE[1]+ " [2]=   "+arrayMERGE[2]+
+    //     " [3]=   "+arrayMERGE[3]+ " [4]=   "+arrayMERGE[4]+
+    //     " [5]=   "+arrayMERGE[5]+ " [6]=   "+arrayMERGE[6]+
+    //     " [7]=   "+arrayMERGE[7]+ " [8]=   "+arrayMERGE[8]+
+    //     " [9]=   "+arrayMERGE[9]+ " [10]=   "+arrayMERGE[10]
+    // document.getElementById("demo30").innerHTML = text;
 
 
 

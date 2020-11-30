@@ -1154,7 +1154,7 @@ function drawSELECT(){
     getReadySELECT.draw();
     gameOverSELECT.draw();
 
-    if(3700 > framesSELECT && framesSELECT > 0){
+    if(3700 > framesSELECT && framesSELECT >= 0){
      //   this.dX +=1.6 * globalSpeedSELECT;
         red_circle01.draw();
         brown_circle01.draw();

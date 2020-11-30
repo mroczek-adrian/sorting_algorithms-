@@ -42,26 +42,57 @@
         <div class="col-sm-8">
 
 
-            <h1>Algorytmy wykorzystujace mechanizm wstawiania:</h1>
+            <h1>Sortowanie przez wstawianie.:(raczej merge sort) Wstawianie proste,wstawianie polowkowe,ulepszenie wstawiania(sort shela)</h1>
             <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                         <a href="{{path('insertion_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/white_insertion_sort.png') }}" >
+                         <a href="{{path('insertion_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/wstawianie-proste-biale.png') }}" >
                          </a>
-
-{#                        insertion#}
                     </div>
                     <div class="swiper-slide">
-                        <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
-
-                        {#                insertion with improve#}
+                        <a href="{{path('insertion_half_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/wstawianie-polowkowe-biale.png') }}" >
+                        </a>
                     </div>
                     <div class="swiper-slide">
-{#                        shell method#}
+                        <a href="{{path('shell_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-metoda-shella-biale.png') }}" >
+                        </a>
                     </div>
+                    <div class="swiper-slide">
+                        <a href="{{path('merge_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-przez-laczenie-biale.png') }}" >
+                        </a>
+                    </div>
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div id="next_swiper" class="swiper-button-next"></div>
+
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+            </div>
+
+            <h1>Sortowanie przez wybieranie.Wybieranie proste ,ulepszenie wybierania-zapamietanie wiekszej ilosci info (sort drzewiaste)</h1>
+            <!-- Slider main container -->
+            <div class="swiper-container">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                        <a href="{{path('select_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/wybieranie-proste-biale.png') }}" >
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{path('heap_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-stogowe-biale.png') }}" >
+                        </a>
+                    </div>
+
+
+
 
                 </div>
                 <!-- If we need pagination -->
@@ -75,38 +106,7 @@
                 <div class="swiper-scrollbar"></div>
             </div>
 
-            <h1>Algorithms which use "select" = "wybieranie" </h1>
-            <!-- Slider main container -->
-            <div class="swiper-container">
-                <!-- Additional required wrapper -->
-                <div class="swiper-wrapper">
-                    <!-- Slides -->
-                    <div class="swiper-slide">
-{#                        <div><a href="{{path('select_sort') }} ">Select sort</a></div>#}
-
-
-                        <a href="                        https://www.youtube.com/watch?v=OGzPmgsI-pQ&ab_channel=GeeksforGeeks
-">                          Na ile moge sie posilkowac internetem aby nie byc oskarzonym o plagiat </a>
-                    </div>
-                    <div class="swiper-slide">
-                        optional "drzewiaste" and "stogowe"
-                    </div>
-
-
-
-                </div>
-                <!-- If we need pagination -->
-                <div class="swiper-pagination"></div>
-
-                <!-- If we need navigation buttons -->
-                <div class="swiper-button-prev"></div>
-                <div id="next_swiper" class="swiper-button-next"></div>
-
-                <!-- If we need scrollbar -->
-                <div class="swiper-scrollbar"></div>
-            </div>
-
-            <h1>Algorithms which use "changing" </h1>
+            <h1>Sortowanie przez zamianę. Sortowanie Babelkowe,bebelkowe ze znacznikiem.  Ulepszenia sortowania babelkowego (sort mieszane) , quick sort</h1>
 
             <!-- Slider main container -->
             <div class="swiper-container">
@@ -114,12 +114,21 @@
                 <div class="swiper-wrapper">
                     <!-- Slides -->
                     <div class="swiper-slide">
-                        <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/mix-sort/mix-sort-img.png') }}" >
+                        <a href="{{path('bubble_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-biale.png') }}" >
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                  quick sort - and other---bubble sort
+                        <a href="{{path('bubble_sort_with_flag') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-ze-znacznikiem-biale.png') }}" >
+                        </a>
                     </div>
-
+                    <div class="swiper-slide">
+                        <a href="{{path('mix_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-mieszane-biale.png') }}" >
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{path('quick_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-szybkie-biale.png') }}" >
+                        </a>
+                    </div>
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -167,7 +176,12 @@
             </form>
 Zamiast wszystkich to daj przyklad zlozonosci n^2 oraz innych zlozonosci i daj tam po 1 przykladzie - chodzi o to aby pokazac jak zlozonosc przeklada sie na szybkosc
 Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymistycznego i losowego
-            <p id="demo"></p>
+            <br><br><br><br><br><br>
+            shell sort Do posortowania n obiektów konieczny jest nakład pracy proporcjonalny do
+            n1.2. - wyklad str 16
+
+            <p id="demo0"></p>
+{#            time#}
             <p id="demo1"></p>
             <p id="demo2"></p>
             <p id="demo3"></p>
@@ -177,8 +191,8 @@ Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymi
             <p id="demo7"></p>
             <p id="demo8"></p>
             <p id="demo9"></p>
-{#            // sprawdzenia#}
             <p id="demo10"></p>
+{#            sprawdzenie czy sortuja #}
             <p id="demo11"></p>
             <p id="demo12"></p>
             <p id="demo13"></p>
@@ -190,12 +204,19 @@ Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymi
             <p id="demo19"></p>
             <p id="demo20"></p>
             <p id="demo21"></p>
-            <br><br><br><br><br><br>
-            Do posortowania n obiektów konieczny jest nakład pracy proporcjonalny do
-            n1.2. - wyklad str 16
+
             <p id="demo22"></p>
             <p id="demo23"></p>
             <p id="demo24"></p>
+            <p id="demo25"></p>
+            <p id="demo26"></p>
+            <p id="demo27"></p>
+            <p id="demo28"></p>
+            <p id="demo29"></p>
+            <p id="demo30"></p>
+            <p id="demo31"></p>
+            <p id="demo32"></p>
+            <p id="demo33"></p>
 {#            <canvas id="birdBUBBLE" width="600" height="380"></canvas>#}
 
 

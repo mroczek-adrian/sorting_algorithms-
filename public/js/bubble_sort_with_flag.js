@@ -1226,13 +1226,13 @@ function draw(){
     ctxBUBBLE_WITH_FLAG.strokeText("Sortowanie  ",25,25);
     ctxBUBBLE_WITH_FLAG.strokeText("bąbelkowe ",25,50);
     ctxBUBBLE_WITH_FLAG.strokeText("ze znacznikiem! ",25,75);
-    ctxBUBBLE_WITH_FLAG.strokeText("Numer zmian:",25,100);
+    ctxBUBBLE_WITH_FLAG.strokeText("Ilość zmian:",25,100);
    // ctxBUBBLE_WITH_FLAG.strokeText("Flag = ",25,125);
 
     //draw function
     // bg.draw();
     // c2nBUBBLE_WITH_FLAG.draw();
-    if(2300 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG > 0){
+    if(2300 > framesBUBBLE_WITH_FLAG && framesBUBBLE_WITH_FLAG >= 0){
         red_circle01.draw();
         red_circle02.draw();
         lineBUBBLE_WITH_FLAG.draw();

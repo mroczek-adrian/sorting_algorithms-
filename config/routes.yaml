@@ -3,8 +3,9 @@ algorytm:
     controller: App\Controller\KtoryAlgZastosowacController::index
 hello_page:
   path: /
-  controller: App\Controller\HelloPageController::index
-
+  controller: App\Controller\FirstPageController::index
+  #path: /
+  #  controller: App\Controller\HelloPageController::index
 dodanie_do_bazy:
   path: /article/admin
   controller: App\Controller\ArticleAdminContorller::index

@@ -1711,7 +1711,7 @@
 
         //draw function
         // bg.draw();
-        if(2100 > framesSHELL && framesSHELL > 0){
+        if(2100 > framesSHELL && framesSHELL >= 0){
            // c2nSHELL.draw();
           //  lineSHELL.draw();
            // lineleftSHELL.draw();

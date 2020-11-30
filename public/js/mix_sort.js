@@ -1509,13 +1509,13 @@
 
         //draw function
         // bg.draw();
-        if(1550 > framesMIX && framesMIX > 0){
+        if(1550 > framesMIX && framesMIX >= 0){
            // c2nMIX.draw();
             lineMIX.draw();
             lineleftMIX.draw();
             bgRectangle.draw();
         }
-        if(650 > framesMIX && framesMIX > 0){
+        if(650 > framesMIX && framesMIX >= 0){
             // c2nMIX.draw();
 
             red_circle01.draw();
