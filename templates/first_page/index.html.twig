@@ -6,7 +6,9 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-
+    html{
+        font-size: 62.5%;
+    }
     body{
         padding:50px;
     }
@@ -15,9 +17,11 @@
         display: block;
         margin: 0 auto;
     }
-    .swiper-container {
-        /*width: 1000px;*/
-        /*height: 500px;*/
+    .swiper-container{
+        width: 50rem;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
     }
     .swiper-slide{
@@ -28,22 +32,154 @@
         align-items: center;
         font-size:40px;
     }
+    #click2start {
+        height: 30rem  ;
+        /*width: 560px;*/
+        margin: 0;
 
+        /*background: yellow;*/
+        /*position: relative;*/
+        /*top: 50%;*/
+        /*left: 50%;*/
+        /*margin-right: -50%;*/
+        /*transform: translate(-50%, -50%);*/
+
+
+        width: 50rem;
+    }
+    #porownanie{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-color: darkgrey;
+    }
+    /*@media all and (max-width: 1500px) and (min-width:1001px){*/
+    /*    body{*/
+    /*        background-color: green;*/
+    /*    }*/
+    /*    #id div {*/
+    /*        width: 98%;*/
+    /*    }*/
+    /*}*/
+    @media all and (max-width: 5000px) and (min-width:616px){
+        body{
+            background-color: lightblue;
+            /*docelowo bialo*/
+        }
+
+        #click2start {
+            height: 30rem  ;
+            /*width: 560px;*/
+
+            width: 50rem;
+        }
+        #algorithm {
+            background-color: blue;
+            /*background-size:cover;*/
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size:2rem;
+            color:white;
+            text-align: center;
+        }
+        .swiper-container{
+            width: 50rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        /*wstawianie proste itd lista cala*/
+        #algorithms_all_list{
+            align-items: center;
+            background-color: black;
+            justify-content: center;
+            font-size:2rem;
+            color:white;
+            text-align: center;
+        }
+        #all_list{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+    }
+    @media all and (max-width: 615px) and (min-width:1px){
+        body{
+            background-color: lightblue;
+            /*docelowo bialo*/
+        }
+
+        #click2start {
+            height: 15rem  ;
+            /*width: 560px;*/
+
+            width: 25rem;
+        }
+        #algorithm {
+            background-color: blue;
+            /*background-size:cover;*/
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            font-size:2rem;
+            color:white;
+            text-align: center;
+        }
+        .swiper-container{
+            width: 25rem;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        /*wstawianie proste itd lista cala*/
+        #algorithms_all_list{
+            align-items: center;
+            background-color: black;
+            justify-content: center;
+            font-size:2rem;
+            color:white;
+            text-align: center;
+        }
+        #all_list{
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+    }
 
 </style>
 
     <div class="form-group row">
-        <div class="col-sm-1">
+{#        <div class="col-sm-1">#}
 
-        </div>
-        <div class="col-sm-1">
-            <li><a href="{{path('hello_page') }} ">back</a></li>
-        </div>
-        <div class="col-sm-8">
+{#        </div>#}
+{#        <div class="col-sm-1">#}
+{#            <li><a href="{{path('hello_page') }} ">back</a></li>#}
+{#            <li><a href="{{ path('logout') }}">Logout</a></li>#}
+{#        </div>#}
+        <div class="col-sm-12">
+            <div id="algorithms_all_list">
+                <div id="all_list"><a href="{{path('insertion_sort') }} ">Wstawieanie proste</a></div>
+                <div id="all_list"><a href="{{path('insertion_half_sort') }} ">Wstawianie polowkowe</a></div>
+                <div id="all_list"><a href="{{path('select_sort') }} ">Wybieranie proste</a></div>
+                <div id="all_list"><a href="{{path('bubble_sort') }} ">Sortowanie Babelkowe - Bubble sort</a></div>
+                <div id="all_list"><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie babelkowe ze znacznikiem</a></div>
+                <div id="all_list"><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>
 
+                <div id="all_list"><a href="{{path('shell_sort') }} ">Sortowanie metoda Shella</a></div>
+                <div id="all_list"><a href="{{path('heap_sort') }} ">Sortowanie stogowe</a></div>
 
-            <h1>Sortowanie przez wstawianie.:(raczej merge sort) Wstawianie proste,wstawianie polowkowe,ulepszenie wstawiania(sort shela)</h1>
-            <!-- Slider main container -->
+                <div id="all_list"><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>
+                <div id="all_list"><a href="{{path('merge_sort') }} ">Sortowanie przez laczenie</a></div>
+            </div>
+            <br>
+            <div id="algorithm">
+            <h1>Algorytmy sortowania wykorzystujace mechanizm wstawiania:</h1>
+            </div>
+                <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -75,9 +211,10 @@
                 <!-- If we need scrollbar -->
                 <div class="swiper-scrollbar"></div>
             </div>
-
-            <h1>Sortowanie przez wybieranie.Wybieranie proste ,ulepszenie wybierania-zapamietanie wiekszej ilosci info (sort drzewiaste)</h1>
-            <!-- Slider main container -->
+            <div id="algorithm">
+                <h1>Algorytmy sortowania wykorzystujace mechanizm wybierania:</h1>
+            </div>
+                <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
                 <div class="swiper-wrapper">
@@ -106,8 +243,9 @@
                 <div class="swiper-scrollbar"></div>
             </div>
 
-            <h1>Sortowanie przez zamianę. Sortowanie Babelkowe,bebelkowe ze znacznikiem.  Ulepszenia sortowania babelkowego (sort mieszane) , quick sort</h1>
-
+            <div id="algorithm">
+                <h1>Algorytmy sortowania wykorzystujace mechanizm zamiany: </h1>
+            </div>
             <!-- Slider main container -->
             <div class="swiper-container">
                 <!-- Additional required wrapper -->
@@ -142,27 +280,18 @@
             </div>
 
 
-            PODSUMOWANIE ALGORYTMOW WYKORZYSTANYCH W WYKLADZIE Z ALGORYTMOW SORTOWANIA
-            <img id="pause"  src="{{ asset('js/img/profesor.png') }}" >
-            <div><a href="{{path('insertion_sort') }} ">Wstawieanie proste</a></div>
-            <div><a href="{{path('insertion_half_sort') }} ">Wstawianie polowkowe</a></div>
-            <div><a href="{{path('select_sort') }} ">Wybieranie proste</a></div>
-            <div><a href="{{path('bubble_sort') }} ">Sortowanie Babelkowe - Bubble sort</a></div>
-            <div><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie babelkowe ze znacznikiem</a></div>
-            <div><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>
+{#            PODSUMOWANIE ALGORYTMOW WYKORZYSTANYCH W WYKLADZIE Z ALGORYTMOW SORTOWANIA#}
+{#            <img id="pause"  src="{{ asset('js/img/profesor.png') }}" >#}
 
-            <div><a href="{{path('shell_sort') }} ">Sortowanie metoda Shella</a></div>
-            <div><a href="{{path('heap_sort') }} ">Sortowanie stogowe</a></div>
-
-            <div><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>
-            <div><a href="{{path('merge_sort') }} ">Sortowanie przez laczenie</a></div>
 
 {#            Nadobowiazkowo:D#}
 {#            <div><a href="{{path('counting_sort') }} ">Count sort</a></div>#}
             <br><br><br><br><br>
 
-            <h1>Porównanie metod sortowania: - slajd 36 </h1>
+            <div id="porownanie">
+            <h1 id="algorithm">Porównanie prętkości działania metod sortowania: - slajd 36 </h1>
 
+                <h1>Podaj ilość elementow do posortowania (zalecane 100 elementów)</h1>
             <form name="myForm">
                 <input id="numb" name="fname">
                 <button onclick="  myFunction()"  type="button">Submit</button>
@@ -181,7 +310,7 @@
             <p id="demo07"></p>
             <p id="demo08"></p>
 {#            time#}
-            <h1> przypadek losowo uporzadkowany</h1>
+                <h1 id="demo111a"></h1>
             <p id="demo1"></p>
             <p id="demo2"></p>
             <p id="demo3"></p>
@@ -192,7 +321,7 @@
             <p id="demo8"></p>
             <p id="demo9"></p>
             <p id="demo10"></p>
-            <h1> przypadek uporzadkowany</h1>
+                <p id="demo111b"></p>
             <p id="demo1a"></p>
             <p id="demo2a"></p>
             <p id="demo3a"></p>
@@ -203,7 +332,7 @@
             <p id="demo8a"></p>
             <p id="demo9a"></p>
             <p id="demo10a"></p>
-            <h1>  przypadek odwrotnie uporzadkowany</h1>
+                <p id="demo111c"></p>
 
             <p id="demo1b"></p>
             <p id="demo2b"></p>
@@ -264,8 +393,8 @@
 
 
         </div>
-
-        <div class="col-sm-2">
+        </div>
+{#        <div class="col-sm-2">#}
 {#            <div class="start-algorithms">#}
 {#                <img id="bubble--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/BUBBLE-start-small.png') }}" >#}
 {#            </div>#}
@@ -285,8 +414,8 @@
 {#            <div class="start-algorithms">#}
 {#                <img id="heap--sort" style="width: 100px ; height: 50px; " src="{{ asset('js/img/HEAP-start-small.png') }}" >#}
 {#            </div>#}
-            {#            <h1>under  title will be canvas with simulation</h1>#}
-        </div>
+{#            #}{#            <h1>under  title will be canvas with simulation</h1>#}
+{#        </div>#}
     </div>
 {% endblock %}
 

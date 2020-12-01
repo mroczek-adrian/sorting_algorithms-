@@ -30,6 +30,42 @@
 </head>
 
 <body>
+<style>
+    @media all and (max-width: 621px) and (min-width:1px){
+        /*.collapse navbar-collapse{*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    text-align: center;*/
+        /*    background-color: #5eb5e0;*/
+        /*}*/
+        /*.div-dev-info{*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    text-align: center;*/
+        /*}*/
+       /*.navbar-item{*/
+       /*    display:flex;*/
+       /*    justify-content: center;*/
+       /*    align-items: center;*/
+       /*    !*height: 10rem;*!*/
+       /*    background-color: #5eb5e0;*/
+       /*}*/
+       #navigate{
+           display:flex;
+           justify-content: center;
+           align-items: center;
+           /*//background-color: #fff;*/
+           height: 10rem;
+       }
+       /*#name{*/
+       /*    justify-content: center;*/
+       /*    align-items: center;*/
+       /*    text-align: center;*/
+       /*    !*background-color: #5eb5e0;*!*/
+       /*}*/
+    }
+
+</style>
 <header>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         <div class="container">
@@ -38,14 +74,14 @@
 {#                <div class="div-prifile-image">#}
 {#                    <img class="profile-image" width="50px" src="{{asset('media/assets/MyPhoto/MyAvatar.png')}}"#}{# title="my image"#}{##}{# alt="My image"#}{#>#}
 {#                </div>#}
-                <div class="div-dev-info">
+                <div id="name" class="div-dev-info">
                     <p class="name-dev">Adrian Mroczek</p>
                     <p class="text-muted">Front-End Developer</p>
                 </div>
 
             </a>
 
-            <div class="collapse navbar-collapse">
+            <div id="navigate" class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     {#Gotowe gdybym chcial wcisnac bloga ;D#}
                     {# <li class="nav-item">
@@ -63,20 +99,20 @@
 {#                    </li>#}
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('bubble_sort') }}">
-                            Bubble sort
+                        <a class="nav-link" href="{{ path('logout') }}">
+                            Logowanie
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('insertion_sort') }}">
-                            Insertion sort
+                        <a class="nav-link" href="{{ path('hello_page') }}">
+                            Strona głowna
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('first_page') }}">
-                            First page
-                        </a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('first_page') }}">#}
+{#                            First page#}
+{#                        </a>#}
+{#                    </li>#}
 {#                    <li class="nav-item">#}
 {#                        <a class="nav-link" href="{{ path('quick_sort') }}">#}
 {#                            Quick sort#}
@@ -101,43 +137,43 @@
 
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('test') }}">
-                            Future develop - test
-                        </a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('test') }}">#}
+{#                            Future develop - test#}
+{#                        </a>#}
+{#                    </li>#}
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('select_sort') }}">
-                            Select sort
-                        </a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('select_sort') }}">#}
+{#                            Select sort#}
+{#                        </a>#}
+{#                    </li>#}
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('insertion_half_sort') }}">
-                            Insertion half sort
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('bubble_sort_with_flag') }}">
-                            Bubble sort with flag
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('mix_sort') }}">
-                           Mix sort
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('sort_algorithms') }}">
-                            Sort algorithms
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('shell_sort') }}">
-                             Shell sort
-                        </a>
-                    </li>
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('insertion_half_sort') }}">#}
+{#                            Insertion half sort#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('bubble_sort_with_flag') }}">#}
+{#                            Bubble sort with flag#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('mix_sort') }}">#}
+{#                           Mix sort#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('sort_algorithms') }}">#}
+{#                            Sort algorithms#}
+{#                        </a>#}
+{#                    </li>#}
+{#                    <li class="nav-item">#}
+{#                        <a class="nav-link" href="{{ path('shell_sort') }}">#}
+{#                             Shell sort#}
+{#                        </a>#}
+{#                    </li>#}
 
                 </ul>
             </div>

@@ -16,6 +16,7 @@ function myFunction() {
 
     var x1 = parseInt(document.getElementById("numb").value);
 
+    //document.style.fontsize("20px");
 
 
 
@@ -371,30 +372,45 @@ function myFunction() {
     var start1 = new Date().getTime();
     prosteWstawianie(losowo1);
     var elapsed1 = new Date().getTime() - start1;
-    var text1 = "1. PROSTE WSTAWIANIE Time of the insertion sort: "+elapsed1+ " ms";
+    var text1 = "1. PROSTE WSTAWIANIE CZAS: "+elapsed1+ " ms";
     document.getElementById("demo1").innerHTML = text1;
 
     var start11 = new Date().getTime();
     prosteWstawianie(uporzadkowany1);
     var elapsed11 = new Date().getTime() - start11;
-    var text11 = "1. PROSTE WSTAWIANIE Time of the insertion sort: "+elapsed11+ " ms";
+    var text11 = "1. PROSTE WSTAWIANIE CZAS: "+elapsed11+ " ms";
     document.getElementById("demo1a").innerHTML = text11;
 
      var start111 = new Date().getTime();
      prosteWstawianie(odwrotnie_upo1);
      var elapsed111 = new Date().getTime() - start111;
-     var text111 = "1.  PROSTE WSTAWIANIE Time of the insertion sort: "+elapsed111+ " ms";
+     var text111 = "1.  PROSTE WSTAWIANIE CZAS: "+elapsed111+ " ms";
      document.getElementById("demo1b").innerHTML = text111;
 
-    // text = " odwrotnie_upo1 [0]=  "+odwrotnie_upo1[0]+
-    //     "[1]= "+odwrotnie_upo1[1]+ " [2]=   "+odwrotnie_upo1[2]+
-    //     " [3]=   "+odwrotnie_upo1[3]+ " [4]=   "+odwrotnie_upo1[4]+
-    //     " [5]=   "+odwrotnie_upo1[5]+ " [6]=   "+odwrotnie_upo1[6]+
-    //     " [7]=   "+odwrotnie_upo1[7]+ " [8]=   "+odwrotnie_upo1[8]+
-    //     " [9]=   "+odwrotnie_upo1[9]+ " [10]=   "+odwrotnie_upo1[10]
-    // document.getElementById("demo11").innerHTML = text;
-  //  sprawdzenie ze dziala
 
+
+    var text111=" Przypadek odwrotnie uporzadkowany "
+    var text111a = " Przypadek losowo uporzadkowany "
+    var text111b = " Przypadek uporzadkowany "
+   // var text111c =p.style.fontsize(100);
+    var span1 = document.getElementById("demo111a");
+    var span2 = document.getElementById("demo111b");
+
+
+    var span = document.getElementById("demo111c");
+    span.style.fontSize="15px";
+    span1.style.fontSize="15px";
+    span2.style.fontSize="15px";
+    span.innerHTML=" Przypadek odwrotnie uporzadkowany ";
+    span1.innerHTML=" Przypadek losowo uporzadkowany ";
+    span2.innerHTML=" Przypadek uporzadkowany ";
+
+    //  sprawdzenie ze dziala
+    //title of canvas
+    // ctxBUBBLE.font = "20px Arial";
+    //
+    // ctxBUBBLE.strokeText("Sortowanie ",25,50);
+    // ctxBUBBLE.strokeText("bąbelkowe!",25,75);
 
 
 
@@ -402,39 +418,39 @@ function myFunction() {
     var start4 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(losowo4);
     var elapsed4 = new Date().getTime() - start4;
-    var text4 = "4. PROSTA ZAMIANA Time of the bubble sort: "+elapsed4+ " ms";
+    var text4 = "4. PROSTA ZAMIANA CZAS: "+elapsed4+ " ms";
     document.getElementById("demo4").innerHTML = text4;
 
     var start44 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(uporzadkowany4);
     var elapsed44 = new Date().getTime() - start44;
-    var text44 = "4.PROSTA ZAMIANA  Time of the bubble sort: "+elapsed44+ " ms";
+    var text44 = "4.PROSTA ZAMIANA CZAS: "+elapsed44+ " ms";
     document.getElementById("demo4a").innerHTML = text44;
 
     var start444 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(odwrotnie_upo4);
     var elapsed444 = new Date().getTime() - start444;
-    var text444 = "4.PROSTA ZAMIANA  Time of the bubble sort: "+elapsed444+ " ms";
+    var text444 = "4.PROSTA ZAMIANA CZAS: "+elapsed444+ " ms";
     document.getElementById("demo4b").innerHTML = text444;
 
   //proste wybieranie
     var start3 = new Date().getTime();
     prosteWybieranie(losowo3);
     var elapsed3 = new Date().getTime() - start3;
-    var text3 = "3.PROSTE WYBIERANIE Time of the SELECT  sort: "+elapsed3+ " ms";
+    var text3 = "3.PROSTE WYBIERANIE CZAS: "+elapsed3+ " ms";
     document.getElementById("demo3").innerHTML = text3;
 
 
     var start33 = new Date().getTime();
     prosteWybieranie(uporzadkowany3);
     var elapsed33 = new Date().getTime() - start33;
-    var text33 = "3.PROSTE WYBIERANIE Time of the SELECT  sort: "+elapsed33+ " ms";
+    var text33 = "3.PROSTE WYBIERANIE CZAS: "+elapsed33+ " ms";
     document.getElementById("demo3a").innerHTML = text33;
 
     var start333 = new Date().getTime();
     prosteWybieranie(odwrotnie_upo3);
     var elapsed333 = new Date().getTime() - start333;
-    var text333 = "3.PROSTE WYBIERANIE Time of the SELECT  sort: "+elapsed333+ " ms";
+    var text333 = "3.PROSTE WYBIERANIE CZAS: "+elapsed333+ " ms";
     document.getElementById("demo3b").innerHTML = text333;
 
 }
