@@ -157,31 +157,31 @@
             <div><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>
             <div><a href="{{path('merge_sort') }} ">Sortowanie przez laczenie</a></div>
 
-            Nadobowiazkowo:D
-            <div><a href="{{path('counting_sort') }} ">Count sort</a></div>
-<br><br><br><br><br>
+{#            Nadobowiazkowo:D#}
+{#            <div><a href="{{path('counting_sort') }} ">Count sort</a></div>#}
+            <br><br><br><br><br>
 
-            <h1>Compare the complexity of the algorithms and speed  </h1>
-
-
-            <h2>-------------------------------------</h2>
-
-            <p>How many numbers you want to sort ? najlepiej do 12000 w zaleznosci od mocy obliczeniowej - pod spodem opis wszystkich algorytmow i porowananie ich szybkosci dzialania ew ze zlozonoscia</p>
-            <h2>o co chodzi z jednym procesorem?</h2>
+            <h1>Porównanie metod sortowania: - slajd 36 </h1>
 
             <form name="myForm">
                 <input id="numb" name="fname">
                 <button onclick="  myFunction()"  type="button">Submit</button>
 
             </form>
-Zamiast wszystkich to daj przyklad zlozonosci n^2 oraz innych zlozonosci i daj tam po 1 przykladzie - chodzi o to aby pokazac jak zlozonosc przeklada sie na szybkosc
-Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymistycznego i losowego
-            <br><br><br><br><br><br>
-            shell sort Do posortowania n obiektów konieczny jest nakład pracy proporcjonalny do
-            n1.2. - wyklad str 16
+             <br><br><br><br><br><br>
 
-            <p id="demo0"></p>
+
+            <p id="demo00"></p>
+            <p id="demo01"></p>
+            <p id="demo02"></p>
+            <p id="demo03"></p>
+            <p id="demo04"></p>
+            <p id="demo05"></p>
+            <p id="demo06"></p>
+            <p id="demo07"></p>
+            <p id="demo08"></p>
 {#            time#}
+            <h1> przypadek losowo uporzadkowany</h1>
             <p id="demo1"></p>
             <p id="demo2"></p>
             <p id="demo3"></p>
@@ -192,6 +192,29 @@ Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymi
             <p id="demo8"></p>
             <p id="demo9"></p>
             <p id="demo10"></p>
+            <h1> przypadek uporzadkowany</h1>
+            <p id="demo1a"></p>
+            <p id="demo2a"></p>
+            <p id="demo3a"></p>
+            <p id="demo4a"></p>
+            <p id="demo5a"></p>
+            <p id="demo6a"></p>
+            <p id="demo7a"></p>
+            <p id="demo8a"></p>
+            <p id="demo9a"></p>
+            <p id="demo10a"></p>
+            <h1>  przypadek odwrotnie uporzadkowany</h1>
+
+            <p id="demo1b"></p>
+            <p id="demo2b"></p>
+            <p id="demo3b"></p>
+            <p id="demo4b"></p>
+            <p id="demo5b"></p>
+            <p id="demo6b"></p>
+            <p id="demo7b"></p>
+            <p id="demo8b"></p>
+            <p id="demo9b"></p>
+            <p id="demo10b"></p>
 {#            sprawdzenie czy sortuja #}
             <p id="demo11"></p>
             <p id="demo12"></p>
@@ -275,7 +298,7 @@ Ogarnac tez zlozonosc oraz czasy sortowania dla przypadku  pestymistyczna optymi
 
     <script src="{{asset('js/first_page.js') }}"></script>
     {#    <script src="{{asset('js/SA_quick_sort.js') }}"></script>#}
-{   <script src="{{asset('js/sort_algorithms.js') }}"></script>
+   <script src="{{asset('js/sort_algorithms.js') }}"></script>
 
     {#    <script src="{{asset('js/counting_sort.js') }}"></script>#}
 
