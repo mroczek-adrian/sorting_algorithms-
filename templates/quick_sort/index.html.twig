@@ -6,46 +6,63 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+    html{
+        font-size: 62.5%;
+    }
     canvas{
         border : 1px solid #000;
         display: block;
         margin: 0 auto;
     }
+    #elements{
+        visibility: hidden;
+        width: 1px;
+        height:1px;
+        display:flex;
+    }
+    #restart_img{
+        height: 15rem;
+        width:30rem;
+        /*display: block;*/
+        text-align: center;
+        display: block;margin-left: auto; margin-right: auto;text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    @media all and (max-width: 615px) and (min-width:1px) {
+        body {
+            background-color: white;
+            /*docelowo bialo*/
+        }
+
+        #birdQUICK {
+            height: 15rem;
+            /*width: 560px;*/
+
+            width: 25rem;
+        }
+        #restart_img{
+            height: 7rem;
+            width:15rem;
+        }
+    }
 
 </style>
 
     <div class="form-group row">
-        <div class="col-sm-1">
 
-        </div>
-        <div class="col-sm-1">
-            <li><a href="{{path('sort_algorithms') }} ">back</a></li>
-        </div>
-        <div class="col-sm-8">
+        <div class="col-sm-12">
 
-            <h1>Hello {{ controller_name }}!  ✅</h1>
-
-            <h2>JavaScript Can Validate Input</h2>
-
-            <p>Please input a 5 numbers - without repetition[1-9]</p>
-{#            <form name="myForm">#}
-{#                <input id="numb" name="fname"><input id="numb1" name="fname1"><input id="numb2" name="fname2"><input id="numb3" name="fname3"><input id="numb4" name="fname4">#}
-{#                <button onclick="  myFunction()"  type="button">Submit</button>#}
-
-{#            </form>#}
+            <li><a href="{{path('sort_algorithms') }} ">Wstecz</a></li>
 
 
-            <p id="demo"></p>
-            <p id="demo1"></p>
-            <p id="demo2"></p>
-            <p id="demo3"></p>
-            <p id="demo4"></p>
-            <p id="demo5"></p>
+
+
             {#            here will be canvas#}
             <canvas id="birdQUICK" width="600" height="380"></canvas>
             <br><br><br>
-            <img id="restart_img" style="width: 200px ; height: 200px;display: block;margin-left: auto; margin-right: auto;text-align: center;  " src="{{ asset('js/img/mix-sort/RESTART.png') }}" >
-            <br><br><br>
+            <img id="restart_img" src="{{ asset('js/img/mix-sort/RESTART.png') }}" >
+                  <div id="elements">
             <img id="image" style="width: 200px ; height: 200px; " src="{{ asset('js/img/sprite.png') }}" >
             <img id="numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/numbers.jpg') }}" >
             <img id="blue_numbers" style="width: 200px ; height: 200px; " src="{{ asset('js/img/blue_numbers_better.png') }}" >
@@ -54,13 +71,16 @@
             <img id="pause" style="width: 200px ; height: 200px; " src="{{ asset('js/img/pause.png') }}" >
             <img id="bg" style="width: 200px ; height: 200px; " src="{{ asset('js/img/QUICK-SORT/IMAGE.png') }}" >
             <img id="img1" style="width: 200px ; height: 200px; " src="{{ asset('js/img/insertion_sort/prostokat1.png') }}" >
-
-
+            <p id="demo"></p>
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+            <p id="demo5"></p>
+                  </div>
         </div>
-        <div class="col-sm-2">
 
-            <h1>under  title will be canvas with simulation</h1>
-        </div>
+
     </div>
 {% endblock %}
 {%  block javascripts %}
