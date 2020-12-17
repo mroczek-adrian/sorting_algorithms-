@@ -1,26 +1,26 @@
-algorytm:
-    path: /ktory/alg/zastosowac
-    controller: App\Controller\KtoryAlgZastosowacController::index
+#algorytm:
+#    path: /ktory/alg/zastosowac
+#    controller: App\Controller\KtoryAlgZastosowacController::index
 hello_page:
   path: /
   controller: App\Controller\FirstPageController::index
   #path: /
   #  controller: App\Controller\HelloPageController::index
-dodanie_do_bazy:
-  path: /article/admin
-  controller: App\Controller\ArticleAdminContorller::index
-
-usuniecia_artykulu:
-  path: /article/delete/{id}
-  controller: App\Controller\ArticleAdminContorller::delete
-
-usuniecia_godz_ucz:
-  path: /article/delete/dni/uczelni/{id}
-  controller: App\Controller\ArticleAdminContorller::delete_uczelnie
-
-usuniecia_teachers:
-  path: /article/delete/teachers/{id}
-  controller: App\Controller\ArticleAdminContorller::delete_teachers
+#dodanie_do_bazy:
+#  path: /article/admin
+#  controller: App\Controller\ArticleAdminContorller::index
+#
+#usuniecia_artykulu:
+#  path: /article/delete/{id}
+#  controller: App\Controller\ArticleAdminContorller::delete
+#
+#usuniecia_godz_ucz:
+#  path: /article/delete/dni/uczelni/{id}
+#  controller: App\Controller\ArticleAdminContorller::delete_uczelnie
+#
+#usuniecia_teachers:
+#  path: /article/delete/teachers/{id}
+#  controller: App\Controller\ArticleAdminContorller::delete_teachers
 
 sort_algorithms:
   path: /sort/algorithms

@@ -25,11 +25,12 @@
         </div>
         <div class="col-sm-8">
             <div class="example-wrapper">
-                <a href="{{ path('logout') }}">Logout</a>
-                <h1>Login page!</h1>
+{#            //    <a href="{{ path('logout') }}">Logout</a>#}
+                <h1>Logowanie!</h1>
 
                 {% if error %}
-                    <span class="error">{{ error.messageKey }}</span>
+{#                    <span class="error">{{ error.messageKey }}</span>#}
+                    <span class="error">Podaj poprawny login i hasło</span>
                 {% endif %}
 
 

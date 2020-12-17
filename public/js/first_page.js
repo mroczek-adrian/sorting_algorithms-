@@ -18,6 +18,9 @@ function myFunction() {
 
     //document.style.fontsize("20px");
 
+    var uporzadkowany10x = [];
+    var uporzadkowany100x = [];
+    var uporzadkowany1000x = [];
 
 
     var uporzadkowany = [];
@@ -53,6 +56,19 @@ function myFunction() {
     var uporzadkowany10 = [];
     var losowo10 = [];
     var odwrotnie_upo10 = [];
+    //10x100x1000x
+    var x10 = x1 * 10;
+    for (var i = 1; i <= x10; i++) {
+        uporzadkowany10x.push(i);
+    }
+    var x100 = x1 * 100;
+    for (var i = 1; i <= x100; i++) {
+        uporzadkowany100x.push(i);
+    }
+    var x1000 = x1 * 1000;
+    for (var i = 1; i <= x1000; i++) {
+        uporzadkowany1000x.push(i);
+    }
     //start
     for (var i = 1; i <= x1; i++) {
         uporzadkowany.push(i);
@@ -307,12 +323,10 @@ function myFunction() {
 
 
 
-//bubble sort
+
     function prostaZamiana_sortowanieBabelkowe( A) {
         var temp;
         let n = A.length;
-        //na poczatku k jest ostatnim elementem - potem zmniejsza sie
-        // a rosnie posortowana tablica
         for(var k = 0; k< n-1; k++) {
              for(var i = 0; i < n-k-1; i++) {
                 if(A[ i ] > A[ i+1] ) {
@@ -325,19 +339,16 @@ function myFunction() {
     }
 
 
-//insertion sort
+
     function prosteWstawianie(a) {
         let n = a.length;
         for (let i = 1; i < n; i++) {
-            //nieposortowana tablica rozpoczyna sie od elementu a[i]
-            // x - wartosc badana
             let x = a[i];
             let j = i-1;
             while (j > -1) {
                 if(x > a[j]){
                     break;
                 }
-
                 a[j+1] = a[j];
                 j--;
             }
@@ -346,19 +357,17 @@ function myFunction() {
         return a;
     }
 
+
     function prosteWybieranie(A) {
         let n = A.length;
-
         for(let i = 0; i < n; i++) {
-            //szare kolo szuka najmniejszego
             let min = i;
             for(let j = i+1; j < n; j++){
                 if(A[j] < A[min]) {
                     min=j;
                 }
             }
-            //jesli znaleziony jest wiekszy od wczesniejszego to zamiana
-            if (min != i) {
+             if (min != i) {
                 let tmp = A[i];
                 A[i] = A[min];
                 A[min] = tmp;
@@ -372,38 +381,73 @@ function myFunction() {
     var start1 = new Date().getTime();
     prosteWstawianie(losowo1);
     var elapsed1 = new Date().getTime() - start1;
-    var text1 = "1. PROSTE WSTAWIANIE CZAS: "+elapsed1+ " ms";
+    var text1 = "ZŁOŻONOŚĆ O(n^2) PROSTE WSTAWIANIE CZAS: "+elapsed1+ " ms";
     document.getElementById("demo1").innerHTML = text1;
 
+    //dla uporzadkowanego
+    //uporzadkowany10x
+    //uporzadkowany100x
+    //uporzadkowany1000x
+    prosteWstawianie(uporzadkowany1);
+    prosteWstawianie(uporzadkowany1);
     var start11 = new Date().getTime();
     prosteWstawianie(uporzadkowany1);
     var elapsed11 = new Date().getTime() - start11;
-    var text11 = "1. PROSTE WSTAWIANIE CZAS: "+elapsed11+ " ms";
+    var text11 = "ZŁOŻONOŚĆ O(n) PROSTE WSTAWIANIE CZAS: "+elapsed11+ " ms";
     document.getElementById("demo1a").innerHTML = text11;
 
-     var start111 = new Date().getTime();
+    prosteWstawianie(uporzadkowany10x);
+    prosteWstawianie(uporzadkowany10x);
+    var start11 = new Date().getTime();
+    prosteWstawianie(uporzadkowany10x);
+    var elapsed11 = new Date().getTime() - start11;
+    var text11 = "ZŁOŻONOŚĆ O(n) PROSTE WSTAWIANIE CZAS (dla 10*n): "+elapsed11+ " ms";
+    document.getElementById("demo1aa").innerHTML = text11;
+
+    prosteWstawianie(uporzadkowany100x);
+    prosteWstawianie(uporzadkowany100x);
+    var start11 = new Date().getTime();
+    prosteWstawianie(uporzadkowany100x);
+    var elapsed11 = new Date().getTime() - start11;
+    var text11 = "ZŁOŻONOŚĆ O(n) PROSTE WSTAWIANIE CZAS (dla 100*n): "+elapsed11+ " ms";
+    document.getElementById("demo1aaa").innerHTML = text11;
+
+
+    prosteWstawianie(uporzadkowany1000x);
+    prosteWstawianie(uporzadkowany1000x);
+    var start11 = new Date().getTime();
+    prosteWstawianie(uporzadkowany1000x);
+    var elapsed11 = new Date().getTime() - start11;
+    var text11 = "ZŁOŻONOŚĆ O(n) PROSTE WSTAWIANIE CZAS (dla 1000*n): "+elapsed11+ " ms";
+    document.getElementById("demo1aaaa").innerHTML = text11;
+
+
+
+
+
+    var start111 = new Date().getTime();
      prosteWstawianie(odwrotnie_upo1);
      var elapsed111 = new Date().getTime() - start111;
-     var text111 = "1.  PROSTE WSTAWIANIE CZAS: "+elapsed111+ " ms";
+     var text111 = "ZŁOŻONOŚĆ O(n^2)  PROSTE WSTAWIANIE CZAS: "+elapsed111+ " ms";
      document.getElementById("demo1b").innerHTML = text111;
 
 
 
-    var text111=" Przypadek odwrotnie uporzadkowany "
-    var text111a = " Przypadek losowo uporzadkowany "
-    var text111b = " Przypadek uporzadkowany "
+    var text111=" Przypadek odwrotnie uporządkowany "
+    var text111a = " Przypadek losowo uporządkowany "
+    var text111b = " Przypadek uporządkowany "
    // var text111c =p.style.fontsize(100);
     var span1 = document.getElementById("demo111a");
     var span2 = document.getElementById("demo111b");
 
 
     var span = document.getElementById("demo111c");
-    span.style.fontSize="15px";
-    span1.style.fontSize="15px";
-    span2.style.fontSize="15px";
-    span.innerHTML=" Przypadek odwrotnie uporzadkowany ";
-    span1.innerHTML=" Przypadek losowo uporzadkowany ";
-    span2.innerHTML=" Przypadek uporzadkowany ";
+    span.style.fontSize="25px";
+    span1.style.fontSize="25px";
+    span2.style.fontSize="25px";
+    span.innerHTML=" Przypadek odwrotnie uporządkowany ";
+    span1.innerHTML=" Przypadek losowo uporządkowany ";
+    span2.innerHTML=" Przypadek uporządkowany ";
 
     //  sprawdzenie ze dziala
     //title of canvas
@@ -418,39 +462,39 @@ function myFunction() {
     var start4 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(losowo4);
     var elapsed4 = new Date().getTime() - start4;
-    var text4 = "4. PROSTA ZAMIANA CZAS: "+elapsed4+ " ms";
+    var text4 = "ZŁOŻONOŚĆ O(n^2) PROSTA ZAMIANA CZAS: "+elapsed4+ " ms";
     document.getElementById("demo4").innerHTML = text4;
 
     var start44 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(uporzadkowany4);
     var elapsed44 = new Date().getTime() - start44;
-    var text44 = "4.PROSTA ZAMIANA CZAS: "+elapsed44+ " ms";
+    var text44 = "ZŁOŻONOŚĆ O(n^2) PROSTA ZAMIANA CZAS: "+elapsed44+ " ms";
     document.getElementById("demo4a").innerHTML = text44;
 
     var start444 = new Date().getTime();
     prostaZamiana_sortowanieBabelkowe(odwrotnie_upo4);
     var elapsed444 = new Date().getTime() - start444;
-    var text444 = "4.PROSTA ZAMIANA CZAS: "+elapsed444+ " ms";
+    var text444 = "ZŁOŻONOŚĆ O(n^2) PROSTA ZAMIANA CZAS: "+elapsed444+ " ms";
     document.getElementById("demo4b").innerHTML = text444;
 
   //proste wybieranie
     var start3 = new Date().getTime();
     prosteWybieranie(losowo3);
     var elapsed3 = new Date().getTime() - start3;
-    var text3 = "3.PROSTE WYBIERANIE CZAS: "+elapsed3+ " ms";
+    var text3 = "ZŁOŻONOŚĆ O(n^2) PROSTE WYBIERANIE CZAS: "+elapsed3+ " ms";
     document.getElementById("demo3").innerHTML = text3;
 
 
     var start33 = new Date().getTime();
     prosteWybieranie(uporzadkowany3);
     var elapsed33 = new Date().getTime() - start33;
-    var text33 = "3.PROSTE WYBIERANIE CZAS: "+elapsed33+ " ms";
+    var text33 = "ZŁOŻONOŚĆ O(n^2) PROSTE WYBIERANIE CZAS: "+elapsed33+ " ms";
     document.getElementById("demo3a").innerHTML = text33;
 
     var start333 = new Date().getTime();
     prosteWybieranie(odwrotnie_upo3);
     var elapsed333 = new Date().getTime() - start333;
-    var text333 = "3.PROSTE WYBIERANIE CZAS: "+elapsed333+ " ms";
+    var text333 = "ZŁOŻONOŚĆ O(n^2) PROSTE WYBIERANIE CZAS: "+elapsed333+ " ms";
     document.getElementById("demo3b").innerHTML = text333;
 
 }

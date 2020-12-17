@@ -107,7 +107,7 @@
     }
     @media all and (max-width: 615px) and (min-width:1px){
         body{
-            background-color: lightblue;
+            background-color: white;
             /*docelowo bialo*/
         }
 
@@ -166,13 +166,13 @@
                 <div id="all_list"><a href="{{path('insertion_half_sort') }} ">Wstawianie polowkowe</a></div>
                 <div id="all_list"><a href="{{path('select_sort') }} ">Wybieranie proste</a></div>
                 <div id="all_list"><a href="{{path('bubble_sort') }} ">Sortowanie Babelkowe - Bubble sort</a></div>
-                <div id="all_list"><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie babelkowe ze znacznikiem</a></div>
-                <div id="all_list"><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>
+{#                <div id="all_list"><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie babelkowe ze znacznikiem</a></div>#}
+{#                <div id="all_list"><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>#}
 
-                <div id="all_list"><a href="{{path('shell_sort') }} ">Sortowanie metoda Shella</a></div>
-                <div id="all_list"><a href="{{path('heap_sort') }} ">Sortowanie stogowe</a></div>
+{#                <div id="all_list"><a href="{{path('shell_sort') }} ">Sortowanie metoda Shella</a></div>#}
+{#                <div id="all_list"><a href="{{path('heap_sort') }} ">Sortowanie stogowe</a></div>#}
 
-                <div id="all_list"><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>
+{#                <div id="all_list"><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>#}
                 <div id="all_list"><a href="{{path('merge_sort') }} ">Sortowanie przez laczenie</a></div>
             </div>
             <br>
@@ -192,14 +192,7 @@
                         <a href="{{path('insertion_half_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/wstawianie-polowkowe-biale.png') }}" >
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="{{path('shell_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-metoda-shella-biale.png') }}" >
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="{{path('merge_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-przez-laczenie-biale.png') }}" >
-                        </a>
-                    </div>
+
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -223,11 +216,12 @@
                         <a href="{{path('select_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/wybieranie-proste-biale.png') }}" >
                         </a>
                     </div>
+
+
                     <div class="swiper-slide">
-                        <a href="{{path('heap_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-stogowe-biale.png') }}" >
+                        <a href="{{path('merge_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-przez-laczenie-biale.png') }}" >
                         </a>
                     </div>
-
 
 
 
@@ -255,18 +249,26 @@
                         <a href="{{path('bubble_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-biale.png') }}" >
                         </a>
                     </div>
-                    <div class="swiper-slide">
-                        <a href="{{path('bubble_sort_with_flag') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-ze-znacznikiem-biale.png') }}" >
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="{{path('mix_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-mieszane-biale.png') }}" >
-                        </a>
-                    </div>
-                    <div class="swiper-slide">
-                        <a href="{{path('quick_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-szybkie-biale.png') }}" >
-                        </a>
-                    </div>
+{#                    <div class="swiper-slide">#}
+{#                        <a href="{{path('bubble_sort_with_flag') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-ze-znacznikiem-biale.png') }}" >#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <a href="{{path('shell_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-metoda-shella-biale.png') }}" >#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <a href="{{path('mix_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-mieszane-biale.png') }}" >#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <a href="{{path('quick_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-szybkie-biale.png') }}" >#}
+{#                        </a>#}
+{#                    </div>#}
+{#                    <div class="swiper-slide">#}
+{#                        <a href="{{path('heap_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-stogowe-biale.png') }}" >#}
+{#                        </a>#}
+{#                    </div>#}
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
@@ -289,9 +291,9 @@
             <br><br><br><br><br>
 
             <div id="porownanie">
-            <h1 id="algorithm">Porównanie prętkości działania metod sortowania: - slajd 36 </h1>
+            <h1 id="algorithm">Porównanie prędkości działania metod sortowania: </h1>
 
-                <h1>Podaj ilość elementow do posortowania (zalecane 100 elementów bo moze dlugo trwac obliczanie)(sa wybrane 3 algorytmy bo dla innych nie istnieja wystarczajace wzory matematyczne slajd 36 - proste wstawianie ma 0ms bo ilosc Po i Pr jest bardzo mala</h1>
+                <h1>Podaj ilość elementow do posortowania:</h1>
             <form name="myForm">
                 <input id="numb" name="fname">
                 <button onclick="  myFunction()"  type="button">Submit</button>
@@ -323,6 +325,9 @@
             <p id="demo10"></p>
                 <p id="demo111b"></p>
             <p id="demo1a"></p>
+                <p id="demo1aa"></p>
+                <p id="demo1aaa"></p>
+                <p id="demo1aaaa"></p>
             <p id="demo2a"></p>
             <p id="demo3a"></p>
             <p id="demo4a"></p>
