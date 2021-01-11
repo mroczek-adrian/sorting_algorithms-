@@ -162,22 +162,22 @@
 {#        </div>#}
         <div class="col-sm-12">
             <div id="algorithms_all_list">
-                <div id="all_list"><a href="{{path('insertion_sort') }} ">Wstawieanie proste</a></div>
-                <div id="all_list"><a href="{{path('insertion_half_sort') }} ">Wstawianie polowkowe</a></div>
+                <div id="all_list"><a href="{{path('insertion_sort') }} ">Wstawianie proste</a></div>
+                <div id="all_list"><a href="{{path('insertion_half_sort') }} ">Wstawianie połowkowe</a></div>
                 <div id="all_list"><a href="{{path('select_sort') }} ">Wybieranie proste</a></div>
-                <div id="all_list"><a href="{{path('bubble_sort') }} ">Sortowanie Babelkowe - Bubble sort</a></div>
-{#                <div id="all_list"><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie babelkowe ze znacznikiem</a></div>#}
-{#                <div id="all_list"><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>#}
+                <div id="all_list"><a href="{{path('bubble_sort') }} ">Sortowanie bąbelkowe</a></div>
+               <div id="all_list"><a href="{{path('bubble_sort_with_flag') }} ">Sortownaie bąbelkowe ze znacznikiem</a></div>
+                <div id="all_list"><a href="{{path('mix_sort') }} ">Sortowanie mieszane</a></div>
 
-{#                <div id="all_list"><a href="{{path('shell_sort') }} ">Sortowanie metoda Shella</a></div>#}
+               <div id="all_list"><a href="{{path('shell_sort') }} ">Sortowanie metodą Shella</a></div>
 {#                <div id="all_list"><a href="{{path('heap_sort') }} ">Sortowanie stogowe</a></div>#}
 
 {#                <div id="all_list"><a href="{{path('quick_sort') }} ">Sortowanie szybkie</a></div>#}
-                <div id="all_list"><a href="{{path('merge_sort') }} ">Sortowanie przez laczenie</a></div>
+                <div id="all_list"><a href="{{path('merge_sort') }} ">Sortowanie przez łączenie</a></div>
             </div>
             <br>
             <div id="algorithm">
-            <h1>Algorytmy sortowania wykorzystujace mechanizm wstawiania:</h1>
+            <h1>Algorytmy sortowania wykorzystujące mechanizm wstawiania:</h1>
             </div>
                 <!-- Slider main container -->
             <div class="swiper-container">
@@ -205,7 +205,7 @@
                 <div class="swiper-scrollbar"></div>
             </div>
             <div id="algorithm">
-                <h1>Algorytmy sortowania wykorzystujace mechanizm wybierania:</h1>
+                <h1>Algorytmy sortowania wykorzystujące mechanizm wybierania:</h1>
             </div>
                 <!-- Slider main container -->
             <div class="swiper-container">
@@ -238,7 +238,7 @@
             </div>
 
             <div id="algorithm">
-                <h1>Algorytmy sortowania wykorzystujace mechanizm zamiany: </h1>
+                <h1>Algorytmy sortowania wykorzystujące mechanizm zamiany: </h1>
             </div>
             <!-- Slider main container -->
             <div class="swiper-container">
@@ -249,18 +249,18 @@
                         <a href="{{path('bubble_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-biale.png') }}" >
                         </a>
                     </div>
-{#                    <div class="swiper-slide">#}
-{#                        <a href="{{path('bubble_sort_with_flag') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-ze-znacznikiem-biale.png') }}" >#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="swiper-slide">#}
-{#                        <a href="{{path('shell_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-metoda-shella-biale.png') }}" >#}
-{#                        </a>#}
-{#                    </div>#}
-{#                    <div class="swiper-slide">#}
-{#                        <a href="{{path('mix_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-mieszane-biale.png') }}" >#}
-{#                        </a>#}
-{#                    </div>#}
+                    <div class="swiper-slide">
+                        <a href="{{path('bubble_sort_with_flag') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-babelkowe-ze-znacznikiem-biale.png') }}" >
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{path('shell_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-metoda-shella-biale.png') }}" >
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="{{path('mix_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-mieszane-biale.png') }}" >
+                        </a>
+                    </div>
 {#                    <div class="swiper-slide">#}
 {#                        <a href="{{path('quick_sort') }} "> <img id="click2start"   src="{{ asset('js/img/first-page/sortowanie-szybkie-biale.png') }}" >#}
 {#                        </a>#}
@@ -296,7 +296,7 @@
                 <h1>Podaj ilość elementow do posortowania:</h1>
             <form name="myForm">
                 <input id="numb" name="fname">
-                <button onclick="  myFunction()"  type="button">Submit</button>
+                <button onclick="  myFunction()"  type="button">Start</button>
 
             </form>
              <br><br><br><br><br><br>
